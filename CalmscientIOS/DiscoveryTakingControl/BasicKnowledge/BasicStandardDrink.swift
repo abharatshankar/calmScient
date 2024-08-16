@@ -17,7 +17,7 @@ class BasicStandardDrink: ViewController {
     var drinks: [[String: Any]] = []
     let activityIndicator = UIActivityIndicatorView(style: .large)
     
-    
+    var sectionID1: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         main_view.layer.cornerRadius = 10
@@ -223,7 +223,7 @@ class BasicStandardDrink: ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":1
+            "sectionId":sectionID1!
         ]
         
         

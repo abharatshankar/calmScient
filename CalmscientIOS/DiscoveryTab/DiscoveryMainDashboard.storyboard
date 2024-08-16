@@ -32,11 +32,25 @@
                                 <color key="textColor" name="CalenderDefaultTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx1-6i-VPc">
+                                <rect key="frame" x="345" y="55" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="WZi-YS-b3T"/>
+                                    <constraint firstAttribute="width" constant="32" id="dYw-4M-xfT"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="profileIcon"/>
+                                <connections>
+                                    <action selector="profileButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fgt-7N-ctG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0ok-vf-Avy" secondAttribute="trailing" constant="98" id="ANv-38-Wuy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wx1-6i-VPc" secondAttribute="trailing" constant="16" id="01N-gG-E3q"/>
+                            <constraint firstItem="nfv-RF-4CZ" firstAttribute="top" secondItem="wx1-6i-VPc" secondAttribute="bottom" constant="17" id="2Ub-n7-4DV"/>
+                            <constraint firstItem="wx1-6i-VPc" firstAttribute="leading" secondItem="0ok-vf-Avy" secondAttribute="trailing" constant="50" id="6W9-Nr-m68"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nfv-RF-4CZ" secondAttribute="bottom" constant="-17" id="I8a-YB-yYC"/>
                             <constraint firstItem="nfv-RF-4CZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ya6-gJ-QGw"/>
                             <constraint firstItem="0ok-vf-Avy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="d2A-Xn-pE9"/>
@@ -55,6 +69,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="profileIcon" width="33.333332061767578" height="33.333332061767578"/>
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -16,7 +16,7 @@ class DrinkingHabbitController:  ViewController {
     @IBOutlet var threetofive_button: UIButton!
     @IBOutlet var almost_button: UIButton!
     @IBOutlet var evryday_button: UIButton!
-    
+    var sectionID6: Int?
     
     @IBOutlet weak var headerLabel: UILabel!
     
@@ -90,7 +90,21 @@ class DrinkingHabbitController:  ViewController {
                 print("Error: \(error)")
             }
         }
+        
+        var image = UIImage(named: "NavigationBack")
+                    image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
     }
+    @objc func backButtonOverrideAction() {
+           print("Back button tapped")
+           // Perform the action you want here
+           let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
+           let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
+           vc?.title = "Basic Knowledge"
+   //            vc?.courseID = 3
+           self.navigationController?.pushViewController(vc!, animated: true)
+           
+       }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
     }
@@ -198,6 +212,7 @@ class DrinkingHabbitController:  ViewController {
                                 print(json)
                                 let next = UIStoryboard(name: "DrinikingHabbit", bundle: nil)
                                 let vc = next.instantiateViewController(withIdentifier: "DrinikingHabbit") as? DrinikingHabbit
+                                vc?.sectionID66 = sectionID6
                                 vc?.title = "Basic Knowledge"
                                 // vc?.basicData = answersList
                                 self.navigationController?.pushViewController(vc!, animated: true)

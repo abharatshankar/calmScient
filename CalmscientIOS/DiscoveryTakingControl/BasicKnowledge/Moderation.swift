@@ -13,7 +13,7 @@ class Moderation: ViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
-
+    var sectionID3: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +144,7 @@ class Moderation: ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":3
+            "sectionId":sectionID3!
         ]
         
         

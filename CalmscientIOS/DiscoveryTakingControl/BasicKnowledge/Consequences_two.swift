@@ -17,7 +17,8 @@ class Consequences_two:  ViewController {
     @IBOutlet weak var hyperTextLabel: UITextView!
     
     @IBOutlet weak var pointsTxt: UILabel!
-    
+    var sectionID55: Int?
+
     let arrayString = ["30% of suicides.","40% of fatal burn injuries.","50% of fatal drownings and of homicides, and about 65 percent of fatal falls.","31% of all fatal crashes in 2021.","A significant number of sexual assaults."]
     
     override func viewDidLoad() {
@@ -110,6 +111,7 @@ class Consequences_two:  ViewController {
         let next = UIStoryboard(name: "Consequences", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "Consequences_three") as? Consequences_three
         vc?.title = "Basic knowledge"
+        vc?.sectionID555 = sectionID55
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func backward_action(_ sender: UIButton) {

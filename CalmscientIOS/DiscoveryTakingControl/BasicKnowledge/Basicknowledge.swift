@@ -177,23 +177,31 @@ class Basicknowledge: ViewController, UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0 {
             let next = UIStoryboard(name: "BasicStandardDrink", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "BasicStandardDrink") as? BasicStandardDrink
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID1 = newData["sectionId"] as? Int
             vc?.title = "Basic knowledge"
             self.navigationController?.pushViewController(vc!, animated: true)
         }else if(indexPath.row == 1){
             let next = UIStoryboard(name: "USGuidlines", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "USGuidlines") as? USGuidlines
             vc?.title = "Basic knowledge"
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID2 = newData["sectionId"] as? Int
             self.navigationController?.pushViewController(vc!, animated: true)
         }
         else if(indexPath.row == 2){
             let next = UIStoryboard(name: "Moderation", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "Moderation") as? Moderation
             vc?.title = "Basic knowledge"
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID3 = newData["sectionId"] as? Int
             self.navigationController?.pushViewController(vc!, animated: true)
         }
         else if(indexPath.row == 3){
             let next = UIStoryboard(name: "BasicknowledgeVideo", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "BasicknowledgeVideo") as? BasicknowledgeVideo
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID4 = newData["sectionId"] as? Int
             vc?.title = "Basic knowledge"
             self.navigationController?.pushViewController(vc!, animated: true)
         }
@@ -201,11 +209,15 @@ class Basicknowledge: ViewController, UITableViewDelegate, UITableViewDataSource
             let next = UIStoryboard(name: "Consequences", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "Consequences") as? Consequences
             vc?.title = "Basic knowledge"
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID5 = newData["sectionId"] as? Int
             self.navigationController?.pushViewController(vc!, animated: true)
         }
         else if(indexPath.row == 5){
             let next = UIStoryboard(name: "DrinkingHabbitController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "DrinkingHabbitController") as? DrinkingHabbitController
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID6 = newData["sectionId"] as? Int
             vc?.title = "Basic knowledge"
             self.navigationController?.pushViewController(vc!, animated: true)
         }
@@ -213,6 +225,8 @@ class Basicknowledge: ViewController, UITableViewDelegate, UITableViewDataSource
             let next = UIStoryboard(name: "WhatToExpectViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "WhatToExpectViewController") as? WhatToExpectViewController
             vc?.title = "Basic knowledge"
+            let newData = basicData2[indexPath.row]
+            vc?.sectionID7 = newData["sectionId"] as? Int
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

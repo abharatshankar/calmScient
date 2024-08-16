@@ -16,7 +16,8 @@ class Consequences_three:  ViewController {
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
     @IBOutlet weak var subtitleLbl: UILabel!
-    
+    var sectionID555: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +64,7 @@ class Consequences_three:  ViewController {
         let next = UIStoryboard(name: "Consequences", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "Consequences_four") as? Consequences_four
         vc?.title = "Basic knowledge"
+        vc?.sectionID5555 = sectionID555
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func backward_action(_ sender: UIButton) {
