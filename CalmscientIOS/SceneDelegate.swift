@@ -2,21 +2,52 @@
 //  SceneDelegate.swift
 //  CalmscientIOS
 //
-//  Created by Arimilli Venkata Rama Kishore on 22/04/24.
+//  Created by KA on 22/04/24.
 //
 
 import UIKit
 
+@available(iOS 16.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    func changeToUserInterfaceStyle(_ style: UIUserInterfaceStyle) {
+        if let window = self.window {
+            window.overrideUserInterfaceStyle = style
+        }
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        let homeController = UIStoryboard(name: "LoginVC", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let navC = UINavigationController(rootViewController: homeController)
+        navC.navigationBar.isHidden = true
+        window?.rootViewController = navC
+        window?.makeKeyAndVisible()
+        
+        
+        
+        if let isDarkMode = UserDefaults.standard.value(forKey: "isDarkMode") as? Bool {
+                let style: UIUserInterfaceStyle = isDarkMode ? .dark : .light
+                changeToUserInterfaceStyle(style)
+            }
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+//        window?.windowScene = windowScene
+//        let homeController = UIStoryboard(name: "UserProfile", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+//        let navC = UINavigationController(rootViewController: homeController)
+//        navC.navigationBar.isHidden = true
+//        window?.rootViewController = navC
+//        window?.makeKeyAndVisible()
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +78,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    
+    func changeRootViewControllerToTabBar() {
+            guard let window = self.window else { return }
+            let homeController = UIStoryboard(name: "AppTabBar", bundle: nil).instantiateViewController(withIdentifier: "AppMainTabViewController") as! AppMainTabViewController
 
+            
+            window.rootViewController = homeController
+            window.makeKeyAndVisible()
+            
+            let options: UIView.AnimationOptions = .transitionFlipFromRight
+            UIView.transition(with: window, duration: 0.5, options: options, animations: nil, completion: nil)
+        }
+
+    
 }
 

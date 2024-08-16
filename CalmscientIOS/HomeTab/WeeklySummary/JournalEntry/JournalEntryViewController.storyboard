@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Journal Entry View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="JournalEntryViewController" id="Y6W-OH-hqX" customClass="JournalEntryViewController" customModule="CalmscientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gK3-WH-vae">
+                                <rect key="frame" x="0.0" y="70" width="393" height="111"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-9T-LhV">
+                                        <rect key="frame" x="16" y="15" width="322" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="322" id="76o-ev-hCW"/>
+                                            <constraint firstAttribute="height" constant="34" id="VTs-2q-gNL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29V-dT-X0j">
+                                        <rect key="frame" x="16" y="64" width="86" height="30"/>
+                                        <color key="backgroundColor" name="AppBackGroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9h4-bW-5aK"/>
+                                            <constraint firstAttribute="width" constant="86" id="MXB-4y-Q9u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Quiz">
+                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="quizButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="l1S-ia-rxj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJO-3R-56L">
+                                        <rect key="frame" x="243" y="64" width="133" height="30"/>
+                                        <color key="backgroundColor" name="AppBackGroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7ym-rg-uDA"/>
+                                            <constraint firstAttribute="width" constant="133" id="aiN-e6-VJz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" name="AppBackGroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Discovery Exercise">
+                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="discoveryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Bl-jB-6V9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciW-kL-yFa">
+                                        <rect key="frame" x="110" y="64" width="125" height="30"/>
+                                        <color key="backgroundColor" name="AppBackGroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="pXh-IH-GLa"/>
+                                            <constraint firstAttribute="width" constant="125" id="w14-XT-iWp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" name="AppBackGroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Daily jouneral">
+                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dailyButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="N5N-Yt-fdK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL6-3I-WNI">
+                                        <rect key="frame" x="354" y="18" width="24" height="24"/>
+                                        <color key="backgroundColor" name="AppBackGroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="a4L-cY-lxQ"/>
+                                            <constraint firstAttribute="width" constant="86" id="gci-uf-7v9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="jIz-Jm-PQ5"/>
+                                            <constraint firstAttribute="height" constant="30" id="jNw-YF-8JZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="calendarIcon">
+                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calenderButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Oa-PH-oiv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="AppBackGroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="09g-nH-nwQ"/>
+                                    <constraint firstItem="Rru-9T-LhV" firstAttribute="top" secondItem="gK3-WH-vae" secondAttribute="top" constant="15" id="1t5-Lq-5BD"/>
+                                    <constraint firstItem="Rru-9T-LhV" firstAttribute="leading" secondItem="gK3-WH-vae" secondAttribute="leading" constant="16" id="3mz-WN-7yP"/>
+                                    <constraint firstItem="ciW-kL-yFa" firstAttribute="top" secondItem="Rru-9T-LhV" secondAttribute="bottom" constant="15" id="3vI-AA-cTW"/>
+                                    <constraint firstAttribute="bottom" secondItem="fJO-3R-56L" secondAttribute="bottom" constant="17" id="5eG-73-5dt"/>
+                                    <constraint firstAttribute="bottom" secondItem="29V-dT-X0j" secondAttribute="bottom" constant="17" id="C25-6C-WIO"/>
+                                    <constraint firstAttribute="trailing" secondItem="fJO-3R-56L" secondAttribute="trailing" constant="17" id="DMS-s9-OjM"/>
+                                    <constraint firstItem="hL6-3I-WNI" firstAttribute="top" secondItem="gK3-WH-vae" secondAttribute="top" constant="18" id="KhP-O7-vFE"/>
+                                    <constraint firstAttribute="height" constant="111" id="NL3-dj-6Ma"/>
+                                    <constraint firstItem="ciW-kL-yFa" firstAttribute="leading" secondItem="29V-dT-X0j" secondAttribute="trailing" constant="8" symbolic="YES" id="RbK-lb-hbF"/>
+                                    <constraint firstAttribute="trailing" secondItem="hL6-3I-WNI" secondAttribute="trailing" constant="15" id="SWa-Me-byf"/>
+                                    <constraint firstItem="fJO-3R-56L" firstAttribute="top" secondItem="Rru-9T-LhV" secondAttribute="bottom" constant="15" id="Z7Z-lq-s7U"/>
+                                    <constraint firstItem="fJO-3R-56L" firstAttribute="top" secondItem="hL6-3I-WNI" secondAttribute="bottom" constant="22" id="d80-iT-gLI"/>
+                                    <constraint firstItem="hL6-3I-WNI" firstAttribute="leading" secondItem="Rru-9T-LhV" secondAttribute="trailing" constant="16" id="iDK-72-zII"/>
+                                    <constraint firstItem="fJO-3R-56L" firstAttribute="leading" secondItem="ciW-kL-yFa" secondAttribute="trailing" constant="8" symbolic="YES" id="lM1-C7-DSQ"/>
+                                    <constraint firstItem="29V-dT-X0j" firstAttribute="top" secondItem="Rru-9T-LhV" secondAttribute="bottom" constant="15" id="lTv-AR-tl3"/>
+                                    <constraint firstAttribute="bottom" secondItem="ciW-kL-yFa" secondAttribute="bottom" constant="17" id="rLR-zp-a0B"/>
+                                    <constraint firstItem="29V-dT-X0j" firstAttribute="leading" secondItem="gK3-WH-vae" secondAttribute="leading" constant="16" id="tIy-Ax-rUE"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-1f-kLK">
+                                <rect key="frame" x="9" y="174" width="368" height="576"/>
+                                <color key="backgroundColor" name="AppBackGroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="368" id="1mI-6Q-dew"/>
+                                    <constraint firstAttribute="height" constant="576" id="dD3-gO-QqG"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIx-FQ-dsa" customClass="LinearGradientButton" customModule="CalmscientIOS" customModuleProvider="target">
+                                <rect key="frame" x="52" y="758" width="295" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="bzD-1F-xza"/>
+                                    <constraint firstAttribute="height" constant="45" id="eQQ-yk-cys"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                        <color key="value" name="GradientButtonColor1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                        <color key="value" name="GradientButtonColor2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="needToTalkAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6UT-s5-4nJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackGroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oIx-FQ-dsa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="Afr-07-7V9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oIx-FQ-dsa" secondAttribute="trailing" constant="46" id="FMm-nw-JJW"/>
+                            <constraint firstItem="gPC-1f-kLK" firstAttribute="top" secondItem="gK3-WH-vae" secondAttribute="bottom" constant="-7" id="FeD-MA-dqq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="oIx-FQ-dsa" secondAttribute="bottom" constant="15" id="PqY-xz-xJe"/>
+                            <constraint firstItem="gPC-1f-kLK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="9" id="TBZ-au-2hR"/>
+                            <constraint firstItem="gK3-WH-vae" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="e6B-7d-4pL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gPC-1f-kLK" secondAttribute="trailing" constant="16" id="ev6-Uw-gn1"/>
+                            <constraint firstItem="gPC-1f-kLK" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-68" id="hjb-hd-VG9"/>
+                            <constraint firstItem="gK3-WH-vae" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="nHm-is-10w"/>
+                            <constraint firstItem="gK3-WH-vae" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="11" id="tMG-Fh-cdW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calenderButton" destination="hL6-3I-WNI" id="SaB-2b-GeT"/>
+                        <outlet property="dailyButton" destination="ciW-kL-yFa" id="24i-if-Qtr"/>
+                        <outlet property="datePickerView" destination="qT3-nc-qex" id="Ala-7E-DaO"/>
+                        <outlet property="discoveryButton" destination="fJO-3R-56L" id="zUx-4M-qYO"/>
+                        <outlet property="journalTableView" destination="gPC-1f-kLK" id="sHy-EU-L24"/>
+                        <outlet property="needToTalkButton" destination="oIx-FQ-dsa" id="8Y3-qn-m0t"/>
+                        <outlet property="pickerBackView" destination="zHy-Ih-qTM" id="bhd-iv-fDv"/>
+                        <outlet property="quizButton" destination="29V-dT-X0j" id="E8j-RR-RRP"/>
+                        <outlet property="searchTF" destination="Rru-9T-LhV" id="hBh-I1-8O3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="zHy-Ih-qTM">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-GA-EKD">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6h-7B-zb9">
+                                    <rect key="frame" x="19" y="8" width="67" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="67" id="oVH-tF-QIX"/>
+                                        <constraint firstAttribute="height" constant="20" id="sLb-bc-8h0"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                    <connections>
+                                        <action selector="okButtomClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ool-wI-hzi"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaM-Mw-HAm">
+                                    <rect key="frame" x="318" y="3" width="67" height="34.333333333333336"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="67" id="4EX-Zg-eRc"/>
+                                        <constraint firstAttribute="height" constant="34.329999999999998" id="JHA-5H-UZs"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                    <connections>
+                                        <action selector="closeButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oQx-wc-BTT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96487838029999995" green="0.96024924519999999" blue="0.98823899029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstItem="HaM-Mw-HAm" firstAttribute="top" secondItem="kxL-GA-EKD" secondAttribute="top" constant="3" id="9St-XG-Ov0"/>
+                                <constraint firstAttribute="bottom" secondItem="HaM-Mw-HAm" secondAttribute="bottom" constant="2.6699999999999999" id="MKS-n4-aRc"/>
+                                <constraint firstAttribute="bottom" secondItem="C6h-7B-zb9" secondAttribute="bottom" constant="12" id="nYe-oM-f5Q"/>
+                                <constraint firstItem="C6h-7B-zb9" firstAttribute="leading" secondItem="kxL-GA-EKD" secondAttribute="leading" constant="19" id="qBu-hF-88a"/>
+                                <constraint firstItem="C6h-7B-zb9" firstAttribute="top" secondItem="kxL-GA-EKD" secondAttribute="top" constant="8" id="slR-CN-Buo"/>
+                                <constraint firstAttribute="trailing" secondItem="HaM-Mw-HAm" secondAttribute="trailing" constant="8" id="zHs-FD-jdf"/>
+                            </constraints>
+                        </view>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" id="qT3-nc-qex">
+                            <rect key="frame" x="52" y="48" width="298" height="132"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <color key="backgroundColor" name="AppLightTextColor"/>
+                            <color key="tintColor" red="0.50196078430000002" green="0.43434495989999999" blue="0.81000056880000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <date key="date" timeIntervalSinceReferenceDate="742390729.33213603">
+                                <!--2024-07-11 11:38:49 +0000-->
+                            </date>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                <!--1970-01-01 11:00:00 +0000-->
+                            </date>
+                        </datePicker>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="L5h-DI-cJs"/>
+                    <color key="backgroundColor" name="AppBackGroundColor"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="kxL-GA-EKD" firstAttribute="top" secondItem="zHy-Ih-qTM" secondAttribute="top" id="01A-ux-jLT"/>
+                        <constraint firstAttribute="trailing" secondItem="kxL-GA-EKD" secondAttribute="trailing" id="jsT-PH-mnY"/>
+                        <constraint firstItem="qT3-nc-qex" firstAttribute="top" secondItem="kxL-GA-EKD" secondAttribute="bottom" constant="8" symbolic="YES" id="qib-Ay-OaA"/>
+                        <constraint firstItem="kxL-GA-EKD" firstAttribute="leading" secondItem="zHy-Ih-qTM" secondAttribute="leading" id="wQE-ZQ-ypZ"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="31.297709923664122" y="35.211267605633807"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="oIx-FQ-dsa">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="calendarIcon" width="24" height="24"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="AppBackGroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppLightTextColor">
+            <color red="0.40799999237060547" green="0.40400001406669617" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CalenderDefaultTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GradientButtonColor1">
+            <color red="0.42745098039215684" green="0.41960784313725491" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GradientButtonColor2">
+            <color red="0.17254901960784313" green="0.20000000000000001" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

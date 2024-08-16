@@ -1,0 +1,345 @@
+/*
+  Localizable.strings
+  CalmscientIOS
+
+  Created by BVK on 16/07/24.
+  
+*/
+
+"Profile" = "Profile";
+"Version 1.0.0" = "Version 1.0.0";
+"Username" = "Username";
+"Password" = "Password";
+"Forgot Password?" = "Forgot Password?";
+"Create an New account" = "Create an New account";
+
+//create account
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"Email" = "Email";
+"Phone Number" = "Phone Number";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Submit" = "Submit";
+
+//basic standard drink
+"Basic Knowledge" = "Basic Knowledge";
+"What’s a standard drink" = "What’s a standard drink";
+"standard drink description" = "In the United States, a “standard drink” (also known as an alcoholic drink equivalent) is defined as any drink that contains about 0.6 fluid ounces or 14 grams of pure alcohol. Although the drinks pictured here are different sizes, each contains approximately the same amount of alcohol and counts as one U.S. standard drink or one alcoholic drink equivalent.";
+
+"standard drink description2" = "Each beverage portrayed above represents one standard drink (or one alcoholic drink equivalent), defined in the United States as any beverage containing 0.6 oz or 14 grams of pure alcohol. The percentage of pure alcohol, expressed here as alcohol by volume (alc/vol), varies within and across beverage types. Although the standard drink amounts are helpful for following health guidelines, they may not reflect customary serving sizes";
+
+
+//us guide lines
+"What are the U.S. guidelines for drinking?" = "What are the U.S. guidelines for drinking?";
+
+"US guidelines part1" = "The 2020–2025 Dietary Guidelines for Americans states that adults of legal drinking age can choose not to drink or to drink in moderation by limiting intake to 2 drinks or less in a day for men and 1 drink or less in a day for women when alcohol is consumed. Drinking less is better for health than drinking more.";
+
+"US guidelines part2" = "There are some adults who should not drink alcohol, such as women who are pregnant.  Adults who choose to drink, and are not among the individuals listed below who should not drink, are encouraged to limit daily consumption of alcohol to align with the Dietary Guidelines.People who do not drink should not start drinking for any reason.";
+
+
+//moderation
+"When is drinking in moderation still too much?" = "When is drinking in moderation still too much?";
+
+"According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to void alcohol altogether if you are: Taking medications that interact with alcohol Managing a medical condition that can be made Worse by drinking Under the age of 21, the minimum legal drinking age in the United States Recovering from alcohol use disorder (AUD) or unable to control the amount you drink Pregnant or might be pregnant In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely." = "According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to void alcohol altogether if you are: Taking medications that interact with alcohol Managing a medical condition that can be made Worse by drinking Under the age of 21, the minimum legal drinking age in the United States Recovering from alcohol use disorder (AUD) or unable to control the amount you drink Pregnant or might be pregnant In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely.";
+
+"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda." = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+//basic knowledge video
+"What’s a standard drink" = "What’s a standard drink";
+"Let’s watch the videos " = "Let’s watch the videos ";
+"This video explains the impact of alcohol on the brain and its subsequent effects. Having this knowledge will help you consider your drinking habits." = "This video explains the impact of alcohol on the brain and its subsequent effects. Having this knowledge will help you consider your drinking habits.";
+
+//consequences
+"What are the consequence?" = "What are the consequence?";
+
+"typesOfconsequence" = "There is a wide range of short- and long-term consequences associated with alcohol misuse.
+For some individuals, any amount of drinking could be potentially harmful.
+
+Let's see some of them.";
+
+"consequences2" = "Alcohol-related deaths are increasing in the United States.
+
+Alcohol is a factor in:
+30% of suicides.
+40% of fatal burn injuries.
+50% of fatal drownings and of homicides, and about 65 percent of fatal falls.
+31% of all fatal crashes in 2021.
+A significant number of sexual assaults.";
+
+//consequences 3
+
+"Alcohol-related blackouts" = "Alcohol-related blackouts";
+
+"consequences3" = "Blackouts are gaps in a person’s memory for events that occurred while they were intoxicated. These gaps happen when a person drinks enough alcohol to temporarily block the transfer of memories from short- to long-term storage—known as memory consolidation—in a brain area called the hippocampus.";
+
+//consequences 4
+"Health problems" = "Health problems";
+"consequences4" = "Drinking is associated with a number of health problems and can make certain chronic health
+problems worse.
+
+Half of liver disease deaths in the United States are caused by alcohol, and alcohol-associated liver disease is increasing, particularly among women and young people.
+
+Research has shown an important association between alcohol consumption and breast cancer—for each 10 grams of alcohol consumed (less than 1 standard drink) on an average daily basis, a woman’s chance of developing postmenopausal breast cancer increases by around 9 percent.
+
+Research has also shown that alcohol misuse increases the risk of liver disease, cardiovascular  diseases, depression, and stomach bleeding, as well as cancers of the oral cavity, esophagus, larynx, pharynx, liver, colon, and rectum.
+
+People who misuse alcohol may also have problems managing conditions such as diabetes, high blood pressure, pain, and sleep disorders.
+ 
+And people who misuse alcohol are more likely to engage in unsafe sexual behavior, putting themselves and others at risk for sexually transmitted infections and unintentional pregnancies.
+
+Birth defects. Prenatal alcohol exposure can result in brain damage and other serious problems in babies. The effects are known as fetal alcohol spectrum disorders, or FASD, and can result in lifelong physical, cognitive, and behavioral problems. Because there is no known safe level of alcohol for a developing baby, women who are pregnant or might be pregnant should not drink.";
+//consequences 5
+"Alcohol use disorder (AUD)" = "Alcohol use disorder (AUD)";
+
+"consequences5" = "Some signs of AUD are continuing to drink even though it is causing trouble with your family or at work, drinking more than you intended, having to drink more than before to get a desired effect, being unable to stop drinking after repeated attempts, or continuing to drink despite negative consequences. Signs of AUD may also include drinking to alleviate negative emotions such as feeling ”low” anxious, uneasy, unhappy, unwell, dissatisfied with life, or other negative emotions that were caused or worsened by alcohol misuse.
+ 
+ Beyond these physical and mental health risks, frequent alcohol misuse also is linked with personal problems, such as losing one’s driver’s license or having relationship troubles.";
+
+//consequences 6
+"Why is being able to “hold your liquor” a concern?" = "Why is being able to “hold your liquor” a concern?";
+"consequences6"= "For some people who drink, it take quite a few drinks to “get a buzz” or feel relaxed, and they may be less likely to show signs of intoxication compared to others. This is sometimes called being able to “hold your liquor’ or “’drink someone under the table”. Often these individuals are unaware that their body’s lower response to the intoxicating effects of alcohol isn’t protection from alcohol problems but instead is a reason for caution.
+
+These individual tend to drink more, socialize with people who drink a lot, and develop a tolerance to alcohol(i.e., it takes more and more alcohol to feel or act intoxicated). As a result , they have an increased risk for developing AUD. Someone who misuses alcohol, especially over the long=term, can experience permanent liver, heart, or brain damage. And all people who drink, regardless of thr amount, need to be aware that critical decision-making abilities and driving-related skills are already diminished long before a person shows physical signs of intoxication.";
+
+//drinking habbit controller
+"How many days a week do you drink?" = "How many days a week do you drink?";
+"1. Now let’s see what drinking habits do you have" = "1. Now let’s see what drinking habits do you have";
+"None" = "None";
+"Less than 2 days" = "Less than 2 days";
+"3-5 days" = "3-5 days";
+"Almost everyday" = "Almost everyday";
+"Everyday" = "Everyday";
+"1. How many days a week do you drink?" = "1. How many days a week do you drink?";
+"Now let's see what drinking habits do you have" = "Now let's see what drinking habits do you have";
+
+//Drinking habbit
+"Now let’s see what drinking habits do you have" = "Now let’s see what drinking habits do you have";
+"2. What kind of alcohol do you drink each time? and how much?" = "2. What kind of alcohol do you drink each time? and how much?";
+
+
+//feel drink controller
+"Now let’s see what drinking habits do you have" = "Now let’s see what drinking habits do you have";
+"4. What is the reason behind?" = "4. What is the reason behind?";
+"Save it to weekly summary journal entry" = "Save it to weekly summary journal entry";
+
+//feel drink habbit
+"3. What do you feel about your drinking habit?" = "3. What do you feel about your drinking habit?";
+"Please select any option" = "Please select any option";
+
+//taking control intro
+"Thank you for being willing to talk about alcohol and drugs. Now let’s begin with a brief assessment." = "Thank you for being willing to talk about alcohol and drugs. Now let’s begin with a brief assessment.";
+"Doesn't apply to me" = "Doesn't apply to me";
+"Doesn't apply to me" = "No se aplica a mí";
+
+
+"Monthly Goal" = "Monthly Goal";
+"Now" = "Now";
+
+
+//check mail vc
+"Check your email" = "Check your email";
+"Enter the 4-digit code that we have sent via email xxxxxxxxxx@gmail.com" = "Enter the 4-digit code that we have sent via email xxxxxxxxxx@gmail.com";
+"Verify Code" = "Verify Code";
+
+//forgot passowrd
+"Forgot password" = "Forgot password";
+"Your email/Phone number " = "Your email/Phone number ";
+"Please enter your email to reset the password" = "Please enter your email to reset the password";
+"Reset Password" = "Reset Password";
+
+//update password
+"Set a new password" = "Set a new password" ;
+"Create a new password. Ensure it differs from previous ones for security" = "Create a new password. Ensure it differs from previous ones for security";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Update Password" = "Update Password";
+
+//user intro screen
+ "Good morning!"=  "Good morning!";
+"Good afternoon!" = "Good afternoon!";
+"Good evening!" = "Good evening!";
+"Save" = "Save";
+"Skip" = "Skip";
+
+
+//discovery main view controller
+"Managing Anxiety" = "Managing Anxiety";
+"Managing Stress" = "Managing Stress";
+"Taking Control" = "Taking Control";
+
+//custom alert view
+"Your License key has
+been verified." = "Your License key has
+been verified.";
+
+"Please complete your profile to start using Calmscient." = "Please complete your profile to start using Calmscient.";
+"Continue" = "Continue";
+
+//selection button
+"I agree to share my info with medical provider" = "I agree to share my info with medical provider";
+
+//landing vc
+"Hello " = "Hello ";
+"We are happy to see you" = "We are happy to see you";
+"Need to talk with someone?" = "Need to talk with someone?";
+
+//monthly drinks count vc
+"Congratulations text" = "Congratulations on making a firm decision on changing your drink consumption!
+
+First, Let’s set up a goal of changing your monthly drink counts.
+
+To do this, pick the date(s) on the calendar below on which you plan to have a alcohol free day.
+";
+"   Your total alcohol free days are" = "   Your total alcohol free days are";
+"days" = "days";
+
+//months view controller
+"Good job!" = "Good job!
+This is the monthly drink counts we suggest.";
+
+"Your suggested" = "Your suggested monthly
+Drinks count";
+
+"Your monthly Drinks count" = "Your monthly Drinks count";
+"Now, lets's decide how much you drink" = "Now, lets's decide how much you drink";
+"Set" = "Set";
+
+
+//custom alert view 1
+
+"You selected more than what is suggested" = "Has seleccionado más de lo sugerido";
+
+"Dismiss" = "Descartar";
+
+"Change goal" = "Cambiar objetivo";
+
+
+//define cell
+"Save it to weekly summary journal entry" = "Save it to weekly summary journal entry";
+
+"Have tried cutting down but cannot stay within the limit you set." = "Have tried cutting down but cannot stay within the limit you set.";
+
+"Have had alcohol use disorder (AUD) or now have any symptoms." = "Have had alcohol use disorder (AUD) or now have any symptoms.";
+
+
+"Have a physical or mental health condition that is caused or being worsened by drinking." = "Have a physical or mental health condition that is caused or being worsened by drinking.";
+"Are taking medication that interacts with alcohol." = "Are taking medication that interacts with alcohol.";
+"Are or might be pregnant." = "Are or might be pregnant.";
+
+
+//tellus cell
+"Save it to weekly summary journal entry" = "Save it to weekly summary journal entry";
+"Yes" = "Yes";
+"Just track the alcohol consumption" = "Just track the alcohol consumption";
+"Quit or cut down drinking" = "Quit or cut down drinking";
+"Save it to weekly summary journal entry" = "Save it to weekly summary journal entry";
+
+//quitViewController
+"congralatuateDecision" = "Congratulations on your decision to quit drinking!
+Remember, you are not alone. The Calmscient app can help you track your progress.
+
+Here are resources that can assist you in achieving your goal?";
+
+"Talk to your primary care doctor" = "Talk to your primary care doctor";
+
+"Now, let's get to know the drink coach features."  = "Now, let's get to know the drink coach features.";
+
+"See the introduction" = "See the introduction";
+
+
+//make a plan
+"Alcohol Fee Days" = "Alcohol Fee Days";
+"Pros" = "Pros";
+"Cons" = "Cons";
+"Make a Plan" = "Make a plan";
+
+
+//mind cell
+"With this in mind, tell us what you would like to do." = "With this in mind, tell us what you would like to do.";
+"Quit" = "Quit";
+"Cut down" = "Cut down" ;
+
+
+//journal entry view controller
+"Quiz" = "Quiz";
+"Daily jouneral" = "Daily jouneral";
+"Discovery Excercise" = "Discovery Excercise";
+
+//ProgressOnCourseWorkHeaderView
+"Course" = "Course";
+"Completed" = "Completed";
+
+
+//home tab dashboard
+"No favorites found for this patient" = "No favorites found for this patient";
+"My Favorites" = "My Favorites";
+
+//login vc
+"Accept Terms & Conditions" = "Accept Terms & Conditions";
+
+//add user medications view controller
+"Save" = "Save";
+"Cancel" = "Cancel";
+"Add Medications" = "Add Medications";
+"Are you sure you want to cancel?" = "Are you sure you want to cancel?";
+"Medications" = "Medications";
+"YES" = "YES";
+"NO" = "NO";
+"An Unknown error occured. Please check with Admin" = "An Unknown error occured. Please check with Admin";
+"Add Medication" = "Add Medication";
+"OK" = "OK";
+"Add Time & Alarm" = "Add Time & Alarm";
+"Name" = "Name";
+"Provider" = "Provider";
+"Dosage" = "Dosage";
+"Direction" =  "Direction";
+"Add Time & Alarm" = "Add Time & Alarm";
+
+
+//add medication vc
+"Add Medications" = "Add Medications";
+"With Meal" = "With Meal";
+"Morning" = "Morning";
+"08:00AM" = "08:00AM";
+"07:50AM"  = "07:50AM";
+"Afternoon" = "Afternoon";
+"Night" = "Night";
+"Schedule Time & Alarm" = "Schedule Time & Alarm";
+
+//medication details view controller
+"Medications detail" = "Medications detail";
+
+
+//add appointments view controller
+"Choose Date and Time" = "Choose Date and Time";
+
+//appointmenr details vc
+"Date and Time" = "Date and Time";
+"Invalid Date" = "Invalid Date";
+"Appointment Details" = "Appointment Details";
+"Contact" = "Contact";
+"Appointment Detail" = "Appointment Detail";
+"Address" = "Address";
+
+
+//screening result vc
+"Need to talk with someone?"  = "Need to talk with someone?";
+"Score
+marked" = "Score
+marked";
+"Total score" = "Total score";
+"Remind me" = "Remind me";
+
+//questioner vc
+"Over the last 2 weeks, how often have you been bothered by the following problems?" = "Over the last 2 weeks, how often have you been bothered by the following problems?";
+"1. Feeling nervous, anxious or on edge" = "1. Feeling nervous, anxious or on edge";
+
+
+//profile privacy vc
+"Data from Calmscient can be transmitted to your doctor for clinical review purposes. Please indicate which data you allow to be shared with your doctor by selecting either Yes or No next to each data element below" = "Data from Calmscient can be transmitted to your doctor for clinical review purposes. Please indicate which data you allow to be shared with your doctor by selecting either Yes or No next to each data element below";
+"Privacy" = "Privacy";
+
+
+//user entry yes or no cell
+"Did you take your meds this evening?" = "Did you take your meds this evening?";

@@ -1,0 +1,341 @@
+/*
+  Localizable.strings
+  CalmscientIOS
+
+  Created by BVK on 16/07/24.
+  
+*/
+// Profile
+
+"Profile" = "Perfil";
+"Version 1.0.0" = "Versión 1.0.0";
+
+
+// Login
+
+"Username" = "Nombre de usuario";
+"Password" = "Contraseña";
+"Forgot Password?" = "¿Has olvidado tu contraseña?";
+"Create an New account" = "Crear una nueva cuenta";
+
+//Create Account
+"First Name" = "Nombre";
+"Last Name" = "Apellido";
+"Email" = "Correo Electrónico";
+"Phone Number" = "Número de Teléfono";
+"Password" = "Contraseña";
+"Confirm Password" = "Confirmar Contraseña";
+"Submit" = "Enviar";
+
+
+
+
+
+//basic standard drink
+"Basic Knowledge" = "Conocimientos básicos";
+"What’s a standard drink" = "¿Qué es una bebida estándar?";
+"standard drink description" = "En los Estados Unidos, una “bebida estándar” (también conocida como equivalente de bebida alcohólica) se define como cualquier bebida que contiene aproximadamente 0.6 onzas líquidas o 14 gramos de alcohol puro. Aunque las bebidas que se muestran aquí son de diferentes tamaños, cada una contiene aproximadamente la misma cantidad de alcohol y cuenta como una bebida estándar estadounidense o un equivalente de bebida alcohólica.";
+
+"standard drink description2" = "Cada bebida representada arriba equivale a una bebida estándar (o un equivalente de bebida alcohólica), definida en los Estados Unidos como cualquier bebida que contenga 0.6 oz o 14 gramos de alcohol puro. El porcentaje de alcohol puro, expresado aquí como alcohol por volumen (alc/vol), varía dentro y entre los tipos de bebidas. Aunque las cantidades de bebidas estándar son útiles para seguir las pautas de salud, pueden no reflejar los tamaños de porciones habituales.";
+
+//US guide lines
+"What are the U.S. guidelines for drinking?" = "¿Cuáles son las pautas de EE. UU. para beber?";
+
+"US guidelines part1" = "Las Guías Alimentarias para los Estadounidenses 2020-2025 establecen que los adultos en edad legal para beber pueden optar por no beber o beber con moderación limitando el consumo a 2 bebidas o menos al día para los hombres y 1 bebida o menos al día para las mujeres cuando se consume alcohol. Beber menos es mejor para la salud que beber más.";
+
+"US guidelines part2" = "Hay algunos adultos que no deben beber alcohol, como las mujeres que están embarazadas. Los adultos que eligen beber y no se encuentran entre los individuos que no deben beber, se les recomienda limitar el consumo diario de alcohol para alinearse con las Guías Alimentarias. Las personas que no beben no deben empezar a beber por ninguna razón.";
+
+//moderation
+"When is drinking in moderation still too much?" = "¿Cuándo es beber con moderación todavía demasiado?";
+
+"According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to void alcohol altogether if you are: Taking medications that interact with alcohol Managing a medical condition that can be made Worse by drinking Under the age of 21, the minimum legal drinking age in the United States Recovering from alcohol use disorder (AUD) or unable to control the amount you drink Pregnant or might be pregnant In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely." = "Según las Pautas dietéticas para estadounidenses 2020-2025, determinadas personas no deben consumir alcohol. Es más seguro evitar el consumo de alcohol por completo si: Toma medicamentos que interactúan con el alcohol. Maneja una condición médica que puede empeorar al beber. Tiene menos de 21 años, la edad mínima legal para beber en los Estados Unidos. Se está recuperando de un trastorno por consumo de alcohol (AUD). o incapaz de controlar la cantidad que bebe. Embarazada o que podría estar embarazada. Además, ciertas personas, particularmente adultos mayores, que planean conducir un vehículo u operar maquinaria, o que participan en actividades que requieren habilidad, coordinación y estado de alerta, deben Evite el alcohol por completo.";
+
+"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda." = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+";
+
+
+//basic knowledge video
+"What’s a standard drink" = "¿Qué le sucede a tu cerebro cuando
+¿bebes?";
+
+"Let’s watch the videos " = "veamos los videos";
+"This video explains the impact of alcohol on the brain and its subsequent effects. Having this knowledge will help you consider your drinking habits." = "Este vídeo explica el impacto del alcohol en el cerebro y sus efectos posteriores. Tener este conocimiento le ayudará a considerar sus hábitos de bebida.
+";
+
+//consequences
+
+"What are the consequence?" =
+"¿Cuáles son las consecuencias?";
+
+"typesOfconsequence" = "Existe una amplia gama de consecuencias a corto y largo plazo asociadas con el abuso de alcohol.
+Para algunas personas, cualquier cantidad de bebida podría ser potencialmente dañina.
+
+Veamos algunos de ellos.";
+
+//consequences 2
+
+"consequences2" = "Las muertes relacionadas con el alcohol están aumentando en los Estados Unidos.
+
+El alcohol es un factor en:
+30% de los suicidios.
+El 40% de las quemaduras mortales.
+el 50% de los ahogamientos mortales y de los homicidios, y alrededor del 65 por ciento de las caídas mortales.
+El 31 % de todos los accidentes mortales en 2021.
+Un número importante de agresiones sexuales.";
+
+//consqquences 3
+"Alcohol-related blackouts" = "Apagones relacionados con el alcohol";
+
+"consequences3" = "Los apagones son lagunas en la memoria de una persona sobre eventos que ocurrieron mientras estaba ebria. Estas brechas ocurren cuando una persona bebe suficiente alcohol como para bloquear temporalmente la transferencia de recuerdos del almacenamiento de corto a largo plazo (lo que se conoce como consolidación de la memoria) en un área del cerebro llamada hipocampo.";
+
+//consequences 4
+"Health problems" = "Problemas de salud";
+
+"consequences4" = "Beber está asociado con una serie de problemas de salud y puede agravar ciertos problemas crónicos de salud.
+los problemas empeoran.
+
+La mitad de las muertes por enfermedades hepáticas en los Estados Unidos son causadas por el alcohol, y las enfermedades hepáticas asociadas al alcohol están aumentando, particularmente entre mujeres y jóvenes.
+
+Las investigaciones han demostrado una asociación importante entre el consumo de alcohol y el cáncer de mama: por cada 10 gramos de alcohol consumidos (menos de 1 bebida estándar) en promedio diario, la probabilidad de que una mujer desarrolle cáncer de mama posmenopáusico aumenta alrededor de un 9 por ciento.
+
+Las investigaciones también han demostrado que el abuso de alcohol aumenta el riesgo de enfermedades hepáticas, enfermedades cardiovasculares, depresión y hemorragia estomacal, así como cánceres de cavidad oral, esófago, laringe, faringe, hígado, colon y recto.
+
+Las personas que abusan del alcohol también pueden tener problemas para controlar afecciones como diabetes, presión arterial alta, dolor y trastornos del sueño.
+ 
+Y las personas que abusan del alcohol tienen más probabilidades de tener conductas sexuales inseguras, poniéndose a sí mismas y a otros en riesgo de contraer infecciones de transmisión sexual y embarazos no intencionales.
+
+Defectos de nacimiento. La exposición prenatal al alcohol puede provocar daño cerebral y otros problemas graves en los bebés. Los efectos se conocen como trastornos del espectro alcohólico fetal (FASD, por sus siglas en inglés) y pueden provocar problemas físicos, cognitivos y de conducta de por vida. Debido a que no se conoce un nivel seguro de alcohol para un bebé en desarrollo, las mujeres que están embarazadas o que podrían estarlo no deben beber";
+//consequences 5
+"Alcohol use disorder (AUD)" = "Trastorno por consumo de alcohol (AUD)";
+"consequences5" = "Algunos signos de AUD son seguir bebiendo aunque esté causando problemas con su familia o en el trabajo, beber más de lo previsto, tener que beber más que antes para obtener el efecto deseado, no poder dejar de beber después de repetidos intentos o continuar bebiendo. beber a pesar de las consecuencias negativas. Los signos de AUD también pueden incluir beber para aliviar emociones negativas, como sentirse 'deprimido', ansioso, intranquilo, infeliz, insatisfecho con la vida u otras emociones negativas causadas o empeoradas por el abuso de alcohol.
+ 
+ Más allá de estos riesgos para la salud física y mental, el abuso frecuente del alcohol también está relacionado con problemas personales, como perder la licencia de conducir o tener problemas en las relaciones.";
+
+//consequences 6
+"Why is being able to “hold your liquor” a concern?" = "¿Por qué es una preocupación poder “retener el licor”?";
+
+ "consequences6"= "Para algunas personas que beben, se necesitan bastantes tragos para “estar drogados” o sentirse relajados, y es menos probable que muestren signos de intoxicación en comparación con otros. A esto a veces se le llama poder “retener el licor” o “beberle a alguien debajo de la mesa”. A menudo, estas personas no son conscientes de que la menor respuesta de su cuerpo a los efectos intoxicantes del alcohol no es una protección contra los problemas del alcohol, sino que es un motivo de precaución.
+
+Estos individuos tienden a beber más, socializar con personas que beben mucho y desarrollar tolerancia al alcohol (es decir, se necesita cada vez más alcohol para sentirse o actuar intoxicado). Como resultado, tienen un mayor riesgo de desarrollar AUD. Alguien que abusa del alcohol, especialmente a largo plazo, puede sufrir daños permanentes en el hígado, el corazón o el cerebro. Y todas las personas que beben, independientemente de la cantidad, deben ser conscientes de que las capacidades críticas para tomar decisiones y las habilidades relacionadas con la conducción ya están disminuidas mucho antes de que una persona muestre signos físicos de intoxicación.
+";
+
+//drinkning habbit controller
+"How many days a week do you drink?" = "¿Cuántos días a la semana bebes?";
+"1. Now let’s see what drinking habits do you have" = "1. Ahora veamos qué hábitos de bebida tienes";
+
+"None" = "Ninguna";
+"Less than 2 days" = "Menos de 2 días";
+"3-5 days" = "3-5 días";
+"Almost everyday" = "Casi todos los días";
+"Everyday" = "Cada día";
+"1. How many days a week do you drink?" = "1. ¿Cuántos días a la semana bebes?";
+"Now let's see what drinking habits do you have" = "Ahora veamos qué hábitos de bebida tienes";
+
+//Drinkning habbit
+"Now let’s see what drinking habits do you have" = "Ahora veamos qué hábitos de bebida tienes";
+"2. What kind of alcohol do you drink each time? and how much?" = "2. ¿Qué tipo de alcohol bebes cada vez? ¿y cuánto?
+";
+//feel drink controller
+"Now let’s see what drinking habits do you have" = "Ahora veamos qué hábitos de bebida tienes.";
+"4. What is the reason behind?" = "4. ¿Cuál es el motivo?";
+"Save it to weekly summary journal entry" = "Guárdelo en la entrada del diario resumido semanal";
+
+//feel drink habbit
+"3. What do you feel about your drinking habit?" = "3. ¿Qué sientes acerca de tu hábito de beber?";
+"Please select any option" = "Por favor seleccione cualquier opción";
+
+//taking control intro
+"Thank you for being willing to talk about alcohol and drugs. Now let’s begin with a brief assessment." = "Gracias por estar dispuesto a hablar sobre el alcohol y las drogas. Ahora comencemos con una breve evaluación.";
+
+"Monthly Goal" = "Meta Mensual";
+"Now" = "Ahora";
+
+
+//check mail vc
+"Check your email" = "Consultar su correo electrónico";
+"Enter the 4-digit code that we have sent via email xxxxxxxxxx@gmail.com" = "Introduce el código de 4 dígitos que te hemos enviado al correo electrónico xxxxxxxxxx@gmail.com";
+"Verify Code" = "Código de verificación";
+
+
+//forgot password
+"Forgot password" = "Has olvidado tu contraseña";
+"Your email/Phone number " = "Su correo electrónico/Número de teléfono";
+"Please enter your email to reset the password" = "Por favor ingresa tu correo electrónico para restablecer la contraseña";
+"Reset Password" = "Restablecer la contraseña";
+
+//update password
+"Set a new password" = "Establecer una nueva contraseña";
+"Create a new password. Ensure it differs from previous ones for security" = "Crea una nueva contraseña. Asegúrate de que sea diferente de las anteriores por seguridad";
+"Password" = "Contraseña";
+"Confirm Password" = "Confirmar Contraseña";
+"Update Password" = "Actualiza contraseña";
+
+//user intro screen
+"Good morning!" = "¡Buenos días!";
+"Good afternoon!" = "¡Buenas tardes!";
+"Good evening!" = "¡Buenas noches!";
+"Save" = "Guardar";
+"Skip" = "Omitir";
+
+//discovery main view controller
+"Managing Anxiety" = "Manejando la ansiedad";
+"Managing Stress" = "Manejando el estrés";
+"Taking Control" = "Tomando el control";
+
+//custom alert view
+"Your License key has
+been verified." = "Tu clave de licencia ha sido verificada.";
+
+"Please complete your profile to start using Calmscient." = "Por favor completa tu perfil para empezar a usar Calmscient.";
+"Continue" = "Continuar";
+
+//selection button
+"I agree to share my info with medical provider" = "Acepto compartir mi información con el proveedor médico";
+//landing vc
+"Hello " = "Hola ";
+"We are happy to see you" = "Estamos felices de verte";
+"Need to talk with someone?" = "¿Necesitas hablar con alguien?";
+
+//monthly drinks count vc
+"Congratulations text" = "¡Felicitaciones por tomar la firme decisión de cambiar tu consumo de bebidas!
+
+Primero, establezcamos un objetivo para cambiar tu recuento mensual de bebidas.
+
+Para hacer esto, elige la(s) fecha(s) en el calendario a continuación en las que planeas tener un día sin alcohol.
+";
+"   Your total alcohol free days are" = "   Tus días totales sin alcohol son";
+"days" = "días";
+
+//months view controller
+"Good job!" = "¡Buen trabajo!
+Estos son los recuentos mensuales de bebidas que sugerimos.";
+
+"Your suggested" = "Tu recuento mensual
+sugerido de bebidas";
+
+"Your monthly Drinks count" = "Tu recuento mensual de bebidas";
+"Now, lets's decide how much you drink" = "Ahora, decidamos cuánto bebes";
+"Set" = "Establecer";
+
+
+//custom alert view 1
+"You selected more than what is suggested" = "Has seleccionado más de lo sugerido";
+
+"Dismiss" = "Descartar";
+
+"Change goal" = "Cambiar objetivo";
+
+
+//define cell
+"Save it to weekly summary journal entry" = "Guárdelo en la entrada del diario resumido semanal";
+
+"Have tried cutting down but cannot stay within the limit you set." = "Ha intentado reducir, pero no puede mantenerse dentro del límite que estableció.";
+
+"Have had alcohol use disorder (AUD) or now have any symptoms." = "Ha tenido trastorno por consumo de alcohol (AUD) o ahora tiene algún síntoma.";
+
+"Have a physical or mental health condition that is caused or being worsened by drinking." = "Tiene una condición de salud física o mental que es causada o empeorada por el consumo de alcohol.";
+"Are taking medication that interacts with alcohol." = "Está tomando medicamentos que interactúan con el alcohol.";
+"Are or might be pregnant." = "Está o podría estar embarazada.";
+
+
+//tellus cell
+"Save it to weekly summary journal entry" = "Guárdelo en la entrada del diario de resumen semanal";
+"Yes" = "Sí";
+"Just track the alcohol consumption" = "Solo registrar el consumo de alcohol";
+"Quit or cut down drinking" = "Dejar o reducir el consumo de alcohol";
+"Save it to weekly summary journal entry" = "Guárdelo en la entrada del diario de resumen semanal";
+
+//quitViewController
+"congralatuateDecision" = "¡Felicitaciones por su decisión de dejar de beber!
+Recuerde, no está solo. La aplicación Calmscient puede ayudarle a seguir su progreso.
+
+Aquí hay recursos que pueden ayudarle a lograr su objetivo.";
+
+"Talk to your primary care doctor" = "Hable con su médico de cabecera";
+
+"Now, let's get to know the drink coach features." = "Ahora, conozcamos las funciones del entrenador de bebidas.";
+
+"See the introduction" = "Ver la introducción";
+
+//mind cell
+"With this in mind, tell us what you would like to do." = "Con esto en mente, díganos qué le gustaría hacer.";
+"Quit" = "Dejar";
+"Cut down" = "Reducir";
+
+//journal entry view controller
+"Quiz" = "Cuestionario";
+"Daily journal" = "Diario diario";
+"Discovery Exercise" = "Ejercicio de descubrimiento";
+
+//ProgressOnCourseWorkHeaderView
+"Course" = "Curso";
+"Completed" = "Completado";
+
+//home tab dashboard viewcontroller
+"No favorites found for this patient" = "No se encontraron favoritos para este paciente";
+"My Favorites" = "Mis favoritos";
+
+// add user medications view controller
+"Save" = "Guardar";
+"Cancel" = "Cancelar";
+"Add Medications" = "Agregar Medicamentos";
+"Are you sure you want to cancel?" = "¿Estás seguro de que quieres cancelar?";
+"Medications" = "Medicamentos";
+"YES" = "SÍ";
+"NO" = "NO";
+"An Unknown error occured. Please check with Admin" = "Ocurrió un error desconocido. Por favor, consulta con el administrador";
+"Add Medication" = "Agregar Medicamento";
+"OK" = "OK";
+"Add Time & Alarm" = "Agregar Hora y Alarma";
+"Name" = "Nombre";
+"Provider" = "Proveedor";
+"Dosage" = "Dosis";
+"Direction" = "Instrucciones";
+"Add Time & Alarm" = "Agregar Hora y Alarma";
+
+// add medication vc
+"Add Medications" = "Agregar Medicamentos";
+"With Meal" = "Con Comida";
+"Morning" = "Mañana";
+"08:00AM" = "08:00AM";
+"07:50AM" = "07:50AM";
+"Afternoon" = "Tarde";
+"Night" = "Noche";
+"Schedule Time & Alarm" = "Programar Hora y Alarma";
+
+// medication details view controller
+"Medications detail" = "Detalles de los Medicamentos";
+
+// add appointments view controller
+"Choose Date and Time" = "Elegir Fecha y Hora";
+
+// appointment details vc
+"Date and Time" = "Fecha y Hora";
+"Invalid Date" = "Fecha Inválida";
+"Appointment Details" = "Detalles de la Cita";
+"Contact" = "Contacto";
+"Appointment Detail" = "Detalle de la Cita";
+"Address" = "Dirección";
+
+// screening result vc
+"Need to talk with someone?" = "¿Necesitas hablar con alguien?";
+"Score\nmarked" = "Puntuación\nmarcada";
+"Total score" = "Puntuación total";
+
+// screening result vc
+"Need to talk with someone?" = "¿Necesitas hablar con alguien?";
+"Score\nmarked" = "Puntuación\nmarcada";
+"Total score" = "Puntuación total";
+"Remind me" = "Recuérdame";
+
+// questioner vc
+"Over the last 2 weeks, how often have you been bothered by the following problems?" = "En las últimas 2 semanas, ¿con qué frecuencia te han molestado los siguientes problemas?";
+"1. Feeling nervous, anxious or on edge" = "1. Sentirse nervioso, ansioso o irritable";
+
+// profile privacy vc
+"Data from Calmscient can be transmitted to your doctor for clinical review purposes. Please indicate which data you allow to be shared with your doctor by selecting either Yes or No next to each data element below" = "Los datos de Calmscient pueden ser transmitidos a su médico para fines de revisión clínica. Por favor, indique qué datos permite que se compartan con su médico seleccionando Sí o No junto a cada elemento de datos a continuación";
+"Privacy" = "Privacidad";
+
+
+//user entry yes or no cell
+"Did you take your meds this evening?" = "¿Tomaste tus medicamentos esta noche?";

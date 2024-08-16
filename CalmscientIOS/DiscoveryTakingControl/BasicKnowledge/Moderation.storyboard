@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="lexendbold.ttf">
+            <string>Lexend-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Moderation-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Moderation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="Moderation" customModule="CalmscientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2t-mE-g1I">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLX-YK-lCE">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="683.33333333333337"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is drinking in moderation still too much?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-yv-JKx">
+                                                <rect key="frame" x="12" y="8" width="369" height="45"/>
+                                                <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="18"/>
+                                                <color key="textColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-ak-cxl">
+                                                <rect key="frame" x="8" y="61" width="373" height="592"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="592" id="o1i-GD-g8X"/>
+                                                    <constraint firstAttribute="width" constant="373" id="qBQ-sR-Z6S"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">According to the 2020-2025 Dietary Guidelines for
+Americans, certain individuals should not consume 
+alcohol. It’s safest to void alcohol altogether 
+if you are:
+
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">	•	Taking medications that interact with alcohol
+
+	•	Managing a medical condition that can be made Worse by drinking
+
+	•	Under the age of 21, the minimum legal drinking age in the United States
+
+	•	Recovering from alcohol use disorder (AUD) or unable to control the amount you drink
+
+	•	Pregnant or might be pregnant
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                <tabStops>
+                                                                    <textTab alignment="left" location="11">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="36">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="56">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="84">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="112">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="140">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="168">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="196">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="224">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="252">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="280">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="308">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                    <textTab alignment="left" location="336">
+                                                                        <options/>
+                                                                    </textTab>
+                                                                </tabStops>
+                                                            </paragraphStyle>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">
+In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely.
+
+What is alcohol misuse?
+
+NIAAA defines heavy drinking as follows:
+
+For women:
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="4 or more drinks on any day or 8 or more per week">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.38135999999999998" blue="0.99824000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">
+
+For men:
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="5 or more drinks on any day or 15 or more per week.">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.38135999999999998" blue="0.99824000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="zF0-ak-cxl" firstAttribute="leading" secondItem="uLX-YK-lCE" secondAttribute="leading" constant="8" id="7dX-sA-4iF"/>
+                                            <constraint firstAttribute="trailing" secondItem="IsF-yv-JKx" secondAttribute="trailing" constant="12" id="Lva-fG-10Q"/>
+                                            <constraint firstAttribute="bottom" secondItem="zF0-ak-cxl" secondAttribute="bottom" constant="30.329999999999998" id="Tcd-hY-RjF"/>
+                                            <constraint firstAttribute="trailing" secondItem="zF0-ak-cxl" secondAttribute="trailing" constant="12" id="aX5-hu-y1S"/>
+                                            <constraint firstItem="zF0-ak-cxl" firstAttribute="top" secondItem="IsF-yv-JKx" secondAttribute="bottom" constant="8" symbolic="YES" id="wcD-cd-mIf"/>
+                                            <constraint firstItem="IsF-yv-JKx" firstAttribute="top" secondItem="uLX-YK-lCE" secondAttribute="top" constant="8" id="yXW-1q-sBr"/>
+                                            <constraint firstItem="IsF-yv-JKx" firstAttribute="leading" secondItem="uLX-YK-lCE" secondAttribute="leading" constant="12" id="z8z-v2-pQo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uLX-YK-lCE" firstAttribute="width" secondItem="P2t-mE-g1I" secondAttribute="width" id="9AL-TQ-rZ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="uLX-YK-lCE" secondAttribute="trailing" id="CtD-dH-GWR"/>
+                                    <constraint firstItem="uLX-YK-lCE" firstAttribute="leading" secondItem="P2t-mE-g1I" secondAttribute="leading" id="caP-5t-Zjf"/>
+                                    <constraint firstAttribute="bottom" secondItem="uLX-YK-lCE" secondAttribute="bottom" constant="75.666666666666629" id="euh-BV-aMj"/>
+                                    <constraint firstItem="uLX-YK-lCE" firstAttribute="top" secondItem="P2t-mE-g1I" secondAttribute="top" id="ryB-CH-VhT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P2t-mE-g1I" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="NKO-Dd-xLh"/>
+                            <constraint firstAttribute="trailing" secondItem="P2t-mE-g1I" secondAttribute="trailing" id="YJQ-n1-hPx"/>
+                            <constraint firstItem="uLX-YK-lCE" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" priority="250" constant="-168.66666666666663" id="cGY-BJ-OKi"/>
+                            <constraint firstItem="P2t-mE-g1I" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dS5-XY-8FW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="P2t-mE-g1I" secondAttribute="bottom" id="uXy-47-9Tr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="IsF-yv-JKx" id="Bgb-45-xAr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

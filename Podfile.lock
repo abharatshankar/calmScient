@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.9.1)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
+  - FSCalendar (2.8.4)
+  - IQKeyboardManagerSwift (7.0.2)
+  - Toast-Swift (5.1.1)
+
+DEPENDENCIES:
+  - AlamofireImage
+  - DGCharts
+  - FSCalendar
+  - IQKeyboardManagerSwift
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - DGCharts
+    - FSCalendar
+    - IQKeyboardManagerSwift
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
+
+PODFILE CHECKSUM: dff66833fdefba77fcdb294950f5aaafe4d8874f
+
+COCOAPODS: 1.15.2
