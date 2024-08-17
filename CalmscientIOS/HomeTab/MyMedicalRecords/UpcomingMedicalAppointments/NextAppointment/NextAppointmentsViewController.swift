@@ -29,7 +29,7 @@ class NextAppointmentsViewController: ViewController, CalendarToViewDelegate {
         nextAppointmentTableView.register(UINib(nibName: "AppointmentsEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "AppointmentsEmptyTableViewCell")
         nextAppointmentTableView.dataSource = self
         nextAppointmentTableView.delegate = self
-        self.title = "Next Appointments"
+        self.title = "Next appointments"
         getMedicalAppointmentsData(forDate: selectedNewDate)
         // Do any additional setup after loading the view.
     }

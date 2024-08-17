@@ -115,7 +115,7 @@ extension String {
         return false
     }
     
-    func getDayTimeFromDate(formatter:String = "yyyy-MM-dd HH:mm:ss",includeTimeZone:Bool = false) -> String? {
+    func getDayTimeFromDate(formatter: String = "yyyy-MM-dd HH:mm:ss", includeTimeZone: Bool = false) -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatter
         dateFormatter.timeZone = TimeZone(identifier: Calendar.current.timeZone.identifier)
@@ -124,40 +124,35 @@ extension String {
             let calendar = Calendar.current
             var hour = calendar.component(.hour, from: date)
             let minute = calendar.component(.minute, from: date)
+
             switch hour {
             case 0..<12:
                 if includeTimeZone {
-                    if minute / 10 == 0 {
-                        return "\(hour):0\(minute) AM"
-                    } else {
-                        return "\(hour):\(minute) AM"
-                    }
+                    let formattedHour = String(format: "%02d", hour)
+                    let formattedMinute = String(format: "%02d", minute)
+                    return "\(formattedHour):\(formattedMinute) AM"
                 } else {
                     return DayTimeValue.Morning.rawValue
                 }
             case 12..<18:
                 if includeTimeZone {
-                    if (hour > 12) {
+                    if hour > 12 {
                         hour = hour % 12
                     }
-                    if minute / 10 == 0 {
-                        return "\(hour):0\(minute) PM"
-                    } else {
-                        return "\(hour):\(minute) PM"
-                    }
+                    let formattedHour = String(format: "%02d", hour)
+                    let formattedMinute = String(format: "%02d", minute)
+                    return "\(formattedHour):\(formattedMinute) PM"
                 } else {
                     return DayTimeValue.Afternoon.rawValue
                 }
             default:
                 if includeTimeZone {
-                    if (hour > 12) {
+                    if hour > 12 {
                         hour = hour % 12
                     }
-                    if minute / 10 == 0 {
-                        return "\(hour):0\(minute) PM"
-                    } else {
-                        return "\(hour):\(minute) PM"
-                    }
+                    let formattedHour = String(format: "%02d", hour)
+                    let formattedMinute = String(format: "%02d", minute)
+                    return "\(formattedHour):\(formattedMinute) PM"
                 } else {
                     return DayTimeValue.Evening.rawValue
                 }
@@ -166,6 +161,7 @@ extension String {
             return nil
         }
     }
+
     
     
     

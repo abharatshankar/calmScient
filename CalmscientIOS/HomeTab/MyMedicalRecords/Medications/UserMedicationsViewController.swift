@@ -66,7 +66,7 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {//kiran diagnostics
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false;
     }

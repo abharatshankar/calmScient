@@ -23,8 +23,8 @@ fileprivate enum AddUserMedicationsCellDef:String {
     
 }
 
-class AddUserMedicationsViewController: ViewController {
-    
+class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationControllerDelegate, UISheetPresentationControllerDelegate {
+    var dimmingView: UIView?
     @IBOutlet weak var cancelButton: BorderShadowButton!
     @IBOutlet weak var saveButton: LinearGradientButton!
     @IBOutlet weak var userAddMedicationsTableView: UITableView!
@@ -55,15 +55,25 @@ class AddUserMedicationsViewController: ViewController {
         userAddMedicationsTableView.dataSource = self
         userAddMedicationsTableView.delegate = self
         userAddMedicationsTableView.separatorStyle = .none
-        self.title = "Add Medications"
-        self.scrollTableViewToBottom()
+        self.title = "Add medications"
+//        self.scrollTableViewToBottom()
        // self.view.showToast(message: "Schedule medication time by clicking on it.")
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if let presentingVC = presentingViewController as? AddUserMedicationsViewController {
+            // Hide or remove the dimming view
+            presentingVC.dimmingView?.removeFromSuperview()
+        }
+    }
+
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.scrollTableViewToBottom()
+//        self.scrollTableViewToBottom()
     }
     func setupLanguage() {
         
@@ -253,17 +263,27 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
     }
     
     private func presentModal(instance:MedicationAlarm) {
+
+        // Present the bottom sheet
         let next = UIStoryboard(name: "BottomSheetTimeAndAlarmVC", bundle: nil)
-        let vc = (next.instantiateViewController(withIdentifier: "BottomSheetTimeAndAlarmVC") as? BottomSheetTimeAndAlarmVC)!
+        guard let vc = next.instantiateViewController(withIdentifier: "BottomSheetTimeAndAlarmVC") as? BottomSheetTimeAndAlarmVC else {
+            fatalError("Could not instantiate view controller with identifier 'BottomSheetTimeAndAlarmVC'")
+        }
         vc.isNewMedicationCreation = true
         vc.newMedicationInstance = instance
-        vc.onScheetClosed = {
-            [weak self] in
+        vc.onScheetClosed = { [weak self] in
             self?.userAddMedicationsTableView.reloadData()
+            self?.dimmingView?.removeFromSuperview()
         }
-       // self.navigationController?.pushViewController(vc, animated: true)
         vc.headingLabelString = "Add Time & Alarm"
-        
+
+        // Create a dimming view and add it to the presenting view controller's view
+        let dimmingView = UIView(frame: self.view.bounds)
+        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(dimmingView)
+        self.dimmingView = dimmingView // Store the reference
+
         if #available(iOS 15.0, *) {
             if let sheet = vc.sheetPresentationController {
                 sheet.detents = [.medium(), .large()]
@@ -271,43 +291,23 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
                 sheet.prefersScrollingExpandsWhenScrolledToEdge = false
                 sheet.prefersEdgeAttachedInCompactHeight = true
                 sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+
+                sheet.delegate = self // To handle delegate methods and adjust dimming view
             }
         } else {
             // Fallback on earlier versions
         }
+
         present(vc, animated: true, completion: nil)
-        
-        
-//        let next = UIStoryboard(name: "BottomSheetTimeAndAlarmVC", bundle: nil)
-//        guard let viewControllerToPresent = next.instantiateViewController(withIdentifier: "BottomSheetTimeAndAlarmVC") as? BottomSheetTimeAndAlarmVC else {
-//            return
-//        }
-//        if #available(iOS 15.0, *) {
-//            if let sheet = viewControllerToPresent.sheetPresentationController {
-//                sheet.detents = [.large(), .large()]
-//                sheet.largestUndimmedDetentIdentifier = .medium
-//                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-//                sheet.prefersEdgeAttachedInCompactHeight = true
-//                sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//        present(viewControllerToPresent, animated: true, completion: nil)
-        
-        
-        
 
-//        vc.modalPresentationStyle = .formSheet
-//        vc.preferredContentSize =  CGSize(width: self.view.frame.width, height: 0.6*self.view.frame.height)
-//        if #available(iOS 15.0, *) {
-//            if let sheet = vc.sheetPresentationController {
-//                sheet.detents = [.large()]
-//                sheet.prefersGrabberVisible = true
-//            }
-//        } else {
-//        }
-//        present(vc, animated: true, completion: nil)
 
+    }
+}
+
+
+
+extension AddUserMedicationsViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfScreenPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

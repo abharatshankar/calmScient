@@ -46,6 +46,7 @@ class AlarmCell: UITableViewCell {
         medicationTimeLbl.text = celldata.medicationTime
         //cell.alarmOnOffSwitch.isOn = celldata.alarmOnOrOFF
         alarmTimeLbl.text = celldata.alarmTime
+        alarmTimeLbl.textAlignment = .left
         switch celldata.alarmMode {
         case "Morning": alarmModeImg.image = UIImage(named: "Morning_Mode")
         case "Afternoon": alarmModeImg.image = UIImage(named: "Noon_Mode")

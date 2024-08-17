@@ -67,7 +67,7 @@ class LandingVC: UIViewController {
     }
     
     func mockDataSetup(){
-        let obj1 = ListData(iconImageName: "medicalRecord", descriptionData: "My Medical Records")
+        let obj1 = ListData(iconImageName: "medicalRecord", descriptionData: "My medical records")
         let obj2 = ListData(iconImageName: "medicalRecord", descriptionData: "Weekly Summary")
         listData.append(obj1)
         listData.append(obj2)

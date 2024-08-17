@@ -288,7 +288,7 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
        // "MyMedicalRecordsIcon"
       //  weeklySummaryImage
         if (indexPath.row == 0) {
-            cell.cellTitleLabel.text = "My Medical Records"
+            cell.cellTitleLabel.text = "My medical records"
             cell.imageView?.image = UIImage(named: "MyMedicalRecordsIcon")
         } else {
             cell.cellTitleLabel.text = "Weekly Summary"

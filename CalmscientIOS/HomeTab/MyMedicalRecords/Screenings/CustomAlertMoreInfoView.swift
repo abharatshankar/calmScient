@@ -13,6 +13,10 @@ class CustomAlertMoreInfoView: UIView {
     @IBOutlet weak var okButton: LinearGradientButton!
     
     
+    @IBOutlet weak var lebelHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var descriptionHeight: NSLayoutConstraint!
+    
 //    @IBOutlet weak var textView2: UITextView!
     
     required init?(coder: NSCoder) {
@@ -55,7 +59,22 @@ class CustomAlertMoreInfoView: UIView {
         
         moreInfoLabel.font = UIFont(name: Fonts().lexendSemiBold, size: 19)
         descriptionLbl.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        let screenSize = UIScreen.main.bounds.size
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        if traitCollection.userInterfaceIdiom == .phone {
+            if screenHeight > 800 {
+                // iPhones with larger screens (like iPhone X and above)
+                print("big mobbbbb")
+                lebelHeightConstraint.constant = 25
+                descriptionHeight.constant = 220
+            } else {
+                print("small mobbbbb")
+                lebelHeightConstraint.constant = 3
+                // Smaller iPhones (like iPhone 8 and below)
+            }
+        }
+        self.inputView?.reloadInputViews()
 //        addAttributeText()
     }
     

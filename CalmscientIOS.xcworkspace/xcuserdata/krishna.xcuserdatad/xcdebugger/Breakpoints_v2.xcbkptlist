@@ -306,6 +306,36 @@
             endingLineNumber = "149"
             landmarkName = "submitAction(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F712BF5E-2313-43C8-8ABA-5FE209E5A087 - 402e2f83c3479d48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150">
+               </Location>
+               <Location
+                  uuid = "F712BF5E-2313-43C8-8ABA-5FE209E5A087 - 402e2f83c3479d48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -338,6 +368,36 @@
             endingLineNumber = "272"
             landmarkName = "updatePatientProfileDetails(patientId:bearerToken:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB071EF8-5A91-436D-8331-5CF4688F86C7 - 92c2462c50f0bd97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalmscientIOS.ProfileViewController.updatePatientProfileDetails(patientId: Swift.Int, bearerToken: Swift.String, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272">
+               </Location>
+               <Location
+                  uuid = "DB071EF8-5A91-436D-8331-5CF4688F86C7 - b439b490a5ebcabc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CalmscientIOS.ProfileViewController.updatePatientProfileDetails(patientId: Swift.Int, bearerToken: Swift.String, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -424,7 +484,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B4D654FE-6CAB-43BB-AE43-A1AEB6CF2ABE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/UserEntryYesOrNoCell.swift"
@@ -440,7 +500,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9C0C662D-DDB1-434A-B349-88357DF0CF5A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/UserEntryYesOrNoCell.swift"

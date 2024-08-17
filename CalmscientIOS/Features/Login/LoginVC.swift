@@ -34,11 +34,11 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 //       passwordTextField.text = "chandra@1234"
         
         
-//               userNameTextField.text = "suresh@gmail.com"
-//               passwordTextField.text = "suresh@1234"
+               userNameTextField.text = "ramesh@gmail.com"
+               passwordTextField.text = "ramesh"
         
-        userNameTextField.text = ""
-        passwordTextField.text = ""
+//        userNameTextField.text = ""
+//        passwordTextField.text = ""
         
         userNameTextField.delegate = self
         userNameTextField.layer.borderColor = UIColor(named: "AppBorderColor")?.cgColor

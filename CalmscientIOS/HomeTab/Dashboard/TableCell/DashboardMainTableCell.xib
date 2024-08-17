@@ -37,10 +37,10 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MedicationsCellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="G7v-ha-AN9">
-                                        <rect key="frame" x="352" y="26.333333333333336" width="13" height="21.333333333333336"/>
+                                        <rect key="frame" x="356" y="30" width="9" height="14"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Medical Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-Bs-DgY">
-                                        <rect key="frame" x="88" y="24.666666666666664" width="194" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My medical records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-Bs-DgY">
+                                        <rect key="frame" x="88.000000000000014" y="24.666666666666664" width="189.33333333333337" height="25"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="MedicationsCellArrow" width="13" height="21.333333969116211"/>
+        <image name="MedicationsCellArrow" width="9" height="14"/>
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

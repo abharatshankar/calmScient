@@ -19,7 +19,7 @@ class UserMedicalRecordsViewController: ViewController {
         medicalRecordsTableView.dataSource = self
         medicalRecordsTableView.delegate = self
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.title = "My Medical Records"
+        self.navigationItem.title = "My medical records"
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
                 //set image for button
         button.setImage(UIImage(named: "profileIcon.png"), for: UIControl.State.normal)

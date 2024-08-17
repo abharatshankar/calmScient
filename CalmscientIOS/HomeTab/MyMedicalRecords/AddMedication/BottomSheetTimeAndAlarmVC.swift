@@ -117,7 +117,7 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
-        dismiss(animated: true)
+        self.dismiss(animated: true)
     }
 }
 
