@@ -96,7 +96,7 @@ extension CoursesTableViewCell: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Return the size of each item in your collection view
         let height = collectionView.frame.height
-        return CGSize(width: 140, height: height)
+        return CGSize(width: 172, height: 120)//height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

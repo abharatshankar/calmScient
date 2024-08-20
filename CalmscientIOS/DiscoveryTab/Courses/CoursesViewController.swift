@@ -116,8 +116,9 @@ extension CoursesViewController : UITableViewDataSource, UITableViewDelegate {
                 let vc = next.instantiateViewController(withIdentifier: "WebViewLessonViewController") as? WebViewLessonViewController
                 let fullURLString = "\(urlString)&sessionId=\(self?.courseSessionID ?? "")"
                 vc?.urlString = fullURLString
-                
+                vc?.index = 2
                 vc?.title = "\(title)"
+                
                 self?.navigationController?.pushViewController(vc!, animated: true)
             }
             cell.darkTheme = self.patientSessionDetails?.darkTheme ?? 0
@@ -137,7 +138,9 @@ extension CoursesViewController : UITableViewDataSource, UITableViewDelegate {
                 let vc = next.instantiateViewController(withIdentifier: "WebViewLessonViewController") as? WebViewLessonViewController
                 let fullURLString = "\(urlString)&sessionId=\(self?.courseSessionID ?? "")"
                 vc?.urlString = fullURLString
-                vc?.title = "\(title)"
+//                vc?.title = "\(title)"
+                vc?.index = 3
+                vc?.pageTitle = title
                 self?.navigationController?.pushViewController(vc!, animated: true)
             }
             cell.updateTableCell(data: instance)
@@ -160,7 +163,7 @@ extension CoursesViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 160
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

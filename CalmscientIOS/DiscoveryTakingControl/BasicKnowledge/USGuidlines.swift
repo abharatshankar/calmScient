@@ -13,7 +13,7 @@ class USGuidlines: ViewController {
     @IBOutlet weak var headerLabel: UILabel!
   
     @IBOutlet weak var usguideTextView: UITextView!
-    
+    var sectionID2: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextView()
@@ -162,7 +162,7 @@ class USGuidlines: ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":2
+            "sectionId":sectionID2!
         ]
         
         

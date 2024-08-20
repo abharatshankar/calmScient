@@ -272,8 +272,12 @@ class MonthsViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
     }
     
     @IBAction func doneClicked(_ sender: Any) {
-        
         numberView.isHidden = true
+        if goalTarget > suggestedMonthlyDrinkCount
+        {
+            showAlertView()
+        }
+       
     }
     func getPatientAlcoholGoal(patientId: Int, bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
         // Define the URL
@@ -556,7 +560,7 @@ class MonthsViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
         }
         if goalTarget > suggestedMonthlyDrinkCount
         {
-            showAlertView()
+          //  showAlertView()
         }
         else{
             self.view.showToastActivity()

@@ -13,9 +13,6 @@
         <array key="lexendbold.ttf">
             <string>Lexend-Bold</string>
         </array>
-        <array key="lexendregular.ttf">
-            <string>Lexend-Regular</string>
-        </array>
         <array key="lexendsemibold.ttf">
             <string>Lexend-SemiBold</string>
         </array>
@@ -32,38 +29,60 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-q3-KTZ">
                                 <rect key="frame" x="0.0" y="70" width="393" height="748"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What’s a standard drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FB-fJ-OYE">
-                                        <rect key="frame" x="0.0" y="2" width="393" height="22.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What’s a standard drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FB-fJ-OYE">
+                                        <rect key="frame" x="24" y="2" width="369" height="22.666666666666668"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="393" id="7FI-1e-Zyn"/>
+                                            <constraint firstAttribute="width" constant="369" id="7FI-1e-Zyn"/>
                                             <constraint firstAttribute="height" constant="22.670000000000002" id="pr0-F4-Pky"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="18"/>
                                         <color key="textColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bO-eD-udY">
-                                        <rect key="frame" x="24" y="39" width="361" height="150"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bO-eD-udY">
+                                        <rect key="frame" x="24" y="39" width="340" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="E6S-4j-69j"/>
-                                            <constraint firstAttribute="width" constant="361" id="avp-DY-1g1"/>
+                                            <constraint firstAttribute="width" constant="340" id="avp-DY-1g1"/>
                                         </constraints>
-                                        <string key="text">In the United States, a “standard drink” (also known as an alcoholic drink equivalent) is defined as any drink that contains about 0.6 fluid ounces or 14 grams of pure alcohol. Although the drinks pictured here are different sizes, each contains approximately the same amount of alcohol and counts as one U.S. standard drink or one alcoholic drink equivalent.</string>
-                                        <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
-                                        <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">In the United States, a “standard drink” (also known as an alcoholic drink equivalent) is defined as any drink that contains about </string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="0.6 fluid ounces or 14 grams">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> of pure alcohol. Although the drinks pictured here are different sizes, each contains approximately the same amount of alcohol and counts as one U.S. standard drink or one alcoholic drink equivalent.</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsI-Cm-mvi">
                                         <rect key="frame" x="40" y="209" width="313" height="222"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tN-lT-E8e">
-                                                <rect key="frame" x="48" y="8" width="215" height="204"/>
+                                                <rect key="frame" x="8" y="8" width="297" height="204"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LiO-Sb-fKC">
-                                                        <rect key="frame" x="57" y="8" width="102.99999999999999" height="118"/>
+                                                        <rect key="frame" x="97" y="8" width="102.99999999999999" height="118"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kK-ln-4s0">
-                                                        <rect key="frame" x="8" y="145" width="229" height="51"/>
+                                                        <rect key="frame" x="34" y="145" width="229" height="51"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="51" id="6vg-Qm-Io7"/>
                                                             <constraint firstAttribute="width" constant="229" id="V38-Bt-k8y"/>
@@ -75,14 +94,15 @@ about 5% alcohol</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.96489423510000005" green="0.96423202750000003" blue="0.99608260390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="LiO-Sb-fKC" firstAttribute="leading" secondItem="6tN-lT-E8e" secondAttribute="leading" constant="57" id="NDy-dX-wdD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LiO-Sb-fKC" secondAttribute="trailing" constant="97" id="5fY-vb-dd8"/>
+                                                    <constraint firstItem="LiO-Sb-fKC" firstAttribute="leading" secondItem="6tN-lT-E8e" secondAttribute="leading" constant="97" id="NDy-dX-wdD"/>
                                                     <constraint firstAttribute="bottom" secondItem="3kK-ln-4s0" secondAttribute="bottom" constant="8" id="Q6O-0g-KhN"/>
-                                                    <constraint firstAttribute="width" constant="215" id="Qq4-Yy-JbT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="3kK-ln-4s0" secondAttribute="trailing" constant="-22" id="S5a-8a-deh"/>
-                                                    <constraint firstItem="LiO-Sb-fKC" firstAttribute="centerX" secondItem="3kK-ln-4s0" secondAttribute="centerX" constant="-14" id="UgU-dI-oxQ"/>
-                                                    <constraint firstItem="3kK-ln-4s0" firstAttribute="leading" secondItem="6tN-lT-E8e" secondAttribute="leading" constant="8" id="Zon-29-EdS"/>
+                                                    <constraint firstAttribute="width" constant="297" id="Qq4-Yy-JbT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3kK-ln-4s0" secondAttribute="trailing" constant="34" id="S5a-8a-deh"/>
+                                                    <constraint firstItem="LiO-Sb-fKC" firstAttribute="centerX" secondItem="3kK-ln-4s0" secondAttribute="centerX" id="UgU-dI-oxQ"/>
+                                                    <constraint firstItem="3kK-ln-4s0" firstAttribute="leading" secondItem="6tN-lT-E8e" secondAttribute="leading" constant="34" id="Zon-29-EdS"/>
                                                     <constraint firstItem="LiO-Sb-fKC" firstAttribute="top" secondItem="6tN-lT-E8e" secondAttribute="topMargin" id="j8i-6b-MwB"/>
                                                     <constraint firstItem="3kK-ln-4s0" firstAttribute="top" secondItem="LiO-Sb-fKC" secondAttribute="bottom" constant="19" id="jK8-9C-rm4"/>
                                                     <constraint firstAttribute="height" constant="204" id="vAH-xo-f0u"/>
@@ -92,7 +112,7 @@ about 5% alcohol</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="6tN-lT-E8e" firstAttribute="top" secondItem="nsI-Cm-mvi" secondAttribute="top" constant="8" id="WsE-qE-Ug5"/>
-                                            <constraint firstItem="6tN-lT-E8e" firstAttribute="centerX" secondItem="nsI-Cm-mvi" secondAttribute="centerX" constant="-1" id="as0-ha-fAc"/>
+                                            <constraint firstItem="6tN-lT-E8e" firstAttribute="centerX" secondItem="nsI-Cm-mvi" secondAttribute="centerX" id="as0-ha-fAc"/>
                                             <constraint firstAttribute="bottom" secondItem="6tN-lT-E8e" secondAttribute="bottom" constant="10" id="bMF-0m-Fe6"/>
                                             <constraint firstAttribute="height" constant="222" id="rxI-TH-Lwb"/>
                                             <constraint firstAttribute="width" constant="313" id="vNj-X9-E0M"/>
@@ -122,11 +142,11 @@ about 5% alcohol</string>
                                             <action selector="forwardButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gSS-lc-6zl"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-MM-CXg">
-                                        <rect key="frame" x="24" y="449" width="351" height="248"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-MM-CXg">
+                                        <rect key="frame" x="24" y="449" width="340" height="248"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="351" id="L6v-Nt-XsE"/>
+                                            <constraint firstAttribute="width" constant="340" id="L6v-Nt-XsE"/>
                                             <constraint firstAttribute="height" constant="248" id="frU-3N-azf"/>
                                         </constraints>
                                         <string key="text">Each beverage portrayed above represents one standard drink (or one alcoholic drink equivalent), defined in the United States as any beverage containing 0.6 oz or 14 grams of pure alcohol. The percentage of pure alcohol, expressed here as alcohol by volume (alc/vol), varies within and across beverage types. Although the standard drink amounts are helpful for following health guidelines, they may not reflect customary serving sizes</string>
@@ -140,10 +160,10 @@ about 5% alcohol</string>
                                     <constraint firstAttribute="bottom" secondItem="ubw-MM-CXg" secondAttribute="bottom" constant="51" id="0WY-b7-qKn"/>
                                     <constraint firstItem="0bO-eD-udY" firstAttribute="top" secondItem="3FB-fJ-OYE" secondAttribute="bottom" constant="14.33" id="2Ab-wM-hpj"/>
                                     <constraint firstItem="ubw-MM-CXg" firstAttribute="top" secondItem="nsI-Cm-mvi" secondAttribute="bottom" constant="18" id="3wW-Es-EPP"/>
-                                    <constraint firstAttribute="trailing" secondItem="0bO-eD-udY" secondAttribute="trailing" constant="8" id="4lu-rP-xeG"/>
+                                    <constraint firstAttribute="trailing" secondItem="0bO-eD-udY" secondAttribute="trailing" constant="29" id="4lu-rP-xeG"/>
                                     <constraint firstItem="MTf-I6-dGL" firstAttribute="top" secondItem="0bO-eD-udY" secondAttribute="bottom" constant="121" id="GGV-0E-bh5"/>
-                                    <constraint firstAttribute="trailing" secondItem="ubw-MM-CXg" secondAttribute="trailing" constant="18" id="Lj9-2F-IHG"/>
-                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" id="NH2-dn-gNK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ubw-MM-CXg" secondAttribute="trailing" constant="29" id="Lj9-2F-IHG"/>
+                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="NH2-dn-gNK"/>
                                     <constraint firstItem="6a3-HU-WsO" firstAttribute="top" secondItem="0bO-eD-udY" secondAttribute="bottom" constant="121" id="RQK-A4-Hjw"/>
                                     <constraint firstAttribute="trailing" secondItem="nsI-Cm-mvi" secondAttribute="trailing" constant="40" id="Rln-wr-dgI"/>
                                     <constraint firstItem="0bO-eD-udY" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="SsU-GM-vlp"/>

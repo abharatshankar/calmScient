@@ -120,7 +120,7 @@ class MindfulBreathing: UIViewController {
             maximiseImg.isUserInteractionEnabled = true
             maximiseImg.addGestureRecognizer(maximiseRecognizer)
         
-        self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 18)
         
         self.preparationTitle.font = UIFont(name: Fonts().lexendRegular, size: 15)
         
@@ -252,7 +252,7 @@ class MindfulBreathing: UIViewController {
     
     func setupPlayer() {
         
-        guard let url = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else { return }
+        guard let url = URL(string: "https://calmscient.blob.core.windows.net/exercises-videos/Mindful%20breathing.mp4") else { return }
         player = AVPlayer(url: url)
                playerLayer = AVPlayerLayer(player: player)
                playerLayer.frame = videoView.bounds

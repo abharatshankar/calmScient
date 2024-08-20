@@ -15,7 +15,8 @@ class Consequences_six:  ViewController {
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
     @IBOutlet weak var subtitleLbl: UILabel!
-    
+    var sectionID555555: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.showToastActivity()

@@ -42,8 +42,14 @@ class ProgressOnWorkMainViewController: ViewController {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         DispatchQueue.main.async { [self] in
                             self.view.hideToastActivity()
+                            
+//                            let response = try JSONDecoder().decode(PatientCourseWorkResponse.self, from: json)
+//                            self.patientCourseWorkList = response.patientCourseWorkList
+                            
+                            
                             if let newdata = json["patientcourseWorkList"] as? [[String: Any]] {
                                 progressData = newdata
+                                print(progressData)
                                         if let firstCourse = newdata.first {
                                             mainPercentage = firstCourse["completedPer"] as? Int
                                             print("mainPercentage\(mainPercentage ?? 0)")
@@ -126,7 +132,7 @@ class ProgressOnWorkMainViewController: ViewController {
             }
             do {
                 let jsonResponse = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-             //   print("Response JSON: \(jsonResponse)")
+                print("Response JSON: \(jsonResponse)")
             } catch {
                 print("Error parsing JSON response: \(error)")
                 completion(.failure(error))

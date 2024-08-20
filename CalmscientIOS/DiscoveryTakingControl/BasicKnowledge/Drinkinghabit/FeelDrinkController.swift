@@ -24,7 +24,7 @@ class FeelDrinkController: ViewController{
     var optionid : Int?
     var questionnaireId : Int?
     var answerId : Int?
-    
+    var sectionID6666: Int?
     
     @IBOutlet weak var headerLabel: UILabel!
     
@@ -74,7 +74,20 @@ class FeelDrinkController: ViewController{
         }
 
         
+        var image = UIImage(named: "NavigationBack")
+                    image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
     }
+    @objc func backButtonOverrideAction() {
+           print("Back button tapped")
+           // Perform the action you want here
+           let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
+           let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
+           vc?.title = "Basic Knowledge"
+   //            vc?.courseID = 3
+           self.navigationController?.pushViewController(vc!, animated: true)
+           
+       }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
     }
@@ -213,6 +226,7 @@ class FeelDrinkController: ViewController{
             let next = UIStoryboard(name: "QuestionViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController
             vc?.title = "Basic knowledge"
+            vc?.sectionID66666 = sectionID6666
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

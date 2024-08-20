@@ -302,7 +302,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zx-1y-ac1">
-                                <rect key="frame" x="146" y="59" width="108" height="21"/>
+                                <rect key="frame" x="167.66666666666666" y="59" width="57.666666666666657" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -340,13 +340,13 @@
     </scenes>
     <designables>
         <designable name="15U-ig-xZZ">
-            <size key="intrinsicContentSize" width="59" height="22"/>
+            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
         </designable>
         <designable name="63Q-WV-8oX">
-            <size key="intrinsicContentSize" width="48" height="30"/>
+            <size key="intrinsicContentSize" width="52" height="31"/>
         </designable>
         <designable name="pXf-Sx-xGG">
-            <size key="intrinsicContentSize" width="59" height="22"/>
+            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
         </designable>
     </designables>
     <resources>

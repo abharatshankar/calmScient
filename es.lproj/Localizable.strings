@@ -278,7 +278,7 @@ Aquí hay recursos que pueden ayudarle a lograr su objetivo.";
 // add user medications view controller
 "Save" = "Guardar";
 "Cancel" = "Cancelar";
-"Add Medications" = "Agregar Medicamentos";
+"Add Medications" = "Agregar medicamentos";
 "Are you sure you want to cancel?" = "¿Estás seguro de que quieres cancelar?";
 "Medications" = "Medicamentos";
 "YES" = "SÍ";
@@ -294,7 +294,7 @@ Aquí hay recursos que pueden ayudarle a lograr su objetivo.";
 "Add Time & Alarm" = "Agregar Hora y Alarma";
 
 // add medication vc
-"Add Medications" = "Agregar Medicamentos";
+"Add Medications" = "Agregar medicamentos";
 "With Meal" = "Con Comida";
 "Morning" = "Mañana";
 "08:00AM" = "08:00AM";

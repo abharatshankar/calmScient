@@ -55,7 +55,7 @@ class CustomAlertMoreInfoView: UIView {
         // Set the attributed text to the label
         highlightLbl.attributedText = attributedString
  
-        highlightLbl.font = UIFont(name: Fonts().lexendLight, size: 15)
+        highlightLbl.font = UIFont(name: Fonts().lexendMedium, size: 15)
         
         moreInfoLabel.font = UIFont(name: Fonts().lexendSemiBold, size: 19)
         descriptionLbl.font = UIFont(name: Fonts().lexendLight, size: 15)

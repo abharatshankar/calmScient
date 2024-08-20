@@ -20,7 +20,7 @@ class WhatToExpectViewController: ViewController {
         @IBOutlet weak var maximizeButton: UIButton!
         @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var playPauseButton: UIButton!
-
+    var sectionID7: Int?
 //        @IBOutlet weak var timeLabel: UILabel!
 
         var player: AVPlayer!
@@ -181,7 +181,7 @@ class WhatToExpectViewController: ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":7
+            "sectionId":sectionID7!
         ]
         
         

@@ -25,6 +25,7 @@ class DrinikingHabbit: ViewController {
     var questionnaireId : Int?
     var answerId : Int?
     var basicData: [[String: Any]] = []
+    var sectionID66: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,7 +118,20 @@ class DrinikingHabbit: ViewController {
                 print("Error: \(error)")
             }
         }
+        var image = UIImage(named: "NavigationBack")
+                    image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
     }
+    @objc func backButtonOverrideAction() {
+           print("Back button tapped")
+           // Perform the action you want here
+           let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
+           let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
+           vc?.title = "Basic Knowledge"
+   //            vc?.courseID = 3
+           self.navigationController?.pushViewController(vc!, animated: true)
+           
+       }
    
     func getCurrentDateString() -> String {
         let dateFormatter = DateFormatter()
@@ -358,6 +372,7 @@ class DrinikingHabbit: ViewController {
                                 let vc = next.instantiateViewController(withIdentifier: "FeelDrinkingHabbit") as? FeelDrinkingHabbit
                                  vc?.title = "Basic knowledge"
                                 //vc?.basicData2 = basicData
+                                vc?.sectionID666 = sectionID66
                                 self.navigationController?.pushViewController(vc!, animated: true)                            }
                             
                         } else {

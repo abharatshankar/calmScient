@@ -11,6 +11,8 @@ import WebKit
 class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScriptMessageHandler {
     var webView:WKWebView!
     var urlString:String = ""
+    var pageTitle: String = ""
+    var index : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
@@ -39,6 +41,7 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
         configureCustomBackButton()
         configureRightButton()
         disableZoom()
+        self.navigationController?.toolbar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -118,10 +121,54 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
             }
             print("--------\(messageBody)-----------")
             for keyValuePair in messageBody {
+                
+                
+//                {
+//                    gotoIndex: {
+//                        1001: 'turn off loading and go to index',
+//                    },
+//                    intialLoadingOff: {
+//                        1100: 'web page loaded with valid session'
+//                    },
+//                    inValidSession: {
+//                        401: 'in valid session'
+//                    },
+//                    changedHeaderTitle: {
+//                        1002: 'in value u will get updated title'
+//                    },
+//                    hideHeader: {
+//                        1003: 'Hide Header'
+//                    },
+//                    showHeader: {
+//                        1004: 'Show  Header'
+//                    },
+//                    needToTalkWithSomeOne: {
+//                        1005: 'needToTalkWithSomeOne'
+//                    },
+//                    returningBackFromFavMedia: {
+//                        1006: 'returningBackFromFavMedia'
+//                    }
+//
+//
+//                }
+                
                 if keyValuePair.key == "1001" {
-                    self.navigationController?.popViewController(animated: true)
+                    //index 3 - last page (quiz)
+                    if(index == 2){
+                        self.navigationController?.popViewController(animated: true)
+                    }else if(index == 3){
+                        self.title = "Your results"
+                    }
+
+                    
                 } else if keyValuePair.key == "1100" {
+                    //index 3 - quiz page entered
                     self.view.hideToastActivity()
+                    if(pageTitle != "" ){
+                        self.title = pageTitle
+                    }
+                    
+                    
                 } else if keyValuePair.key == "401" {
                     let alertController = UIAlertController(title: "Error Occured", message: "Error occured. Please try again!!", preferredStyle: .alert)
                     // Add an action button to the alert

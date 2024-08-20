@@ -33,9 +33,9 @@ class TouchAndButterFly2: UIViewController {
     
     override func viewDidLoad() {
         
-        titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 18)
         
-        descriptionLabel.font = UIFont(name: Fonts().lexendRegular, size: 14)
+        descriptionLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             backImg.isUserInteractionEnabled = true

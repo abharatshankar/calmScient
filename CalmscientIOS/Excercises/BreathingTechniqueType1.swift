@@ -17,8 +17,6 @@ import AVFoundation
 
 class BreathingTechniqueType1: UIViewController {
     
-    
-    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var preparationView: UIView!
@@ -115,7 +113,7 @@ class BreathingTechniqueType1: UIViewController {
         super.viewDidLoad()
         setupPlayer()
         setupProgressBar()
-        bringControlsToFront()
+        
         progressBar.setThumbImage(UIImage(), for: .normal)
         progressBar.tintColor = UIColor.white
         preparationView.applyShadow()
@@ -163,7 +161,7 @@ class BreathingTechniqueType1: UIViewController {
         
         titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
         preparationLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        preparationDescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
         
         subtitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
     
@@ -214,10 +212,10 @@ class BreathingTechniqueType1: UIViewController {
                 
             } else {
                 player.play()
-                playPauseImage.image = UIImage(named: "fav")
+                playPauseImage.image = UIImage(named: "pause")
 
             }
-        bringControlsToFront()
+            bringControlsToFront()
             isPlaying.toggle()
     }
     
@@ -239,9 +237,10 @@ class BreathingTechniqueType1: UIViewController {
     func bringControlsToFront() {
         self.view.bringSubviewToFront(playPauseImage)
             self.view.bringSubviewToFront(favImg)
-            self.view.bringSubviewToFront(maximiseImg)
+            
             self.view.bringSubviewToFront(progressBar)
-        self.view.bringSubviewToFront(playPauseImage)
+            self.view.bringSubviewToFront(playPauseImage)
+        self.view.bringSubviewToFront(maximiseImg)
         }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -253,9 +252,13 @@ class BreathingTechniqueType1: UIViewController {
         bringControlsToFront()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        bringControlsToFront()
+    }
+    
     func setupPlayer() {
         
-        guard let url = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else { return }
+        guard let url = URL(string: "https://calmscient.blob.core.windows.net/exercises-videos/Mindful%20breathing.mp4") else { return }
         player = AVPlayer(url: url)
                playerLayer = AVPlayerLayer(player: player)
                playerLayer.frame = videoView.bounds
@@ -301,22 +304,70 @@ class BreathingTechniqueType1: UIViewController {
 
 
 extension UIView {
-    func applyShadow(
-        color: UIColor = UIColor(hex: "#323247"),
-        opacity: Float = 1,
-        offset: CGSize = CGSize(width: 4, height: 4),
-        radius: CGFloat = 5) {
-            
-            self.backgroundColor = .white
-            self.layer.borderColor = UIColor(hex: "#E8E7F4").cgColor
-            self.layer.borderWidth = 1
-            self.layer.shadowColor = color.cgColor.copy(alpha: 0.08)
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowOffset = offset
-        self.layer.shadowRadius = radius
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = 10
+//    func applyShadow(
+//        color: UIColor = UIColor.black, //UIColor(hex: "#323247"),
+//        opacity: Float = 1,
+//        offset: CGSize = CGSize(width: 2, height: 8),
+//        radius: CGFloat = 5) {
+//            
+//            
+//            self.backgroundColor = .white
+//            self.layer.borderColor = UIColor(hex: "#E8E7F4").cgColor
+//            self.layer.borderWidth = 1
+//            self.layer.shadowColor = color.cgColor.copy(alpha: 0.08)
+//        self.layer.shadowOpacity = opacity
+//        self.layer.shadowOffset = offset
+//        self.layer.shadowRadius = radius
+//        self.layer.masksToBounds = false
+//        self.layer.cornerRadius = 15
+//    }
+    
+    func applyShadow(cornerRadius: CGFloat = 10.0, shadowColor: UIColor = .black, shadowOpacity: Float = 0.2, shadowOffset: CGSize = CGSize(width: 0, height: 2), shadowRadius: CGFloat = 10.0) {
+        self.backgroundColor = .white
+            self.layer.cornerRadius = cornerRadius
+            self.layer.shadowColor = shadowColor.cgColor
+            self.layer.shadowOpacity = shadowOpacity
+            self.layer.shadowOffset = shadowOffset
+            self.layer.shadowRadius = shadowRadius
+            self.layer.masksToBounds = false
+        }
+    
+    func addShadowView() {
+        //Remove previous shadow views
+        superview?.viewWithTag(119900)?.removeFromSuperview()
+
+        //Create new shadow view with frame
+        let shadowView = UIView(frame: frame)
+        shadowView.tag = 119900
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 2, height: 3)
+        shadowView.layer.masksToBounds = false
+
+        shadowView.layer.shadowOpacity = 0.3
+        shadowView.layer.shadowRadius = 3
+        shadowView.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        shadowView.layer.rasterizationScale = UIScreen.main.scale
+        shadowView.layer.shouldRasterize = true
+
+        superview?.insertSubview(shadowView, belowSubview: self)
     }
+    
+    
+    func applyShadowWithCornerRadius(cornerRadius: CGFloat,
+                                         shadowColor: UIColor = .darkGray,
+                                         shadowOffset: CGSize = .zero,
+                                         shadowRadius: CGFloat = 20,
+                                         shadowOpacity: Float = 1) {
+            self.layer.cornerRadius = cornerRadius
+            self.layer.shadowColor = shadowColor.cgColor
+            self.layer.shadowOffset = shadowOffset
+            self.layer.shadowRadius = shadowRadius
+            self.layer.shadowOpacity = shadowOpacity
+            
+            // Set shadow path for performance optimization
+            let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius)
+            self.layer.shadowPath = shadowPath.cgPath
+        }
 }
 
 extension UIColor {

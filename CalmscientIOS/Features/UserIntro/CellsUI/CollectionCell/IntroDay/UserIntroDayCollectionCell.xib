@@ -34,8 +34,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad jsbjsfbs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-Qk-I2S">
-                                <rect key="frame" x="2" y="61.000000000000007" width="56" height="11.333333333333336"/>
-                                <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="9"/>
+                                <rect key="frame" x="2" y="61" width="56" height="10"/>
+                                <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="8"/>
                                 <color key="textColor" name="UserIntroCollectionCellBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

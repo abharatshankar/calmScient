@@ -62,6 +62,11 @@ class DiscoveryMainViewController: ViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func profileButtonAction(_ sender: Any) {
+        let userProfileViewController = UIStoryboard(name: "UserProfile", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        self.navigationController?.pushViewController(userProfileViewController, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
         self.navigationController?.navigationBar.isHidden = true

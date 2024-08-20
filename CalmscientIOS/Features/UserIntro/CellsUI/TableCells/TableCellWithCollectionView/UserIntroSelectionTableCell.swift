@@ -25,15 +25,39 @@ class UserIntroSelectionTableCell: UITableViewCell {
     }
     private var instance:UserStartupScreenDayData!
     var selectedIndex = -1
-    let dummyData:[String:[(String,String)]] = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? ["UserMoodHoursCell":[("UserIntro_Bad","BAD"),("UserIntro_Couldbe","COULD BE BETTER"),("UserIntro_Fair","FAIR"),("UserIntro_Good","GOOD"),("UserIntro_Excellent","EXCELLENT")],"UserEntryTimeSpendCell":[("UserIntro_Family","FAMILY"),("UserIntro_Friends","FRIENDS"),("UserIntro_Workmates","WORKMATES"),("UserIntro_Others","OTHERS"),("UserIntro_Alone","ALONE")]] 
+    let dummyData:[String:[(String,String)]] = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? ["UserMoodHoursCell":[
+        ("UserIntro_Bad","BAD"),
+        ("UserIntro_Couldbe","COULD BE BETTER"),
+        ("UserIntro_Fair","FAIR"),
+        ("UserIntro_Good","GOOD"),
+        ("UserIntro_Excellent","EXCELLENT")
+    ],"UserEntryTimeSpendCell":[
+        ("UserIntro_Family","FAMILY"),
+        ("UserIntro_Friends","FRIENDS"),
+        ("UserIntro_Workmates","WORKMATES"),
+        ("UserIntro_Others","OTHERS"),
+        ("UserIntro_Alone","ALONE")
+    ]]
     
     :
     
-    ["UserMoodHoursCell":[("UserIntro_Bad","MALO"),("UserIntro_Couldbe","PODRÍA SER MEJOR"),("UserIntro_Fair","REGULAR"),("UserIntro_Good","BUENO"),("UserIntro_Excellent","EXCELENTE")],"UserEntryTimeSpendCell":[("UserIntro_Family","FAMILIA"),("UserIntro_Friends","AMIGOS"),("UserIntro_Workmates","COMPAÑEROS DE TRABAJO"),("UserIntro_Others","OTROS"),("UserIntro_Alone","SOLO")]]
+    ["UserMoodHoursCell":[
+        ("UserIntro_Bad","MALO"),
+        ("UserIntro_Couldbe","PODRÍA SER MEJOR"),
+        ("UserIntro_Fair","REGULAR"),
+        ("UserIntro_Good","BUENO"),
+        ("UserIntro_Excellent","EXCELENTE")
+    ],"UserEntryTimeSpendCell":[
+        ("UserIntro_Family","FAMILIA"),
+        ("UserIntro_Friends","AMIGOS"),
+        ("UserIntro_Workmates","COMPAÑEROS DE TRABAJO"),
+        ("UserIntro_Others","OTROS"),
+        ("UserIntro_Alone","SOLO")
+    ]]
     
     let selectedSmileyImgs = ["bad_selected","could_better_selected","fair_selected","good_selected","excellent_selected"]
     
-    let selectedFamilyImages = ["UserIntro_Family",]
+    let selectedFamilyImages = ["family_selected","friends_selected","workmates_selected","others","alone_selected"]
     
     var collectionData:[(String,String)]!
     fileprivate func addShadowAndBorder() {
@@ -42,11 +66,13 @@ class UserIntroSelectionTableCell: UITableViewCell {
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         shadowView.layer.shadowOpacity = 0.2
         shadowView.layer.shadowRadius = 2.0
+//        shadowView.applyShadow(radius: 8)
         
         borderContainerView.layer.cornerRadius = 8
         borderContainerView.layer.masksToBounds = true
         borderContainerView.layer.borderWidth = 1
         borderContainerView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+        borderContainerView.applyShadow(cornerRadius: 8)
     }
     
 //    func setupLanguage() {
@@ -115,7 +141,7 @@ extension UserIntroSelectionTableCell : UICollectionViewDelegateFlowLayout, UICo
         let cellData = collectionData[indexPath.row]
         if indexPath.row == selectedIndex {
             cell.cellTitleLabel.textColor = UIColor(named: "TabBarSelectedColor")
-            cell.cellImageView.image = UIImage(named: "\(cellData.0)")//UIImage(named: selectedSmileyImgs[indexPath.row]) 
+            cell.cellImageView.image =  cellType == .UserEntryTimeSpendCell ? UIImage(named: selectedFamilyImages[indexPath.row]) : UIImage(named: "\(cellData.0)")  //UIImage(named: selectedSmileyImgs[indexPath.row])
             cell.cellImageView.applyShadow()
             // UIImage(named: "\(cellData.0)")
             // Assuming cellImageView is a square view

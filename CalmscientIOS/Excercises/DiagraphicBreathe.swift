@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+import AVKit
 
 
 class DiagraphicBreathe: UIViewController {
@@ -15,8 +17,6 @@ class DiagraphicBreathe: UIViewController {
     
     @IBOutlet weak var backImg: UIImageView!
     
-    
-    @IBOutlet weak var playPauseButton: UIButton!
     
     @IBOutlet weak var preparationView: UIView!
     @IBOutlet weak var step1View: UIView!
@@ -34,8 +34,6 @@ class DiagraphicBreathe: UIViewController {
     
     @IBOutlet weak var verticalBar: UIView!
     
-    
-    @IBOutlet weak var maximiseButton: UIButton!
     
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -66,10 +64,33 @@ class DiagraphicBreathe: UIViewController {
     @IBOutlet weak var bottomDescLabel: UILabel!
     
     
+    @IBOutlet weak var playPauseImg: UIImageView!
+    @IBOutlet weak var maximiseImg: UIImageView!
+    @IBOutlet weak var progressBar: UISlider!
+    
+    @IBOutlet weak var videoView: UIView!
+    
+    
+    var player: AVPlayer!
+    var playerLayer: AVPlayerLayer!
+    var isMaximized: Bool = false
+    var isPlaying = false
+    var isFavorite = false
+    var isFullScreen = false
+    let avController = AVPlayerViewController()
+    var autoHideTimer: Timer?
+    
+    
     override func viewDidLoad() {
         
-        playPauseButton.titleLabel?.text = ""
-        maximiseButton.titleLabel?.text = ""
+        self.view.backgroundColor = .white
+        super.viewDidLoad()
+        setupPlayer()
+        setupProgressBar()
+        bringControlsToFront()
+        progressBar.setThumbImage(UIImage(), for: .normal)
+        progressBar.tintColor = UIColor.white
+        preparationView.applyShadow()
         
         preparationView.applyShadow()
         step1View.applyShadow()
@@ -109,11 +130,113 @@ class DiagraphicBreathe: UIViewController {
             backImg.isUserInteractionEnabled = true
             backImg.addGestureRecognizer(tapGestureRecognizer)
         
+        let playPauseRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPauseTapped(tapGestureRecognizer:)))
+        playPauseImg.isUserInteractionEnabled = true
+        playPauseImg.addGestureRecognizer(playPauseRecognizer)
+        
+        
+            let maximiseGesture = UITapGestureRecognizer(target: self, action: #selector(maximiseTapped(tapGestureRecognizer:)))
+            maximiseImg.isUserInteractionEnabled = true
+            maximiseImg.addGestureRecognizer(maximiseGesture)
+        
+        
+        
         setFonts()
     }
     
+    
+    @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+
+            if isPlaying {
+                player.pause()
+                playPauseImg.image = UIImage(named: "Play")
+   
+                
+            } else {
+                player.play()
+                playPauseImg.image = UIImage(named: "pause")
+
+            }
+        bringControlsToFront()
+            isPlaying.toggle()
+    }
+    
+    
+    @objc func maximiseTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        
+        guard let player = player else { return }
+        avController.modalPresentationStyle = .fullScreen
+        avController.player = player
+        present(avController, animated: true) {
+            player.play()
+            
+        }
+        bringControlsToFront()
+    }
+    
+    
+    func bringControlsToFront() {
+        self.view.bringSubviewToFront(playPauseImg)
+            self.view.bringSubviewToFront(maximiseImg)
+            self.view.bringSubviewToFront(progressBar)
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        bringControlsToFront()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        playerLayer.frame = videoView.bounds
+        bringControlsToFront()
+    }
+    
+    func setupPlayer() {
+        
+        guard let url = URL(string: "https://calmscient.blob.core.windows.net/exercises-videos/Mindful%20breathing.mp4") else { return }
+        player = AVPlayer(url: url)
+               playerLayer = AVPlayerLayer(player: player)
+               playerLayer.frame = videoView.bounds
+               playerLayer.videoGravity = .resizeAspect
+               videoView.layer.addSublayer(playerLayer)
+               videoView.bringSubviewToFront(playPauseImg)
+               player.pause()
+               addPeriodicTimeObserver()
+        bringControlsToFront()
+    }
+
+    func setupProgressBar() {
+        progressBar.value = 0
+        progressBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+    }
+    
+    
+        @objc func sliderValueChanged(_ sender: UISlider) {
+            let seconds = Double(progressBar.value) * player.currentItem!.duration.seconds
+            let targetTime = CMTime(seconds: seconds, preferredTimescale: 600)
+            player.seek(to: targetTime)
+        }
+    
+    
+    func addPeriodicTimeObserver() {
+        let interval = CMTime(seconds: 1, preferredTimescale: 600)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
+            self?.updateProgressBar()
+        }
+    }
+
+    func updateProgressBar() {
+        guard let currentItem = player.currentItem else { return }
+        let currentTime = player.currentTime().seconds
+        let duration = currentItem.duration.seconds
+        progressBar.value = Float(currentTime / duration)
+
+    }
+    
+    
     func setFonts(){
-        self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 15)
         self.topDescriptionLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
         self.preparationLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
         self.preparationDescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
@@ -150,12 +273,6 @@ class DiagraphicBreathe: UIViewController {
     }
     
     
-    @IBAction func playPauseAction(_ sender: Any) {
-    }
-    
-    
-    @IBAction func maximiseAction(_ sender: Any) {
-    }
     
     
 }

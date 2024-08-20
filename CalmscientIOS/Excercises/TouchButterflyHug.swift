@@ -40,7 +40,7 @@ class TouchButterflyHug: UIViewController {
         
         titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
         
-        subTitleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        subTitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 19)
         
         view1Title.font  = UIFont(name: Fonts().lexendLight, size: 15)
         

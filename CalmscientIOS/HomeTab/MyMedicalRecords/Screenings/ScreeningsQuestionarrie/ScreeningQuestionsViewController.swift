@@ -259,7 +259,19 @@ class ScreeningQuestionsViewController: ViewController {
     }
     @IBAction func didClickOnForwardButton(_ sender: Any) {
         if pageNumber == maxPage - 1 {
-            self.sendPatientSelectedAnswersToServer()
+            print(patientAnsweredOption)
+            if(patientAnsweredOption.compactMap({$0}).count == 0){
+                // create the alert
+                        let alert = UIAlertController(title: "", message: "Please answer the questions", preferredStyle: UIAlertController.Style.alert)
+
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+            }else{
+                self.sendPatientSelectedAnswersToServer()
+            }
         } else {
             let tempPageNo = pageNumber + 1
             
@@ -306,11 +318,14 @@ extension ScreeningQuestionsViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if maxPage > 0 {
-            let possibleWidth =  tableView.bounds.width - 64
-            let view = QuestionHeaderView(frame: CGRect(x: 0, y: 0, width: possibleWidth - 64, height: 1000))
-            view.headerLabel.text = "\(pageNumber + 1). \(questionData[pageNumber].questionName)"
-            view.headerLabel.sizeToFit()
-            return  view.headerLabel.bounds.size.height
+//            let possibleWidth =  tableView.bounds.width - 64
+//            let view = QuestionHeaderView(frame: CGRect(x: 0, y: 0, width: possibleWidth - 64, height: 1000))
+//            view.headerLabel.text = "\(pageNumber + 1). \(questionData[pageNumber].questionName)"
+//            view.headerLabel.sizeToFit()
+//            return  view.headerLabel.bounds.size.height
+            
+                let width = tableView.frame.width
+                return calculateHeaderHeight(for: "\(pageNumber + 1). \(questionData[pageNumber].questionName)", width: tableView.bounds.width - 64)
         } else {
             return 0
         }
@@ -328,6 +343,18 @@ extension ScreeningQuestionsViewController: UITableViewDataSource, UITableViewDe
             return nil
         }
       
+    }
+    
+    func calculateHeaderHeight(for text: String, width: CGFloat) -> CGFloat {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = text
+        label.font = UIFont(name: Fonts().lexendMedium, size: 20) // Use the appropriate font
+        
+        let maxSize = CGSize(width: width - 64, height: CGFloat.greatestFiniteMagnitude) // 64 accounts for the leading and trailing padding
+        let size = label.sizeThatFits(maxSize)
+
+        return size.height
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

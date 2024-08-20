@@ -110,12 +110,12 @@ class MindfulNess: UIViewController {
             leftBtn.isHidden = true
             // Define the attributes for each text segment
                     let highlightAttr: [NSAttributedString.Key: Any] = [
-                        .font: UIFont.systemFont(ofSize: 15),
+                        .font: UIFont(name: Fonts().lexendLight, size: 15)!,
                         .foregroundColor: UIColor(hex: "#6E6BB3")
                     ]
 
                     let attrs2: [NSAttributedString.Key: Any] = [
-                        .font: UIFont.systemFont(ofSize: 15),
+                        .font: UIFont(name: Fonts().lexendLight, size: 15)!,
                         .foregroundColor: UIColor(hex: "#110E0E")
                     ]
 
@@ -149,22 +149,53 @@ class MindfulNess: UIViewController {
         }else if(counter == 1){
             
             leftBtn.isHidden = false
-            text1.attributedText = outputAttStr(highlightedStr1: "Mindfulness", normalStr: "is the opposite of automatic pilot. It is about experiencing the world that is firmly in the ‘here and now’. This is referred to as the being mode. It liberates you from automatic and unhelpful thoughts and responses.")
-            text2.text = ""
             stepsImgView.image = UIImage(named: "step2")
             imgView.image = imagesArray[1]
+            let highlightAttr: [NSAttributedString.Key: Any] = [
+                .font: UIFont(name: Fonts().lexendLight, size: 15)!,
+                .foregroundColor: UIColor(hex: "#6E6BB3")
+            ]
+
+            let attrs2: [NSAttributedString.Key: Any] = [
+                .font: UIFont(name: Fonts().lexendLight, size: 15)!,
+                .foregroundColor: UIColor(hex: "#110E0E")
+            ]
+            
+            let fullString = "Mindfulness is the opposite of automatic pilot. It is about experiencing the world that is firmly in the ‘here and now’. This is referred to as the being mode. It liberates you from automatic and unhelpful thoughts and responses."
+
+            // Create an NSMutableAttributedString with the entire string
+            let attributedString = NSMutableAttributedString(string: fullString)
+
+            
+
+            // Apply the default attributes to the entire string
+            attributedString.addAttributes(attrs2, range: NSRange(location: 0, length: fullString.count))
+
+            // Define the ranges of the words you want to highlight
+            let mindfulnessRange = (fullString as NSString).range(of: "Mindfulness")
+            let beingRange = (fullString as NSString).range(of: "being")
+
+            
+
+            // Apply the highlighted attributes to the specific ranges
+            attributedString.addAttributes(highlightAttr, range: mindfulnessRange)
+            attributedString.addAttributes(highlightAttr, range: beingRange)
+
+            text1.attributedText = attributedString
         }
         else if(counter == 2){
             text1.text = textArray[2]
-            text1.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            text1.font = UIFont(name: Fonts().lexendRegular, size: 15)!
             imgView.image = imagesArray[2]
             stepsImgView.image = UIImage(named: "step3")
+            imgView.contentMode = .scaleAspectFit
             text2.text = "When we allow our brain to enter automatic pilot mode too often, it can be at risk of being conditioned to be overly preoccupied about the future, past experiences or our emotions in negative ways. If we have fallen into this old and unhelpful habit, we can unlearn it and replace it with skills that help us resist ‘buying into’ automatic worry and anxiety. "
         }
         else if(counter == 3){
             text1.text = textArray[3]
-            text1.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+            text1.font = UIFont(name: Fonts().lexendLight, size: 15)!
             text2.text = ""
+            imgView.contentMode = .scaleAspectFill
             imgView.image = imagesArray[3]
             stepsImgView.image = UIImage(named: "step4")
         }
@@ -172,6 +203,7 @@ class MindfulNess: UIViewController {
             rightBtn.isHidden = false
             text1.text = textArray[4]
             text2.text = ""
+            imgView.contentMode = .scaleAspectFit
             imgView.image = imagesArray[4]
             stepsImgView.image = UIImage(named: "step5")
         }

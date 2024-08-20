@@ -15,7 +15,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var headlbl: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
-    
+    var sectionID666: Int?
     var optionid2 : Int?
     var questionnaireId2 : Int?
     var answerId2 : Int?
@@ -89,7 +89,20 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         configureLabel1(headlbl, withText: "What do you feel about your drinking habit?")
         tableView.rowHeight = UITableView.automaticDimension
         
+        var image = UIImage(named: "NavigationBack")
+                    image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
     }
+    @objc func backButtonOverrideAction() {
+           print("Back button tapped")
+           // Perform the action you want here
+           let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
+           let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
+           vc?.title = "Basic Knowledge"
+   //            vc?.courseID = 3
+           self.navigationController?.pushViewController(vc!, animated: true)
+           
+       }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
     }
@@ -294,6 +307,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
                                 let vc = next.instantiateViewController(withIdentifier: "FeelDrinkController") as? FeelDrinkController
                                 vc?.basicData3 = basicData2
                                 vc?.title = "Basic knowledge"
+                                vc?.sectionID6666 = sectionID666
                                 self.navigationController?.pushViewController(vc!, animated: true)
                             }
                             
@@ -311,7 +325,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         
     }
     @IBAction func backward_action(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
         
     }
     func saveBasicKnowledgeCource(plId: Int, patientId: Int, clientId: Int, activityDate: String,bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {

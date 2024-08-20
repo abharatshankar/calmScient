@@ -281,7 +281,7 @@ Here are resources that can assist you in achieving your goal?";
 //add user medications view controller
 "Save" = "Save";
 "Cancel" = "Cancel";
-"Add Medications" = "Add Medications";
+"Add Medications" = "Add medications";
 "Are you sure you want to cancel?" = "Are you sure you want to cancel?";
 "Medications" = "Medications";
 "YES" = "YES";

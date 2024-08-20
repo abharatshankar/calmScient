@@ -13,6 +13,7 @@ import AVFoundation
 class Progressive: UIViewController {
     
     
+    @IBOutlet weak var equalizerImg: UIImageView!
     
     @IBOutlet weak var backImg: UIImageView!
     var player: AVPlayer?
@@ -25,6 +26,7 @@ class Progressive: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    var redOverlayView: UIView!
     
     
     override func viewDidLoad() {
@@ -57,6 +59,8 @@ class Progressive: UIViewController {
         
     }
     
+    
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         
@@ -84,10 +88,41 @@ class Progressive: UIViewController {
         
     }
     
+    @objc func updateOverlayView() {
+        let totalDuration = player?.currentItem?.duration
+        let currentTime = player?.currentTime().seconds
+        let progress = CGFloat((currentTime ?? 0.0) / (totalDuration?.seconds ?? 0.0))
+            
+            let newWidth = equalizerImg.frame.width * progress
+        redOverlayView.frame = CGRect(x: 0, y: 0, width: newWidth, height: equalizerImg.frame.height)
+                
+                // Stop the timer if the audio has finished playing
+                if progress >= 1.0 {
+                    redOverlayView.frame = CGRect(x: 0, y: 0, width: equalizerImg.frame.width, height: equalizerImg.frame.height)
+                }
+        }
+    
     @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        
+        // Create an image view for the equalizer
+       
+//        equalizerImg.contentMode = .scaleAspectFit
+       
+                // Create the red overlay view
+                redOverlayView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: equalizerImg.frame.height))
+                redOverlayView.backgroundColor = UIColor.red
+        equalizerImg.addSubview(redOverlayView)
+
+                
+                
+               
         player?.timeControlStatus == .playing ? player?.pause() : player?.play()
-        playAudioImg.image = player?.timeControlStatus == .playing ? UIImage(named: "fav") : UIImage(named: "playAudio")
+        // Start a timer to update the red overlay view based on the audio progress
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateOverlayView), userInfo: nil, repeats: true)
+
+        playAudioImg.image = player?.timeControlStatus == .playing ? UIImage(named: "pause") : UIImage(named: "playAudio")
+        
         
     }
     

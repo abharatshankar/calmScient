@@ -55,7 +55,7 @@ class BreathingTechnique: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         backImg.isUserInteractionEnabled = true
         backImg.addGestureRecognizer(tapGestureRecognizer)
-        
+        setFonts()
     }
     
     func setFonts(){

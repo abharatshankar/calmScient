@@ -19,7 +19,7 @@ class BasicknowledgeVideo: ViewController {
         @IBOutlet weak var maximizeButton: UIButton!
         @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var playPauseButton: UIButton!
-
+    var sectionID4: Int?
 //        @IBOutlet weak var timeLabel: UILabel!
 
         var player: AVPlayer!
@@ -143,7 +143,7 @@ class BasicknowledgeVideo: ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":4
+            "sectionId":sectionID4!
         ]
         
         

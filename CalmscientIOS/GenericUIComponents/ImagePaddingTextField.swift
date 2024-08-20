@@ -85,6 +85,7 @@ public class ImagePaddingTextField : UITextField {
         guard let tappedImageView = tapGestureRecognizer.view as? UIImageView else {
             return
         }
+        tappedImageView.contentMode = .scaleAspectFit
         guard let _ = rightViewSelectedImage else {
             return
         }

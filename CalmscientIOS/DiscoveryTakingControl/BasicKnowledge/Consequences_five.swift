@@ -15,7 +15,8 @@ class Consequences_five:  ViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
-    
+    var sectionID55555: Int?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +114,7 @@ class Consequences_five:  ViewController {
             
             "patientId":patientId,
             "isCompleted":1,
-            "sectionId":5
+            "sectionId":sectionID55555!
         ]
         
         

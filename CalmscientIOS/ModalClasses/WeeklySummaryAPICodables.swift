@@ -840,11 +840,21 @@ extension CodableRequestFormParams {
         var requestParams:[String:Any] = [:]
         requestParams["patientLocationId"] = userInfo.patientLocationID
         requestParams["fromDate"] = startDate
+        requestParams["toDate"] = endDate
         requestParams["patientId"] = userInfo.patientID
       //  requestParams["userId"] = userInfo.userID
         requestParams["clientId"] = userInfo.clientID
-        requestParams["entry"] = "userInfo.clientID"
+        requestParams["userId"] = userInfo.userID
         
+        
+//        {
+//            "patientLocationId": 21,
+//            "fromDate": "08/01/2024",
+//            "toDate": "08/14/2024",
+//            "patientId": 34,
+//            "clientId": 1,
+//            "userId": 393
+//        }
         
 //        {
 //            "patientLocationId": 4,
@@ -914,6 +924,7 @@ class GetGAD7RequestForm : EndPointRequest, CodableRequestFormParams {
     
     required init(startDate:String, endDate:String) {
         requestBody = getRequestFormParams(startDate: startDate, endDate: endDate)
+        print(requestBody)
     }
     
     func getRequestFormParams(startDate:String,endDate:String) -> [String:Any] {

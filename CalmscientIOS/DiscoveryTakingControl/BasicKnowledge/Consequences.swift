@@ -14,7 +14,7 @@ class Consequences:  ViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
-    
+    var sectionID5: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +49,7 @@ class Consequences:  ViewController {
         let next = UIStoryboard(name: "Consequences", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "Consequences_two") as? Consequences_two
                    vc?.title = "Basic knowledge"
+        vc?.sectionID55 = sectionID5
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {

@@ -59,10 +59,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
     
     @objc func clicked1(_ sender: UIButton) {
         
-        let next = UIStoryboard(name: "QuitViewController", bundle: nil)
-        let vc = next.instantiateViewController(withIdentifier: "QuitViewController") as? QuitViewController
-        vc?.title = "Make a Plan"
-        self.navigationController?.pushViewController(vc!, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func clicked(_ sender: UIButton) {
@@ -304,8 +301,6 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-                
                 
                 if indexPath.section == 1 {
                     tableSelectedRow[1] = indexPath.row

@@ -26,7 +26,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVW-8b-P0K">
-                        <rect key="frame" x="11" y="15" width="372" height="172"/>
+                        <rect key="frame" x="11" y="24" width="372" height="155"/>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" name="424242Color"/>
@@ -89,14 +89,14 @@
                 </subviews>
                 <color key="backgroundColor" name="AppBackGroundColor"/>
                 <constraints>
-                    <constraint firstItem="PVW-8b-P0K" firstAttribute="top" secondItem="DP0-ou-kyr" secondAttribute="top" constant="15" id="8k2-6m-poy"/>
+                    <constraint firstItem="PVW-8b-P0K" firstAttribute="top" secondItem="DP0-ou-kyr" secondAttribute="top" constant="24" id="8k2-6m-poy"/>
                     <constraint firstAttribute="trailing" secondItem="8CN-nO-d5s" secondAttribute="trailing" constant="20" id="Alq-bv-GpS"/>
                     <constraint firstAttribute="trailing" secondItem="PVW-8b-P0K" secondAttribute="trailing" constant="10" id="Ktr-NK-AWq"/>
                     <constraint firstItem="PVW-8b-P0K" firstAttribute="leading" secondItem="DP0-ou-kyr" secondAttribute="leading" constant="11" id="NKt-R9-SO9"/>
                     <constraint firstItem="8CN-nO-d5s" firstAttribute="leading" secondItem="DP0-ou-kyr" secondAttribute="leading" id="TiF-xi-zkk"/>
                     <constraint firstAttribute="bottom" secondItem="8CN-nO-d5s" secondAttribute="bottom" constant="21" id="geK-Do-f9w"/>
                     <constraint firstItem="8CN-nO-d5s" firstAttribute="top" secondItem="DP0-ou-kyr" secondAttribute="top" id="pGz-aC-aoh"/>
-                    <constraint firstAttribute="bottom" secondItem="PVW-8b-P0K" secondAttribute="bottom" constant="13" id="pYi-fb-5Zi"/>
+                    <constraint firstAttribute="bottom" secondItem="PVW-8b-P0K" secondAttribute="bottom" constant="21" id="pYi-fb-5Zi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

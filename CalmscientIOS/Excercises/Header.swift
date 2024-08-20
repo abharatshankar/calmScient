@@ -14,7 +14,7 @@ class HeaderView: UICollectionReusableView {
     private let label: UILabel = {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            label.font = UIFont(name: Fonts().lexendRegular, size: 20)
             label.textColor = .black
             label.textAlignment = .center
             return label

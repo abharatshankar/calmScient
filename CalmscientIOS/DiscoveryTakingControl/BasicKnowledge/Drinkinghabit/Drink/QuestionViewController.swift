@@ -34,6 +34,7 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
     var values: [String] = []
     var optionType5: String = ""
     var optionType6: String = ""
+    var sectionID66666: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -141,7 +142,20 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
             }
         }
         
+        var image = UIImage(named: "NavigationBack")
+                    image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
     }
+    @objc func backButtonOverrideAction() {
+           print("Back button tapped")
+           // Perform the action you want here
+           let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
+           let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
+           vc?.title = "Basic Knowledge"
+   //            vc?.courseID = 3
+           self.navigationController?.pushViewController(vc!, animated: true)
+           
+       }
     func updateBasicKnowledgeIndex(patientId: Int, clientId: Int, activityDate: String,bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void){
         // Define the URL
         guard let url = URL(string: "\(baseURLString)patients/api/v1/takingControl/updateBasicKnowledgeIndex") else {
@@ -160,8 +174,8 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
         let payload: [String: Any] = [
             
             "patientId":patientId,
-            "isCompleted":1,
-            "sectionId":6
+            "isCompleted": 1,
+            "sectionId": sectionID66666!
         ]
         
         
