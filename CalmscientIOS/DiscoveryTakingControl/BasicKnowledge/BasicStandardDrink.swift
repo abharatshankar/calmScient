@@ -2,6 +2,7 @@ import UIKit
 
 class BasicStandardDrink: ViewController {
     
+    @IBOutlet weak var drinkScrollView: UIScrollView!
     @IBOutlet weak var drinkName: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var normalTextLabel: UILabel!
@@ -20,9 +21,10 @@ class BasicStandardDrink: ViewController {
     var sectionID1: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        labelText()
         main_view.layer.cornerRadius = 10
         main_view.layer.borderWidth = 1
-        main_view.layer.borderColor = UIColor.lightGray.cgColor
+        main_view.layer.borderColor = UIColor(hex: "#F6F6FF").cgColor
         updateContent()
         title = "Basic Knowledge"
         
@@ -30,12 +32,18 @@ class BasicStandardDrink: ViewController {
         self.view.bringSubviewToFront(forwardButton)
         
         self.view.showToastActivity()
-        
+        if #available(iOS 17.4, *) {
+            drinkScrollView.bouncesHorizontally = false
+        } else {
+            // Fallback on earlier versions
+        }
+        drinkScrollView.alwaysBounceHorizontal = false
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
         }
-        
-        
+      
+        self.normalTextLabel.font = UIFont(name: Fonts().lexendRegular, size: 14)
+        self.normalTextView.font = UIFont(name: Fonts().lexendRegular, size: 14)
         getAlcoholDrinks(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, activityDate: "", bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
             switch result {
             case .success(let data):
@@ -83,6 +91,34 @@ class BasicStandardDrink: ViewController {
                 }
             }
         }
+    }
+    func labelText() {
+        let fullText = """
+        In the United States, a “standard drink” (also known as an alcoholic drink equivalent) is defined as any drink that contains about 0.6 fluid ounces or 14 grams of pure alcohol. Although the drinks pictured here are different sizes, each contains approximately the same amount of alcohol and counts as one U.S. standard drink or one alcoholic drink equivalent.
+        """
+
+        // Define the substrings and the color to apply
+        let purpleSubstrings = ["0.6 fluid ounces", "14 grams"]
+        let purpleColor = UIColor(named: "barColor1")
+
+        // Create an NSMutableAttributedString
+        let attributedString = NSMutableAttributedString(string: fullText)
+
+        // Apply purple color to the specified substrings
+        for substring in purpleSubstrings {
+            if let range = fullText.range(of: substring) {
+                let nsRange = NSRange(range, in: fullText)
+                attributedString.addAttribute(.foregroundColor, value: purpleColor, range: nsRange)
+            }
+        }
+
+        // Assign the attributed string to the UILabel
+        normalTextLabel.attributedText = attributedString
+
+        // Additional label setup (optional)
+        normalTextLabel.numberOfLines = 0  // Allows label to display multiple lines
+        normalTextLabel.textAlignment = .left
+       
     }
     func setupLanguage() {
         

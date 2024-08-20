@@ -10,7 +10,7 @@ import UIKit
 class UserMedicalRecordsViewController: ViewController {
 
     @IBOutlet weak var medicalRecordsTableView: UITableView!
-    let content:[(String,UIImage)] = [("Medications",UIImage(named: "Medications_Cell")!),("Upcoming Medical Appointments",UIImage(named: "MedicalAppointment_Cell")!),("Screenings",UIImage(named: "Screening_Cell")!)]
+    let content:[(String,UIImage)] = [("Medications",UIImage(named: "Medications_Cell")!),("Upcoming medical appointments",UIImage(named: "MedicalAppointment_Cell")!),("Screenings",UIImage(named: "Screening_Cell")!)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false

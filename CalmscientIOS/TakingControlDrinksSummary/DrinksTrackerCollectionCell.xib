@@ -34,19 +34,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRf-OF-Fgx">
-                                        <rect key="frame" x="28" y="4" width="80" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRf-OF-Fgx">
+                                        <rect key="frame" x="25" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="JYC-vR-0S1"/>
+                                            <constraint firstAttribute="height" constant="80" id="X3c-Pn-lYu"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="JfY-oD-CEX" firstAttribute="top" secondItem="KRf-OF-Fgx" secondAttribute="bottom" constant="13" id="4Nf-qT-3T5"/>
                                     <constraint firstItem="JfY-oD-CEX" firstAttribute="leading" secondItem="z3o-Ll-AZi" secondAttribute="leading" constant="1" id="Cio-Ve-mQt"/>
                                     <constraint firstAttribute="bottom" secondItem="JfY-oD-CEX" secondAttribute="bottom" constant="-1" id="OHT-LI-NCk"/>
-                                    <constraint firstItem="KRf-OF-Fgx" firstAttribute="centerX" secondItem="z3o-Ll-AZi" secondAttribute="centerX" constant="3" id="Smd-pU-sIW"/>
-                                    <constraint firstItem="KRf-OF-Fgx" firstAttribute="top" secondItem="z3o-Ll-AZi" secondAttribute="top" constant="4" id="UM7-yD-Ul0"/>
+                                    <constraint firstItem="KRf-OF-Fgx" firstAttribute="leading" secondItem="z3o-Ll-AZi" secondAttribute="leading" constant="25" id="OSE-E5-ZGT"/>
+                                    <constraint firstItem="KRf-OF-Fgx" firstAttribute="top" secondItem="z3o-Ll-AZi" secondAttribute="top" id="Y4l-pL-Sy3"/>
                                     <constraint firstAttribute="trailing" secondItem="JfY-oD-CEX" secondAttribute="trailing" constant="-5" id="ifE-9h-Bpt"/>
-                                    <constraint firstItem="KRf-OF-Fgx" firstAttribute="leading" secondItem="z3o-Ll-AZi" secondAttribute="leading" constant="28" id="tbi-0E-Aa2"/>
+                                    <constraint firstAttribute="trailing" secondItem="KRf-OF-Fgx" secondAttribute="trailing" constant="25" id="uln-Th-1mg"/>
                                 </constraints>
                             </view>
                         </subviews>

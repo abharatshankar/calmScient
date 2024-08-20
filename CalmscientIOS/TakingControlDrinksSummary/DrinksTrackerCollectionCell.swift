@@ -38,7 +38,7 @@ class DrinksTrackerCollectionCell: UICollectionViewCell {
         mainView.layer.shadowRadius = 2
         mainView.layer.masksToBounds = false
         mainView.layer.borderWidth = 1
-        mainView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
+        mainView.layer.borderColor = UIColor(hex: "#F2F2F2").cgColor
         
         
         //numberView.layer.cornerRadius = 10
@@ -48,7 +48,7 @@ class DrinksTrackerCollectionCell: UICollectionViewCell {
         numberView.layer.shadowRadius = 2
         numberView.layer.masksToBounds = false
         numberView.layer.borderWidth = 1
-        numberView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
+        numberView.layer.borderColor = UIColor(hex: "#F2F2F2").cgColor
         
         
         

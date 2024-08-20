@@ -269,22 +269,23 @@ class DrinkingHabbitController:  ViewController {
         
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderColor = UIColor(hex: "#F2F2F2").cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tag = optionId
         button.addTarget(self, action: #selector(didClickOnAnswer(_:)), for: .touchUpInside)
         
         
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.1
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowRadius = 4
-        button.layer.masksToBounds = false
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOpacity = 0.1
+//        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        button.layer.shadowRadius = 4
+//        button.layer.masksToBounds = false
        // backGroundView.layer.borderWidth = 1
        // backGroundView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
                
                // Adding a shadow path for better performance
-        button.layer.shadowPath = UIBezierPath(roundedRect: button.bounds, cornerRadius: button.layer.cornerRadius).cgPath
+        button.applyShadow()
+       // button.layer.shadowPath = UIBezierPath(roundedRect: button.bounds, cornerRadius: button.layer.cornerRadius).cgPath
         
         NSLayoutConstraint.activate([
                button.heightAnchor.constraint(equalToConstant: 40) // Set the height you want here
