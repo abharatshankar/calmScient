@@ -623,7 +623,6 @@ features</string>
                                     </state>
                                     <connections>
                                         <action selector="bulbPopupcloseButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="MJg-5H-Ch8"/>
-                                        <action selector="congratulationCloseButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="HXW-th-wrQ"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q27-vl-uUP">

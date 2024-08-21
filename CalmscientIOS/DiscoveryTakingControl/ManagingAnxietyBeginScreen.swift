@@ -14,6 +14,7 @@ class ManagingAnxietyBeginScreen: UIViewController {
     @IBOutlet weak var managingTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         managingTextView.font = UIFont(name: Fonts().lexendLight, size: 16)
         letsBeginButton.titleLabel?.font = UIFont(name: Fonts().lexendSemiBold, size: 18)
         titleLabel.font = UIFont(name: Fonts().lexendSemiBold, size: 18)
@@ -23,7 +24,9 @@ class ManagingAnxietyBeginScreen: UIViewController {
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     @IBAction func letBeginButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "CourseViewController", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
