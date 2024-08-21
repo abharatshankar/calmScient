@@ -69,44 +69,57 @@ class USGuidlines: ViewController {
         
         }
     private func setupTextView() {
-//           let fullText = """
-//           The 2020–2025 Dietary Guidelines for Americans states that adults of legal drinking age can choose not to drink or to drink in moderation by limiting intake to 2 drinks or less in a day for men and 1 drink or less in a day for women when alcohol is consumed. Drinking less is better for health than drinking more.
-//
-//           There are some adults who should not drink alcohol, such as women who are pregnant. Adults who choose to drink, and are not among the individuals listed below who should not drink, are encouraged to limit daily consumption of alcohol to align with the Dietary Guidelines.People who do not drink should not start drinking for any reason.
-//           """
-        
         let fullText = AppHelper.getLocalizeString(str: "US guidelines part1") + "\n\n" + AppHelper.getLocalizeString(str: "US guidelines part2")
         
+        let attributedString = NSMutableAttributedString(string: fullText)
         
-           
-           let attributedString = NSMutableAttributedString(string: fullText)
-           
-           // Define attributes
-           let paragraphStyle = NSMutableParagraphStyle()
-           paragraphStyle.lineSpacing = 4
-           
-           let boldAttributes: [NSAttributedString.Key: Any] = [
-               .font: UIFont.boldSystemFont(ofSize: 16),
-               .foregroundColor: UIColor(named: "AppointmentsTextColor") as Any
-           ]
-           
-           let normalAttributes: [NSAttributedString.Key: Any] = [
-               .font: UIFont.systemFont(ofSize: 14),
-               .foregroundColor: UIColor(named: "AppointmentsTextColor") as Any,
-               .paragraphStyle: paragraphStyle
-           ]
-           
-           // Apply attributes to specific parts of the text
-           let firstPartRange = (fullText as NSString).range(of: AppHelper.getLocalizeString(str: "US guidelines part1"))
-           attributedString.addAttributes(normalAttributes, range: firstPartRange)
-           
-           let secondPartRange = (fullText as NSString).range(of: AppHelper.getLocalizeString(str: "US guidelines part2"))
-           attributedString.addAttributes(normalAttributes, range: secondPartRange)
-           
+        // Define attributes
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        
+        let boldAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: 16),
+            .foregroundColor: UIColor(named: "AppointmentsTextColor") as Any
+        ]
+        
+        let normalAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: UIColor(named: "AppointmentsTextColor") as Any,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let redAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "barColor1") as Any
+        ]
+        
+        // Apply attributes to specific parts of the text
+        let firstPartRange = (fullText as NSString).range(of: AppHelper.getLocalizeString(str: "US guidelines part1"))
+        attributedString.addAttributes(normalAttributes, range: firstPartRange)
+        
+        let secondPartRange = (fullText as NSString).range(of: AppHelper.getLocalizeString(str: "US guidelines part2"))
+        attributedString.addAttributes(normalAttributes, range: secondPartRange)
+        
+        // Define target strings for both English and Spanish
+        let targetStrings = [
+            "2 drinks or less in a day",
+            "1 drink or less in a day",
+            "2 bebidas o menos al día",
+            "1 bebida o menos al día"
+        ]
+        
+        // Apply red color to the target strings if they exist
+        for target in targetStrings {
+            let range = (fullText as NSString).range(of: target)
+            if range.location != NSNotFound {
+                attributedString.addAttributes(redAttributes, range: range)
+            }
+        }
+        
         usguideTextView.attributedText = attributedString
         usguideTextView.isEditable = false
         usguideTextView.isScrollEnabled = false
-       }
+    }
+
     
 //    private func setupTextView() {
 //           let fullText = """

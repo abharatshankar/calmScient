@@ -9,13 +9,28 @@ import UIKit
 
 class ManagingAnxietyBeginScreen: UIViewController {
 
+    @IBOutlet weak var letsBeginButton: LinearGradientButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var managingTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        managingTextView.font = UIFont(name: Fonts().lexendLight, size: 16)
+        letsBeginButton.titleLabel?.font = UIFont(name: Fonts().lexendSemiBold, size: 18)
+        titleLabel.font = UIFont(name: Fonts().lexendSemiBold, size: 18)
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func letBeginButtonAction(_ sender: Any) {
+        let next = UIStoryboard(name: "CourseViewController", bundle: nil)
+        let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
+        vc?.title = "Managing Anxiety"
+        vc?.courseID = 2
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     /*
     // MARK: - Navigation
 

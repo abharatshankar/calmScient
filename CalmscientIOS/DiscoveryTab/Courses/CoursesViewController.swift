@@ -18,6 +18,7 @@ class CoursesViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "AppViewBorderColor")
         if #available(iOS 16.0, *) {
             self.navigationController?.navigationItem.leftBarButtonItem?.isHidden = false
         } else {

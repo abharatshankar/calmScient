@@ -176,23 +176,45 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0, 1:
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AlcholFreeCell", for: indexPath) as! AlcholFreeCell
                     cell.leftBox.layer.cornerRadius = 10
                     cell.leftTitle.text = AppHelper.getLocalizeString(str: "Now")
 
                     let sectionData = index[indexPath.section]
                     if let nowValue = sectionData["now"] as? Int {
-                        cell.leftValue.text = "\(nowValue)"
+                        cell.leftValue.text = "\(nowValue) days"
                     } else {
-                        cell.leftValue.text = "0"
+                        cell.leftValue.text = "0 days"
                     }
            
                     cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
                     if let goalValue = sectionData["goal"] as? Int {
-                        cell.rightValue.text = "\(goalValue)"
+                        cell.rightValue.text = "\(goalValue) days"
                     } else {
-                        cell.rightValue.text = "0"
+                        cell.rightValue.text = "0 days"
+                    }
+
+                    cell.rightBox.layer.cornerRadius = 10
+                    cell.selectionStyle = .none
+                    return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlcholFreeCell", for: indexPath) as! AlcholFreeCell
+                    cell.leftBox.layer.cornerRadius = 10
+                    cell.leftTitle.text = AppHelper.getLocalizeString(str: "Now")
+
+                    let sectionData = index[indexPath.section]
+                    if let nowValue = sectionData["now"] as? Int {
+                        cell.leftValue.text = "\(nowValue) counts"
+                    } else {
+                        cell.leftValue.text = "0 counts"
+                    }
+           
+                    cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
+                    if let goalValue = sectionData["goal"] as? Int {
+                        cell.rightValue.text = "\(goalValue) counts"
+                    } else {
+                        cell.rightValue.text = "0 counts"
                     }
 
                     cell.rightBox.layer.cornerRadius = 10

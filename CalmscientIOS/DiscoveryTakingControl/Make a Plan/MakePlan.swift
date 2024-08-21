@@ -264,9 +264,9 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
         case 2:
             header.setText("Alcohol Fee Days")
         case 1:
-            header.setText("Pros")
+            header.setText("Pros:")
         case 3:
-            header.setText("Cons")
+            header.setText("Cons:")
         default:
             header.setText("")
         }
@@ -313,17 +313,12 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                         if let previousCell = tableView.cellForRow(at: previousIndexPath) {
                             previousCell.contentView.backgroundColor = UIColor.white // Default color
                             journalEntry.removeAll { $0["entry"] == button_name[previousIndexPath.row] }
-                            tableView.reloadRows(at: [previousIndexPath], with: .none)
+                           // tableView.reloadRows(at: [previousIndexPath], with: .none)
                         }
                     }
                     
-                    // Add the new entry to journalEntry
+                   
                     journalEntry.append(["entry": names])
-                    
-        //            // Update the background color for the selected cell
-        //            if let cell = tableView.cellForRow(at: indexPath) {
-        //                cell.contentView.backgroundColor = UIColor.systemBlue // Selected color
-        //            }
                     previousSelectedIndexPath = indexPath
                     tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
                     
@@ -346,11 +341,6 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                     // Add the new entry to journalEntry
                     journalEntry.append(["entry": names1])
                     
-        //            // Update the background color for the selected cell
-        //            if let cell = tableView.cellForRow(at: indexPath) {
-        //                cell.contentView.backgroundColor = UIColor.systemBlue // Selected color
-        //            }
-        //
                     tableView.reloadSections(IndexSet(integer: 3), with: .automatic)
                     previousSelectedIndexPath1 = indexPath
                     print(journalEntry)

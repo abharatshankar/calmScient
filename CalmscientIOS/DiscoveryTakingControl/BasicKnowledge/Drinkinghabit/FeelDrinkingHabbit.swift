@@ -33,6 +33,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
     
     var checkedStates: [Bool] = []
     var previouslySelectedTextView: UITextView?
+    var previouslySelectedBackgroundView : UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -206,35 +207,58 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         let optionValue = self.options[indexPath.row]
         configureTextView(cell.drinkTextView, withHTML: optionValue)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(drinkTextViewTapped))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(drinkTextViewTapped(_:)))
         cell.drinkTextView.addGestureRecognizer(tapGesture)
         cell.drinkTextView.isUserInteractionEnabled = true
         cell.drinkTextView.tag = indexPath.row
+        cell.newBackGroundView.tag = indexPath.row
+        
+        
+        let backgroundViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(drinkTextViewTapped(_:)))
+           cell.newBackGroundView.addGestureRecognizer(backgroundViewTapGesture)
+           cell.newBackGroundView.isUserInteractionEnabled = true
+           cell.newBackGroundView.tag = indexPath.row
+        
         
         return cell
     }
    
     @objc func drinkTextViewTapped(_ sender: UITapGestureRecognizer) {
-        guard let textView = sender.view as? UITextView else { return }
-        let indexPathRow = textView.tag // Retrieve the row index from the tag
-        
+        guard let tappedView = sender.view else { return }
+        let indexPathRow = tappedView.tag // Retrieve the row index from the tag
+
+        guard let cell = tableView.cellForRow(at: IndexPath(row: indexPathRow, section: 0)) as? FeelDrink else { return }
+
         guard let options1 = basicData2[2]["options"] as? [[String: Any]] else { return }
-        
+
         let selectedOption = options1[indexPathRow]
-        
+
         if let optionId = selectedOption["optionId"] as? Int {
             optionid2 = optionId
             print("Selected optionId: \(optionid2 ?? 0)")
-            
+
+            // Reset previously selected views
             if let previousTextView = previouslySelectedTextView {
                 previousTextView.backgroundColor = UIColor.white
+                previousTextView.textColor = UIColor.black
             }
-            
-            textView.backgroundColor = UIColor(named: "AppBorderColor")
-            
-            previouslySelectedTextView = textView
+            if let previousBackgroundView = previouslySelectedBackgroundView {
+                previousBackgroundView.backgroundColor = UIColor.white
+            }
+
+            // Apply selection changes
+            cell.drinkTextView.backgroundColor = UIColor(named: "barColor1")
+            cell.drinkTextView.textColor = UIColor.white
+            cell.newBackGroundView.backgroundColor = UIColor(named: "barColor1")
+
+            // Store references to the current views
+            previouslySelectedTextView = cell.drinkTextView
+            previouslySelectedBackgroundView = cell.newBackGroundView
         }
     }
+
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 200
@@ -397,36 +421,28 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         let font = UIFont.systemFont(ofSize: 16)
         let textColor = UIColor(named: "AppointmentsTextColor") ?? UIColor.black
         
-        if let data = html.data(using: .utf8) {
-            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                .documentType: NSAttributedString.DocumentType.html,
-                .characterEncoding: String.Encoding.utf8.rawValue
-            ]
+        if let attributedString = NSAttributedString(html: html, font: font) {
+            let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
+            mutableAttributedString.addAttribute(.foregroundColor, value: textColor, range: NSRange(location: 0, length: mutableAttributedString.length))
             
-            if let attributedString = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil) {
-                attributedString.addAttribute(.foregroundColor, value: textColor, range: NSRange(location: 0, length: attributedString.length))
-                attributedString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributedString.length))
-                
-                textView.attributedText = attributedString
-                textView.isEditable = false
-                textView.isScrollEnabled = false
-                textView.textContainerInset = .zero
-                textView.textContainer.lineFragmentPadding = 0
-            }
+            textView.attributedText = mutableAttributedString
+            textView.isEditable = false
+            textView.isScrollEnabled = false
+            textView.textContainerInset = .zero
+            textView.textContainer.lineFragmentPadding = 0
         }
     }
+
 }
 
 extension NSAttributedString {
     convenience init?(html: String, font: UIFont) {
         let modifiedHtml = """
         <style>
-        body { font-family: \(font.fontName); font-size: \(font.pointSize)px; }
-        b { font-family: \(font.fontName); font-size: \(font.pointSize * 1.2)px; font-weight: bold; }
-        ul { padding-left: 20px; margin: 0; }
-        li { margin-bottom: 10px; }
+        body { font-family: \(font.fontName); font-size: \(font.pointSize)px; color: #000000; }
+        b { font-family: \(font.fontName); font-size: \(font.pointSize)px; font-weight: bold; }
         </style>
-        \(html.replacingOccurrences(of: "<br>", with: "&nbsp;<br>"))
+        \(html.replacingOccurrences(of: "<br>", with: "<br/><br/>"))
         """
         guard let data = modifiedHtml.data(using: .utf8) else { return nil }
         try? self.init(data: data,
@@ -435,5 +451,6 @@ extension NSAttributedString {
                        documentAttributes: nil)
     }
 }
+
 
 

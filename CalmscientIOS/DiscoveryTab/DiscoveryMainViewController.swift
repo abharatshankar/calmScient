@@ -180,10 +180,10 @@ extension DiscoveryMainViewController : UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let next = UIStoryboard(name: "CourseViewController", bundle: nil)
-            let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
-            vc?.title = "Managing Anxiety"
-            vc?.courseID = 2
+            let next = UIStoryboard(name: "ManagingAnxietyBeginScreen", bundle: nil)
+            let vc = next.instantiateViewController(withIdentifier: "ManagingAnxietyBeginScreen") as? ManagingAnxietyBeginScreen
+           // vc?.title = "Managing Anxiety"
+            //vc?.courseID = 2
             self.navigationController?.pushViewController(vc!, animated: true)
         } else if indexPath.row == 1 {
             let next = UIStoryboard(name: "CourseViewController", bundle: nil)

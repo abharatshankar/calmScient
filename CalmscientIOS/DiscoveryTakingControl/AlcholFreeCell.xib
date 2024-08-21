@@ -35,13 +35,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-jM-zwe">
-                                <rect key="frame" x="49" y="20.666666666666668" width="34" height="19.000000000000004"/>
-                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
+                                <rect key="frame" x="49" y="19.333333333333336" width="38.666666666666657" height="21.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.60253532570000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyD-xt-KCj">
-                                <rect key="frame" x="49.000000000000007" y="44.666666666666664" width="68.666666666666686" height="22.666666666666664"/>
+                                <rect key="frame" x="49.000000000000007" y="51" width="68.666666666666686" height="22.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="18"/>
                                 <color key="textColor" name="AppointmentsTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Upc-F2-9A0"/>
                             <constraint firstItem="lyD-xt-KCj" firstAttribute="leading" secondItem="FmS-jM-zwe" secondAttribute="leading" id="WC2-OO-GQb"/>
                             <constraint firstItem="5Zw-l9-Whz" firstAttribute="leading" secondItem="x3A-Pe-Ocd" secondAttribute="leading" constant="12" id="Zg0-4U-6Ua"/>
-                            <constraint firstItem="lyD-xt-KCj" firstAttribute="top" secondItem="FmS-jM-zwe" secondAttribute="bottom" constant="5" id="g12-za-O17"/>
+                            <constraint firstItem="lyD-xt-KCj" firstAttribute="top" secondItem="FmS-jM-zwe" secondAttribute="bottom" constant="10.333333333333329" id="g12-za-O17"/>
                             <constraint firstItem="5Zw-l9-Whz" firstAttribute="top" secondItem="x3A-Pe-Ocd" secondAttribute="top" constant="14" id="s5U-7F-ffe"/>
                         </constraints>
                     </view>
@@ -70,13 +70,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmT-Ui-y6N">
-                                <rect key="frame" x="49.000000000000007" y="19" width="103.66666666666669" height="19"/>
-                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
+                                <rect key="frame" x="48.999999999999993" y="18" width="117.33333333333331" height="21.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.60253532570000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZt-LW-ijV">
-                                <rect key="frame" x="49.000000000000007" y="41" width="68.666666666666686" height="22.666666666666671"/>
+                                <rect key="frame" x="49" y="51" width="68.666666666666657" height="22.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="18"/>
                                 <color key="textColor" name="AppointmentsTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                         <color key="backgroundColor" name="AppViewContentColor"/>
                         <constraints>
                             <constraint firstItem="wmT-Ui-y6N" firstAttribute="centerY" secondItem="5im-co-Zu7" secondAttribute="centerY" constant="-1.5" id="BXs-ON-etY"/>
-                            <constraint firstItem="HZt-LW-ijV" firstAttribute="top" secondItem="wmT-Ui-y6N" secondAttribute="bottom" constant="3" id="KJW-3q-yKJ"/>
+                            <constraint firstItem="HZt-LW-ijV" firstAttribute="top" secondItem="wmT-Ui-y6N" secondAttribute="bottom" constant="11.666666666666671" id="KJW-3q-yKJ"/>
                             <constraint firstItem="HZt-LW-ijV" firstAttribute="leading" secondItem="wmT-Ui-y6N" secondAttribute="leading" id="Kld-FZ-zc4"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Oxn-Gz-4lG"/>
                             <constraint firstItem="5im-co-Zu7" firstAttribute="leading" secondItem="wam-tE-z2C" secondAttribute="leading" constant="12" id="gsK-ea-eHm"/>
