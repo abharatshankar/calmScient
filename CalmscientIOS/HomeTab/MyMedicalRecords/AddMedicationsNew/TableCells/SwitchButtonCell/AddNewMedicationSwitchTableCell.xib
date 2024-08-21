@@ -63,6 +63,7 @@
             </constraints>
             <connections>
                 <outlet property="cellTitleLabel" destination="TRx-kM-JaV" id="Zzc-Sp-nyv"/>
+                <outlet property="scheduleTimeLbl" destination="RSq-tX-yV3" id="F3G-3O-dqc"/>
                 <outlet property="switchButton" destination="xG3-EF-sz9" id="57q-We-rTu"/>
             </connections>
             <point key="canvasLocation" x="-21.374045801526716" y="47.183098591549296"/>

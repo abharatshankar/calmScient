@@ -89,6 +89,16 @@ class MindfulWalking: UIViewController {
         
     }
     
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            // Stop the audio when the view is about to disappear
+            if self.isMovingFromParent {
+                player?.pause()
+            }
+        }
+    
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -186,7 +196,8 @@ class MindfulWalking: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
         
-        descriptionLabel.attributedText = add(stringList: languageId == 1 ? stringsArr : spanishStringsArr, font: descriptionLabel.font, bullet: "•")
+        descriptionLabel.attributedText = add(stringList: languageId == 1 ? stringsArr : spanishStringsArr, font: descriptionLabel.font, bullet: "•",textColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242"), bulletColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242")
+        )
     }
     
     

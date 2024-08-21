@@ -60,7 +60,7 @@ class ProgressCollapsableTableCell: UITableViewCell {
                            subLabel.font = UIFont.systemFont(ofSize: 14)
                            
                            let percentageLabel = UILabel()
-                           percentageLabel.font = UIFont.systemFont(ofSize: 14)
+                           percentageLabel.font = UIFont(name: Fonts().lexendMedium, size: 15)
                            if index < dataItem.percentage.count {
                                percentageLabel.text = "\(dataItem.percentage[index])%  "
                            } else {
@@ -122,10 +122,11 @@ class ProgressCollapsableTableCell: UITableViewCell {
         shadowView.layer.shadowOpacity = 0.2
         shadowView.layer.shadowRadius = 2.0
         
-        borderView.layer.cornerRadius = 8
-        borderView.layer.masksToBounds = true
-        borderView.layer.borderWidth = 1
-        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+//        borderView.layer.cornerRadius = 8
+//        borderView.layer.masksToBounds = true
+//        borderView.layer.borderWidth = 1
+//        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+        borderView.applyShadow()
     }
     
     

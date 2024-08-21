@@ -29,7 +29,7 @@ class NextAppointmentsViewController: ViewController, CalendarToViewDelegate {
         nextAppointmentTableView.register(UINib(nibName: "AppointmentsEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "AppointmentsEmptyTableViewCell")
         nextAppointmentTableView.dataSource = self
         nextAppointmentTableView.delegate = self
-        self.title = "Next appointments"
+        self.title = AppHelper.getLocalizeString(str:"Next appointments")
         getMedicalAppointmentsData(forDate: selectedNewDate)
         // Do any additional setup after loading the view.
     }
@@ -124,7 +124,7 @@ extension NextAppointmentsViewController : UITableViewDataSource, UITableViewDel
         case .emptyAppointment(let dateInstance):
             cell.dateLabel.text = dateInstance
             cell.cellIconImageView.image = UIImage(named: "appointmentIcon")
-            cell.contentTextLabel.text = "No appointments"
+            cell.contentTextLabel.text = AppHelper.getLocalizeString(str:"No appointments" )
         case .medicalAppointment(let appointment):
             cell.dateLabel.text = appointment.dateString
             cell.cellIconImageView.image = UIImage(named: "doctorWithSteth")

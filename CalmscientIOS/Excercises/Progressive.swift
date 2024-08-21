@@ -41,6 +41,13 @@ class Progressive: UIViewController {
         setupLanguage()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            // Stop the audio when the view is about to disappear
+            if self.isMovingFromParent {
+                player?.pause()
+            }
+        }
     
     func setupLanguage() {
         

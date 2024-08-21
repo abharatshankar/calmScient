@@ -96,6 +96,7 @@ class MindfulBreathing: UIViewController {
     let avController = AVPlayerViewController()
     var autoHideTimer: Timer?
 
+    var languageId : Int = 1
 
     
     override func viewDidLoad() {
@@ -147,6 +148,55 @@ class MindfulBreathing: UIViewController {
         
     }
     
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Mindful breathing exercise")
+        
+        preparationTitle.text = AppHelper.getLocalizeString(str: "Preparation")
+        preparationDesLabel.text = AppHelper.getLocalizeString(str: "First find a comfortable to either sit down or lay down. You can close your eyes if you want to.")
+        
+        subTitleLabel.text = AppHelper.getLocalizeString(str: "Let’s learn how to do the mindful breathing exercise.")
+        
+        step1Label.text =  AppHelper.getLocalizeString(str: "Step 1: Inhale")
+        step1DescLabel.text = AppHelper.getLocalizeString(str: "Inhale through your nose until the tummy expands.")
+        
+        step2Label.text =  AppHelper.getLocalizeString(str: "Step 2: Exhale slowly and repeat it")
+        step2DescLabel.text = AppHelper.getLocalizeString(str: "Exhale slowly through your mouse. And repeat the process.")
+        
+        step3Label.text =  AppHelper.getLocalizeString(str: "Step 3: Focus on the breath")
+        step3DescLabel.text = AppHelper.getLocalizeString(str: "Once settled into the pattern, focus on the breath coming in through the nose and out through the mouth")
+        
+        step4Label.text =  AppHelper.getLocalizeString(str: "Step 4: Focus on the tummy")
+        step4DescLabel.text = AppHelper.getLocalizeString(str: "Notice the rise and fall of the tummy as the breath come in and out")
+        
+        step5Label.text =  AppHelper.getLocalizeString(str: "Step 5: Focus on the mind")
+        step5DescLabel.text = AppHelper.getLocalizeString(str: "As thoughts come into the head, notice that they are there without judgment, then let them go and bring the attention back to the breathing.")
+        
+        step6Label.text =  AppHelper.getLocalizeString(str: "Step 6: Focus on the connection between mind and body.")
+        step6DescLabel.text = AppHelper.getLocalizeString(str: "Carry on until feeling calm, then start to be aware of how the body and mind feel.")
+        
+        videoLabel.text = AppHelper.getLocalizeString(str: "Now, let’s dive into it.\nPay careful attention to the following video.")
+        
+        bottomDescLabel.text = AppHelper.getLocalizeString(str:"Engage in this practice regularly, allowing the diaphragmatic breathing technique to guide you towards a state of tranquility and mindful breathing.")
+        
+        
+        
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+        bringControlsToFront()
+    }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
@@ -160,18 +210,15 @@ class MindfulBreathing: UIViewController {
 
             if isPlaying {
                 
-                playPauseImage.image = UIImage(named: "Play")
-   
-                bringControlsToFront()
                 player.pause()
-            } else {
+                bringControlsToFront()
                 playPauseImage.image = UIImage(named: "pause")
+            } else {
+                playPauseImage.image = UIImage(named: "Play")
+                
                 guard let player = player else { return }
                 avController.modalPresentationStyle = .fullScreen
                 avController.player = player
-//                present(avController, animated: true) {
-//                    player.play()
-//                }
                 player.play()
                 bringControlsToFront()
 

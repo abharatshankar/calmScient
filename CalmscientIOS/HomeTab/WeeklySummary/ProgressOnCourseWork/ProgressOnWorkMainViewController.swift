@@ -25,7 +25,7 @@ class ProgressOnWorkMainViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Progress on course work"
-        needTotTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
+        
 //        tableData.append(ProgressOfWorkMainTableData(title: "Braving Anxiety", subTitle: "45%"))
 //        tableData.append(ProgressOfWorkMainTableData(title: "Feeling Better", subTitle: "18%"))
 //        tableData.append(ProgressOfWorkMainTableData(title: "Taking Control", subTitle: "10%"))
@@ -50,15 +50,27 @@ class ProgressOnWorkMainViewController: ViewController {
                             if let newdata = json["patientcourseWorkList"] as? [[String: Any]] {
                                 progressData = newdata
                                 print(progressData)
-                                        if let firstCourse = newdata.first {
-                                            mainPercentage = firstCourse["completedPer"] as? Int
-                                            print("mainPercentage\(mainPercentage ?? 0)")
-                                            let courseName = firstCourse["courseName"] as? String
-                                            tableData.append(ProgressOfWorkMainTableData(title: courseName, subTitle: "\(mainPercentage ?? Int(0.0))%"))
-                                            setUpTableView()
+                                
+                                for eachCourse in newdata {
+                                    if let mainPerc = eachCourse["completedPer"] as? Int{
+                                        mainPercentage = mainPerc
+                                        let courseName = eachCourse["courseName"] as? String
+                                        tableData.append(ProgressOfWorkMainTableData(title: courseName, subTitle: "\(mainPercentage ?? Int(0.0))%"))
+                                    }
+                                }
+                                setUpTableView()
 
-                                            tableView.reloadData()
-                                        }
+                                tableView.reloadData()
+                                
+//                                        if let firstCourse = newdata.first {
+//                                            mainPercentage = firstCourse["completedPer"] as? Int
+//                                            print("mainPercentage\(mainPercentage ?? 0)")
+//                                            let courseName = firstCourse["courseName"] as? String
+//                                            tableData.append(ProgressOfWorkMainTableData(title: courseName, subTitle: "\(mainPercentage ?? Int(0.0))%"))
+//                                            setUpTableView()
+//
+//                                            tableView.reloadData()
+//                                        }
                                     } else {
                                         print("Unable to cast patientcourseWorkList to [[String: Any]]")
                                     }
@@ -77,6 +89,9 @@ class ProgressOnWorkMainViewController: ViewController {
             }
         }
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        needTotTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
     }
     @IBAction func needToTalkButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "NeedToTalkViewController", bundle: nil)

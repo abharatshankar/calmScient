@@ -12,6 +12,8 @@ class AddNewMedicationSwitchTableCell: UITableViewCell {
 
     @IBOutlet weak var switchButton: SwitchButton!
     @IBOutlet weak var cellTitleLabel: UILabel!
+    
+    @IBOutlet weak var scheduleTimeLbl: UILabel!
     var isMedicationIncluded:((Bool) -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()

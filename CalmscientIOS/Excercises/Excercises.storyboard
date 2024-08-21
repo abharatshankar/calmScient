@@ -21,13 +21,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-cy-l9w">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindfulness – what is it?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhA-h6-uD0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindfulness – what is it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhA-h6-uD0">
                                         <rect key="frame" x="93.666666666666686" y="17.333333333333329" width="206" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="2oa-FO-VVe">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="2oa-FO-VVe">
                                         <rect key="frame" x="20" y="7.6666666666666714" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="Pdt-f8-qg8"/>
@@ -276,13 +276,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxP-WD-eep">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-y5-Wki">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-y5-Wki">
                                                         <rect key="frame" x="60" y="18" width="273" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="Kz8-kn-44P">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Kz8-kn-44P">
                                                         <rect key="frame" x="18" y="7.6666666666666714" width="41" height="41"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="0N1-gq-4d8"/>
@@ -471,13 +471,13 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-Zx-Pd4">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progressive muscle relaxation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-vf-Uio">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progressive muscle relaxation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-vf-Uio">
                                         <rect key="frame" x="60" y="18" width="273" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="GOL-wE-mKS">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="GOL-wE-mKS">
                                         <rect key="frame" x="20" y="7.6666666666666714" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="7UI-zl-2La"/>
@@ -615,7 +615,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="H6x-yw-9EF">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="H6x-yw-9EF">
                                         <rect key="frame" x="20" y="7.6666666666666714" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="ebL-7I-KKq"/>
@@ -770,13 +770,13 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-bZ-ylR">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-Fc-qHA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-Fc-qHA">
                                         <rect key="frame" x="60" y="18" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="Hrv-BI-emX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Hrv-BI-emX">
                                         <rect key="frame" x="20" y="7.6666666666666714" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="qPU-BY-wy2"/>
@@ -1018,14 +1018,14 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-5B-5hY">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="co5-Kc-6aL">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="co5-Kc-6aL">
                                         <rect key="frame" x="20" y="10.666666666666671" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="hgd-bI-0L8"/>
                                             <constraint firstAttribute="width" constant="41" id="mKv-hV-nlf"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movement: running" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-Yv-LUN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movement: running" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-Yv-LUN">
                                         <rect key="frame" x="0.0" y="21" width="393" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1101,14 +1101,14 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-L5-bSX">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epd-4q-E7r">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epd-4q-E7r">
                                         <rect key="frame" x="60" y="19" width="273" height="24"/>
                                         <string key="text">Mindful body movement	</string>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-IN-pJg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-IN-pJg">
                                         <rect key="frame" x="20" y="10.666666666666671" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="RZT-xE-TOV"/>
@@ -1187,13 +1187,13 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-YY-VHc">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movement: dance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8Y-Xb-c2F">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movement: dance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8Y-Xb-c2F">
                                         <rect key="frame" x="0.0" y="21" width="393" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="ntZ-zG-EBc">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ntZ-zG-EBc">
                                         <rect key="frame" x="20" y="10.666666666666671" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="MUY-AG-5TW"/>
@@ -1265,14 +1265,14 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSn-dg-LEy">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-Hr-szE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-Hr-szE">
                                         <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <string key="text">Hand over your heart	</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="htY-ll-YQT">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="htY-ll-YQT">
                                         <rect key="frame" x="20" y="10.666666666666671" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="G98-PS-ZZH"/>
@@ -1403,7 +1403,7 @@ For added effect, you can place your other hand across your forehead or on your 
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqf-JT-htm">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-7-8 Breathing excercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-zY-fUW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-7-8 Breathing excercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-zY-fUW">
                                         <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1454,7 +1454,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="W13-29-2LU" firstAttribute="leading" secondItem="maI-08-fk0" secondAttribute="leading" constant="15" id="9OL-Rs-ezf"/>
                                                     <constraint firstItem="W13-29-2LU" firstAttribute="top" secondItem="XWd-JX-FZX" secondAttribute="bottom" constant="8" id="Na4-CJ-S6N"/>
@@ -1490,7 +1490,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="loo-cQ-5J2" secondAttribute="bottom" constant="15" id="6BB-JQ-5li"/>
@@ -1526,7 +1526,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="BWp-ZQ-8t9" secondAttribute="trailing" constant="15" id="G7f-8g-VL7"/>
                                                     <constraint firstItem="BWp-ZQ-8t9" firstAttribute="top" secondItem="dgS-7c-P7z" secondAttribute="bottom" constant="15" id="blG-lo-Y4M"/>
@@ -1564,7 +1564,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="c5W-1R-pMt" secondAttribute="trailing" constant="15" id="Dvy-A6-UKz"/>
                                                     <constraint firstItem="c5W-1R-pMt" firstAttribute="top" secondItem="27C-ez-IMl" secondAttribute="top" constant="15" id="PHE-RQ-Mo6"/>
@@ -1603,7 +1603,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="EBE-e5-4aC" firstAttribute="leading" secondItem="d1d-YF-lOe" secondAttribute="leading" constant="15" id="NLh-yK-gau"/>
                                                     <constraint firstItem="anO-d3-EVD" firstAttribute="top" secondItem="EBE-e5-4aC" secondAttribute="bottom" constant="15" id="QRJ-nG-Vrg"/>
@@ -1641,7 +1641,7 @@ the tissue just behind your top front teeth</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="BmD-nu-uuj" firstAttribute="leading" secondItem="1pS-2l-EWy" secondAttribute="leading" constant="15" id="1XJ-LE-QMd"/>
                                                     <constraint firstAttribute="trailing" secondItem="BmD-nu-uuj" secondAttribute="trailing" constant="15" id="3RQ-D2-8FI"/>
@@ -1858,13 +1858,13 @@ Pay careful attention to the following video.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-zN-o8K">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing technic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRk-6r-LtC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing technic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRk-6r-LtC">
                                         <rect key="frame" x="129.66666666666669" y="18" width="133.66666666666669" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="Did-ca-Gew">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Did-ca-Gew">
                                         <rect key="frame" x="20" y="7.6666666666666714" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="8VE-SW-hyO"/>
@@ -1998,13 +1998,13 @@ Pay careful attention to the following video.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-u5-rQJ">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUe-72-pye">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUe-72-pye">
                                         <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="rJk-7O-6r6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rJk-7O-6r6">
                                         <rect key="frame" x="20" y="6" width="45" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="KAd-lQ-BTr"/>
@@ -2045,7 +2045,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="3OX-1J-Q4k" firstAttribute="top" secondItem="eQ7-k7-8bc" secondAttribute="top" constant="15" id="3ZO-ja-rKb"/>
                                                     <constraint firstAttribute="trailing" secondItem="d7H-pN-LJh" secondAttribute="trailing" constant="15" id="6ML-Zf-fMl"/>
@@ -2081,7 +2081,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstItem="9P1-GP-3fc" firstAttribute="leading" secondItem="yx1-Oi-Wny" secondAttribute="leading" constant="15" id="V2D-qC-VlK"/>
@@ -2117,7 +2117,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="6VW-se-Oqk" firstAttribute="leading" secondItem="pmc-tJ-d4V" secondAttribute="leading" constant="15" id="5ge-GZ-XB9"/>
                                                     <constraint firstItem="6VW-se-Oqk" firstAttribute="top" secondItem="pf0-II-5Ce" secondAttribute="bottom" constant="15" id="96p-W1-ToA"/>
@@ -2155,7 +2155,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="8oL-Hy-QFN" secondAttribute="trailing" constant="15" id="2jj-ii-bdh"/>
                                                     <constraint firstItem="8oL-Hy-QFN" firstAttribute="top" secondItem="dL3-cv-Es9" secondAttribute="top" constant="15" id="7EG-Cy-vml"/>
@@ -2193,7 +2193,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="He1-l1-aVU" secondAttribute="trailing" constant="15" id="9Z9-Vd-Ack"/>
                                                     <constraint firstItem="He1-l1-aVU" firstAttribute="leading" secondItem="YJh-AK-guG" secondAttribute="leading" constant="15" id="GiV-qI-cQw"/>
@@ -2268,7 +2268,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="N72-Fp-CHP" secondAttribute="bottom" constant="15" id="J9V-c1-xaL"/>
                                                     <constraint firstItem="N72-Fp-CHP" firstAttribute="leading" secondItem="QRB-H8-9Na" secondAttribute="leading" constant="15" id="XAj-1A-BGf"/>
@@ -2310,7 +2310,7 @@ Pay careful attention to the following video.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="npH-e0-7VT" firstAttribute="leading" secondItem="ynm-C3-q9S" secondAttribute="leading" constant="15" id="2EN-j9-drz"/>
                                                     <constraint firstAttribute="bottom" secondItem="npH-e0-7VT" secondAttribute="bottom" constant="15" id="Pza-zY-Ic8"/>
@@ -2537,13 +2537,13 @@ Pay careful attention to the following video.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-eK-LwL">
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diaphragmatic breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-kg-gEg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diaphragmatic breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-kg-gEg">
                                         <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-dv-HOu">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-dv-HOu">
                                         <rect key="frame" x="20" y="10.666666666666671" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="89u-f1-FAc"/>
@@ -2586,7 +2586,7 @@ lay down.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="ezS-b0-xO5" firstAttribute="top" secondItem="WtN-ZU-yhx" secondAttribute="top" constant="15" id="9Tm-oL-Xq3"/>
                                                     <constraint firstItem="4aB-92-vzz" firstAttribute="top" secondItem="ezS-b0-xO5" secondAttribute="bottom" constant="8" id="EFU-rv-Y8B"/>
@@ -2622,7 +2622,7 @@ lay down.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Z7A-Pi-sIz" secondAttribute="trailing" constant="15" id="7PP-i6-AiN"/>
@@ -2660,7 +2660,7 @@ Focusing on the tummy rising.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="l8C-GJ-Zh1" firstAttribute="leading" secondItem="PSj-Cl-B6i" secondAttribute="leading" constant="15" id="BKM-pl-EfG"/>
                                                     <constraint firstItem="922-L5-WUU" firstAttribute="leading" secondItem="PSj-Cl-B6i" secondAttribute="leading" constant="15" id="JgE-j7-qBk"/>
@@ -2698,7 +2698,7 @@ Focusing on the tummy rising.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="zfU-pe-VCB" firstAttribute="leading" secondItem="Ad9-4m-TV4" secondAttribute="leading" constant="15" id="B5e-km-vvI"/>
                                                     <constraint firstAttribute="trailing" secondItem="O5a-lq-qkg" secondAttribute="trailing" constant="15" id="Tja-C8-Ahq"/>
@@ -2736,7 +2736,7 @@ Focusing on the tummy rising.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="bbX-XM-OoW" secondAttribute="trailing" constant="15" id="59Z-Nf-iZc"/>
                                                     <constraint firstAttribute="trailing" secondItem="UEw-9L-4p4" secondAttribute="trailing" constant="15" id="9Be-Gr-t87"/>
@@ -2774,7 +2774,7 @@ Focusing on the tummy rising.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="EKO-se-ayg" firstAttribute="top" secondItem="6Tb-gO-L0E" secondAttribute="bottom" constant="15" id="YZi-xY-6OG"/>
                                                     <constraint firstItem="6Tb-gO-L0E" firstAttribute="top" secondItem="Sjc-1M-mqN" secondAttribute="top" constant="15" id="Yfi-G7-kwT"/>
@@ -2993,7 +2993,6 @@ Pay careful attention to the following video.</string>
     <resources>
         <image name="BackArrow" width="41" height="41"/>
         <image name="back" width="82" height="82"/>
-        <image name="backButton" width="41" height="41"/>
         <image name="breathingTechnique" width="1260" height="804"/>
         <image name="butterfly 1" width="524" height="450"/>
         <image name="butterfly 1-2" width="524" height="450"/>
@@ -3017,17 +3016,11 @@ Pay careful attention to the following video.</string>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

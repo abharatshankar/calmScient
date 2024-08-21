@@ -13,6 +13,10 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var timeLbl: UILabel!
+    
+    
     weak var instanceObj:ScheduledTimeList?
     weak var newMedicationInstance:MedicationAlarm?
     var isNewMedicationCreation = false
@@ -58,6 +62,7 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         tableView.layer.cornerRadius = 5
         tableView.layer.masksToBounds = true
         tableView.register(UINib(nibName: "UpdateMedicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "UpdateMedicationsTableViewCell")
+        timeLbl.text = AppHelper.getLocalizeString(str:"Time")
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none

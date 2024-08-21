@@ -23,11 +23,19 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
     let subTextFont = UIFont(name: Fonts().lexendLight, size: 14)
     
     @IBOutlet weak var myFavourites: UILabel!
+    var languageId : Int = 1
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noFavsLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         setupLanguage()
+        let text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? NSMutableAttributedString(string: "Hello \(ApplicationSharedInfo.shared.loginResponse!.firstName)\nWe are happy to see you") :
+            NSMutableAttributedString(string: "Hola \(ApplicationSharedInfo.shared.loginResponse!.firstName)\nEstamos felices de verte")
+        text.addAttributes([.font:helloFont!], range: text.mutableString.range(of:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Hello" : "Hola"))
+        text.addAttributes([.font:userFont!], range: text.mutableString.range(of: ApplicationSharedInfo.shared.loginResponse!.firstName))
+        text.addAttributes([.font:subTextFont!], range: text.mutableString.range(of:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "We are happy to see you" : "Estamos felices de verte"))
+        screenTitleLabel.attributedText = text
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
         }
@@ -71,12 +79,8 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        let text = NSMutableAttributedString(string: "Hello \(ApplicationSharedInfo.shared.loginResponse!.firstName)\nWe are happy to see you")
-        text.addAttributes([.font:helloFont!], range: text.mutableString.range(of: "Hello"))
-        text.addAttributes([.font:userFont!], range: text.mutableString.range(of: ApplicationSharedInfo.shared.loginResponse!.firstName))
-        text.addAttributes([.font:subTextFont!], range: text.mutableString.range(of: "We are happy to see you"))
-        screenTitleLabel.attributedText = text
-        actionButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
+        
+        
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
 
         dashboardTableView.register(UINib(nibName: "DashboardMainTableCell", bundle: nil), forCellReuseIdentifier: "DashboardMainTableCell")
@@ -161,7 +165,7 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
     
     func setupLanguage() {
         
-            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
             
             if languageId == 1 {
                 UserDefaults.standard.set("en", forKey: "Language")
@@ -171,6 +175,9 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
         
         noFavsLabel.text = AppHelper.getLocalizeString(str: "No favorites found for this patient")
         myFavourites.text = AppHelper.getLocalizeString(str: "My Favorites")
+        actionButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str: "Need to talk with someone?"))
+        dashboardTableView.reloadData()
+        
         }
     @objc func actionButtonTapped() {
            // Perform the action you want when the button is tapped
@@ -287,11 +294,12 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardMainTableCell", for: indexPath) as! DashboardMainTableCell
        // "MyMedicalRecordsIcon"
       //  weeklySummaryImage
+
         if (indexPath.row == 0) {
-            cell.cellTitleLabel.text = "My medical records"
+            cell.cellTitleLabel.text = languageId == 1 ? "My medical records" :  "Mis registros médicos"
             cell.imageView?.image = UIImage(named: "MyMedicalRecordsIcon")
         } else {
-            cell.cellTitleLabel.text = "Weekly summary"
+            cell.cellTitleLabel.text = languageId == 1 ? "Weekly summary" : "Resumen semanal"
             cell.imageView?.image = UIImage(named: "weeklySummaryImage") //UIImage(named: "weeklySummaryImage")//MyMedicalRecordsIcon
         }
         cell.selectionStyle = .none

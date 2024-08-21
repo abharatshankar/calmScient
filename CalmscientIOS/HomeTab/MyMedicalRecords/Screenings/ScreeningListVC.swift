@@ -21,7 +21,7 @@ class ScreeningListVC: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Screenings"
+        
         screeningListTable.register(UINib(nibName: "ScreeningCell", bundle: nil), forCellReuseIdentifier: "ScreeningCell")
         self.screeningListTable.delegate = self
         self.screeningListTable.dataSource = self
@@ -30,7 +30,9 @@ class ScreeningListVC: ViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.title = AppHelper.getLocalizeString(str:"Screenings")
         getScreeningData()
+        
     }
     
     func getScreeningData() {

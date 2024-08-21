@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQt-A5-WyA" customClass="LinearGradientButton" customModule="CalmscientIOS" customModuleProvider="target">
-                                <rect key="frame" x="49" y="749" width="295" height="45"/>
+                                <rect key="frame" x="16" y="749" width="361" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="i9D-Vg-J2q"/>
                                 </constraints>
@@ -40,8 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <constraints>
+                            <constraint firstItem="UQt-A5-WyA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="BGm-cz-rUN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UQt-A5-WyA" secondAttribute="bottom" constant="24" id="BV6-vU-epu"/>
-                            <constraint firstItem="UQt-A5-WyA" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.75" id="kmo-uI-1MS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UQt-A5-WyA" secondAttribute="trailing" constant="16" id="vli-yU-s6e"/>
                             <constraint firstItem="UQt-A5-WyA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="y2O-6Z-Iwq"/>
                         </constraints>
                     </view>

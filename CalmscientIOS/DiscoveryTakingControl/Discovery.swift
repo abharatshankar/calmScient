@@ -266,7 +266,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomButton", for: indexPath) as! CustomButton
             cell.selectionStyle = .none
-            cell.button.setTitle("Need to talk with someone?", for: .normal)
+            cell.button.setTitle(AppHelper.getLocalizeString(str:"Need to talk with someone?"), for: .normal)
             cell.button.titleLabel?.font =  UIFont(name: Fonts().lexendMedium, size: 18)
 
             cell.button.addTarget(self, action: #selector(Discovery.needToTalkButtonClicked(_:)), for: .touchUpInside)

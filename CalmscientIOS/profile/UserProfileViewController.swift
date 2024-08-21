@@ -45,7 +45,7 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        self.title = "Profile"
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Profile" : "Perfil"
         setupView()
         setupTableView()
         setupLanguage()
@@ -818,6 +818,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 fatalError("Unable to found Application Shared Info")
             }
             cell.switchValueChanged = { isOn in
+                
                 if isOn {
                     setAppDarkMode(true)
                     UserDefaults.standard.set(true, forKey: "isDarkMode")
@@ -880,6 +881,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             return cell
         case .ProfileLanguageTableViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: data.rawValue, for: indexPath) as! ProfileLanguageTableViewCell
+            
             if let imageUrlString = profileIconList[indexPath.row] as? String, let url = URL(string: imageUrlString) {
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {

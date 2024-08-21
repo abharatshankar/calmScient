@@ -45,8 +45,7 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
         userEnteredDetails[1] = ApplicationSharedInfo.shared.loginResponse?.providerName ?? "NA"
         saveButton.setAttributedTitleWithGradientDefaults(title: "Save")
         cancelButton.setAttributedTitleWithGradientDefaults(title: "Cancel")
-        saveButton.setAttributedTitleWithGradientDefaults(title:saveStr)
-        cancelButton.setAttributedTitleWithGradientDefaults(title:AppHelper.getLocalizeString(str: "Cancel"))
+        
         userAddMedicationsTableView.tableFooterView = tableFooter
         tableFooter.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80)
         userAddMedicationsTableView.register(UINib(nibName: "MedicationsDetailTableCell", bundle: nil), forCellReuseIdentifier: "MedicationsDetailTableCell")
@@ -55,7 +54,6 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
         userAddMedicationsTableView.dataSource = self
         userAddMedicationsTableView.delegate = self
         userAddMedicationsTableView.separatorStyle = .none
-        self.title = "Add medications"
 //        self.scrollTableViewToBottom()
        // self.view.showToast(message: "Schedule medication time by clicking on it.")
         // Do any additional setup after loading the view.
@@ -87,6 +85,8 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
         self.title = AppHelper.getLocalizeString(str:"Add Medications")
         var headingLabelString = AppHelper.getLocalizeString(str:"Add Time & Alarm")
         saveStr = AppHelper.getLocalizeString(str: "Save")
+        saveButton.setAttributedTitleWithGradientDefaults(title:AppHelper.getLocalizeString(str:saveStr))
+        cancelButton.setAttributedTitleWithGradientDefaults(title:AppHelper.getLocalizeString(str: "Cancel"))
 //        change at line 48, 49,
         }
     override func viewWillAppear(_ animated: Bool) {
@@ -239,6 +239,8 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
         case .switchAndTableCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewMedicationSwitchTableCell", for: indexPath) as! AddNewMedicationSwitchTableCell
             cell.selectionStyle = .none
+            cell.cellTitleLabel.text = AppHelper.getLocalizeString(str:"With Meal")
+            cell.scheduleTimeLbl.text = AppHelper.getLocalizeString(str:"Schedule Time & Alarm")
             cell.isMedicationIncluded = {
                 [weak self] (canIncludeMedicineWithMeals) in
                 self?.isMedicineWithMeals = canIncludeMedicineWithMeals
@@ -275,7 +277,7 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
             self?.userAddMedicationsTableView.reloadData()
             self?.dimmingView?.removeFromSuperview()
         }
-        vc.headingLabelString = "Add Time & Alarm"
+        vc.headingLabelString = AppHelper.getLocalizeString(str:"Add Time & Alarm")
 
         // Create a dimming view and add it to the presenting view controller's view
         let dimmingView = UIView(frame: self.view.bounds)

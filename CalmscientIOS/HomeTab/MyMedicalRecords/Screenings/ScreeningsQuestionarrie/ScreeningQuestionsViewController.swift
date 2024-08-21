@@ -64,7 +64,7 @@ class ScreeningQuestionsViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let alertController = UIAlertController(title: "Information", message: selectedScreening?.screeningReminder ?? "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Information": "Información", message: selectedScreening?.screeningReminder ?? "", preferredStyle: .alert)
         let cancelAction =  UIAlertAction(title: "Ok", style: .default)
         alertController.addAction(cancelAction)
         // Present the alert
@@ -140,7 +140,7 @@ class ScreeningQuestionsViewController: ViewController {
                     self.view.showToast(message: "An Unknown error occured. Please check with Admin")
                 } else if let response = response {
                     if response.statusResponse.responseCode == 300 {
-                        let alertController = UIAlertController(title: "Screening", message: response.statusResponse.responseMessage, preferredStyle: .alert)
+                        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:"Screening"), message: response.statusResponse.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
                         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                             let next = UIStoryboard(name: "ScreeningListVC", bundle: nil)
@@ -153,7 +153,7 @@ class ScreeningQuestionsViewController: ViewController {
                         self.present(alertController, animated: true, completion: nil)
                     } else if response.statusResponse.responseCode == 200 {
                         
-                        let alertController = UIAlertController(title: "Screening", message: response.statusResponse.responseMessage, preferredStyle: .alert)
+                        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:"Screening"), message: response.statusResponse.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
                         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                            
@@ -250,7 +250,7 @@ class ScreeningQuestionsViewController: ViewController {
     }
     
     @IBAction func didClickOnInfoButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Information", message: selectedScreening?.screeningReminder ?? "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:"Information") , message: selectedScreening?.screeningReminder ?? "", preferredStyle: .alert)
         let cancelAction =  UIAlertAction(title: "Ok", style: .default)
         alertController.addAction(cancelAction)
         // Present the alert
@@ -262,7 +262,7 @@ class ScreeningQuestionsViewController: ViewController {
             print(patientAnsweredOption)
             if(patientAnsweredOption.compactMap({$0}).count == 0){
                 // create the alert
-                        let alert = UIAlertController(title: "", message: "Please answer the questions", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "", message:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Please answer the questions": "Por favor, responde las preguntas", preferredStyle: UIAlertController.Style.alert)
 
                         // add an action (button)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

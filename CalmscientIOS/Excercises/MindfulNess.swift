@@ -128,12 +128,13 @@ class MindfulNess: UIViewController {
             // Define the attributes for each text segment
                     let highlightAttr: [NSAttributedString.Key: Any] = [
                         .font: UIFont(name: Fonts().lexendLight, size: 15)!,
-                        .foregroundColor: UIColor(hex: "#6E6BB3")
+                        .foregroundColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? UIColor(hex: "#F48383") : UIColor(hex: "#6E6BB3")
                     ]
 
                     let attrs2: [NSAttributedString.Key: Any] = [
                         .font: UIFont(name: Fonts().lexendLight, size: 15)!,
-                        .foregroundColor: UIColor(hex: "#110E0E")
+                        .foregroundColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#110E0E")
+                        
                     ]
 
                     // Define the text segments
@@ -170,12 +171,13 @@ class MindfulNess: UIViewController {
             imgView.image = imagesArray[1]
             let highlightAttr: [NSAttributedString.Key: Any] = [
                 .font: UIFont(name: Fonts().lexendLight, size: 15)!,
-                .foregroundColor: UIColor(hex: "#6E6BB3")
+                .foregroundColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? UIColor(hex: "#F48383") : UIColor(hex: "#6E6BB3")
             ]
 
             let attrs2: [NSAttributedString.Key: Any] = [
                 .font: UIFont(name: Fonts().lexendLight, size: 15)!,
-                .foregroundColor: UIColor(hex: "#110E0E")
+                .foregroundColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#110E0E")
+                
             ]
             
             let fullString = languageId == 1 ? "Mindfulness is the opposite of automatic pilot. It is about experiencing the world that is firmly in the ‘here and now’. This is referred to as the being mode. It liberates you from automatic and unhelpful thoughts and responses." : "La atención plena es lo opuesto al piloto automático. Se trata de experimentar el mundo que está firmemente en el 'aquí y ahora'. Esto se conoce como el modo de ser. Te libera de pensamientos y respuestas automáticas e inútiles"
@@ -244,6 +246,7 @@ class MindfulNess: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
+        titleLabel.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242")
     }
     override func viewDidLoad() {
         //back button tapped
@@ -252,6 +255,7 @@ class MindfulNess: UIViewController {
         let arrowBack = UITapGestureRecognizer(target: self, action: #selector(bottomBackTapped(tapGestureRecognizer:)))
         
         titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 20)
+        titleLabel.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242")
         
         backActionImg.isUserInteractionEnabled = true
         backActionImg.addGestureRecognizer(arrowBack)

@@ -47,10 +47,11 @@ class ProgressOnCourseWorkHeaderView: UIView {
         shadowView.layer.shadowOpacity = 0.2
         shadowView.layer.shadowRadius = 2.0
         
-        borderView.layer.cornerRadius = 8
-        borderView.layer.masksToBounds = true
-        borderView.layer.borderWidth = 1
-        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+//        borderView.layer.cornerRadius = 8
+//        borderView.layer.masksToBounds = true
+//        borderView.layer.borderWidth = 1
+//        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+        borderView.applyShadow()
     }
     
     private func loadViewFromNib(nibName: String) {

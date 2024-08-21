@@ -105,6 +105,7 @@
                         <outlet property="headingLabel" destination="G9Y-tM-PkC" id="0j7-eG-2pK"/>
                         <outlet property="saveButton" destination="lns-Ik-BvO" id="LQ4-s5-f9m"/>
                         <outlet property="tableView" destination="2Fo-qK-kE6" id="ZiL-OI-uXq"/>
+                        <outlet property="timeLbl" destination="ZVc-JN-chQ" id="bUv-zj-Nk9"/>
                         <outlet property="timePicker" destination="DgT-x2-3wV" id="bR7-wr-CLC"/>
                     </connections>
                 </viewController>

@@ -139,11 +139,22 @@ class MedicationsDetailTableCell: UITableViewCell {
                 return
             }
             self.dayTimeImageView.image = dayTypeMatch.getIconImage()
-            leftTitleLabel.text = dayTypeMatch.rawValue
-            rightTitleLabel.text = "Alarm"
+            leftTitleLabel.text = getTimeStr(timeStr: dayTypeMatch.rawValue)
+        rightTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alarm" : "Alarma"
             leftContentLabel.text = medicineTimeShortForm
             rightContentLabel.text = alarmDayTypeShortForm
         }
+    
+    func getTimeStr(timeStr:String) -> String{
+        
+        if(timeStr == "Good morning!"){
+            return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good morning!" : "¡Buenos días!"
+        }else if(timeStr == "Good afternoon!"){
+            return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good afternoon!" : "¡Buenos tardes!"
+        }else{
+            return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good evening!" : "¡Buenos noches!"
+        }
+    }
         
         func updateCellData(medicationAlarm:MedicationAlarm) {
             if medicationAlarm.isEnabled == 1 {
@@ -153,8 +164,8 @@ class MedicationsDetailTableCell: UITableViewCell {
             }
             self.cellSwitchImageView.image = self.currentImage
             self.dayTimeImageView.image = medicationAlarm.getDayTime().getIconImage()
-            leftTitleLabel.text = medicationAlarm.getDayTime().rawValue
-            rightTitleLabel.text = "Alarm"
+            leftTitleLabel.text = getTimeStr(timeStr:medicationAlarm.getDayTime().rawValue)
+            rightTitleLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alarm" : "Alarma"
             leftContentLabel.text = medicationAlarm.getMedicineTimeWithAMorPM()
             rightContentLabel.text =  medicationAlarm.getAlarmTimeWithAMOrPM()
         }

@@ -16,58 +16,38 @@ class DiagraphicBreathe: UIViewController {
 
     
     @IBOutlet weak var backImg: UIImageView!
-    
-    
     @IBOutlet weak var preparationView: UIView!
     @IBOutlet weak var step1View: UIView!
     @IBOutlet weak var step2View: UIView!
     @IBOutlet weak var step3View: UIView!
     @IBOutlet weak var step4View: UIView!
     @IBOutlet weak var step5View: UIView!
-    
-    
     @IBOutlet weak var dot1View: UIView!
     @IBOutlet weak var dot2View: UIView!
     @IBOutlet weak var dot3View: UIView!
     @IBOutlet weak var dot4View: UIView!
     @IBOutlet weak var dot5View: UIView!
-    
     @IBOutlet weak var verticalBar: UIView!
-    
-    
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var topDescriptionLabel: UILabel!
-    
     @IBOutlet weak var preparationLabel: UILabel!
-    
     @IBOutlet weak var preparationDescLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var step1Label: UILabel!
     @IBOutlet weak var step1DescLabel: UILabel!
-    
-    
     @IBOutlet weak var step2Label: UILabel!
     @IBOutlet weak var step2DescLabel: UILabel!
-    
     @IBOutlet weak var step3Label: UILabel!
     @IBOutlet weak var step3DescLabel: UILabel!
-    
     @IBOutlet weak var step4Label: UILabel!
     @IBOutlet weak var step4DescLabel: UILabel!
-    
     @IBOutlet weak var step5Label: UILabel!
     @IBOutlet weak var step5DescLabel: UILabel!
-    
     @IBOutlet weak var videoDesc: UILabel!
     @IBOutlet weak var bottomDescLabel: UILabel!
-    
-    
     @IBOutlet weak var playPauseImg: UIImageView!
     @IBOutlet weak var maximiseImg: UIImageView!
     @IBOutlet weak var progressBar: UISlider!
-    
     @IBOutlet weak var videoView: UIView!
     
     
@@ -79,7 +59,7 @@ class DiagraphicBreathe: UIViewController {
     var isFullScreen = false
     let avController = AVPlayerViewController()
     var autoHideTimer: Timer?
-    
+    var languageId :Int = 1
     
     override func viewDidLoad() {
         
@@ -90,8 +70,6 @@ class DiagraphicBreathe: UIViewController {
         bringControlsToFront()
         progressBar.setThumbImage(UIImage(), for: .normal)
         progressBar.tintColor = UIColor.white
-        preparationView.applyShadow()
-        
         preparationView.applyShadow()
         step1View.applyShadow()
         step2View.applyShadow()
@@ -145,17 +123,62 @@ class DiagraphicBreathe: UIViewController {
     }
     
     
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Diaphragmatic breathing exercise")
+        
+        topDescriptionLabel.text = AppHelper.getLocalizeString(str: "Doctors usually recommend diaphragmatic breathing to people with a lung condition called chronic obstructive pulmonary disease. A 2017 study found that it could also help reduce anxiety.")
+        preparationLabel.text = AppHelper.getLocalizeString(str:"Preparation")
+        preparationDescLabel.text = AppHelper.getLocalizeString(str: "First find a comfortable to either sit down or lay down.")
+        
+        subtitleLabel.text = AppHelper.getLocalizeString(str: "Let’s learn how to do the diaphragmatic breathing exercise.")
+        
+        step1Label.text =  AppHelper.getLocalizeString(str: "Step 1: Inhale")
+        step1DescLabel.text = AppHelper.getLocalizeString(str: "Inhale through your nose until the tummy expands.")
+        
+        step2Label.text =  AppHelper.getLocalizeString(str: "Step 2: Exhale slowly and repeat it")
+        step2DescLabel.text = AppHelper.getLocalizeString(str: "Inhale through your nose about 4 seconds,\nFocusing on the tummy rising.")
+        
+        step3Label.text =  AppHelper.getLocalizeString(str: "Step 3: Focus on the breath")
+        step3DescLabel.text = AppHelper.getLocalizeString(str: "Once settled into the pattern, focus on the breath coming in through the nose and out through the mouth")
+        
+        step4Label.text =  AppHelper.getLocalizeString(str: "Step 4: Focus on the tummy")
+        step4DescLabel.text = AppHelper.getLocalizeString(str: "Notice the rise and fall of the tummy as the breath come in and out")
+        
+        step5Label.text =  AppHelper.getLocalizeString(str: "Step 5: Focus on the mind")
+        step5DescLabel.text = AppHelper.getLocalizeString(str: "As thoughts come into the head, notice that they are there without judgment, then let them go and bring the attention back to the breathing.")
+        
+        videoDesc.text = AppHelper.getLocalizeString(str: "Now, let’s dive into it.\nPay careful attention to the following video.")
+        
+        bottomDescLabel.text = AppHelper.getLocalizeString(str:"Engage in this practice regularly, allowing the diaphragmatic breathing technique to guide you towards a state of tranquility and mindful breathing.")
+        
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+        bringControlsToFront()
+    }
+    
+    
     @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
 
             if isPlaying {
                 player.pause()
-                playPauseImg.image = UIImage(named: "Play")
-   
+                playPauseImg.image = UIImage(named: "pause")
                 
             } else {
                 player.play()
-                playPauseImg.image = UIImage(named: "pause")
+                playPauseImg.image = UIImage(named: "Play")
+                
 
             }
         bringControlsToFront()

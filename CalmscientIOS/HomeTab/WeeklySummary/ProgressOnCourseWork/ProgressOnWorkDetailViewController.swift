@@ -90,7 +90,8 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         super.viewDidLoad()
         self.title = "Progress on course work"
         tableData = prepareData()
-        needToTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
+        print(tableData)
+        summaryResultsTableView.separatorStyle = .none
         
         self.view.addSubview(summaryResultsTableView)
         NSLayoutConstraint.activate([
@@ -101,6 +102,9 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         ])
         self.view.bringSubviewToFront(needToTalkSomeOneButton)
         summaryResultsTableView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        needToTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
     }
     @IBAction func needToTalkButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "NeedToTalkViewController", bundle: nil)

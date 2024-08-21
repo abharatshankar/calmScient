@@ -188,7 +188,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
-        
+        needToTalkButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
         quizButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Quiz")
         dailyButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Daily jouneral")
         discoveryButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Discovery Excercise")

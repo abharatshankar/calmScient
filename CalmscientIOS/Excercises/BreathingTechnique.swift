@@ -32,9 +32,7 @@ class BreathingTechnique: UIViewController {
     
     override func viewDidLoad() {
         //        backBtn.titleLabel?.text = ""
-        breathingExcercise478.applyShadow()
-        mindfulBreathingExcercise478.applyShadow()
-        diaphragmaticBreathing.applyShadow()
+        
         self.navigationController?.navigationBar.tintColor = UIColor.white
         let breathe = UITapGestureRecognizer(target: self, action: #selector(bottomBackTapped(tapGestureRecognizer:)))
         
@@ -61,6 +59,9 @@ class BreathingTechnique: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
+        breathingExcercise478.applyShadow(shadowColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : .black,shadowOpacity: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? 0.4 : 0.2)
+        mindfulBreathingExcercise478.applyShadow(shadowColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : .black,shadowOpacity: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? 0.4 : 0.2)
+        diaphragmaticBreathing.applyShadow(shadowColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : .black,shadowOpacity: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? 0.4 : 0.2)
     }
     
     

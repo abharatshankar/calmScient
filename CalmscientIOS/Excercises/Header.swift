@@ -36,6 +36,7 @@ class HeaderView: UICollectionReusableView {
     }
 
     func configure(with text: String) {
+        label.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242")
         label.text = text
     }
 }

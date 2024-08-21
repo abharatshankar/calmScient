@@ -36,55 +36,26 @@ class BreathingTechniqueType1: UIViewController {
     @IBOutlet weak var dot3View: UIView!
     @IBOutlet weak var dot4View: UIView!
     @IBOutlet weak var dot5View: UIView!
-    
-    
     @IBOutlet weak var verticalBar: UIView!
-    
     @IBOutlet weak var videoView: UIView!
-
-//        @IBOutlet weak var favoriteButton: UIButton!
-//        @IBOutlet weak var maximizeButton: UIButton!
-        @IBOutlet weak var progressBar: UISlider!
-//    @IBOutlet weak var playPauseButton: UIButton!
-
+    @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var playPauseImage: UIImageView!
-    
     @IBOutlet weak var maximiseImg: UIImageView!
-    
-    
     @IBOutlet weak var favImg: UIImageView!
-    
-    
     @IBOutlet weak var bottomDescriptionLbl: UILabel!
-    
-    
     @IBOutlet weak var preparationDescLabel: UILabel!
-    
-    
     @IBOutlet weak var subtitleLabel: UILabel!
-    
     @IBOutlet weak var step1TitleLabel: UILabel!
-    
     @IBOutlet weak var step1DescLabel: UILabel!
-    
     @IBOutlet weak var step2TitleLabel: UILabel!
-    
     @IBOutlet weak var step2DescLabel: UILabel!
-    
     @IBOutlet weak var step3TitleLabel: UILabel!
-    
     @IBOutlet weak var step3DescLabel: UILabel!
-    
     @IBOutlet weak var step4TitleLabel: UILabel!
-    
     @IBOutlet weak var step4DescLabel: UILabel!
-    
     @IBOutlet weak var step5TitleLabel: UILabel!
-    
     @IBOutlet weak var step5DescLabel: UILabel!
-    
     @IBOutlet weak var videoDescLbl: UILabel!
-    
     @IBOutlet weak var bottomDescLabel: UILabel!
     
     
@@ -92,8 +63,8 @@ class BreathingTechniqueType1: UIViewController {
     var playerLayer: AVPlayerLayer!
     var isMaximized: Bool = false
     var isPlaying = false
-   var isFavorite = false
-   var isFullScreen = false
+    var isFavorite = false
+    var isFullScreen = false
     let avController = AVPlayerViewController()
     var autoHideTimer: Timer?
     
@@ -105,9 +76,6 @@ class BreathingTechniqueType1: UIViewController {
     var languageId : Int = 1
     
     override func viewDidLoad() {
-        //        favoriteButton.titleLabel?.text = ""
-        //        maximizeButton.titleLabel?.text = ""
-        //        playPauseButton.titleLabel?.text = ""
         
         self.view.backgroundColor = .white
         super.viewDidLoad()
@@ -207,12 +175,11 @@ class BreathingTechniqueType1: UIViewController {
 
             if isPlaying {
                 player.pause()
-                playPauseImage.image = UIImage(named: "Play")
-   
+                playPauseImage.image = UIImage(named: "pause")
                 
             } else {
                 player.play()
-                playPauseImage.image = UIImage(named: "pause")
+                playPauseImage.image = UIImage(named: "Play")
 
             }
             bringControlsToFront()

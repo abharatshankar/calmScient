@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,19 +31,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="308" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Anxiety Works" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-fE-8Lb">
-                                        <rect key="frame" x="8" y="16" width="160.66666666666666" height="19"/>
+                                        <rect key="frame" x="14" y="16" width="160.66666666666666" height="19"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                         <color key="textColor" name="424242Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkB-hZ-3YH">
-                                        <rect key="frame" x="240" y="16" width="22" height="19"/>
+                                        <rect key="frame" x="234" y="16" width="22" height="19"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                         <color key="textColor" name="424242Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="978-Pr-Ir6">
-                                        <rect key="frame" x="278" y="14.666666666666668" width="22" height="22.000000000000004"/>
+                                        <rect key="frame" x="272" y="14.666666666666668" width="22" height="22.000000000000004"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="cellExpansion"/>
@@ -55,9 +55,9 @@
                                 <color key="backgroundColor" name="AppViewContentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="gbd-fE-8Lb" secondAttribute="bottom" constant="16" id="3i0-7e-1D8"/>
-                                    <constraint firstItem="gbd-fE-8Lb" firstAttribute="leading" secondItem="nHu-ab-4aZ" secondAttribute="leading" constant="8" id="RZb-9N-txO"/>
+                                    <constraint firstItem="gbd-fE-8Lb" firstAttribute="leading" secondItem="nHu-ab-4aZ" secondAttribute="leading" constant="14" id="RZb-9N-txO"/>
                                     <constraint firstItem="978-Pr-Ir6" firstAttribute="leading" secondItem="YkB-hZ-3YH" secondAttribute="trailing" constant="16" id="Yl1-JB-F14"/>
-                                    <constraint firstAttribute="trailing" secondItem="978-Pr-Ir6" secondAttribute="trailing" constant="8" id="cgQ-Yj-T6A"/>
+                                    <constraint firstAttribute="trailing" secondItem="978-Pr-Ir6" secondAttribute="trailing" constant="14" id="cgQ-Yj-T6A"/>
                                     <constraint firstItem="YkB-hZ-3YH" firstAttribute="centerY" secondItem="gbd-fE-8Lb" secondAttribute="centerY" id="m0x-Tb-rGU"/>
                                     <constraint firstItem="978-Pr-Ir6" firstAttribute="centerY" secondItem="nHu-ab-4aZ" secondAttribute="centerY" id="tdO-u7-vEQ"/>
                                     <constraint firstItem="gbd-fE-8Lb" firstAttribute="top" secondItem="nHu-ab-4aZ" secondAttribute="top" constant="16" id="v1B-8C-2Sf"/>

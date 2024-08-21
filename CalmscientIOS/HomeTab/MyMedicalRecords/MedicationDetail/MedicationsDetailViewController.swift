@@ -45,7 +45,7 @@ class MedicationsDetailViewController: ViewController, UISheetPresentationContro
         medicationsDetailsTableView.dataSource = self
         medicationsDetailsTableView.delegate = self
         medicationsDetailsTableView.reloadData()
-        self.title = "Medications detail"
+        
         dosageView.layer.cornerRadius = 8
         dosageView.layer.masksToBounds = true
         dosageView.layer.borderWidth = 1
@@ -64,7 +64,7 @@ class MedicationsDetailViewController: ViewController, UISheetPresentationContro
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        self.title = AppHelper.getLocalizeString(str:"Medications detail")
         if let presentingVC = presentingViewController as? AddUserMedicationsViewController {
             // Hide or remove the dimming view
             presentingVC.dimmingView?.removeFromSuperview()
@@ -102,9 +102,7 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
                 UserDefaults.standard.set("es", forKey: "Language")
             }
         self.title = AppHelper.getLocalizeString(str:"Add Medications")
-       // var headingLabelString = AppHelper.getLocalizeString(str:"Add Time & Alarm")
         saveStr = AppHelper.getLocalizeString(str: "Save")
-//        change at line 48, 49,
         }
 
     private func presentModal(forInstance:ScheduledTimeList) {

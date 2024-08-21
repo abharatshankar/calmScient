@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYH-P4-Z0f">
-                    <rect key="frame" x="24.000000000000004" y="183" width="48.333333333333343" height="17.666666666666657"/>
+                    <rect key="frame" x="23.999999999999996" y="183" width="50.666666666666657" height="19"/>
                     <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                     <color key="textColor" name="424242Color"/>
                     <nil key="highlightedColor"/>
@@ -46,25 +46,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="361" height="90"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Course Work Complete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Cs-2Sl">
-                                    <rect key="frame" x="8" y="12.000000000000002" width="192.33333333333334" height="17.666666666666671"/>
+                                    <rect key="frame" x="14" y="12" width="206.66666666666666" height="19"/>
                                     <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                     <color key="textColor" name="424242Color"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-mR-OYd">
-                                    <rect key="frame" x="8" y="41.666666666666671" width="345" height="12"/>
+                                    <rect key="frame" x="14" y="43" width="333" height="12"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="9iD-kx-igQ"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-wZ-5uk">
-                                    <rect key="frame" x="8" y="55.66666666666665" width="32" height="17.666666666666664"/>
+                                    <rect key="frame" x="14.000000000000002" y="57" width="29.666666666666671" height="19"/>
                                     <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="15"/>
                                     <color key="textColor" name="424242Color"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YF-W2-C9e">
-                                    <rect key="frame" x="312.66666666666669" y="55.66666666666665" width="40.333333333333314" height="17.666666666666664"/>
+                                    <rect key="frame" x="306.66666666666669" y="57" width="40.333333333333314" height="19"/>
                                     <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="15"/>
                                     <color key="textColor" name="424242Color"/>
                                     <nil key="highlightedColor"/>
@@ -75,13 +75,13 @@
                                 <constraint firstItem="kdF-wZ-5uk" firstAttribute="top" secondItem="46Q-mR-OYd" secondAttribute="bottom" constant="2" id="7si-dL-cTX"/>
                                 <constraint firstItem="2YF-W2-C9e" firstAttribute="trailing" secondItem="46Q-mR-OYd" secondAttribute="trailing" id="BTs-hj-QdZ"/>
                                 <constraint firstItem="2YF-W2-C9e" firstAttribute="centerY" secondItem="kdF-wZ-5uk" secondAttribute="centerY" id="EwL-gq-jTW"/>
-                                <constraint firstAttribute="trailing" secondItem="46Q-mR-OYd" secondAttribute="trailing" constant="8" id="St7-AQ-aqS"/>
+                                <constraint firstAttribute="trailing" secondItem="46Q-mR-OYd" secondAttribute="trailing" constant="14" id="St7-AQ-aqS"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="19t-Cs-2Sl" secondAttribute="trailing" constant="8" id="Wg1-xX-sKg"/>
                                 <constraint firstItem="46Q-mR-OYd" firstAttribute="leading" secondItem="19t-Cs-2Sl" secondAttribute="leading" id="XvE-i9-Yka"/>
                                 <constraint firstItem="19t-Cs-2Sl" firstAttribute="top" secondItem="vli-TF-zEC" secondAttribute="top" constant="12" id="cds-Mi-uxg"/>
                                 <constraint firstItem="kdF-wZ-5uk" firstAttribute="leading" secondItem="19t-Cs-2Sl" secondAttribute="leading" id="hLd-0L-gXo"/>
                                 <constraint firstItem="46Q-mR-OYd" firstAttribute="top" secondItem="19t-Cs-2Sl" secondAttribute="bottom" constant="12" id="rVA-oJ-cXM"/>
-                                <constraint firstItem="19t-Cs-2Sl" firstAttribute="leading" secondItem="vli-TF-zEC" secondAttribute="leading" constant="8" id="t3K-1N-FF2"/>
+                                <constraint firstItem="19t-Cs-2Sl" firstAttribute="leading" secondItem="vli-TF-zEC" secondAttribute="leading" constant="14" id="t3K-1N-FF2"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -95,7 +95,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% Completed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdn-xy-dgw">
-                    <rect key="frame" x="275.33333333333331" y="183" width="93.666666666666686" height="17.666666666666657"/>
+                    <rect key="frame" x="273" y="183" width="96" height="19"/>
                     <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                     <color key="textColor" name="424242Color"/>
                     <nil key="highlightedColor"/>

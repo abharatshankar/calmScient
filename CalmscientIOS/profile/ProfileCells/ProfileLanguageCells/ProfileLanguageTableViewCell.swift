@@ -62,6 +62,7 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
         }
         let newData = languagesArray[indexPath.row]
         cell.langaugeLable.text = newData["languageName"] as? String
+        cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? UIColor(hex: "#424242") : .white
         if let imageUrlString = newData["flagUrl"] as? String, let url = URL(string: imageUrlString) {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
@@ -123,6 +124,7 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
                     languageSelectionClosure?(languageId)
                 }
                 collectionView.reloadData()
+        languageCollectionView.reloadData()
         
 //        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
 //            fatalError("Unable to found Application Shared Info")

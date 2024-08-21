@@ -11,6 +11,9 @@ class UserMedicalRecordsViewController: ViewController {
 
     @IBOutlet weak var medicalRecordsTableView: UITableView!
     let content:[(String,UIImage)] = [("Medications",UIImage(named: "Medications_Cell")!),("Upcoming medical appointments",UIImage(named: "MedicalAppointment_Cell")!),("Screenings",UIImage(named: "Screening_Cell")!)]
+    let spanishContent:[(String,UIImage)] = [("Medicamentos",UIImage(named: "Medications_Cell")!),
+                                             ("Próximas citas médicas",UIImage(named: "MedicalAppointment_Cell")!),
+                                             ("Exámenes",UIImage(named: "Screening_Cell")!)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -19,7 +22,7 @@ class UserMedicalRecordsViewController: ViewController {
         medicalRecordsTableView.dataSource = self
         medicalRecordsTableView.delegate = self
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.title = "My medical records"
+        
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
                 //set image for button
         button.setImage(UIImage(named: "profileIcon.png"), for: UIControl.State.normal)
@@ -32,6 +35,10 @@ class UserMedicalRecordsViewController: ViewController {
                 //assign button to navigationbar
                 self.navigationItem.rightBarButtonItem = barButton
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        medicalRecordsTableView.reloadData()
+        self.navigationItem.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "My medical records" :  "Mis registros médicos"
     }
     @objc func profileButtonPressed() {
 
@@ -47,7 +54,7 @@ extension UserMedicalRecordsViewController : UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyMedicalRecordsCell", for: indexPath) as! MyMedicalRecordsCell
-        let cellContent = content[indexPath.row]
+        let cellContent = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? content[indexPath.row] : spanishContent[indexPath.row]
         cell.medicalCellImage.image = cellContent.1
         cell.titleTextField.text = cellContent.0
         return cell

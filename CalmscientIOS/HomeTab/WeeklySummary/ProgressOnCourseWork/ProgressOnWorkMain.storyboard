@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" name="AppBackGroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-TF-xXU" customClass="LinearGradientButton" customModule="CalmscientIOS" customModuleProvider="target">
-                                <rect key="frame" x="39.333333333333343" y="748" width="314.33333333333326" height="45"/>
+                                <rect key="frame" x="16" y="748" width="361" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jNP-X4-fiZ"/>
                                 </constraints>
@@ -49,7 +49,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zgk-TF-xXU" secondAttribute="bottom" constant="25" id="Acc-ao-MEP"/>
                             <constraint firstItem="Zgk-TF-xXU" firstAttribute="top" secondItem="FWV-cR-p29" secondAttribute="bottom" constant="16" id="SQ5-M5-vsg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FWV-cR-p29" secondAttribute="trailing" id="Umi-wL-PKc"/>
-                            <constraint firstItem="Zgk-TF-xXU" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.8" id="hUM-23-lZs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zgk-TF-xXU" secondAttribute="trailing" constant="16" id="gJh-2n-PWf"/>
+                            <constraint firstItem="Zgk-TF-xXU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="lrN-LU-yBi"/>
                             <constraint firstItem="Zgk-TF-xXU" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="nD7-H1-fO2"/>
                         </constraints>
                     </view>

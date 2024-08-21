@@ -46,7 +46,7 @@ class HandOverYourHeart: UIViewController {
         
 
         howToDoIt.attributedText = add(stringList: languageId == 1 ? arrayString : arrayStringSpanish, font: UIFont(name: Fonts().lexendLight, size: 15)!
-                                       , bullet: "•")
+                                       , bullet: "•",textColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242"),bulletColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242"))
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             backImg.isUserInteractionEnabled = true
@@ -78,8 +78,9 @@ class HandOverYourHeart: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
+        
         howToDoIt.attributedText = add(stringList: languageId == 1 ? arrayString : arrayStringSpanish, font: UIFont(name: Fonts().lexendLight, size: 15)!
-                                       , bullet: "•")
+                                       , bullet: "•",textColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242"),bulletColor: (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242"))
         super.viewWillAppear(animated)
             navigationController?.setNavigationBarHidden(true, animated: animated)
     }

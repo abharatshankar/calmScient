@@ -27,6 +27,9 @@ public enum DayTimeValue:String, Comparable, Equatable {
         case .Morning: return UIImage(named: "Isolation_Mode")
         case .Afternoon:  return UIImage(named: "afternoonSun")
         case .Evening: return UIImage(named: "moon")
+//        case .spanishMorning: return UIImage(named: "Isolation_Mode")
+//        case .spanishAfternoon:  return UIImage(named: "afternoonSun")
+//        case .spanishEvening: return UIImage(named: "moon")
         }
     }
     
@@ -35,6 +38,9 @@ public enum DayTimeValue:String, Comparable, Equatable {
         case .Morning: return 1
         case .Afternoon:  return 2
         case .Evening: return 3
+//        case .spanishMorning: return 1
+//        case .spanishAfternoon: return 2
+//        case .spanishEvening: return 3
         }
     }
 }
@@ -132,7 +138,7 @@ extension String {
                     let formattedMinute = String(format: "%02d", minute)
                     return "\(formattedHour):\(formattedMinute) AM"
                 } else {
-                    return DayTimeValue.Morning.rawValue
+                    return DayTimeValue.Morning.rawValue 
                 }
             case 12..<18:
                 if includeTimeZone {

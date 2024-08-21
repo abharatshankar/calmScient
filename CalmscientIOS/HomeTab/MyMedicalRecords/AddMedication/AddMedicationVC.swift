@@ -19,25 +19,19 @@ class AddMedicationVC: UIViewController {
     @IBOutlet weak var withMealSwitch: SwitchButton!
     @IBOutlet weak var alarmlistTable: UITableView!
     @IBOutlet weak var providerLbl: UILabel!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dosageLabel: UILabel!
-    
     @IBOutlet weak var directionLabel: UILabel!
-    
     @IBOutlet weak var withMealLabel: UILabel!
-    
     @IBOutlet weak var scheduleTimeLabel: UILabel!
     
     var alarmListData: [AlarmData] = [AlarmData]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
-        navigationItem.title = "Add medications"
         navigationItem.backButtonTitle = ""
         addCustomBackbutton()
         alarmlistTable.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")

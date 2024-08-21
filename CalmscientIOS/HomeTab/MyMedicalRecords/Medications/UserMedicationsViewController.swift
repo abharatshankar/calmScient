@@ -31,8 +31,6 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
         medicationsTableView.register(UINib(nibName: "UserMedicationsTableCell", bundle: nil), forCellReuseIdentifier: "UserMedicationsTableCell")
         medicationsTableView.dataSource = self
         medicationsTableView.delegate = self
-        saveButton.setAttributedTitleWithGradientDefaults(title: "Save")
-        self.title = "Medications"
         getMedicationsData(forDate: Date())
         
         
@@ -69,6 +67,8 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
     override func viewWillAppear(_ animated: Bool) {//kiran diagnostics
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false;
+        self.title = AppHelper.getLocalizeString(str:"Medications")
+        saveButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Save"))
     }
     
     func calendardidChangeBounds(newBounds: CGRect) {
