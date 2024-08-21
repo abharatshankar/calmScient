@@ -56,7 +56,31 @@ class BreathingTechnique: UIViewController {
         backImg.isUserInteractionEnabled = true
         backImg.addGestureRecognizer(tapGestureRecognizer)
         setFonts()
+        setupLanguage()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+    }
+    
+    
+    func setupLanguage() {
+        
+            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Breathing technic")
+        subTitleLabel.text = AppHelper.getLocalizeString(str:"Breathing exercises")
+        excersice1Label.text = AppHelper.getLocalizeString(str: "4-7-8 Breathing exercise")
+        excersice2Label.text = AppHelper.getLocalizeString(str: "Mindful breathing exercise")
+        excersice3Label.text = AppHelper.getLocalizeString(str: "Diaphragmatic breathing exercise")
+        
+        
+        }
     
     func setFonts(){
         self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)

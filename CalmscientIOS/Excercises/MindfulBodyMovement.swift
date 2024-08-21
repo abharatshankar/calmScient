@@ -19,6 +19,7 @@ class MindfulBodyMovement : UIViewController {
     
     
     @IBOutlet weak var descriptionLabel: UILabel!
+    var languageId : Int = 1
     
     
     override func viewDidLoad() {
@@ -35,6 +36,26 @@ class MindfulBodyMovement : UIViewController {
         
         
         
+    }
+    
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLbl.text = AppHelper.getLocalizeString(str:"Mindful body movement")
+        
+        descriptionLabel.text = AppHelper.getLocalizeString(str: "There are many movement routines that invite you to reconnect with your body. Pilates, yoga and other similar stretching exercises incorporate mindful awareness of movements and postures. Additionally, coordinating body movement and breath further potentiates your ability to shift your state.")
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

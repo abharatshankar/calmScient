@@ -15,6 +15,9 @@ import AVFoundation
 class MindfulWalking: UIViewController {
     
     
+    @IBOutlet weak var equalizerImg: UIImageView!
+    
+    var redOverlayView: UIView!
     
     var player: AVPlayer?
     
@@ -22,6 +25,12 @@ class MindfulWalking: UIViewController {
         "Stress Reduction: Engaging in mindful walking can be an effective way to reduce stress and promote relaxation. By directing your attention to the physical sensations of walking, you create a mental break from everyday stressors. This practice activates the relaxation response in your body, leading to a calmer state of mind",
         "Emotional Regulation: Engaging in mindful walking can help regulate your emotions. By observing your thoughts and emotions as they arise during the practice, you develop a non-judgmental and accepting attitude towards them. This can enhance emotional resilience and provide you with a greater sense of control over your reactions to challenging situations."
     ]
+    
+    let spanishStringsArr = [
+        "Reducción del estrés: Participar en la caminata consciente puede ser una forma efectiva de reducir el estrés y promover la relajación. Al dirigir tu atención a las sensaciones físicas de caminar, creas un descanso mental de los factores estresantes cotidianos. Esta práctica activa la respuesta de relajación en tu cuerpo, lo que lleva a un estado mental más tranquilo.",
+        "Regulación emocional: Participar en la caminata consciente puede ayudar a regular tus emociones. Al observar tus pensamientos y emociones a medida que surgen durante la práctica, desarrollas una actitud de no juicio y aceptación hacia ellos. Esto puede mejorar la resiliencia emocional y brindarte un mayor sentido de control sobre tus reacciones ante situaciones desafiantes."
+    ]
+
     
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -38,8 +47,9 @@ class MindfulWalking: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     @IBOutlet weak var subtitleLabel: UILabel!
+    
+    var languageId : Int = 1
     
     
     override func viewDidLoad() {
@@ -52,7 +62,7 @@ class MindfulWalking: UIViewController {
         player = AVPlayer(url: url)
         
         
-        descriptionLabel.attributedText = add(stringList: stringsArr, font: descriptionLabel.font, bullet: "•")
+        descriptionLabel.attributedText = add(stringList: languageId == 1 ? stringsArr : spanishStringsArr, font: descriptionLabel.font, bullet: "•")
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -108,11 +118,75 @@ class MindfulWalking: UIViewController {
         
     }
     
-    @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        player?.timeControlStatus == .playing ? player?.pause() : player?.play()
-        playAudioImg.image = player?.timeControlStatus == .playing ? UIImage(named: "fav") : UIImage(named: "playAudio")
+    
+    @objc func updateOverlayView() {
+        guard let player = player else { return }
+        let totalDuration = player.currentItem?.duration.seconds ?? 1.0
+        let currentTime = player.currentTime().seconds
+        let progress = CGFloat(currentTime / totalDuration)
         
+        let newWidth = equalizerImg.frame.width * progress
+        redOverlayView.frame = CGRect(x: 0, y: 0, width: newWidth, height: equalizerImg.frame.height)
+        
+        // Stop the timer if the audio has finished playing
+        if progress >= 1.0 {
+            redOverlayView.frame = CGRect(x: 0, y: 0, width: equalizerImg.frame.width, height: equalizerImg.frame.height)
+        }
+    }
+    
+    @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        equalizerImg.contentMode = .scaleToFill
+        
+        // Create the red overlay view
+        redOverlayView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: equalizerImg.frame.height))
+        redOverlayView.backgroundColor = UIColor(hex: "#F48383")
+        equalizerImg.addSubview(redOverlayView)
+        
+        // Create the mask layer
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = equalizerImg.bounds
+        
+        // Use the image as the mask
+        maskLayer.contents = equalizerImg.image?.cgImage
+        redOverlayView.layer.mask = maskLayer
+        
+        // Play or pause audio
+        if player?.timeControlStatus == .playing {
+            playAudioImg.image = UIImage(named: "playAudio")
+            player?.pause()
+            
+        } else {
+            playAudioImg.image = UIImage(named: "pause")
+            player?.play()
+        }
+        
+        // Start a timer to update the red overlay view based on the audio progress
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateOverlayView), userInfo: nil, repeats: true)
+        
+        // Update the play/pause icon
+//        playAudioImg.image = player?.timeControlStatus == .playing ? UIImage(named: "pause") : UIImage(named: "playAudio")
+    }
+    
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Mindful walking")
+        
+        subtitleLabel.text = AppHelper.getLocalizeString(str: "What are the benefits of mindful walking?")
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+        
+        descriptionLabel.attributedText = add(stringList: languageId == 1 ? stringsArr : spanishStringsArr, font: descriptionLabel.font, bullet: "•")
     }
     
     

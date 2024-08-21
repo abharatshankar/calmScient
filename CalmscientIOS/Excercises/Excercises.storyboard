@@ -276,8 +276,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxP-WD-eep">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-y5-Wki">
-                                                        <rect key="frame" x="91" y="17.666666666666671" width="211" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-y5-Wki">
+                                                        <rect key="frame" x="60" y="18" width="273" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -295,9 +295,11 @@
                                                     <constraint firstAttribute="height" constant="56" id="182-ki-MpV"/>
                                                     <constraint firstItem="UsN-y5-Wki" firstAttribute="centerY" secondItem="ZxP-WD-eep" secondAttribute="centerY" id="9Jv-wl-uOO"/>
                                                     <constraint firstItem="UsN-y5-Wki" firstAttribute="centerX" secondItem="ZxP-WD-eep" secondAttribute="centerX" id="DM4-2L-1ob"/>
+                                                    <constraint firstItem="UsN-y5-Wki" firstAttribute="leading" secondItem="ZxP-WD-eep" secondAttribute="leading" constant="60" id="M48-AK-19b"/>
                                                     <constraint firstItem="Kz8-kn-44P" firstAttribute="leading" secondItem="ZxP-WD-eep" secondAttribute="leading" constant="18" id="RCq-ON-d8f"/>
                                                     <constraint firstItem="UsN-y5-Wki" firstAttribute="centerY" secondItem="ZxP-WD-eep" secondAttribute="centerY" id="bsV-su-7Oj"/>
                                                     <constraint firstItem="Kz8-kn-44P" firstAttribute="centerY" secondItem="ZxP-WD-eep" secondAttribute="centerY" id="k3U-9q-9ua"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UsN-y5-Wki" secondAttribute="trailing" constant="60" id="qvg-Ts-910"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchAndButterfly" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-ju-Wi5">
@@ -458,120 +460,6 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
             </objects>
             <point key="canvasLocation" x="-1463.3587786259541" y="-383.0985915492958"/>
         </scene>
-        <!--Touch And Butter Fly2-->
-        <scene sceneID="9d8-5n-Rc0">
-            <objects>
-                <viewController id="yWx-bu-4I1" customClass="TouchAndButterFly2" customModule="CalmscientIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FFa-uY-JUl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbc-ao-7TQ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSr-VH-7nq">
-                                        <rect key="frame" x="91" y="17.666666666666671" width="211" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ld-ev-WxP">
-                                        <rect key="frame" x="18" y="7.6666666666666714" width="41" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="5lD-Ua-nVo"/>
-                                            <constraint firstAttribute="height" constant="41" id="sxC-rm-45r"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="backButton"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="7Ld-ev-WxP" firstAttribute="leading" secondItem="kbc-ao-7TQ" secondAttribute="leading" constant="18" id="LWx-aa-9Mt"/>
-                                    <constraint firstAttribute="height" constant="56" id="RtY-XK-qnp"/>
-                                    <constraint firstItem="7Ld-ev-WxP" firstAttribute="centerY" secondItem="kbc-ao-7TQ" secondAttribute="centerY" id="Z86-Qd-DIF"/>
-                                    <constraint firstItem="BSr-VH-7nq" firstAttribute="centerY" secondItem="kbc-ao-7TQ" secondAttribute="centerY" id="eNv-fb-w0b"/>
-                                    <constraint firstItem="BSr-VH-7nq" firstAttribute="centerX" secondItem="kbc-ao-7TQ" secondAttribute="centerX" id="mNY-tg-jcJ"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tWX-Li-N2K">
-                                <rect key="frame" x="0.0" y="100" width="393" height="753"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-lH-nU1">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="touchAndButterfly" translatesAutoresizingMaskIntoConstraints="NO" id="l56-lr-1Ar">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="217"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fav" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-qK-gdB">
-                                                <rect key="frame" x="333" y="14" width="39" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-t2-Bgc">
-                                                <rect key="frame" x="305" y="14" width="41" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cho-Tv-hgI">
-                                                <rect key="frame" x="19" y="233" width="350" height="131"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Humans respond powerfully to touch. Gentle, affectionate touch helps calm the nervous system and can trigger the release of oxytocin, the attachment hormone. Interestingly, when it comes to releasing oxytocin, our bodies don’t differentiate between the touch of a loved one or our own touch as we hold ourselves.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swc-4V-dJH">
-                                                <rect key="frame" x="19" y="371" width="350" height="66"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <string key="text">When you are feeling upset, ungrounded, agitated or irritable, try giving yourself a hug or a gentle stroke on the cheek and see how it impacts the way you feel.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="cTC-h7-4fC">
-                                <rect key="frame" x="19" y="614" width="39" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7u-5H-hFH">
-                                <rect key="frame" x="55" y="614" width="40" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="front" translatesAutoresizingMaskIntoConstraints="NO" id="26L-Lw-xd5">
-                                <rect key="frame" x="333" y="614" width="39" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHI-Er-Q1i">
-                                <rect key="frame" x="305" y="614" width="40" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MJf-Mo-BGJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="kbc-ao-7TQ" firstAttribute="top" secondItem="MJf-Mo-BGJ" secondAttribute="top" id="7Ge-cx-In4"/>
-                            <constraint firstItem="kbc-ao-7TQ" firstAttribute="leading" secondItem="MJf-Mo-BGJ" secondAttribute="leading" id="edx-ko-JYb"/>
-                            <constraint firstItem="kbc-ao-7TQ" firstAttribute="trailing" secondItem="MJf-Mo-BGJ" secondAttribute="trailing" id="yA4-fP-EKE"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="393" height="852"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eCx-Rz-GuS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-811.45038167938924" y="-325.35211267605638"/>
-        </scene>
         <!--Progressive-->
         <scene sceneID="Pi2-EP-Ph5">
             <objects>
@@ -583,10 +471,9 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-Zx-Pd4">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progressive muscle relaxation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-vf-Uio">
-                                        <rect key="frame" x="89.333333333333314" y="17.666666666666668" width="227" height="21.000000000000004"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progressive muscle relaxation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-vf-Uio">
+                                        <rect key="frame" x="60" y="18" width="273" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -601,8 +488,12 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="5Wc-tN-cj6"/>
+                                    <constraint firstItem="sZk-vf-Uio" firstAttribute="centerY" secondItem="JAa-Zx-Pd4" secondAttribute="centerY" id="OaO-rf-59i"/>
+                                    <constraint firstAttribute="trailing" secondItem="sZk-vf-Uio" secondAttribute="trailing" constant="60" id="PDa-kO-hyO"/>
                                     <constraint firstItem="GOL-wE-mKS" firstAttribute="centerY" secondItem="JAa-Zx-Pd4" secondAttribute="centerY" id="Qzu-fm-9dg"/>
+                                    <constraint firstItem="sZk-vf-Uio" firstAttribute="centerX" secondItem="JAa-Zx-Pd4" secondAttribute="centerX" id="X6e-Ql-LeD"/>
                                     <constraint firstItem="GOL-wE-mKS" firstAttribute="leading" secondItem="JAa-Zx-Pd4" secondAttribute="leading" constant="20" id="gDQ-xf-KL7"/>
+                                    <constraint firstItem="sZk-vf-Uio" firstAttribute="leading" secondItem="JAa-Zx-Pd4" secondAttribute="leading" constant="60" id="uix-NS-A4T"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spz-5a-PNn">
@@ -617,7 +508,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                                     <constraint firstAttribute="width" secondItem="ldf-2U-rQm" secondAttribute="height" multiplier="131:93" id="aW2-rT-vFD"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyEqualizer" translatesAutoresizingMaskIntoConstraints="NO" id="Ys7-ri-j7T">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyEqualizer" translatesAutoresizingMaskIntoConstraints="NO" id="Ys7-ri-j7T">
                                                 <rect key="frame" x="30" y="324.33333333333331" width="333" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ys7-ri-j7T" secondAttribute="height" multiplier="37:6" id="QOD-MP-hgj"/>
@@ -695,7 +586,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                     </view>
                     <connections>
                         <outlet property="backImg" destination="GOL-wE-mKS" id="5hO-if-bxt"/>
-                        <outlet property="equalizerImg" destination="Ys7-ri-j7T" id="dIY-Gz-bTM"/>
+                        <outlet property="equalizerImg" destination="Ys7-ri-j7T" id="MZj-px-4XT"/>
                         <outlet property="forwardImg" destination="sWI-RO-7MS" id="22x-XQ-a8l"/>
                         <outlet property="playAudioImg" destination="Gqh-71-Bbb" id="rxz-WK-Gb7"/>
                         <outlet property="rewindImg" destination="dMu-mw-Gzs" id="mQO-3T-Cec"/>
@@ -717,8 +608,8 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-hR-QbA">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agw-sy-gcc">
-                                        <rect key="frame" x="126.66666666666669" y="17.666666666666671" width="140" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agw-sy-gcc">
+                                        <rect key="frame" x="60" y="17.666666666666671" width="273" height="21"/>
                                         <string key="text">Mindful walking	</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -735,10 +626,12 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="H6x-yw-9EF" firstAttribute="leading" secondItem="FN0-hR-QbA" secondAttribute="leading" constant="20" id="6kJ-Ep-xKB"/>
+                                    <constraint firstAttribute="trailing" secondItem="agw-sy-gcc" secondAttribute="trailing" constant="60" id="8sb-2G-xzg"/>
                                     <constraint firstItem="H6x-yw-9EF" firstAttribute="centerY" secondItem="FN0-hR-QbA" secondAttribute="centerY" id="NKd-kQ-3PZ"/>
+                                    <constraint firstItem="agw-sy-gcc" firstAttribute="centerX" secondItem="FN0-hR-QbA" secondAttribute="centerX" id="ReE-JW-9N6"/>
+                                    <constraint firstItem="agw-sy-gcc" firstAttribute="leading" secondItem="FN0-hR-QbA" secondAttribute="leading" constant="60" id="VxJ-ZI-Lbp"/>
+                                    <constraint firstItem="agw-sy-gcc" firstAttribute="centerY" secondItem="FN0-hR-QbA" secondAttribute="centerY" id="bJh-VS-D2I"/>
                                     <constraint firstAttribute="height" constant="56" id="non-4a-Rxw"/>
-                                    <constraint firstItem="agw-sy-gcc" firstAttribute="centerY" secondItem="FN0-hR-QbA" secondAttribute="centerY" id="oes-lp-KYP"/>
-                                    <constraint firstItem="agw-sy-gcc" firstAttribute="centerX" secondItem="FN0-hR-QbA" secondAttribute="centerX" id="yXj-Dn-aMo"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-wh-m0V">
@@ -766,7 +659,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="equalizer" translatesAutoresizingMaskIntoConstraints="NO" id="NRW-9E-m95">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyEqualizer" translatesAutoresizingMaskIntoConstraints="NO" id="NRW-9E-m95">
                                                 <rect key="frame" x="30" y="359.33333333333331" width="333" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="zpi-cg-RKR"/>
@@ -853,6 +746,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                     <connections>
                         <outlet property="backImg" destination="H6x-yw-9EF" id="zE7-W8-BTZ"/>
                         <outlet property="descriptionLabel" destination="uII-ql-zEB" id="2rM-S0-m5i"/>
+                        <outlet property="equalizerImg" destination="NRW-9E-m95" id="7Tw-FN-4nc"/>
                         <outlet property="forwardImg" destination="tSD-T8-LGd" id="oZT-7h-wvu"/>
                         <outlet property="playAudioImg" destination="cFZ-5K-QJj" id="5Hx-G3-M1v"/>
                         <outlet property="playPauseImg" destination="cFZ-5K-QJj" id="pwV-vi-MRm"/>
@@ -877,7 +771,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch and the butterfly hug" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-Fc-qHA">
-                                        <rect key="frame" x="91" y="18" width="211" height="20.333333333333329"/>
+                                        <rect key="frame" x="60" y="18" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -894,6 +788,8 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <constraints>
                                     <constraint firstItem="Hrv-BI-emX" firstAttribute="centerY" secondItem="AAe-bZ-ylR" secondAttribute="centerY" id="2fT-gX-wuW"/>
                                     <constraint firstItem="kc9-Fc-qHA" firstAttribute="centerY" secondItem="AAe-bZ-ylR" secondAttribute="centerY" id="4rI-IA-kgs"/>
+                                    <constraint firstItem="kc9-Fc-qHA" firstAttribute="leading" secondItem="AAe-bZ-ylR" secondAttribute="leading" constant="60" id="Ioe-yH-qcf"/>
+                                    <constraint firstAttribute="trailing" secondItem="kc9-Fc-qHA" secondAttribute="trailing" constant="60" id="aWw-nS-bnM"/>
                                     <constraint firstAttribute="height" constant="56" id="fuR-33-txM"/>
                                     <constraint firstItem="kc9-Fc-qHA" firstAttribute="centerX" secondItem="AAe-bZ-ylR" secondAttribute="centerX" id="nO6-OY-xpI"/>
                                     <constraint firstItem="Hrv-BI-emX" firstAttribute="leading" secondItem="AAe-bZ-ylR" secondAttribute="leading" constant="20" id="ptV-hu-mNC"/>
@@ -1206,7 +1102,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epd-4q-E7r">
-                                        <rect key="frame" x="0.0" y="19" width="393" height="24"/>
+                                        <rect key="frame" x="60" y="19" width="273" height="24"/>
                                         <string key="text">Mindful body movement	</string>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -1222,12 +1118,13 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="epd-4q-E7r" firstAttribute="leading" secondItem="bRi-L5-bSX" secondAttribute="leading" id="2lD-XD-N0L"/>
+                                    <constraint firstItem="epd-4q-E7r" firstAttribute="leading" secondItem="bRi-L5-bSX" secondAttribute="leading" constant="60" id="01R-Rs-8Mh"/>
                                     <constraint firstItem="aPc-IN-pJg" firstAttribute="centerY" secondItem="bRi-L5-bSX" secondAttribute="centerY" id="43r-dO-4EE"/>
+                                    <constraint firstItem="epd-4q-E7r" firstAttribute="centerY" secondItem="bRi-L5-bSX" secondAttribute="centerY" id="9Oj-Rd-2e1"/>
                                     <constraint firstItem="aPc-IN-pJg" firstAttribute="leading" secondItem="bRi-L5-bSX" secondAttribute="leading" constant="20" id="EFa-a0-qAV"/>
+                                    <constraint firstItem="epd-4q-E7r" firstAttribute="centerX" secondItem="bRi-L5-bSX" secondAttribute="centerX" id="Jes-MI-T8W"/>
                                     <constraint firstAttribute="height" constant="62" id="SbT-dG-p4q"/>
-                                    <constraint firstAttribute="trailing" secondItem="epd-4q-E7r" secondAttribute="trailing" id="bw2-uq-Y7h"/>
-                                    <constraint firstItem="epd-4q-E7r" firstAttribute="centerY" secondItem="bRi-L5-bSX" secondAttribute="centerY" id="t2V-th-ji2"/>
+                                    <constraint firstAttribute="trailing" secondItem="epd-4q-E7r" secondAttribute="trailing" constant="60" id="tHe-bb-gHr"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrP-Yn-7le">
@@ -1369,7 +1266,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-Hr-szE">
-                                        <rect key="frame" x="0.0" y="21" width="393" height="20.333333333333329"/>
+                                        <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <string key="text">Hand over your heart	</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1385,10 +1282,11 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="jdJ-Hr-szE" secondAttribute="trailing" id="IUd-qv-rer"/>
-                                    <constraint firstItem="jdJ-Hr-szE" firstAttribute="centerY" secondItem="tSn-dg-LEy" secondAttribute="centerY" id="Q8y-Nj-cWC"/>
+                                    <constraint firstItem="jdJ-Hr-szE" firstAttribute="centerY" secondItem="tSn-dg-LEy" secondAttribute="centerY" id="1eh-Is-u8s"/>
+                                    <constraint firstItem="jdJ-Hr-szE" firstAttribute="centerX" secondItem="tSn-dg-LEy" secondAttribute="centerX" id="IKK-tE-tp6"/>
+                                    <constraint firstItem="jdJ-Hr-szE" firstAttribute="leading" secondItem="tSn-dg-LEy" secondAttribute="leading" constant="60" id="UN5-v0-2EL"/>
+                                    <constraint firstAttribute="trailing" secondItem="jdJ-Hr-szE" secondAttribute="trailing" constant="60" id="XWw-xU-0mk"/>
                                     <constraint firstAttribute="height" constant="62" id="hMD-OQ-yyV"/>
-                                    <constraint firstItem="jdJ-Hr-szE" firstAttribute="leading" secondItem="tSn-dg-LEy" secondAttribute="leading" id="mst-8l-ez2"/>
                                     <constraint firstItem="htY-ll-YQT" firstAttribute="leading" secondItem="tSn-dg-LEy" secondAttribute="leading" constant="20" id="n0M-ag-Tu1"/>
                                     <constraint firstItem="htY-ll-YQT" firstAttribute="centerY" secondItem="tSn-dg-LEy" secondAttribute="centerY" id="sU1-ay-3QU"/>
                                 </constraints>
@@ -1506,7 +1404,7 @@ For added effect, you can place your other hand across your forehead or on your 
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-7-8 Breathing excercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-zY-fUW">
-                                        <rect key="frame" x="0.0" y="21" width="393" height="20.333333333333329"/>
+                                        <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1522,11 +1420,11 @@ For added effect, you can place your other hand across your forehead or on your 
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="I6b-zY-fUW" firstAttribute="centerY" secondItem="vqf-JT-htm" secondAttribute="centerY" id="0ab-WX-GNE"/>
-                                    <constraint firstItem="I6b-zY-fUW" firstAttribute="leading" secondItem="vqf-JT-htm" secondAttribute="leading" id="7Oh-hQ-YEw"/>
+                                    <constraint firstItem="I6b-zY-fUW" firstAttribute="leading" secondItem="vqf-JT-htm" secondAttribute="leading" constant="60" id="7Oh-hQ-YEw"/>
                                     <constraint firstItem="I6b-zY-fUW" firstAttribute="centerX" secondItem="vqf-JT-htm" secondAttribute="centerX" id="bK8-XY-2kK"/>
                                     <constraint firstAttribute="height" constant="62" id="hl4-rd-lvR"/>
                                     <constraint firstItem="Ps0-4j-AI1" firstAttribute="leading" secondItem="vqf-JT-htm" secondAttribute="leading" constant="20" id="mxd-zk-pLr"/>
-                                    <constraint firstAttribute="trailing" secondItem="I6b-zY-fUW" secondAttribute="trailing" id="sDq-Bc-joG"/>
+                                    <constraint firstAttribute="trailing" secondItem="I6b-zY-fUW" secondAttribute="trailing" constant="60" id="sDq-Bc-joG"/>
                                     <constraint firstItem="Ps0-4j-AI1" firstAttribute="centerY" secondItem="vqf-JT-htm" secondAttribute="centerY" id="tGV-dg-ad4"/>
                                 </constraints>
                             </view>
@@ -2101,7 +1999,7 @@ Pay careful attention to the following video.</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUe-72-pye">
-                                        <rect key="frame" x="0.0" y="21" width="393" height="20.333333333333329"/>
+                                        <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2117,12 +2015,12 @@ Pay careful attention to the following video.</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="rJk-7O-6r6" firstAttribute="centerY" secondItem="KcA-u5-rQJ" secondAttribute="centerY" id="LLv-41-v7s"/>
-                                    <constraint firstAttribute="trailing" secondItem="bUe-72-pye" secondAttribute="trailing" id="PuO-wC-9tj"/>
+                                    <constraint firstAttribute="trailing" secondItem="bUe-72-pye" secondAttribute="trailing" constant="60" id="PuO-wC-9tj"/>
                                     <constraint firstAttribute="height" constant="62" id="bQq-z9-vvK"/>
                                     <constraint firstItem="bUe-72-pye" firstAttribute="centerY" secondItem="KcA-u5-rQJ" secondAttribute="centerY" id="j4G-dh-17w"/>
                                     <constraint firstItem="bUe-72-pye" firstAttribute="centerX" secondItem="KcA-u5-rQJ" secondAttribute="centerX" id="kOS-cc-i5m"/>
                                     <constraint firstItem="rJk-7O-6r6" firstAttribute="leading" secondItem="KcA-u5-rQJ" secondAttribute="leading" constant="20" id="kyl-Gs-QML"/>
-                                    <constraint firstItem="bUe-72-pye" firstAttribute="leading" secondItem="KcA-u5-rQJ" secondAttribute="leading" id="nqN-cS-3fV"/>
+                                    <constraint firstItem="bUe-72-pye" firstAttribute="leading" secondItem="KcA-u5-rQJ" secondAttribute="leading" constant="60" id="nqN-cS-3fV"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkp-eh-ATY">
@@ -2640,7 +2538,7 @@ Pay careful attention to the following video.</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diaphragmatic breathing exercise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-kg-gEg">
-                                        <rect key="frame" x="30" y="21" width="333" height="20.333333333333329"/>
+                                        <rect key="frame" x="60" y="21" width="273" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2656,9 +2554,9 @@ Pay careful attention to the following video.</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="5tT-kg-gEg" firstAttribute="centerY" secondItem="9XU-eK-LwL" secondAttribute="centerY" id="42L-yJ-VVx"/>
-                                    <constraint firstItem="5tT-kg-gEg" firstAttribute="leading" secondItem="9XU-eK-LwL" secondAttribute="leading" constant="30" id="8Uq-ZS-uTW"/>
+                                    <constraint firstItem="5tT-kg-gEg" firstAttribute="leading" secondItem="9XU-eK-LwL" secondAttribute="leading" constant="60" id="8Uq-ZS-uTW"/>
                                     <constraint firstItem="5tT-kg-gEg" firstAttribute="centerX" secondItem="9XU-eK-LwL" secondAttribute="centerX" id="KCt-LO-jVS"/>
-                                    <constraint firstAttribute="trailing" secondItem="5tT-kg-gEg" secondAttribute="trailing" constant="30" id="RN2-no-zBt"/>
+                                    <constraint firstAttribute="trailing" secondItem="5tT-kg-gEg" secondAttribute="trailing" constant="60" id="RN2-no-zBt"/>
                                     <constraint firstAttribute="height" constant="62" id="TOy-S0-c4g"/>
                                     <constraint firstItem="m6n-dv-HOu" firstAttribute="leading" secondItem="9XU-eK-LwL" secondAttribute="leading" constant="20" id="eT1-mH-nRE"/>
                                     <constraint firstItem="m6n-dv-HOu" firstAttribute="centerY" secondItem="9XU-eK-LwL" secondAttribute="centerY" id="fmD-N0-AoS"/>
@@ -3101,7 +2999,6 @@ Pay careful attention to the following video.</string>
         <image name="butterfly 1-2" width="524" height="450"/>
         <image name="butterflyLady" width="1260" height="804"/>
         <image name="emptyEqualizer" width="346" height="65"/>
-        <image name="equalizer" width="691" height="129"/>
         <image name="fav" width="82" height="82"/>
         <image name="forwardAudio" width="55" height="45"/>
         <image name="front" width="82" height="82"/>

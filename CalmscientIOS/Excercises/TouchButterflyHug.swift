@@ -76,6 +76,32 @@ class TouchButterflyHug: UIViewController {
         leftIcon.addGestureRecognizer(backIconRecognizer)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+    }
+    
+    func setupLanguage() {
+        
+            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Touch and the butterfly hug")
+        
+        subTitleLabel.text = AppHelper.getLocalizeString(str: "HOW TO DO IT")
+        
+        view1Title.text = AppHelper.getLocalizeString(str: "Interlock your thumbs to form a butterfly shape")
+        
+        view2title.text = AppHelper.getLocalizeString(str: "Place both hands over your chest, and alternate tapping your middle finger just below your collarbone")
+        
+        descriptionLabel.text = AppHelper.getLocalizeString(str: "Breathe slowly and deeply (abdominal breathing) while you mentally observe what is going through your mind and body thoughts, images, sounds, odors, feelings, and physical sensation.")
+        
+        }
+    
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView

@@ -146,6 +146,7 @@ extension UserIntroSelectionTableCell : UICollectionViewDelegateFlowLayout, UICo
             // UIImage(named: "\(cellData.0)")
             // Assuming cellImageView is a square view
             cell.cellImageView.layer.borderWidth = 4
+            cell.cellImageView.layer.borderColor = UIColor.white.cgColor
             cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.height / 2
             cell.cellImageView.layer.masksToBounds = true
             cell.cellImageView.layer.shadowColor = UIColor.black.cgColor

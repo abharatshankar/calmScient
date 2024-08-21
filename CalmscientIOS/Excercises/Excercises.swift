@@ -20,21 +20,36 @@ class Excercises: UIViewController {
     
     
     let exercises = [
-            ("Mindfulness - What is it?", "mindfulness"),
-            ("Progressive Muscle Relaxation", "progressive"),
-            ("Touch and the Butterfly Hug", "touchAndButterfly"),
-            ("Hand Over Your Heart", "handover"),
-            ("Mindful Walking", "mindful"),
-            ("Movement: Dance", "movement"),
-            ("Movement: Running", "movementRunning"),
-            ("Mindful Body Movement", "mindFulBodyMovement"),
+            ("Mindfulness - what is it?", "mindfulness"),
+            ("Progressive muscle relaxation", "progressive"),
+            ("Touch and the butterfly hug", "touchAndButterfly"),
+            ("Hand over your heart", "handover"),
+            ("Mindful walking", "mindful"),
+            ("Movement: dance", "movement"),
+            ("Movement: running", "movementRunning"),
+            ("Mindful body movement", "mindFulBodyMovement"),
             ("Breathing technique", "breathingTechnique")
         ]
+    
+    let exercisesSpanish = [
+         "Mindfulness - ¿qué es?",
+         "Relajación muscular progresiva",
+         "Toque y el abrazo de mariposa",
+        "Mano sobre tu corazón",
+         "Caminata consciente",
+        "Movimiento: baile",
+        "Movimiento: correr",
+        "Movimiento corporal consciente",
+        "Técnica de respiración"
+
+        ]
+    
+    var titleStr : String = ""
     
     override func viewDidLoad() {
         
         
-
+        setupLanguage()
         if let layout = excercisesCollection.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             let spacing: CGFloat = 10
@@ -44,7 +59,7 @@ class Excercises: UIViewController {
                                 layout.minimumLineSpacing = spacing
                             }
         
-        self.title = "Exercises"
+        self.title = titleStr;
         
         self.excercisesCollection.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier)
 
@@ -55,9 +70,28 @@ class Excercises: UIViewController {
     }
     
     
+    func setupLanguage() {
+        
+            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+
+        titleStr = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Exercises" : "Ejercicios"
+        
+        
+        }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             navigationController?.setNavigationBarHidden(true, animated: animated)
+        setupLanguage()
+        self.title = titleStr;
+        excercisesCollection.reloadData()
     }
 }
 
@@ -66,7 +100,7 @@ extension Excercises: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as! HeaderView
-            headerView.configure(with: "Excercises")
+            headerView.configure(with: titleStr)
             return headerView
         }
         return UICollectionReusableView()
@@ -158,7 +192,7 @@ extension Excercises: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExerciseCell", for: indexPath) as! ExerciseCell
         cell.layoutSubviews()
         let exercise = exercises[indexPath.row]
-        cell.label.text = exercise.0
+        cell.label.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? (exercise.0) : exercisesSpanish[indexPath.row]
         cell.label.font = UIFont(name: Fonts().lexendRegular, size: 14)
         cell.imageView.image = UIImage(named: exercise.1)
 //        let itemWidth = (view.frame.size.width - 10) / 2

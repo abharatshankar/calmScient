@@ -13,11 +13,9 @@ class MovementRunning: UIViewController {
     
     
     @IBOutlet weak var backImg: UIImageView!
-    
-    
     @IBOutlet weak var titleLbl: UILabel!
-    
     @IBOutlet weak var descriptionLbl: UILabel!
+    var languageId : Int = 1
     
     
     override func viewDidLoad() {
@@ -31,6 +29,26 @@ class MovementRunning: UIViewController {
         titleLbl.font = UIFont(name: Fonts().lexendMedium, size: 19)
         
         
+    }
+    
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLbl.text = AppHelper.getLocalizeString(str:"Movement: running")
+        
+        descriptionLbl.text = AppHelper.getLocalizeString(str: "It’s not easy to move when you have a shutdown or are feeling numb. Running can quickly shift you out of the shutdown state and re-energize you.")
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

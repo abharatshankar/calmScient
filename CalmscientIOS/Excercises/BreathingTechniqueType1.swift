@@ -102,7 +102,7 @@ class BreathingTechniqueType1: UIViewController {
     
     @IBOutlet weak var preparationLabel: UILabel!
     
-    
+    var languageId : Int = 1
     
     override func viewDidLoad() {
         //        favoriteButton.titleLabel?.text = ""
@@ -252,7 +252,49 @@ class BreathingTechniqueType1: UIViewController {
         bringControlsToFront()
     }
     
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"4-7-8 Breathing excercise")
+        
+        preparationLabel.text = AppHelper.getLocalizeString(str: "Preparation")
+        preparationDescLabel.text = AppHelper.getLocalizeString(str: "First find a comfortable seated position. Ensure that you are at ease before beginning the rhythmic breathing pattern.\n\nPlace the tip of your tongue gently against the tissue just behind your top front teeth")
+        
+        subtitleLabel.text = AppHelper.getLocalizeString(str: "Let’s learn how to do the 4-7-8 breathing exercise.")
+        
+        step1TitleLabel.text =  AppHelper.getLocalizeString(str: "Step 1: Emptying the lungs")
+        step1DescLabel.text = AppHelper.getLocalizeString(str: "Begin by completely emptying your lungs of air. Allow yourself a moment to release any tension.")
+        
+        step2TitleLabel.text =  AppHelper.getLocalizeString(str: "Step 2: Inhaling quietly")
+        step2DescLabel.text = AppHelper.getLocalizeString(str: "Inhale quietly through your nose, counting to 4 seconds. Fell the breath entering your body, bringing calmness.")
+        
+        step3TitleLabel.text =  AppHelper.getLocalizeString(str: "Step 3: Hold the breath")
+        step3DescLabel.text = AppHelper.getLocalizeString(str: "Hold your breath for  a steady count of 7 seconds. Embrace the stillness within, allowing the breath to settle.")
+        
+        step4TitleLabel.text =  AppHelper.getLocalizeString(str: "Step 4: Force exhalation")
+        step4DescLabel.text = AppHelper.getLocalizeString(str: "Exhale forcefully through your mouth, pursing your lips, and create a distinct “whoosh” sound for 8 seconds. Feel the release of tension as you expel the breath.")
+        
+        step5TitleLabel.text =  AppHelper.getLocalizeString(str: "Step 5: Repeat the process")
+        step5DescLabel.text = AppHelper.getLocalizeString(str: "Repeat this entire cycle up to 4 times. Each repetition contributes to a deepening sense of relaxation.")
+        
+        videoDescLbl.text = AppHelper.getLocalizeString(str: "Now, let’s dive into it.\nPay careful attention to the following video.")
+        
+        bottomDescLabel.text = AppHelper.getLocalizeString(str:"Engage in this practice regularly, allowing the 4-7-8 technique to guide you towards a state of tranquility and mindful breathing.")
+        
+        
+        
+        
+        }
+    
     override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
         bringControlsToFront()
     }
     

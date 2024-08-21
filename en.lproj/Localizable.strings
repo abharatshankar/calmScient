@@ -343,3 +343,96 @@ marked";
 
 //user entry yes or no cell
 "Did you take your meds this evening?" = "Did you take your meds this evening?";
+
+
+//Breathing technique
+"Breathing technic" = "Breathing technic";
+"Breathing exercises" = "Breathing exercises";
+"4-7-8 Breathing exercise" = "4-7-8 Breathing exercise";
+"Mindful breathing exercise" = "Mindful breathing exercise";
+"Diaphragmatic breathing exercise" = "Diaphragmatic breathing exercise";
+
+//Exercises
+"Exercises" = "Exercises";
+
+
+//mindfulness
+
+"Have you ever caught your mind wandering or daydreaming while you are in the middle of a familiar or repetitive task? You could be walking, working or even driving your car, and your mind is miles away, perhaps fantasizing about going on vacation, thinking about your to-do list, or worrying about some upcoming event." = "Have you ever caught your mind wandering or daydreaming while you are in the middle of a familiar or repetitive task? You could be walking, working or even driving your car, and your mind is miles away, perhaps fantasizing about going on vacation, thinking about your to-do list, or worrying about some upcoming event.";
+                     
+                     "Mindfulness is the opposite of automatic pilot. It is about experiencing the world that is firmly in the ‘here and now’. This is referred to as the being mode. It liberates you from automatic and unhelpful thoughts and responses." = "Mindfulness is the opposite of automatic pilot. It is about experiencing the world that is firmly in the ‘here and now’. This is referred to as the being mode. It liberates you from automatic and unhelpful thoughts and responses.";
+                     
+                     "How does mindfulness help with anxiety?" = "How does mindfulness help with anxiety?";
+                     
+    "Mindfulness reminds us that we don’t have to take immediate control of, remove or fix unpleasant experiences. Instead, we can identify and actively engage in something that will give us a sense of safety and connection." = "Mindfulness reminds us that we don’t have to take immediate control of, remove or fix unpleasant experiences. Instead, we can identify and actively engage in something that will give us a sense of safety and connection.";
+                     
+                     "As a simple example: Instead of focusing on how many miles you walked in the morning, can you be mindfully aware of the birds singing, actively feel the fresh air, and sense the changing of the season? When you connect your senses to nature, animals, people and your own body, you capture the attention of your nervous system, which in turn soothes your anxiety. When you return home, you will be in a better frame of mind and more prepared to face your day." = "As a simple example: Instead of focusing on how many miles you walked in the morning, can you be mindfully aware of the birds singing, actively feel the fresh air, and sense the changing of the season? When you connect your senses to nature, animals, people and your own body, you capture the attention of your nervous system, which in turn soothes your anxiety. When you return home, you will be in a better frame of mind and more prepared to face your day.";
+                     
+                     "Which mindfulness exercises would you like to make part of your daily routine? Calmscient can remind you of some easy mindfulness routines that will help you stay in a healthy, being mode." = "Which mindfulness exercises would you like to make part of your daily routine? Calmscient can remind you of some easy mindfulness routines that will help you stay in a healthy, being mode.";
+
+"Progressive muscle relaxation" = "Progressive muscle relaxation";
+
+"Touch and the butterfly hug" = "Touch and the butterfly hug";
+
+"Humans respond powerfully to touch. Gentle, affectionate touch helps calm the nervous system and can trigger the release of oxytocin, the attachment hormone. Interestingly, when it comes to releasing oxytocin, our bodies don’t differentiate between the touch of a loved one or our own touch as we hold ourselves.\nWhen you are feeling upset, ungrounded, agitated or irritable, try giving yourself a hug or a gentle stroke on the cheek and see how it impacts the way you feel." = "Humans respond powerfully to touch. Gentle, affectionate touch helps calm the nervous system and can trigger the release of oxytocin, the attachment hormone. Interestingly, when it comes to releasing oxytocin, our bodies don’t differentiate between the touch of a loved one or our own touch as we hold ourselves.
+
+When you are feeling upset, ungrounded, agitated or irritable, try giving yourself a hug or a gentle stroke on the cheek and see how it impacts the way you feel.";
+
+"HOW TO DO IT" = "HOW TO DO IT";
+
+"Interlock your thumbs to form a butterfly shape" = "Interlock your thumbs to form a butterfly shape";
+
+"Place both hands over your chest, and alternate tapping your middle finger just below your collarbone" = "Place both hands over your chest, and alternate tapping your middle finger just below your collarbone";
+
+"Breathe slowly and deeply (abdominal breathing) while you mentally observe what is going through your mind and body thoughts, images, sounds, odors, feelings, and physical sensation." = "Breathe slowly and deeply (abdominal breathing) while you mentally observe what is going through your mind and body thoughts, images, sounds, odors, feelings, and physical sensation.";
+
+"Hand over your heart" = "Hand over your heart";
+
+"Movement: running" = "Movement: running";
+
+"It’s not easy to move when you have a shutdown or are feeling numb. Running can quickly shift you out of the shutdown state and re-energize you." = "It’s not easy to move when you have a shutdown or are feeling numb. Running can quickly shift you out of the shutdown state and re-energize you.";
+
+"Mindful body movement" = "Mindful body movement";
+
+"There are many movement routines that invite you to reconnect with your body. Pilates, yoga and other similar stretching exercises incorporate mindful awareness of movements and postures. Additionally, coordinating body movement and breath further potentiates your ability to shift your state." = "There are many movement routines that invite you to reconnect with your body. Pilates, yoga and other similar stretching exercises incorporate mindful awareness of movements and postures. Additionally, coordinating body movement and breath further potentiates your ability to shift your state.";
+
+"Movement: dance" = "Movement: dance";
+
+"Moving your body to music can be a fun and fast way to shift your state and reconnect with your body, rhythm and expression." = "Moving your body to music can be a fun and fast way to shift your state and reconnect with your body, rhythm and expression.";
+
+//Mindful walking
+"Mindful walking" = "Mindful walking";
+
+"What are the benefits of mindful walking?" = "What are the benefits of mindful walking?";
+
+"Emotional Regulation: Engaging in mindful walking can help regulate your emotions. By observing your thoughts and emotions as they arise during the practice, you develop a non-judgmental and accepting attitude towards them. This can enhance emotional resilience and provide you with a greater sense of control over your reactions to challenging situations." = "Emotional Regulation: Engaging in mindful walking can help regulate your emotions. By observing your thoughts and emotions as they arise during the practice, you develop a non-judgmental and accepting attitude towards them. This can enhance emotional resilience and provide you with a greater sense of control over your reactions to challenging situations.";
+
+
+//4-7-8 breating
+
+"4-7-8 Breathing excercise" = "4-7-8 Breathing excercise";
+"Preparation" = "Preparation";
+"First find a comfortable seated position. Ensure that you are at ease before beginning the rhythmic breathing pattern.\n\nPlace the tip of your tongue gently against the tissue just behind your top front teeth" = "First find a comfortable seated position. Ensure that you are at ease before beginning the rhythmic breathing pattern.\n\nPlace the tip of your tongue gently against the tissue just behind your top front teeth";
+
+"Let’s learn how to do the 4-7-8 breathing exercise." = "Let’s learn how to do the 4-7-8 breathing exercise.";
+
+"Step 1: Emptying the lungs" = "Step 1: Emptying the lungs";
+"Begin by completely emptying your lungs of air. Allow yourself a moment to release any tension." = "Begin by completely emptying your lungs of air. Allow yourself a moment to release any tension.";
+"Step 2: Inhaling quietly" = "Step 2: Inhaling quietly";
+"Inhale quietly through your nose, counting to 4 seconds. Fell the breath entering your body, bringing calmness." = "Inhale quietly through your nose, counting to 4 seconds. Fell the breath entering your body, bringing calmness.";
+
+"Step 3: Hold the breath" = "Step 3: Hold the breath";
+"Hold your breath for  a steady count of 7 seconds. Embrace the stillness within, allowing the breath to settle." = "Hold your breath for  a steady count of 7 seconds. Embrace the stillness within, allowing the breath to settle.";
+
+"Step 4: Force exhalation" = "Step 4: Force exhalation";
+
+"Exhale forcefully through your mouth, pursing your lips, and create a distinct “whoosh” sound for 8 seconds. Feel the release of tension as you expel the breath." = "Exhale forcefully through your mouth, pursing your lips, and create a distinct “whoosh” sound for 8 seconds. Feel the release of tension as you expel the breath.";
+
+"Step 5: Repeat the process" = "Step 5: Repeat the process";
+"Repeat this entire cycle up to 4 times. Each repetition contributes to a deepening sense of relaxation." = "Repeat this entire cycle up to 4 times. Each repetition contributes to a deepening sense of relaxation.";
+
+"Step 5: Repeat the process" = "Step 5: Repeat the process";
+
+"Repeat this entire cycle up to 4 times. Each repetition contributes to a deepening sense of relaxation." = "Repeat this entire cycle up to 4 times. Each repetition contributes to a deepening sense of relaxation.";
+"Now, let’s dive into it.\nPay careful attention to the following video." = "Now, let’s dive into it.\nPay careful attention to the following video.";
+"Engage in this practice regularly, allowing the 4-7-8 technique to guide you towards a state of tranquility and mindful breathing." = "Engage in this practice regularly, allowing the 4-7-8 technique to guide you towards a state of tranquility and mindful breathing.";

@@ -11,18 +11,11 @@ import UIKit
 
 class MovementDance: UIViewController {
     
-    @IBAction func backButtonAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     
     @IBOutlet weak var titleLbl: UILabel!
-    
-    
     @IBOutlet weak var descriptionLbl: UILabel!
-    
-    
     @IBOutlet weak var backImg: UIImageView!
+    var languageId : Int = 1
     
     override func viewDidLoad() {
         
@@ -35,6 +28,26 @@ class MovementDance: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             backImg.isUserInteractionEnabled = true
             backImg.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
+    func setupLanguage() {
+        
+             languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLbl.text = AppHelper.getLocalizeString(str:"Movement: dance")
+        
+        descriptionLbl.text = AppHelper.getLocalizeString(str: "Moving your body to music can be a fun and fast way to shift your state and reconnect with your body, rhythm and expression.")
+        
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

@@ -9,8 +9,8 @@ import UIKit
 
 
 
-class MedicationsDetailViewController: ViewController {
-
+class MedicationsDetailViewController: ViewController, UISheetPresentationControllerDelegate {
+    var dimmingView: UIView?
     @IBOutlet weak var scrennTitleView: UIView!
     @IBOutlet weak var dosageView: UIView!
     @IBOutlet weak var tableTitleLabel: UILabel!
@@ -61,6 +61,16 @@ class MedicationsDetailViewController: ViewController {
         directionsValue.text = details.directions
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if let presentingVC = presentingViewController as? AddUserMedicationsViewController {
+            // Hide or remove the dimming view
+            presentingVC.dimmingView?.removeFromSuperview()
+        }
+    }
+    
 
 }
 extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDelegate {
@@ -107,6 +117,7 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
             sheetVC.isNewMedicationCreation = false
             sheetVC.onScheetClosed = {
                 [weak self] in
+                self?.dimmingView?.removeFromSuperview()
                 self?.medicationsDetailsTableView.reloadData()
                 guard let scheduleAlarm = forInstance.scheduledTimes.first else {
                     fatalError("Update Medications failed")
@@ -132,6 +143,15 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
                     print(response?.responseMessage ?? "")
                 }
             }
+        
+        
+        // Create a dimming view and add it to the presenting view controller's view
+        let dimmingView = UIView(frame: self.view.bounds)
+        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(dimmingView)
+        self.dimmingView = dimmingView // Store the reference
+
             self.navigationController?.modalPresentationStyle = .pageSheet
             
             if #available(iOS 15.0, *) {
@@ -139,7 +159,11 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
                    // sheet.detents = [.large()]
                     sheet.detents = [.medium(), .large()]
                     sheet.largestUndimmedDetentIdentifier = .medium
-                    sheet.prefersGrabberVisible = true
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                    sheet.prefersEdgeAttachedInCompactHeight = true
+                    sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+
+                    sheet.delegate = self
                 }
             } else {
                 

@@ -15,15 +15,12 @@ class TouchAndButterFly2: UIViewController {
     
     
     @IBOutlet weak var text1: UILabel!
-    @IBOutlet weak var text2: UILabel!
-    
     
     @IBOutlet weak var backImg: UIImageView!
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     
     @IBOutlet weak var nextIcon: UIImageView!
     
@@ -45,6 +42,26 @@ class TouchAndButterFly2: UIViewController {
         nextIcon.isUserInteractionEnabled = true
         nextIcon.addGestureRecognizer(nextPageRecognizer)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+    }
+    
+    
+    func setupLanguage() {
+        
+            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
+            if languageId == 1 {
+                UserDefaults.standard.set("en", forKey: "Language")
+            } else if languageId == 2 {
+                UserDefaults.standard.set("es", forKey: "Language")
+            }
+        titleLabel.text = AppHelper.getLocalizeString(str:"Touch and the butterfly hug")
+        
+        descriptionLabel.text = AppHelper.getLocalizeString(str: "Humans respond powerfully to touch. Gentle, affectionate touch helps calm the nervous system and can trigger the release of oxytocin, the attachment hormone. Interestingly, when it comes to releasing oxytocin, our bodies don’t differentiate between the touch of a loved one or our own touch as we hold ourselves.\nWhen you are feeling upset, ungrounded, agitated or irritable, try giving yourself a hug or a gentle stroke on the cheek and see how it impacts the way you feel.")
+        
+        }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
