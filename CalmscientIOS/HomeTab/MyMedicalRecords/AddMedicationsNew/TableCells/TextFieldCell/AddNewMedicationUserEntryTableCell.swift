@@ -30,7 +30,8 @@ class AddNewMedicationUserEntryTableCell: UITableViewCell, UITextFieldDelegate {
         userEntryTextField.layer.masksToBounds = true
         userEntryTextField.delegate = self
         if cellType == .MedicationName {
-                    userEntryTextField.autocapitalizationType = .allCharacters
+                    userEntryTextField.autocapitalizationType = .sentences
+                    userEntryTextField.delegate = self
                 }
         
         // Initialization code
@@ -52,7 +53,21 @@ class AddNewMedicationUserEntryTableCell: UITableViewCell, UITextFieldDelegate {
         userEntryCaptureClosure?(textField.text ?? "",cellRow)
     }
     
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Get the current text, including the new characters
+        let currentText = textField.text ?? ""
+        let textRange = Range(range, in: currentText)!
+        let updatedText = currentText.replacingCharacters(in: textRange, with: string)
+        
+        // Apply capitalization: Capitalize the first letter, lowercase the rest
+        let capitalizedText = updatedText.prefix(1).uppercased() + updatedText.dropFirst().lowercased()
+        
+        // Update the text field
+        textField.text = capitalizedText
+        
+        // Returning false as we've already updated the text field manually
+        return false
+    }
     
 }
 

@@ -42,16 +42,6 @@
                                         <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. What kind of alcohol do you drink each time? and how much?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3W-UL-UPa">
-                                        <rect key="frame" x="8" y="57" width="361" height="42.666666666666657"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="361" id="VpE-Br-5q5"/>
-                                            <constraint firstAttribute="height" constant="42.670000000000002" id="pUD-bg-ces"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="17"/>
-                                        <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFf-Bg-pya">
                                         <rect key="frame" x="311.33333333333331" y="12" width="30.666666666666686" height="15"/>
                                         <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="12"/>
@@ -82,21 +72,57 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZb-6D-idp">
+                                        <rect key="frame" x="0.0" y="56" width="393" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="pcP-Bm-0tH"/>
+                                            <constraint firstAttribute="width" constant="393" id="po7-uw-AY8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNp-JJ-sf5">
+                                        <rect key="frame" x="9" y="61" width="16" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="ddk-hI-BX5"/>
+                                            <constraint firstAttribute="width" constant="16" id="xIT-Hp-WT1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of alcohol do you drink each time? and how much?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3W-UL-UPa">
+                                        <rect key="frame" x="33" y="60" width="323" height="42.666666666666664"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="323" id="VpE-Br-5q5"/>
+                                            <constraint firstAttribute="height" constant="42.670000000000002" id="pUD-bg-ces"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lexend-Bold" family="Lexend" pointSize="17"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="AppBackGroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hNp-JJ-sf5" firstAttribute="top" secondItem="MZb-6D-idp" secondAttribute="bottom" constant="4" id="5Yc-q8-snn"/>
+                                    <constraint firstItem="hNp-JJ-sf5" firstAttribute="leading" secondItem="NMX-j1-VxI" secondAttribute="leading" constant="9" id="7Gm-Aj-ElD"/>
                                     <constraint firstAttribute="width" constant="393" id="8f2-4f-i2m"/>
                                     <constraint firstItem="vQg-yM-YFy" firstAttribute="leading" secondItem="mFf-Bg-pya" secondAttribute="trailing" constant="8" symbolic="YES" id="FZQ-cs-orh"/>
                                     <constraint firstItem="vQg-yM-YFy" firstAttribute="top" secondItem="NMX-j1-VxI" secondAttribute="top" constant="10" id="GSa-ag-Vow"/>
                                     <constraint firstItem="zwQ-YM-dMl" firstAttribute="leading" secondItem="NMX-j1-VxI" secondAttribute="leading" constant="9" id="JJc-1c-7QN"/>
                                     <constraint firstItem="mMy-i9-4TC" firstAttribute="top" secondItem="NMX-j1-VxI" secondAttribute="top" constant="26" id="OoB-vs-hlN"/>
+                                    <constraint firstItem="O3W-UL-UPa" firstAttribute="top" secondItem="MZb-6D-idp" secondAttribute="bottom" constant="3" id="S3q-Wg-1ds"/>
                                     <constraint firstItem="zwQ-YM-dMl" firstAttribute="top" secondItem="NMX-j1-VxI" secondAttribute="top" constant="12" id="Uyk-ld-su0"/>
+                                    <constraint firstItem="O3W-UL-UPa" firstAttribute="leading" secondItem="hNp-JJ-sf5" secondAttribute="trailing" constant="8" symbolic="YES" id="azy-M3-qOS"/>
                                     <constraint firstAttribute="height" constant="126" id="czR-2k-HLW"/>
-                                    <constraint firstItem="O3W-UL-UPa" firstAttribute="top" secondItem="zwQ-YM-dMl" secondAttribute="bottom" constant="7.3300000000000001" id="jub-7I-z39"/>
+                                    <constraint firstItem="MZb-6D-idp" firstAttribute="top" secondItem="zwQ-YM-dMl" secondAttribute="bottom" constant="6.3300000000000001" id="fKw-CJ-U10"/>
+                                    <constraint firstAttribute="trailing" secondItem="MZb-6D-idp" secondAttribute="trailing" id="k0U-n6-8dM"/>
                                     <constraint firstAttribute="trailing" secondItem="vQg-yM-YFy" secondAttribute="trailing" constant="8" id="mXf-vG-6Oa"/>
                                     <constraint firstItem="mFf-Bg-pya" firstAttribute="top" secondItem="NMX-j1-VxI" secondAttribute="top" constant="12" id="ocU-ec-IrD"/>
                                     <constraint firstItem="vQg-yM-YFy" firstAttribute="leading" secondItem="mMy-i9-4TC" secondAttribute="trailing" constant="8" symbolic="YES" id="rqc-RF-pGz"/>
-                                    <constraint firstItem="O3W-UL-UPa" firstAttribute="leading" secondItem="NMX-j1-VxI" secondAttribute="leading" constant="8" id="t5b-q9-OFh"/>
+                                    <constraint firstItem="MZb-6D-idp" firstAttribute="leading" secondItem="NMX-j1-VxI" secondAttribute="leading" id="sJg-fK-t6q"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-EA-Gb4">
@@ -175,6 +201,9 @@
         <namedColor name="profileTextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

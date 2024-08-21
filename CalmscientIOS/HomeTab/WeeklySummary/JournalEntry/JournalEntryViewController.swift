@@ -173,6 +173,12 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
 
         setupLanguage()
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        pickerBackView.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        pickerBackView.isHidden = true
+    }
     func setupLanguage() {
         
             let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")

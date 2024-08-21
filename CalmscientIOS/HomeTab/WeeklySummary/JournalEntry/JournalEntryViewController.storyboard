@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL6-3I-WNI">
-                                        <rect key="frame" x="354" y="18" width="24" height="24"/>
+                                        <rect key="frame" x="354" y="12" width="86" height="30"/>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="a4L-cY-lxQ"/>
@@ -221,17 +221,11 @@
                                 <constraint firstAttribute="trailing" secondItem="HaM-Mw-HAm" secondAttribute="trailing" constant="8" id="zHs-FD-jdf"/>
                             </constraints>
                         </view>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" id="qT3-nc-qex">
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" id="qT3-nc-qex">
                             <rect key="frame" x="52" y="48" width="298" height="132"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <color key="backgroundColor" name="AppLightTextColor"/>
                             <color key="tintColor" red="0.50196078430000002" green="0.43434495989999999" blue="0.81000056880000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <date key="date" timeIntervalSinceReferenceDate="742390729.33213603">
-                                <!--2024-07-11 11:38:49 +0000-->
-                            </date>
-                            <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                <!--1970-01-01 11:00:00 +0000-->
-                            </date>
                         </datePicker>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="L5h-DI-cJs"/>

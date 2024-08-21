@@ -291,7 +291,7 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
             cell.cellTitleLabel.text = "My medical records"
             cell.imageView?.image = UIImage(named: "MyMedicalRecordsIcon")
         } else {
-            cell.cellTitleLabel.text = "Weekly Summary"
+            cell.cellTitleLabel.text = "Weekly summary"
             cell.imageView?.image = UIImage(named: "weeklySummaryImage") //UIImage(named: "weeklySummaryImage")//MyMedicalRecordsIcon
         }
         cell.selectionStyle = .none

@@ -188,7 +188,7 @@ extension DiscoveryMainViewController : UITableViewDataSource,UITableViewDelegat
         } else if indexPath.row == 1 {
             let next = UIStoryboard(name: "CourseViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
-            vc?.title = "Managing Stress"
+            vc?.title = "Changing your response to stress"
             vc?.courseID = 3
             self.navigationController?.pushViewController(vc!, animated: true)
         } else {
