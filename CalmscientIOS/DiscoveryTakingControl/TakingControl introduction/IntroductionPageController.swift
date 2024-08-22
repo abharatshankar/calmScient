@@ -120,60 +120,32 @@ class IntroductionPageController: ViewController {
     
     
     func setupCustomButton() {
-            // Set the button height to 65 (if not set in storyboard)
         drinkcoach.heightAnchor.constraint(equalToConstant: 65).isActive = true
 
-            // Set the button's border
-//        drinkcoach.layer.borderWidth = 0.5
-//        drinkcoach.layer.borderColor = UIColor.lightGray.cgColor
-//            
-//            // Set the button's corner radius
-//        drinkcoach.layer.cornerRadius = 10.0
-//            
-//            // Set the button's shadow
-//        drinkcoach.layer.shadowColor = UIColor.black.cgColor
-//        drinkcoach.layer.shadowOpacity = 0.2
-//        drinkcoach.layer.shadowOffset = CGSize(width: 2, height: 4)
-//        drinkcoach.layer.shadowRadius = 4.0
+
         drinkcoach.applyShadow()
+        drinkcoach.layer.borderWidth = 0.5
+        drinkcoach.layer.borderColor = UIColor.lightGray.cgColor
         drinkcoach.layer.masksToBounds = false
         
         substainCoach.heightAnchor.constraint(equalToConstant: 65).isActive = true
-
-            // Set the button's border
+        substainCoach.applyShadow()
         substainCoach.layer.borderWidth = 0.5
         substainCoach.layer.borderColor = UIColor.lightGray.cgColor
-            
-            // Set the button's corner radius
         substainCoach.layer.cornerRadius = 10.0
             
-            // Set the button's shadow
-        substainCoach.layer.shadowColor = UIColor.black.cgColor
-        substainCoach.layer.shadowOpacity = 0.2
-        substainCoach.layer.shadowOffset = CGSize(width: 2, height: 4)
-        substainCoach.layer.shadowRadius = 4.0
-        substainCoach.applyShadow()
-        substainCoach.layer.masksToBounds = false
         }
     @IBAction func checkTapped(_ sender: UIButton) {
-      //  isChecked.toggle()
-//        if tutorialFlag == 1{
-//            checkbox.setImage(UIImage(named: "checkbox"), for: .normal)
-//            tutorialFlag11 = 0
-//        }
-//        else if tutorialFlag == 0{
-//            checkbox.setImage(UIImage(named: "uncheck"), for: .normal)
-//            tutorialFlag11 = 1
-//        }
-         if tutorialFlag == 1 {
-        tutorialFlag = 0
-    } else {
-        tutorialFlag = 1
-    }
-    
-    // Update the checkbox appearance based on the new value of tutorialFlag
-    updateCheckboxAppearance()
-       
+        
+        if tutorialFlag == 1 {
+            tutorialFlag = 0
+        } else {
+            tutorialFlag = 1
+        }
+        
+        // Update the checkbox appearance based on the new value of tutorialFlag
+        updateCheckboxAppearance()
+        
         
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
@@ -188,10 +160,10 @@ class IntroductionPageController: ViewController {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         DispatchQueue.main.async { [self] in
                             print(json)
-                          
+                            
                             
                             self.view.hideToastActivity()
-                           
+                            
                         }
                         
                     } else {
