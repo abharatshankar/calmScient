@@ -15,6 +15,7 @@ class FeelDrink: UITableViewCell {
     @IBOutlet weak var main_lble: UILabel!
     @IBOutlet weak var main_view: UIView!
 
+    @IBOutlet weak var newBackGroundView: UIView!
     @IBOutlet weak var drinkTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,14 +29,15 @@ class FeelDrink: UITableViewCell {
         
         
      //   drinkTextView.layer.masksToBounds = false
-        drinkTextView.layer.cornerRadius = 10
-        drinkTextView.layer.borderWidth = 1
-        drinkTextView.layer.borderColor = UIColor(red: 232/255, green: 231/255, blue: 244/255, alpha: 1).cgColor
+        newBackGroundView.layer.cornerRadius = 10
+        newBackGroundView.layer.borderWidth = 1
+        newBackGroundView.layer.borderColor = UIColor(red: 232/255, green: 231/255, blue: 244/255, alpha: 1).cgColor
 //        main_view.layer.shadowColor = UIColor.black.cgColor
 //        main_view.layer.shadowOffset = CGSize(width: 0, height: 2)
 //        main_view.layer.shadowOpacity = 2
 //        main_view.layer.shadowRadius = 2
-        drinkTextView.layer.masksToBounds = false
+        newBackGroundView.layer.masksToBounds = false
+        newBackGroundView.applyShadow()
         
 //        configureLabel(label1, withText: "I only drink to relax, it’s not a big deal.")
 //        configureLabel(label2, withText: "I've started taking medication to manage craving, I'm working with a therapist or I'm attending a support group meeting.")

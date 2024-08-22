@@ -62,7 +62,7 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         tableView.layer.cornerRadius = 5
         tableView.layer.masksToBounds = true
         tableView.register(UINib(nibName: "UpdateMedicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "UpdateMedicationsTableViewCell")
-        timeLbl.text = AppHelper.getLocalizeString(str:"Time")
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -76,6 +76,10 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         onScheetClosed?()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        timeLbl.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Time" : "Tiempo"
     }
     
     private func updateWithNewMedicationAlarmInstance() {

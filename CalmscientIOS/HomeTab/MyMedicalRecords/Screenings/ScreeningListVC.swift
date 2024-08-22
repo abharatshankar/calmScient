@@ -26,11 +26,10 @@ class ScreeningListVC: ViewController {
         self.screeningListTable.delegate = self
         self.screeningListTable.dataSource = self
         self.view.showToastActivity()
-//        self.getScreeningData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = AppHelper.getLocalizeString(str:"Screenings")
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Screenings" : "Exámenes"
         getScreeningData()
         
     }

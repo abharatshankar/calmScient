@@ -43,7 +43,7 @@ class TellUsCell: UITableViewCell {
             }
         
         headerLabel.text = AppHelper.getLocalizeString(str: "Save it to weekly summary journal entry")
-        titleLabel.text = AppHelper.getLocalizeString(str: "Have tried cutting down but cannot stay within the limit you set." )
+        titleLabel.text = AppHelper.getLocalizeString(str: "Tell us what you would like to do." )
         
         yesButton.titleLabel?.text = AppHelper.getLocalizeString(str: "Yes")
         

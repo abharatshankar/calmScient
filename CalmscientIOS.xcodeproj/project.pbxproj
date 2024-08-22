@@ -56,6 +56,8 @@
 		43508AEB2C4D7F63000B5645 /* docpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 43508AEA2C4D7F63000B5645 /* docpic.png */; };
 		43508AF22C4E395E000B5645 /* quizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43508AF02C4E395E000B5645 /* quizTableViewCell.swift */; };
 		43508AF32C4E395E000B5645 /* quizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43508AF12C4E395E000B5645 /* quizTableViewCell.xib */; };
+		437392E42C761DBC009F9F2C /* ManagingAnxietyBeginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437392E22C761DBB009F9F2C /* ManagingAnxietyBeginScreen.swift */; };
+		437392E72C761E04009F9F2C /* ManagingAnxietyBeginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437392E62C761E04009F9F2C /* ManagingAnxietyBeginScreen.storyboard */; };
 		4396C4D72C2D3C51000985A7 /* MonthlyDrinksCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396C4D62C2D3C51000985A7 /* MonthlyDrinksCountViewController.swift */; };
 		4396C4EB2C2E8564000985A7 /* MonthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396C4E82C2E8564000985A7 /* MonthsViewController.swift */; };
 		4396C4EF2C2E870E000985A7 /* MonthlyDrinksCountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4396C4EE2C2E870E000985A7 /* MonthlyDrinksCountViewController.storyboard */; };
@@ -478,6 +480,8 @@
 		43508AEA2C4D7F63000B5645 /* docpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = docpic.png; sourceTree = "<group>"; };
 		43508AF02C4E395E000B5645 /* quizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizTableViewCell.swift; sourceTree = "<group>"; };
 		43508AF12C4E395E000B5645 /* quizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = quizTableViewCell.xib; sourceTree = "<group>"; };
+		437392E22C761DBB009F9F2C /* ManagingAnxietyBeginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingAnxietyBeginScreen.swift; sourceTree = "<group>"; };
+		437392E62C761E04009F9F2C /* ManagingAnxietyBeginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManagingAnxietyBeginScreen.storyboard; sourceTree = "<group>"; };
 		4396C4D62C2D3C51000985A7 /* MonthlyDrinksCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyDrinksCountViewController.swift; sourceTree = "<group>"; };
 		4396C4E82C2E8564000985A7 /* MonthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsViewController.swift; sourceTree = "<group>"; };
 		4396C4EE2C2E870E000985A7 /* MonthlyDrinksCountViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonthlyDrinksCountViewController.storyboard; sourceTree = "<group>"; };
@@ -1121,6 +1125,8 @@
 				4A0853722C21684B00202C02 /* Discovery.swift */,
 				4A0853732C21684B00202C02 /* ResourceCell.swift */,
 				4A0853742C21684B00202C02 /* ResourceCell.xib */,
+				437392E22C761DBB009F9F2C /* ManagingAnxietyBeginScreen.swift */,
+				437392E62C761E04009F9F2C /* ManagingAnxietyBeginScreen.storyboard */,
 			);
 			path = DiscoveryTakingControl;
 			sourceTree = "<group>";
@@ -2238,6 +2244,7 @@
 				4A78A1442BDF444F00D1EFC1 /* JournalEntryPopOverTableCell.xib in Resources */,
 				4A78A1232BDEDA9F00D1EFC1 /* ProgressOnCourseWorkHeaderView.xib in Resources */,
 				4A35FE052BF9FC9700D71B14 /* CourseViewController.storyboard in Resources */,
+				437392E72C761E04009F9F2C /* ManagingAnxietyBeginScreen.storyboard in Resources */,
 				4A87C1442C011245004E04CC /* CheckMailVC.storyboard in Resources */,
 				4A98BFE42BF67FA900C9D043 /* ProfileLanguageCollectionCell.xib in Resources */,
 				4A967FC12BD6892800FCE646 /* Dashboard.storyboard in Resources */,
@@ -2459,6 +2466,7 @@
 				4AD5D1112BD7A6A500E4C945 /* CustomCalender.swift in Sources */,
 				4A0853BE2C21684B00202C02 /* Discovery.swift in Sources */,
 				4A0853872C21684B00202C02 /* DrinkingHabbitController.swift in Sources */,
+				437392E42C761DBC009F9F2C /* ManagingAnxietyBeginScreen.swift in Sources */,
 				4A0853842C21684B00202C02 /* DrinkEachTimeCell.swift in Sources */,
 				4A0853B62C21684B00202C02 /* ButtonCell.swift in Sources */,
 				4AA592232BDF626D001FE6B3 /* JournalEntryCollapsedTableCell.swift in Sources */,

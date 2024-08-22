@@ -15,6 +15,7 @@ class CustomCheckboxCell: UITableViewCell {
 
         override func awakeFromNib() {
             super.awakeFromNib()
+            main_view.layer.cornerRadius = 20
 //            checkBox.layer.cornerRadius = 15
 //            checkBox.layer.borderWidth = 1
 //            checkBox.layer.borderColor = UIColor.black.cgColor

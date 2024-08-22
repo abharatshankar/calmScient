@@ -18,9 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var phoneTF: UITextField!
     
-    
     @IBOutlet weak var newPwTF: ImagePaddingTextField!
-    
     
     @IBOutlet weak var confirmPwTF: ImagePaddingTextField!
     
@@ -33,6 +31,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lastView: UIView!
     @IBOutlet weak var confirmView: UIView!
     var profileDetails: [[String: Any]] = []
+    
+    
+    @IBOutlet weak var profileTitle: UILabel!
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var lastName: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var newPassLabel: UILabel!
+    @IBOutlet weak var confirmPassLabel: UILabel!
+    @IBOutlet weak var submitButton: LinearGradientButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +113,30 @@ class ProfileViewController: UIViewController {
         
     }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileTitle.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        profileTitle.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Profile" : "Perfil"
+        
+        firstName.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "First Name" : "Nombre"
+        firstName.font = UIFont(name: Fonts().lexendRegular, size: 16)
+        lastName.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Last Name" : "Apellido"
+        lastName.font =  UIFont(name: Fonts().lexendRegular, size: 16)
+        emailLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Email" : "Correo electrónico"
+        emailLabel.font =  UIFont(name: Fonts().lexendRegular, size: 16)
+        
+        phoneLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Phone" : "Teléfono"
+        phoneLabel.font =  UIFont(name: Fonts().lexendRegular, size: 16)
+        
+        newPassLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "New Password" : "Nueva contraseña"
+        newPassLabel.font =  UIFont(name: Fonts().lexendRegular, size: 16)
+        
+        confirmPassLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Confirm Password" : "Confirmar contraseña"
+        confirmPassLabel.font =  UIFont(name: Fonts().lexendRegular, size: 16)
+        
+        submitButton.titleLabel?.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Submit" : "Enviar"
+        
     }
     
     

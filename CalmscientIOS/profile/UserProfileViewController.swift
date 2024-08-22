@@ -24,8 +24,8 @@ fileprivate enum ProfileTableCells : String {
     }
 }
 
-class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    
+class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISheetPresentationControllerDelegate {
+    var dimmingView: UIView?
     @IBOutlet weak var profileIcon: UIImageView!
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var gallerySelectionImageView: UIImageView!
@@ -128,6 +128,14 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
 
             }
         }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if let presentingVC = presentingViewController as? UserProfileViewController {
+            // Hide or remove the dimming view
+            presentingVC.dimmingView?.removeFromSuperview()
+        }
+    }
     func handleUserProfileResponse(data: Data) {
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
@@ -946,10 +954,25 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             self.navigationController?.pushViewController(vc!, animated: true)
         }
         if indexPath.row == 4 {
+
             let next = UIStoryboard(name: "ProfilePrivacy", bundle: nil)
             guard let viewControllerToPresent = next.instantiateViewController(withIdentifier: "ProfilePrivacyViewController") as? ProfilePrivacyViewController else {
                 return
             }
+
+            // Create a dimming view and add it to the window
+            if let window = UIApplication.shared.keyWindow {
+                let dimmingView = UIView(frame: window.bounds)
+                dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                window.addSubview(dimmingView)
+                self.dimmingView = dimmingView // Store the reference
+            }
+
+            viewControllerToPresent.onScheetClosed = { [weak self] in
+                self?.dimmingView?.removeFromSuperview()
+            }
+
             if #available(iOS 15.0, *) {
                 if let sheet = viewControllerToPresent.sheetPresentationController {
                     sheet.detents = [.medium(), .large()]
@@ -957,11 +980,14 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                     sheet.prefersScrollingExpandsWhenScrolledToEdge = false
                     sheet.prefersEdgeAttachedInCompactHeight = true
                     sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+                    sheet.delegate = self // To handle delegate methods and adjust dimming view
                 }
             } else {
                 // Fallback on earlier versions
             }
+
             present(viewControllerToPresent, animated: true, completion: nil)
+
         }
         if indexPath.row == 5 {
             let alert = UIAlertController(title: "License Key", message: self.licenseKey, preferredStyle: UIAlertController.Style.alert)

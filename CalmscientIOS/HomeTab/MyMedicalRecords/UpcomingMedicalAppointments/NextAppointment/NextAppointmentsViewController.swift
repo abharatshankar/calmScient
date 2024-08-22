@@ -29,9 +29,13 @@ class NextAppointmentsViewController: ViewController, CalendarToViewDelegate {
         nextAppointmentTableView.register(UINib(nibName: "AppointmentsEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "AppointmentsEmptyTableViewCell")
         nextAppointmentTableView.dataSource = self
         nextAppointmentTableView.delegate = self
-        self.title = AppHelper.getLocalizeString(str:"Next appointments")
+        
         getMedicalAppointmentsData(forDate: selectedNewDate)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Next appointments" : "Próximas citas"
     }
     
     func calendardidChangeBounds(newBounds: CGRect) {

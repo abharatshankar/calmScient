@@ -26,7 +26,8 @@ fileprivate enum collectionCellType {
         case .alarmCell:
             return ["05","10","15","20","25","30"]
         case .weekCell:
-            return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+            
+            return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"] : ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]
         }
     }
     
@@ -63,18 +64,26 @@ class UpdateMedicationsTableViewCell: UITableViewCell {
         "Wed": 3,
         "Thu": 4,
         "Fri": 5,
-        "Sat": 6
+        "Sat": 6,
+        
+        "Dom": 0,
+        "Lun": 1,
+        "Mar": 2,
+        "Mié": 3,
+        "Jue": 4,
+        "Vie": 5,
+        "Sáb": 6
     ]
     
     var cellIndex:Int = 0 {
         didSet {
             if cellIndex == 1 {
-                titleLabel.text = "Repeat"
+                titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Repeat" : "Repetir"
                 subTitleHeight.constant = 15
                 subTitleBottompadding.constant = 4
                 cellType = .weekCell
             } else {
-                titleLabel.text = "Alarm"
+                titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Alarm" : "Alarma"
                 subTitleHeight.constant = 0
                 subTitleBottompadding.constant = 0
                 cellType = .alarmCell
@@ -125,7 +134,7 @@ class UpdateMedicationsTableViewCell: UITableViewCell {
                 return
             }
             if currentInstance.repeatDay.count == 7 {
-                subTitleLabel.text = "EveryDay"
+                subTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "EveryDay" : "todos los días."
             } else {
                 subTitleLabel.text = currentInstance.repeatDay.joined(separator: ",")
             }
@@ -154,7 +163,7 @@ class UpdateMedicationsTableViewCell: UITableViewCell {
                 return
             }
             if currentInstance.repeat.count == 7 {
-                subTitleLabel.text = "EveryDay"
+                subTitleLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "EveryDay" : "todos los días."
             } else {
                 subTitleLabel.text = currentInstance.repeat.joined(separator: ",")
             }
@@ -229,7 +238,7 @@ extension UpdateMedicationsTableViewCell: UICollectionViewDelegateFlowLayout, UI
                 }
                 currentInstance.repeat = getRepeatValues()
                 if currentInstance.repeat.count == 7 {
-                    subTitleLabel.text = "EveryDay"
+                    subTitleLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "EveryDay" : "todos los días."
                 } else {
                     subTitleLabel.text = currentInstance.repeat.joined(separator: ",")
                 }
@@ -268,7 +277,7 @@ extension UpdateMedicationsTableViewCell: UICollectionViewDelegateFlowLayout, UI
                 }
                 currentInstance.repeatDay = getRepeatValues()
                 if currentInstance.repeatDay.count == 7 {
-                    subTitleLabel.text = "EveryDay"
+                    subTitleLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "EveryDay" : "todos los días."
                 } else {
                     subTitleLabel.text = currentInstance.repeatDay.joined(separator: ",")
                 }

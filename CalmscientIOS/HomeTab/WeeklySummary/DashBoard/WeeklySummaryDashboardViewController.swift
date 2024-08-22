@@ -9,6 +9,7 @@ import UIKit
 
 class WeeklySummaryDashboardViewController: ViewController {
     var collectionItems:[WeeklySummaryItems] = [.WeeklySummarySummaryOfMood,.WeeklySummarySummaryOfSleep,.WeeklySummarySummaryOfPHQ9,.WeeklySummarySummaryOfGAD,.WeeklySummarySummaryOfAudit,.WeeklySummarySummaryOfDast,.WeeklySummaryProgressOnCourseWork,.WeeklySummaryJournalEntry]
+    var spanishCollection:[String] = ["Resumen del Estado de Ánimo","Resumen del Sueño","Resumen del PHQ-9","Resumen del GAD","Resumen de la Auditoría","Resumen del DAST","Progreso en el Trabajo del Curso","Entrada del Diario"]
     private lazy var dashboardCollectionView:UICollectionView = {
         let customFlowLayout:CustomCollectionViewLayout = CustomCollectionViewLayout()
         let cellWidth = self.view.bounds.width - 42
@@ -21,7 +22,6 @@ class WeeklySummaryDashboardViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Weekly Summary"
         self.navigationController?.isNavigationBarHidden = false
         let nib = UINib(nibName: "WeeklySummaryDashboardCell", bundle: nil)
         dashboardCollectionView.backgroundColor = UIColor(named: "AppBackGroundColor")
@@ -62,6 +62,11 @@ class WeeklySummaryDashboardViewController: ViewController {
                 self.navigationItem.rightBarButtonItem = barButton
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Weekly summary" : "Resumen semanal"
+    }
+    
     @objc func profileButtonPressed() {
 
         let userProfileViewController = UIStoryboard(name: "UserProfile", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
@@ -84,7 +89,7 @@ extension WeeklySummaryDashboardViewController: UICollectionViewDelegateFlowLayo
             return UICollectionViewCell()
         }
         cell.cellImageView.image = UIImage(named: collectionItems[indexPath.row].getAssetName())
-        cell.cellTitleLabel.text = collectionItems[indexPath.row].rawValue
+        cell.cellTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  collectionItems[indexPath.row].rawValue : spanishCollection[indexPath.row]
         return cell
     }
     
@@ -113,7 +118,7 @@ extension WeeklySummaryDashboardViewController: UICollectionViewDelegateFlowLayo
             let next = UIStoryboard(name: "WeeklySummaryGraphResults", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "WeeklySummaryGraphViewController") as? WeeklySummaryGraphViewController
             vc?.summaryType = collectionItems[indexPath.row]
-            vc?.title = collectionItems[indexPath.row].rawValue
+            vc?.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  collectionItems[indexPath.row].rawValue : spanishCollection[indexPath.row]
             self.navigationController?.pushViewController(vc!, animated: true)
         } else if indexPath.row == 6 {
             let next = UIStoryboard(name: "ProgressOnWorkMain", bundle: nil)
@@ -122,7 +127,7 @@ extension WeeklySummaryDashboardViewController: UICollectionViewDelegateFlowLayo
         } else if indexPath.row == collectionItems.count - 1 {
             let next = UIStoryboard(name: "JournalEntryViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "JournalEntryViewController") as? JournalEntryViewController
-            vc?.title = collectionItems[indexPath.row].rawValue
+            vc?.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  collectionItems[indexPath.row].rawValue : spanishCollection[indexPath.row]
             self.navigationController?.pushViewController(vc!, animated: true)
         }
       

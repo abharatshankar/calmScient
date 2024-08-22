@@ -143,12 +143,16 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
             }
         
         
-        // Create a dimming view and add it to the presenting view controller's view
-        let dimmingView = UIView(frame: self.view.bounds)
-        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(dimmingView)
-        self.dimmingView = dimmingView // Store the reference
+        
+        // Create a dimming view and add it to the window
+        if let window = UIApplication.shared.keyWindow {
+            let dimmingView = UIView(frame: window.bounds)
+            dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            window.addSubview(dimmingView)
+            self.dimmingView = dimmingView // Store the reference
+        }
+
 
             self.navigationController?.modalPresentationStyle = .pageSheet
             
@@ -166,7 +170,7 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
             } else {
                 
             }
-           sheetVC.headingLabelString = "Update Time & Alarm"
+        sheetVC.headingLabelString = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Update Time & Alarm" : "Actualizar Hora y Alarma."
             present(sheetVC, animated: true, completion: nil)
         }
 }

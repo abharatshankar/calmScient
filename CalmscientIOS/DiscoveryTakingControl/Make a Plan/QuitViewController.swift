@@ -32,7 +32,7 @@ class QuitViewController: ViewController{
        var isNotifiedMangmentChecked = false
     var button_name = ["To improve my health","To improve my relationships","To avoid hangovers","To do better at work or in school", "To save money","To lose weight or get fit","To avoid more serious problems","To meet my own personal standards"]
     override func viewDidLoad() {
-        
+        self.navigationController?.isNavigationBarHidden = false
         notifiy_pcp.layer.borderWidth = 2
         notifiy_pcp.layer.cornerRadius = 20
         notifiy_pcp.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
@@ -99,6 +99,7 @@ class QuitViewController: ViewController{
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
         setupLanguage()
     }
     
@@ -114,14 +115,23 @@ class QuitViewController: ViewController{
         
         descriptionLabel.text = AppHelper.getLocalizeString(str: "congralatuateDecision")
         talkToPrimaryDoc.text = AppHelper.getLocalizeString(str: "Talk to your primary care doctor" )
-        talkToPrimaryDoc2.text = AppHelper.getLocalizeString(str: "Talk to your primary care doctor" )
-        talkToPrimaryDoc3.text = AppHelper.getLocalizeString(str: "Talk to your primary care doctor" )
+        talkToPrimaryDoc2.text = AppHelper.getLocalizeString(str: "Consider medication management" )
+        talkToPrimaryDoc3.text = AppHelper.getLocalizeString(str: "Look for alcohol treatment program" )
         letsGetToKnow.text = AppHelper.getLocalizeString(str: "Now, let's get to know the drink coach features." )
         instruction_see.titleLabel?.text = AppHelper.getLocalizeString(str: "See the introduction")
         
         
         }
     
+    @IBAction func linkButtonAction(_ sender: Any) {
+        let next = UIStoryboard(name: "FavoritesVideosWebViewController", bundle: nil)
+        let vc = next.instantiateViewController(withIdentifier: "FavoritesVideosWebViewController") as? FavoritesVideosWebViewController
+        vc?.favURL = "https://alcoholtreatment.niaaa.nih.gov/"
+        vc?.titleString =  ""
+        
+        //vc?.title = "Favorite Video"
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     @IBAction func notifyDoctorAction(_ sender: Any) {
         isNotifyPcpChecked.toggle()
                 let imageName = isNotifyPcpChecked ? "check" : "newCircle11"

@@ -89,6 +89,10 @@ class MonthlyDrinksCountViewController: UIViewController {
             // Do any additional setup after loading the view.
         }
     }
+    
+    @IBAction func downBackButttonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
     }
@@ -238,7 +242,7 @@ class MonthlyDrinksCountViewController: UIViewController {
     private func setUpMonths() {
         let titleLabel = UILabel()
         titleLabel.text = "  Apply same alcohol free days for following months"
-        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 2
         titleLabel.font = UIFont.systemFont(ofSize: 13)
         titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

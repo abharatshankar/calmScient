@@ -39,28 +39,22 @@ Here are resources that can assist you in achieving your goal?</string>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to your primary care doctor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fd-ag-E65">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consider medication management" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fd-ag-E65">
                                 <rect key="frame" x="20" y="316.33333333333331" width="353" height="21.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to your primary care doctor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-fp-ZfO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Look for alcohol treatment program" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-fp-ZfO">
                                 <rect key="frame" x="20" y="402.66666666666669" width="353" height="21.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now, let's get to know the drink coach features." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-u8-emo">
-                                <rect key="frame" x="20" y="475" width="353" height="21.333333333333314"/>
-                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
+                                <rect key="frame" x="20" y="490.33333333333331" width="353" height="20"/>
+                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="16"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(https://alcoholtreatment.niaaa.nih.gov/)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F24-sK-SVl">
-                                <rect key="frame" x="20" y="439" width="338" height="21"/>
-                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="17"/>
-                                <color key="textColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMQ-aQ-Fl2">
@@ -79,7 +73,7 @@ Here are resources that can assist you in achieving your goal?</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oak-TU-n2e">
-                                <rect key="frame" x="22" y="506.33333333333326" width="349" height="45"/>
+                                <rect key="frame" x="22" y="520.33333333333337" width="349" height="45"/>
                                 <color key="backgroundColor" name="6E6BB3ColorOnly"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gyO-dX-A7P"/>
@@ -104,6 +98,31 @@ Here are resources that can assist you in achieving your goal?</string>
                                     <action selector="notifyMedicineAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="U1Q-uv-eII"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-p5-iF0">
+                                <rect key="frame" x="16" y="432" width="357" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="ELo-YW-71V"/>
+                                    <constraint firstAttribute="height" constant="25" id="NJ7-iD-Z0m"/>
+                                    <constraint firstAttribute="width" constant="357" id="xl8-zZ-Tpf"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="(https://alcoholtreatment.niaaa.nih.gov/)">
+                                            <attributes>
+                                                <color key="NSColor" name="6E6BB3ColorOnly"/>
+                                                <font key="NSFont" metaFont="system" size="19"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="linkButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Uwd-LL-c8X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,29 +131,29 @@ Here are resources that can assist you in achieving your goal?</string>
                             <constraint firstItem="TU2-Ej-gBj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="1MK-aI-gWI"/>
                             <constraint firstItem="HZP-mj-lwR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="35G-Uj-ava"/>
                             <constraint firstItem="HZP-mj-lwR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="3G4-N5-D1l"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="F24-sK-SVl" secondAttribute="trailing" constant="35" id="5Nt-Xp-LAE"/>
+                            <constraint firstItem="R1K-p5-iF0" firstAttribute="top" secondItem="oDT-fp-ZfO" secondAttribute="bottom" constant="8" id="5JK-gY-Ukf"/>
                             <constraint firstItem="xMQ-aQ-Fl2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="6XH-kg-gsr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HZP-mj-lwR" secondAttribute="trailing" constant="20" id="AfA-tz-QiM"/>
                             <constraint firstItem="qXN-HR-IoQ" firstAttribute="top" secondItem="HZP-mj-lwR" secondAttribute="bottom" constant="19.670000000000002" id="BHI-BE-mbR"/>
                             <constraint firstItem="xMQ-aQ-Fl2" firstAttribute="top" secondItem="qXN-HR-IoQ" secondAttribute="bottom" constant="10" id="I6A-fu-g3P"/>
                             <constraint firstItem="oDT-fp-ZfO" firstAttribute="top" secondItem="TU2-Ej-gBj" secondAttribute="bottom" constant="10" id="Jsn-HT-qKl"/>
-                            <constraint firstItem="F24-sK-SVl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="KBA-fZ-m2h"/>
                             <constraint firstItem="oDT-fp-ZfO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="LhX-jG-iLe"/>
                             <constraint firstItem="IXT-u8-emo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Nq9-VS-1CY"/>
-                            <constraint firstItem="F24-sK-SVl" firstAttribute="top" secondItem="oDT-fp-ZfO" secondAttribute="bottom" constant="15" id="Rj3-hm-DD8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xMQ-aQ-Fl2" secondAttribute="trailing" constant="22" id="S1d-7c-zw8"/>
                             <constraint firstItem="2Fd-ag-E65" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ZWI-jY-g9U"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oDT-fp-ZfO" secondAttribute="trailing" constant="20" id="bHS-Az-Lyt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IXT-u8-emo" secondAttribute="trailing" constant="20" id="deh-ec-qdv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Oak-TU-n2e" secondAttribute="trailing" constant="22" id="hJL-z5-l02"/>
+                            <constraint firstItem="R1K-p5-iF0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="kJ2-eA-gs0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Fd-ag-E65" secondAttribute="trailing" constant="20" id="kLs-Y6-ewo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R1K-p5-iF0" secondAttribute="trailing" constant="20" id="n6k-rD-xZV"/>
                             <constraint firstItem="2Fd-ag-E65" firstAttribute="top" secondItem="xMQ-aQ-Fl2" secondAttribute="bottom" constant="10" id="nCy-to-oF4"/>
                             <constraint firstItem="TU2-Ej-gBj" firstAttribute="top" secondItem="2Fd-ag-E65" secondAttribute="bottom" constant="10" id="pBU-4f-mHH"/>
                             <constraint firstItem="Oak-TU-n2e" firstAttribute="top" secondItem="IXT-u8-emo" secondAttribute="bottom" constant="10" id="ptc-EN-43J"/>
                             <constraint firstItem="qXN-HR-IoQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="qG3-SC-QN8"/>
                             <constraint firstItem="Oak-TU-n2e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="wa9-a3-PPZ"/>
-                            <constraint firstItem="IXT-u8-emo" firstAttribute="top" secondItem="F24-sK-SVl" secondAttribute="bottom" constant="15" id="x6L-dw-ZXE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TU2-Ej-gBj" secondAttribute="trailing" constant="22" id="xoe-44-4U7"/>
+                            <constraint firstItem="IXT-u8-emo" firstAttribute="top" secondItem="R1K-p5-iF0" secondAttribute="bottom" constant="33.333333333333314" id="y29-7h-CFP"/>
                         </constraints>
                     </view>
                     <connections>

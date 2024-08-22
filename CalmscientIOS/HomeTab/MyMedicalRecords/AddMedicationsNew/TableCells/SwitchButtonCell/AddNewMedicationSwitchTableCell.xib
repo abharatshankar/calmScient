@@ -71,7 +71,7 @@
     </objects>
     <designables>
         <designable name="xG3-EF-sz9">
-            <size key="intrinsicContentSize" width="90.666666666666671" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

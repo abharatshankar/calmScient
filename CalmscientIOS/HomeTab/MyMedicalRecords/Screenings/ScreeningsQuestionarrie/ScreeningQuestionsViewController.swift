@@ -140,7 +140,7 @@ class ScreeningQuestionsViewController: ViewController {
                     self.view.showToast(message: "An Unknown error occured. Please check with Admin")
                 } else if let response = response {
                     if response.statusResponse.responseCode == 300 {
-                        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:"Screening"), message: response.statusResponse.responseMessage, preferredStyle: .alert)
+                        let alertController = UIAlertController(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Screening" : "Cribado", message: response.statusResponse.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
                         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                             let next = UIStoryboard(name: "ScreeningListVC", bundle: nil)

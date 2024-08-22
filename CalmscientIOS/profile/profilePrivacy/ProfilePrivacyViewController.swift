@@ -10,7 +10,7 @@ import UIKit
 class ProfilePrivacyViewController: UIViewController {
     
     let tableData:[String] = ["Journaling","Course Work","Mood","Sleep","Medication","PHQ-9 Screening","GAD-7 Screening","Audit Screening","DAST Screening"]
-    
+    var onScheetClosed:(()->Void)?
     @IBOutlet weak var privacyTableView: UITableView!
     var profilePrivacyData: [[String: Any]] = []
     @IBOutlet weak var privacyLabel: UILabel!
@@ -55,6 +55,10 @@ class ProfilePrivacyViewController: UIViewController {
     }
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        onScheetClosed?()
+    }
     
     func setupLanguage() {
         

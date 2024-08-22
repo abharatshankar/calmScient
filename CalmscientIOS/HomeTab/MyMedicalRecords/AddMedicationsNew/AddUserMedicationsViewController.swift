@@ -239,8 +239,8 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
         case .switchAndTableCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewMedicationSwitchTableCell", for: indexPath) as! AddNewMedicationSwitchTableCell
             cell.selectionStyle = .none
-            cell.cellTitleLabel.text = AppHelper.getLocalizeString(str:"With Meal")
-            cell.scheduleTimeLbl.text = AppHelper.getLocalizeString(str:"Schedule Time & Alarm")
+            cell.cellTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "With Meal" : "Con la Comida."
+            cell.scheduleTimeLbl.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   "Schedule Time & Alarm" :  "Programar Hora y Alarma."
             cell.isMedicationIncluded = {
                 [weak self] (canIncludeMedicineWithMeals) in
                 self?.isMedicineWithMeals = canIncludeMedicineWithMeals
@@ -279,12 +279,16 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
         }
         vc.headingLabelString = AppHelper.getLocalizeString(str:"Add Time & Alarm")
 
-        // Create a dimming view and add it to the presenting view controller's view
-        let dimmingView = UIView(frame: self.view.bounds)
-        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(dimmingView)
-        self.dimmingView = dimmingView // Store the reference
+        
+        // Create a dimming view and add it to the window
+        if let window = UIApplication.shared.keyWindow {
+            let dimmingView = UIView(frame: window.bounds)
+            dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            window.addSubview(dimmingView)
+            self.dimmingView = dimmingView // Store the reference
+        }
+
 
         if #available(iOS 15.0, *) {
             if let sheet = vc.sheetPresentationController {
