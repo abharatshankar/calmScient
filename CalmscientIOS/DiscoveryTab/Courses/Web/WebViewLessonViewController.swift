@@ -96,13 +96,13 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
     }
     
     @objc func backButtonTapped() {
-        let javascript = "onAbortCourseGotoIndex();"
-        webView.evaluateJavaScript(javascript) { [weak self] (result, error) in
-            if error != nil {
-                self?.navigationController?.popViewController(animated: true)
-            }
-            print(result)
-        }
+//        let javascript = "onAbortCourseGotoIndex();"
+//        webView.evaluateJavaScript(javascript) { [weak self] (result, error) in
+//            if error != nil {
+        self.navigationController?.popViewController(animated: true)
+           // }
+          //  print(result)
+       // }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

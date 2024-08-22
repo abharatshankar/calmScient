@@ -315,7 +315,7 @@ class MonthsViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
         calendarView.backgroundColor = UIColor(named: "lightF2F2F2Color")
         calendarView.layer.cornerCurve = .continuous
         calendarView.layer.cornerRadius = 10.0
-        calendarView.tintColor = UIColor.blue
+        calendarView.tintColor = UIColor(named: "AppThemeColor")
         
         calendarView.delegate = self
         //        calendarView.wantsDateDecorations = true

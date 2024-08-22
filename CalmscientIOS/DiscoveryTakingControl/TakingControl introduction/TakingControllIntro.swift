@@ -150,6 +150,59 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
                     UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "DUST-10" : "POLVO-10" ,
                     UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "CAGE" : "JAULA"]
         tableView.reloadData()
+        
+        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
+            fatalError("Unable to found Application Shared Info")
+        }
+        
+        self.view.showToastActivity()
+        
+        getTakingControlIntroduction(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, activityDate: "", bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
+            switch result {
+            case .success(let data):
+                // Convert data to JSON object and print it
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        DispatchQueue.main.async { [self] in
+                            self.view.hideToastActivity()
+                            if let introData = json["takingControlIntroduction"] as? [String: Any] {
+                                if let auditFlagValue = introData["auditFlag"] as? Int {
+                                    auditFlag = auditFlagValue
+                                    print("auditFlag\(auditFlag ?? 0)")
+                                } else {
+                                    print("auditFlag not found or not an Int")
+                                }
+                                if let dustFlagValue = introData["dastFlag"] as? Int {
+                                    dastFlag = dustFlagValue
+                                    print("dastFlag\(dastFlag ?? 0)")
+                                   
+                                } else {
+                                    print("dustFlagValue not found or not an Int")
+                                }
+                                if let cageFlagFlagValue = introData["cageFlag"] as? Int {
+                                    cageFlag = cageFlagFlagValue
+                                    print("cageFlag\(cageFlag ?? 0)")
+                                  
+
+                                } else {
+                                    print("cageFlag not found or not an Int")
+                                }
+                                tableView.reloadData()
+                                self.view.hideToastActivity()
+                            } else {
+                                print("Unable to cast takingControlIntroduction to [String: Any]")
+                            }
+                        }
+                    } else {
+                        print("Unable to convert data to JSON")
+                    }
+                } catch {
+                    print("Error converting data to JSON: \(error)")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
     
     func setupLanguage() {
@@ -469,7 +522,7 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
             self.view.addSubview(self.questionAlertBackGroundView!)
         }, completion: nil)
         questionAlertView.layer.cornerRadius = 10
-       // print("auditFlag====\(auditFlag ?? 0)")
+        
         if auditFlag == 0 {
             questionAlertView.contentLabel.text = "\(value) apply to you"
         }
@@ -562,8 +615,6 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
             }
             auditFlag1 = auditFlag
             dastFlag1 = dastFlag
-
-            
         }
 //        print("flag1====\(auditFlag1 ?? 0)")
 //        print("dastFlag1====\(dastFlag1 ?? 0)")
@@ -793,46 +844,41 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
 
         
     
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    guard indexPath.row == 0 || indexPath.row == 1 else {
-                return
-            }
+        if indexPath.row == 0 {
             var screeningID = 3
-            if indexPath.row == 1 {
-                screeningID = 4
-            }
-            guard let selectedScreening = screeningData.filter({ obj in
-                obj.screeningID == screeningID
-            }).first else {
-                return
-            }
-            let next = UIStoryboard(name: "ScreeningQuestions", bundle: nil)
-            let vc = next.instantiateViewController(withIdentifier: "ScreeningQuestionsViewController") as? ScreeningQuestionsViewController
-            vc?.selectedScreening = selectedScreening
-            self.navigationController?.pushViewController(vc!, animated: true)
+            if auditFlag == 0{
                 
-        
-       
-      //  self.navigationController?.pushViewController(vc!, animated: true)
-        
-        
-                // Reset the background color of the previously selected cell's main_view
-//                if let previousIndexPath = previouslySelectedIndexPath {
-//                    if let previousCell = tableView.cellForRow(at: previousIndexPath) as? CustomCell {
-//                        previousCell.main_view.backgroundColor = UIColor(named: "AppBackGroundColor") // Or the default color
-//                    }
-//                }
-//                
-//                // Get the cell that was selected
-//                if let cell = tableView.cellForRow(at: indexPath) as? CustomCell {
-//                    // Change the background color of main_view
-//                    cell.main_view.backgroundColor = UIColor(named: "barColor3")  // Or any other color you want
-//                }
-//                
-//                // Update the previously selected index path
-//                previouslySelectedIndexPath = indexPath
+            }
+            else if auditFlag == 1{
+                if let selectedScreening = screeningData.filter({ $0.screeningID == screeningID }).first {
+                    let storyboard = UIStoryboard(name: "ScreeningQuestions", bundle: nil)
+                    if let vc = storyboard.instantiateViewController(withIdentifier: "ScreeningQuestionsViewController") as? ScreeningQuestionsViewController {
+                        vc.selectedScreening = selectedScreening
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+                
+            }
+        }
+        if indexPath.row == 1 {
+            var screeningID1 = 4
+            if dastFlag == 0 {
+                
+            }
+            else if dastFlag == 1 {
+                if let selectedScreening = screeningData.filter({ $0.screeningID == screeningID1 }).first {
+                    let storyboard = UIStoryboard(name: "ScreeningQuestions", bundle: nil)
+                    if let vc = storyboard.instantiateViewController(withIdentifier: "ScreeningQuestionsViewController") as? ScreeningQuestionsViewController {
+                        vc.selectedScreening = selectedScreening
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+        }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

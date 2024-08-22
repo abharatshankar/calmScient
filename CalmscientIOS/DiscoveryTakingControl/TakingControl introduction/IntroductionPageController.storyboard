@@ -41,7 +41,7 @@ records section</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="eMW-cQ-9XJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Drink coach">
                                     <color key="titleColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,7 +56,7 @@ records section</string>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="We0-Qh-HIT"/>
                                     <constraint firstAttribute="height" constant="70" id="qnr-dl-VfH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Substance coach">
                                     <color key="titleColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
