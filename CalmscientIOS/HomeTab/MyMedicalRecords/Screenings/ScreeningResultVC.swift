@@ -71,7 +71,7 @@ class ScreeningResultVC: ViewController {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
         
-        self.title = "Your Results"
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
@@ -97,6 +97,7 @@ class ScreeningResultVC: ViewController {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
+        self.title =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Your Results" : "Tus Resultados."
         needToTalkButton.titleLabel!.text = AppHelper.getLocalizeString(str:"Need to talk with someone?")
         remindMeLabel.text = AppHelper.getLocalizeString(str:"Remind me")
         scoreMarkedLabel.text =  AppHelper.getLocalizeString(str:"Score marked")

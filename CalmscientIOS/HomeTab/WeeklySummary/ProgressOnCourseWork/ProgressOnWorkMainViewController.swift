@@ -218,6 +218,7 @@ extension ProgressOnWorkMainViewController: UITableViewDataSource,UITableViewDel
         let next = UIStoryboard(name: "ProgressOnWorkDetail", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "ProgressOnWorkDetailViewController") as? ProgressOnWorkDetailViewController
         vc?.progressDetailData = progressData
+        
         vc?.index = indexPath.row
         self.navigationController?.pushViewController(vc!, animated: true)
     }

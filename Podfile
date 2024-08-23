@@ -11,6 +11,7 @@ pod 'DGCharts'
 pod 'IQKeyboardManagerSwift'
 pod 'Toast-Swift'
 pod 'AlamofireImage'
+pod 'SVGKit'
 
 end
 

@@ -61,6 +61,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nfv-RF-4CZ" id="ads-lh-qYl"/>
+                        <outlet property="titleLabel" destination="0ok-vf-Avy" id="zmh-7T-CpA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

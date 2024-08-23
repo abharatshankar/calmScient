@@ -10,6 +10,8 @@ import UIKit
 @available(iOS 16.0, *)
 class DiscoveryMainViewController: ViewController {
     var tutorialFlag : Int?
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,6 @@ class DiscoveryMainViewController: ViewController {
         tableView.separatorStyle = .none
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationItem.leftBarButtonItem?.isHidden = true
-        self.navigationItem.title = "The Discovery"
         
         
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
@@ -71,7 +72,7 @@ class DiscoveryMainViewController: ViewController {
         setupLanguage()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationItem.leftBarButtonItem?.isHidden = true
-        self.navigationItem.title = "The Discovery"
+        titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "The Discovery" : "El Descubrimiento."
         tableView.reloadData()
     }
     

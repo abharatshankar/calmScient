@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="lexendregular.ttf">
+        <array key="Lexend-Regular.ttf">
             <string>Lexend-Regular</string>
         </array>
     </customFonts>
@@ -37,8 +37,12 @@
                             <constraint firstAttribute="height" constant="0.5" id="tYi-k4-dWo"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LnM-K1-kFU">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_svg" translatesAutoresizingMaskIntoConstraints="NO" id="LnM-K1-kFU">
                         <rect key="frame" x="16" y="11" width="29" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="Fki-9o-IXB"/>
+                            <constraint firstAttribute="height" constant="22" id="rly-Xb-SxD"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-JO-6Ek">
                         <rect key="frame" x="61" y="12" width="43" height="20"/>
@@ -70,7 +74,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="privacyIcon" width="29" height="22"/>
+        <image name="profile_svg" width="29" height="32"/>
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,8 +37,9 @@ class UserMedicalRecordsViewController: ViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        medicalRecordsTableView.reloadData()
+        
         self.navigationItem.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "My medical records" :  "Mis registros médicos"
+        medicalRecordsTableView.reloadData()
     }
     @objc func profileButtonPressed() {
 

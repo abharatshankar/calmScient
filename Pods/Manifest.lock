@@ -2,11 +2,16 @@ PODS:
   - Alamofire (5.9.1)
   - AlamofireImage (4.3.0):
     - Alamofire (~> 5.8)
+  - CocoaLumberjack (3.8.5):
+    - CocoaLumberjack/Core (= 3.8.5)
+  - CocoaLumberjack/Core (3.8.5)
   - DGCharts (5.1.0):
     - DGCharts/Core (= 5.1.0)
   - DGCharts/Core (5.1.0)
   - FSCalendar (2.8.4)
   - IQKeyboardManagerSwift (7.0.2)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
   - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
@@ -14,25 +19,30 @@ DEPENDENCIES:
   - DGCharts
   - FSCalendar
   - IQKeyboardManagerSwift
+  - SVGKit
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - CocoaLumberjack
     - DGCharts
     - FSCalendar
     - IQKeyboardManagerSwift
+    - SVGKit
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: dff66833fdefba77fcdb294950f5aaafe4d8874f
+PODFILE CHECKSUM: 86687732cb1334d8bbe8bf85446a8587ce018205
 
 COCOAPODS: 1.15.2

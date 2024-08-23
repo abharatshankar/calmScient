@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGKit
 
 fileprivate enum ProfileTableCells : String {
     case ProfileDefaultTableViewCell = "ProfileDefaultTableViewCell"
@@ -41,6 +42,7 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     //    var cellTitleList:[String] = ["Profile","Theme","Language","Privacy","Notifications","License Key","Help & Support","Logout"]
     
     fileprivate let tableRows:[ProfileTableCells] = [.ProfileDefaultTableViewCell,.ProfileThemeTableViewCell,.ProfileLanguageTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.LogoutTableViewCell]
+    fileprivate let profileSvgIcons = ["profile_svg","theme_svg","language_svg","notification_svg","privacy_svg","license_svg","helpNsupport_svg","logout_svg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -729,16 +731,19 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
         switch data {
         case .ProfileDefaultTableViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: data.rawValue, for: indexPath) as! ProfileDefaultTableViewCell
-            if let imageUrlString = profileIconList[indexPath.row] as? String, let url = URL(string: imageUrlString) {
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url) {
-                        DispatchQueue.main.async {
-                            cell.cellIconView.image = UIImage(data: data)
-                            
-                        }
-                    }
-                }
-            }
+            
+            cell.cellIconView.image = UIImage(named: profileSvgIcons[indexPath.row])
+            
+//            if let imageUrlString = profileIconList[indexPath.row] as? String, let url = URL(string: imageUrlString) {
+//                DispatchQueue.global().async {
+//                    if let data = try? Data(contentsOf: url) {
+//                        DispatchQueue.main.async {
+//                            cell.cellIconView.image = UIImage(data: data)
+//                            
+//                        }
+//                    }
+//                }
+//            }
             cell.cellTitleLabel.text = cellTitleList[indexPath.row]
             return cell
         case .ProfileThemeTableViewCell:
@@ -747,7 +752,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
-                            cell.cellIconView.image = UIImage(data: data)
+//                            cell.cellIconView.image = UIImage(data: data)
+                            cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                             guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
                                 fatalError("Unable to found Application Shared Info")
                             }
@@ -897,7 +903,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
-                            cell.cellIconView.image = UIImage(data: data)
+//                            cell.cellIconView.image = UIImage(data: data)
+                            cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                             cell.languagesArray = self.languagesData
                             cell.languageSelectionClosure = { [weak self] languageId in
                                
@@ -935,7 +942,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
-                            cell.cellIconView.image = UIImage(data: data)
+//                            cell.cellIconView.image = UIImage(data: data)
+                            cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                         }
                     }
                 }

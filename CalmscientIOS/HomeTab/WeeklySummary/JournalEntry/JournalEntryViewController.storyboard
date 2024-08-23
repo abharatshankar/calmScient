@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="70" width="393" height="111"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-9T-LhV">
-                                        <rect key="frame" x="16" y="15" width="322" height="34"/>
+                                        <rect key="frame" x="16" y="21" width="322" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="322" id="76o-ev-hCW"/>
                                             <constraint firstAttribute="height" constant="34" id="VTs-2q-gNL"/>
@@ -30,7 +30,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29V-dT-X0j">
-                                        <rect key="frame" x="16" y="64" width="86" height="30"/>
+                                        <rect key="frame" x="16" y="70" width="86" height="30"/>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9h4-bW-5aK"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJO-3R-56L">
-                                        <rect key="frame" x="243" y="64" width="133" height="30"/>
+                                        <rect key="frame" x="243" y="70" width="133" height="30"/>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7ym-rg-uDA"/>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciW-kL-yFa">
-                                        <rect key="frame" x="110" y="64" width="125" height="30"/>
+                                        <rect key="frame" x="110" y="70" width="125" height="30"/>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pXh-IH-GLa"/>
@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL6-3I-WNI">
-                                        <rect key="frame" x="354" y="12" width="86" height="30"/>
+                                        <rect key="frame" x="354" y="18" width="86" height="30"/>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="a4L-cY-lxQ"/>
@@ -239,7 +239,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="31.297709923664122" y="35.211267605633807"/>
+            <point key="canvasLocation" x="224" y="29"/>
         </scene>
     </scenes>
     <designables>
