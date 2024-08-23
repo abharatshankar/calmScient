@@ -65,6 +65,7 @@ class AppointmentDetailsVC: ViewController {
         } else {
             // Handle the case where the date string could not be parsed
             dateAndTimeValue.text = "Invalid Date"
+            dateAndTimeValue.text = AppHelper.getLocalizeString(str:"Invalid Date")
         }
 
         
@@ -88,10 +89,8 @@ class AppointmentDetailsVC: ViewController {
             }
         dataAndTimeLabel.text = AppHelper.getLocalizeString(str:"Date and Time")
         self.title = AppHelper.getLocalizeString(str:"Appointment Details")
-        dateAndTimeValue.text = AppHelper.getLocalizeString(str:"Invalid Date")
         contactLabel.text =  AppHelper.getLocalizeString(str:"Contact")
         addressLabel.text = AppHelper.getLocalizeString(str:"Address")
         appointmentDetalLabel.text = AppHelper.getLocalizeString(str:"Appointment Detail")
-//        change at line 48, 49,
         }
 }

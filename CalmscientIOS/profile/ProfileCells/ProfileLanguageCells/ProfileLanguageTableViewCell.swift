@@ -62,7 +62,7 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
         }
         let newData = languagesArray[indexPath.row]
         cell.langaugeLable.text = newData["languageName"] as? String
-        cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? UIColor(hex: "#424242") : .white
+//        cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? UIColor(hex: "#424242") : .white
         if let imageUrlString = newData["flagUrl"] as? String, let url = URL(string: imageUrlString) {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
@@ -79,8 +79,10 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
         
         if let preferred = newData["preferred"] as? Int, preferred == 1 {
             cell.cellBackGroundView.backgroundColor = UIColor(named: "AppBorderColor")
+            cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ?  .black : .white
                } else {
                    cell.cellBackGroundView.backgroundColor = UIColor.clear
+                   cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : .black
                }
 //        if selectedIndexPath == indexPath {
 //            cell.cellBackGroundView.backgroundColor = UIColor.green // Change to desired color

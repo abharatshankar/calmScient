@@ -784,6 +784,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                                             print("Error: \(error)")
                                         }
                                     }
+                                    let indexPath = IndexPath(row: 2, section: 0)
+                                            tableView.reloadRows(at: [indexPath], with: .automatic)
                                     print("Switch is ON")
                                 } else {
                                     setAppDarkMode(false)
@@ -812,6 +814,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                                             print("Error: \(error)")
                                         }
                                     }
+                                    let indexPath = IndexPath(row: 2, section: 0)
+                                            tableView.reloadRows(at: [indexPath], with: .automatic)
                                 }
                             }
                             
@@ -840,7 +844,6 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                                     DispatchQueue.main.async {
                                         print(json)
-                                        
                                     }
                                     
                                 } else {
@@ -919,6 +922,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 }
                 
             }
+            print("-4-4-4-4-4--4")
+            print(cellTitleList[indexPath.row])
             cell.cellTitleLabel.text = cellTitleList[indexPath.row]
             
             
