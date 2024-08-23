@@ -96,13 +96,33 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
     }
     
     @objc func backButtonTapped() {
-//        let javascript = "onAbortCourseGotoIndex();"
-//        webView.evaluateJavaScript(javascript) { [weak self] (result, error) in
-//            if error != nil {
-        self.navigationController?.popViewController(animated: true)
-           // }
-          //  print(result)
-       // }
+        let javascript = "onAbortCourseGotoIndex();"
+        
+        webView.evaluateJavaScript(javascript) { [weak self] (result, error) in
+            guard let self = self else { return }
+
+            if let error = error {
+                print("JavaScript error: \(error)")
+            }
+
+            // Here we simulate the messageBody that might contain "1001" key
+            // Normally, this would come from your JS message handler
+            let messageBody: [String: Any] = ["1001": "turn off loading and go to index"]
+
+            for keyValuePair in messageBody {
+                if keyValuePair.key == "1001" {
+                    // index 3 - last page (quiz)
+                    if self.index == 2 {
+                        self.navigationController?.popViewController(animated: true)
+                    } else if self.index == 3 {
+                        self.title = "Your results"
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }else if (keyValuePair.key == "1100"){
+                    print("web page loaded with valid session")
+                }
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -159,7 +179,7 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
                     }else if(index == 3){
                         self.title = "Your results"
                     }
-
+                    self.navigationController?.isNavigationBarHidden = false
                     
                 } else if keyValuePair.key == "1100" {
                     //index 3 - quiz page entered
@@ -168,8 +188,13 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
                         self.title = pageTitle
                     }
                     
+                    self.navigationController?.isNavigationBarHidden = false
+                }else if keyValuePair.key == "1003" {
+                    // "1003": Hide Header
+                    self.navigationController?.isNavigationBarHidden = true
                     
                 } else if keyValuePair.key == "401" {
+                    self.navigationController?.isNavigationBarHidden = false
                     let alertController = UIAlertController(title: "Error Occured", message: "Error occured. Please try again!!", preferredStyle: .alert)
                     // Add an action button to the alert
                     let okAction = UIAlertAction(title: "OK", style: .default) { _ in

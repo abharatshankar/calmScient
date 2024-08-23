@@ -27,18 +27,18 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         setupLanguage()
 
        
-//       userNameTextField.text = "mtabata@gmail.com"
-//       passwordTextField.text = "mtabata@1234"
+       userNameTextField.text = "mtabata@gmail.com"
+       passwordTextField.text = "mtabata@1234"
 //        
 //       userNameTextField.text = "chandra.p@gmail.com"
 //       passwordTextField.text = "chandra@1234"
         
         
 //               userNameTextField.text = "ramesh@gmail.com"
-//               passwordTextField.text = "ramesh"
+//               passwordTextField.text = "ramesh@123"
         
-               userNameTextField.text = "sravanthi@gmail.com"
-               passwordTextField.text = "sravanthi@1234"
+//               userNameTextField.text = "sravanthi@gmail.com"
+//               passwordTextField.text = "sravanthi@1234"
 
 //        userNameTextField.text = ""
 //        passwordTextField.text = ""
@@ -65,7 +65,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         
         
         
-        self.loginButton.setAttributedTitleWithGradientDefaults(title: "Login")
+        self.loginButton.setAttributedTitleWithGradientDefaults(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Login" : "Acceso")
         
         self.forgotPasswordLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPasswordGesture(tapGestureRecognizer:)))
@@ -77,14 +77,15 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         createAccountTapGesture.numberOfTapsRequired = 1
         self.createAnAccountLabel.addGestureRecognizer(createAccountTapGesture)
         
-        let attributedText = NSMutableAttributedString(string: "Forgot password?", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
+        let attributedText = NSMutableAttributedString(string: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Forgot Password?" : "¿Has olvidado tu contraseña?", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
         forgotPasswordLabel.attributedText = attributedText
         
-        let createAccountAttributedText = NSMutableAttributedString(string: "Create an new account", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
+       
+        let createAccountAttributedText = NSMutableAttributedString(string:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Create an new account" : "Crea una nueva cuenta", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
         createAnAccountLabel.attributedText = createAccountAttributedText
         
-        
-        let termsAndConditions = "Accept terms and conditions"
+       
+        let termsAndConditions = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Accept terms and conditions" : " Aceptar términos y condiciones"
         let termsAndConditionsAttributedText = NSMutableAttributedString(string: termsAndConditions, attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white])
         termsAndConditionsAttributedText.addAttributes([.underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white], range: (termsAndConditions as NSString).range(of: "terms and conditions"))
         selectionButton.contentLabel.attributedText = termsAndConditionsAttributedText

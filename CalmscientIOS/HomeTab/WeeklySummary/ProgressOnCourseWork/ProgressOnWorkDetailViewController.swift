@@ -79,9 +79,12 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "ProgressCollapsableTableCell", bundle: nil), forCellReuseIdentifier: "ProgressCollapsableTableCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SubsectionCell")
         return tableView
     }()
+    
     var tableData: [ProgressOfWorkCellData] = []
     var progressDetailData: [[String: Any]] = []
     var index: Int?
@@ -91,7 +94,6 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         self.title = "Progress on course work"
         tableData = prepareData()
         print(tableData)
-        summaryResultsTableView.separatorStyle = .none
         
         self.view.addSubview(summaryResultsTableView)
         NSLayoutConstraint.activate([
@@ -103,14 +105,17 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         self.view.bringSubviewToFront(needToTalkSomeOneButton)
         summaryResultsTableView.reloadData()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         needToTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
     }
+    
     @IBAction func needToTalkButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "NeedToTalkViewController", bundle: nil)
-               let vc = next.instantiateViewController(withIdentifier: "NeedToTalkViewController") as? NeedToTalkViewController
-               vc?.title = "Emergency resource"
-               self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = next.instantiateViewController(withIdentifier: "NeedToTalkViewController") as? NeedToTalkViewController
+        vc?.title = "Emergency resource"
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     private func prepareData() -> [ProgressOfWorkCellData] {
@@ -129,7 +134,6 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         }
     }
     
-    
     // MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,37 +144,47 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         let dataItem = tableData[section]
         return dataItem.exapansionState ? dataItem.subtitle.count + 1 : 1
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataItem = tableData[indexPath.section]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
-            return UITableViewCell()
-        }
-           if indexPath.row == 0 {
-       
-        cell.dataItem = dataItem
-        cell.cellExpansionClosure = { [weak self] isExpanded in
-            guard let self = self else { return }
-            if isExpanded {
-                // Collapse all sections
-                for item in self.tableData {
-                    item.updateExpansionState(isExpanded: false)
-                }
-                // Expand the selected section
-                dataItem.updateExpansionState(isExpanded: true)
-            } else {
-                // Collapse the selected section
-                dataItem.updateExpansionState(isExpanded: false)
+        
+        if indexPath.row == 0 {
+            // Main collapsible cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
+                return UITableViewCell()
             }
-            tableView.reloadData() // Reload the table view after updating the expansion state
+            cell.dataItem = dataItem
+            cell.cellExpansionClosure = { [weak self] isExpanded in
+                guard let self = self else { return }
+                if isExpanded {
+                    // Collapse all sections
+                    for item in self.tableData {
+                        item.updateExpansionState(isExpanded: false)
+                    }
+                    // Expand the selected section
+                    dataItem.updateExpansionState(isExpanded: true)
+                } else {
+                    // Collapse the selected section
+                    dataItem.updateExpansionState(isExpanded: false)
+                }
+                tableView.reloadData() // Reload the table view after updating the expansion state
+            }
+            return cell
+        } else {
+            // Subsection cells
+            let subTitle = dataItem.subtitle[indexPath.row - 1]
+            let subPercentage = dataItem.percentage[indexPath.row - 1]
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SubsectionCell", for: indexPath)
+            cell.textLabel?.text = subTitle
+            cell.detailTextLabel?.text = subPercentage
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.detailTextLabel?.textAlignment = .right
+            cell.selectionStyle = .none
+            
+            return cell
         }
-         }
-        return cell
-
-        //else {
-        //                let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "SubsectionCell")
-        //                cell.textLabel?.text = dataItem.subtitle[indexPath.row - 1]
-        //                cell.detailTextLabel?.text = dataItem.percentage[indexPath.row - 1]
-        //                return cell
     }
     
     //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

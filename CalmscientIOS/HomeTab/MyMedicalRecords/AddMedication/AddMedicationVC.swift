@@ -57,7 +57,7 @@ class AddMedicationVC: UIViewController {
         dosageLabel.text = AppHelper.getLocalizeString(str:"Dosage")
         dosageLabel.text = AppHelper.getLocalizeString(str:"Direction")
         withMealLabel.text = AppHelper.getLocalizeString(str:"With Meal")
-        scheduleTimeLabel.text = AppHelper.getLocalizeString(str:"Schedule Time & Alarm")
+        scheduleTimeLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Schedule Time & Alarm" : "Programar Hora y Alarma"
         }
     func setupAlarmMockData(){
         let alarmMorning = AlarmData(alarmMode: "Morning", medicationTime: "08:00AM", alarmTime: "07:50AM", alarmOnOrOFF: false)

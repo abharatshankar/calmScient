@@ -25,12 +25,13 @@ class ManagingAnxietyBeginScreen: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Managing Anxiety" : "Manejo de la Ansiedad"
         self.navigationController?.navigationBar.isHidden = true
     }
     @IBAction func letBeginButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "CourseViewController", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
-        vc?.title = "Managing Anxiety"
+        vc?.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Managing Anxiety" : "Manejo de la Ansiedad"
         vc?.courseID = 2
         self.navigationController?.pushViewController(vc!, animated: true)
     }

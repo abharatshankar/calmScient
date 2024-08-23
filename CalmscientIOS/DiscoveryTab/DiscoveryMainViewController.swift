@@ -189,7 +189,7 @@ extension DiscoveryMainViewController : UITableViewDataSource,UITableViewDelegat
         } else if indexPath.row == 1 {
             let next = UIStoryboard(name: "CourseViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "CoursesViewController") as? CoursesViewController
-            vc?.title = "Changing your response to stress"
+            vc?.title =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Changing your response to stress" : "Cambiando tu respuesta al estrés"
             vc?.courseID = 3
             self.navigationController?.pushViewController(vc!, animated: true)
         } else {

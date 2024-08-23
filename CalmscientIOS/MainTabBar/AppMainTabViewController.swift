@@ -10,6 +10,7 @@ import UIKit
 @available(iOS 16.0, *)
 class AppMainTabViewController: UITabBarController {
 
+    var isInitalView: Bool  = false
     let tabTitles:[String] = ["HOME","DISCOVERY","EXERCISES","REWARDS"]
     let selectedImages:[String] =  ["MainTab_Home_Selected","MainTab_Discovery_Selected","MainTab_Exercises_Selected","MainTab_Rewards_Selected"]
     let unselectedimages:[String] = ["MainTab_Home_Unselected","MainTab_Discovery_Unselected","MainTab_Exercises_Unselected","MainTab_Rewards_UnSelected"]
@@ -46,10 +47,15 @@ class AppMainTabViewController: UITabBarController {
         print("prepare Tabs")
         var tabVC:[UIViewController] = []
         
-        let vc1 = UIStoryboard(name: "DashboardHomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTabDashboardViewController") as! HomeTabDashboardViewController
-        let navC = UINavigationController(rootViewController: vc1)
+        let vmain = UIStoryboard(name: "DashboardHomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTabDashboardViewController") as! HomeTabDashboardViewController
+        let navCview = UINavigationController(rootViewController: vmain)
         
-        let item1 = navC
+        let vc1 = UIStoryboard(name: "UserMedicalRecords", bundle: nil).instantiateViewController(withIdentifier: "UserMedicalRecordsViewController") as! UserMedicalRecordsViewController
+                let navC = UINavigationController(rootViewController: vc1)
+                
+        
+        
+        let item1 = isInitalView ? navC : navCview
         let icon1 = UITabBarItem(title: "\(tabTitles[0])", image: UIImage(named: "\(unselectedimages[0])"), selectedImage: UIImage(named: "\(selectedImages[0])"))
         
         item1.tabBarItem = icon1

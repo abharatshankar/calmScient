@@ -262,11 +262,11 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
         
         switch section {
         case 2:
-            header.setText("Alcohol Fee Days")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol Fee Days" : "Días sin alcohol.")
         case 1:
-            header.setText("Pros:")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Pros:" : "Ventajas:")
         case 3:
-            header.setText("Cons:")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Cons:" : "Contras:")
         default:
             header.setText("")
         }

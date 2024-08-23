@@ -41,6 +41,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         //        basicKnowledge.tintColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1)
         //        basicKnowledge.layer.cornerRadius = 10;
         customSegmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
+        customSegmentedControl.setupLabels()
         updateView()
         self.navigationController?.isNavigationBarHidden = false
         
@@ -104,6 +105,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
        // self.view.showToastActivity()
     }
 //        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
@@ -183,16 +185,18 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
 
                     let sectionData = index[indexPath.section]
                     if let nowValue = sectionData["now"] as? Int {
-                        cell.leftValue.text = "\(nowValue) days"
+                        
+                        cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(nowValue) days" :"Días"
                     } else {
-                        cell.leftValue.text = "0 days"
+                        
+                        cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 days" :"0 Días"
                     }
            
                     cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
                     if let goalValue = sectionData["goal"] as? Int {
                         cell.rightValue.text = "\(goalValue) days"
                     } else {
-                        cell.rightValue.text = "0 days"
+                        cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 days" :"0 Días"
                     }
 
                     cell.rightBox.layer.cornerRadius = 10
@@ -305,9 +309,9 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         
         switch section {
         case 0:
-            header.setText("Alcohol Fee Days")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol Fee Days" : "Días sin alcohol.")
         case 1:
-            header.setText("Drink Counts")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Drink Counts" : "Conteo de bebidas.")
         default:
             header.setText("")
         }

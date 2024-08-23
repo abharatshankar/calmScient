@@ -147,9 +147,9 @@ class MedicationsDetailTableCell: UITableViewCell {
     
     func getTimeStr(timeStr:String) -> String{
         
-        if(timeStr == "Good morning!"){
+        if(timeStr == "Morning"){
             return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good morning!" : "¡Buenos días!"
-        }else if(timeStr == "Good afternoon!"){
+        }else if(timeStr == "Afternoon"){
             return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good afternoon!" : "¡Buenos tardes!"
         }else{
             return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Good evening!" : "¡Buenos noches!"

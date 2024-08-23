@@ -71,6 +71,10 @@ class MedicationsDetailViewController: ViewController, UISheetPresentationContro
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Schedule Time & Alarm" : "Programar Hora y Alarma"
+    }
+    
 
 }
 extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDelegate {

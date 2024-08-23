@@ -24,7 +24,7 @@ class ProgressOnWorkMainViewController: ViewController {
     var tableData:[ProgressOfWorkMainTableData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Progress on course work"
+        
         
 //        tableData.append(ProgressOfWorkMainTableData(title: "Braving Anxiety", subTitle: "45%"))
 //        tableData.append(ProgressOfWorkMainTableData(title: "Feeling Better", subTitle: "18%"))
@@ -92,6 +92,7 @@ class ProgressOnWorkMainViewController: ViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         needTotTalkSomeOneButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Progress on course work" : "Progreso en el trabajo del curso"
     }
     @IBAction func needToTalkButtonAction(_ sender: Any) {
         let next = UIStoryboard(name: "NeedToTalkViewController", bundle: nil)

@@ -8,7 +8,9 @@ class CustomSegmentedControl: UIControl {
     
     var bottomBorderViews = [UIView]()
     
-    var items: [String] = ["Drinking Control", "Smoking Control"] {
+    var items: [String] = [
+        UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Drinking Control" : "Control del Consumo de Alcohol",
+        UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Smoking Control" : "Control del Tabaquismo" ] {
         didSet {
             setupLabels()
             setupBorders()

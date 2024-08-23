@@ -198,9 +198,16 @@ class UserIntroDayFeedbackViewController: ViewController {
             .first?.delegate as? SceneDelegate {
             guard let window = sceneDelegate.window else { return }
             let homeController = UIStoryboard(name: "AppTabBar", bundle: nil).instantiateViewController(withIdentifier: "AppMainTabViewController") as! AppMainTabViewController
+            homeController.isInitalView = true
             window.rootViewController = homeController
             window.makeKeyAndVisible()
         }
+        
+        
+        
+//        let next = UIStoryboard(name: "UserMedicalRecords", bundle: nil)
+//                    let vc = next.instantiateViewController(withIdentifier: "UserMedicalRecordsViewController") as? UserMedicalRecordsViewController
+//                    self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }
