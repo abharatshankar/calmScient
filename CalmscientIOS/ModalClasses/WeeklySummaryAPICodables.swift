@@ -68,10 +68,11 @@ public class GraphData {
     }
     
     func getMarkerTextValue() -> String {
+        let scoreString = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Score" : "Puntaje"
         guard let additionalInfo = self.additionalInfo else {
-            return "Score(\(yValue))"
+            return "\(scoreString)(\(yValue))"
         }
-        return "Score(\(yValue))\n\(additionalInfo)"
+        return "\(scoreString)(\(yValue))\n\(additionalInfo)"
     }
     
     func getXAxisLabelValue() -> String {

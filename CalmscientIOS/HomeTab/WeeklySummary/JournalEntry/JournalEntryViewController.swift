@@ -32,16 +32,30 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        needToTalkButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
+        
+        searchTF.placeholder = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Search" : "Buscar"
         self.navigationController?.isNavigationBarHidden = false
         calenderButton.layer.cornerRadius = calenderButton.frame.height/2
 
         searchTF.delegate = self
         
-        needToTalkButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
+   //     needToTalkButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
         buttonTag = 1
         quizButton.layer.cornerRadius = 10
         discoveryButton.layer.cornerRadius = 10
         dailyButton.layer.cornerRadius = 10
+        
+        quizButton.layer.borderWidth = 0.5
+        discoveryButton.layer.borderWidth = 0.5
+        dailyButton.layer.borderWidth = 0.5
+        
+        quizButton.layer.borderColor = UIColor.lightGray.cgColor
+        discoveryButton.layer.borderColor = UIColor.lightGray.cgColor
+        dailyButton.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
 
         journalTableView.register(UINib(nibName: "quizTableViewCell", bundle: nil), forCellReuseIdentifier: "quizTableViewCell")
         journalTableView.delegate = self
@@ -69,7 +83,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         pickerBackView.isHidden = true
         
         
-        nomedications.text = "No data for this date"
+        nomedications.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No data for this date" : "No hay datos para esta fecha"
         nomedications.textColor = .purple
         nomedications.textAlignment = .center
         nomedications.font = UIFont.boldSystemFont(ofSize: 17)
@@ -167,11 +181,29 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
                 print("Error: \(error)")
             }
         }
+        let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            let title1 = languageId == 1 ? "Quiz" : "Prueba"
+            quizButton.setTitle(title1, for: .normal)
+        let title2 = languageId == 1 ? "Daily jouneral" : "diario"
+        dailyButton.setTitle(title2, for: .normal)
+        
+        let title3 = languageId == 1 ? "Discovery Excercise" : "Ejercicio de descubrimiento"
+        discoveryButton.setTitle(title3, for: .normal)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
 
-        setupLanguage()
+        //setupLanguage()
+        
+        let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            let title1 = languageId == 1 ? "Quiz" : "Prueba"
+            quizButton.setTitle(title1, for: .normal)
+        let title2 = languageId == 1 ? "Daily jouneral" : "diario"
+        dailyButton.setTitle(title2, for: .normal)
+        
+        let title3 = languageId == 1 ? "Discovery Excercise" : "Ejercicio de descubrimiento"
+        discoveryButton.setTitle(title3, for: .normal)
     }
     override func viewDidDisappear(_ animated: Bool) {
         pickerBackView.isHidden = true
@@ -188,10 +220,11 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
+        
         needToTalkButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Need to talk with someone?"))
-        quizButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Quiz")
-        dailyButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Daily jouneral")
-        discoveryButton.titleLabel!.text = AppHelper.getLocalizeString(str: "Discovery Excercise")
+      
+       
+
         }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string

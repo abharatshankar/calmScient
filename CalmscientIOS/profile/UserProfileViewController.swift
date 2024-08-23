@@ -1001,10 +1001,10 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             
             //  func showAlert() {
             // Create the alert controller
-            let alertController = UIAlertController(title: "Confirmation", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            let alertController = UIAlertController(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Confirmation" : "Confirmación", message: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Are you sure you want to logout?" : "¿Estás seguro de que quieres cerrar sesión?", preferredStyle: .alert)
             
             // Create the "Yes" action
-            let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            let yesAction = UIAlertAction(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Yes" : "Sí", style: .default) { _ in
                 print("User tapped Yes")
                 let next = UIStoryboard(name: "LoginVC", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC

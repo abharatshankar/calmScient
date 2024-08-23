@@ -24,7 +24,7 @@ class ProgressOnWorkMainViewController: ViewController {
     var tableData:[ProgressOfWorkMainTableData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Progress on course work"
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Progress on course work" : "Progreso en el trabajo del curso"
         
 //        tableData.append(ProgressOfWorkMainTableData(title: "Braving Anxiety", subTitle: "45%"))
 //        tableData.append(ProgressOfWorkMainTableData(title: "Feeling Better", subTitle: "18%"))

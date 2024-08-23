@@ -43,6 +43,27 @@ public enum WeeklySummaryItems:String {
     case WeeklySummaryProgressOnCourseWork = "Progress On Course Work"
     case WeeklySummaryJournalEntry = "Journal Entry"
     
+    var localized: String {
+          switch self {
+          case .WeeklySummarySummaryOfMood:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary Of Mood" : "Resumen del estado de ánimo"
+          case .WeeklySummarySummaryOfSleep:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary of sleep" : "Resumen del sueño"
+          case .WeeklySummarySummaryOfPHQ9:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary Of PHQ9" : "Resumen del PHQ9";
+          case .WeeklySummarySummaryOfGAD:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary Of GAD" : "Resumen de TAG";
+          case .WeeklySummarySummaryOfAudit:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary Of Audit" : "Resumen de auditoría"
+          case .WeeklySummarySummaryOfDast:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary Of Dast" : "Resumen de Dast"
+          case .WeeklySummaryProgressOnCourseWork:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Progress On Course Work" : "Progreso en el trabajo del curso"
+          case .WeeklySummaryJournalEntry:
+              return UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Journal Entry" : "Entrada de diario"
+          }
+      }
+    
     public func getAssetName() -> String {
         switch self {
         case .WeeklySummaryJournalEntry:
