@@ -6,13 +6,14 @@ class ResourceCell: UITableViewCell {
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var headLable: UILabel!
-
+    
+    @IBOutlet weak var resourcesLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Configure corner radius
         mainView.layer.cornerRadius = 10
         mainView.layer.masksToBounds = true
-               
                // Configure shadow
         mainView.layer.shadowColor = UIColor.black.cgColor
         mainView.layer.shadowOpacity = 0.1

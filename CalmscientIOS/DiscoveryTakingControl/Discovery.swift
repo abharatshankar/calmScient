@@ -49,6 +49,32 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
 //        getTakingControlIndexResponse()
 //       print("takingControlResponse?.courseLists: \(takingControlResponse?.courseLists)")
         
+        
+        
+        
+
+        
+        var image = UIImage(named: "NavigationBack")
+        image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        customSegmentedControl.setupLabels()
+    }
+    
+    @objc func backButtonOverrideAction() {
+        print("Back button tapped")
+        // Perform the action you want here
+        let vcz = UIStoryboard(name: "DiscoveryMainDashboard", bundle: nil).instantiateViewController(withIdentifier: "DiscoveryMainViewController") as! DiscoveryMainViewController
+      //  vc?.title = "Basic Knowledge"
+        self.navigationController?.pushViewController(vcz, animated: true)
+   //     self.navigationController?.popViewController(animated: false)
+
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
             
@@ -85,26 +111,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
                 print("Error: \(error)")
             }
         }
-        
-        
-
-        
-        var image = UIImage(named: "NavigationBack")
-        image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
-
-    }
-    @objc func backButtonOverrideAction() {
-        print("Back button tapped")
-        // Perform the action you want here
-        let vcz = UIStoryboard(name: "DiscoveryMainDashboard", bundle: nil).instantiateViewController(withIdentifier: "DiscoveryMainViewController") as! DiscoveryMainViewController
-      //  vc?.title = "Basic Knowledge"
-        self.navigationController?.pushViewController(vcz, animated: true)
-   //     self.navigationController?.popViewController(animated: false)
-
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
+        customSegmentedControl.setupLabels()
         tableView.reloadData()
         self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Taking control" : "Tomando el control"
        // self.view.showToastActivity()
@@ -290,7 +297,8 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
             cell.selectionStyle = .none
             cell.videoImageView.image = UIImage(named: "Mask", in: nil, with: nil)
             cell.headLable.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   "Work your strengths" : "Aprovecha tus fortalezas"
-            
+            cell.resourcesLbl.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Resources" : "Recursos"
+                   
             cell.descriptionLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   "Do something you're good at to build self-confidence, then tackle a tougher task." : "Haz algo en lo que seas bueno para aumentar tu autoconfianza, y luego enfrenta una tarea más difícil."
             // Configure the cell as needed
             return cell

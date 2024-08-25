@@ -83,7 +83,9 @@ class CustomSegmentedControl: UIControl {
         
         for index in 0..<items.count {
             let label = UILabel(frame: .zero)
-            label.text = items[index]
+            label.text = [
+                UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Drinking Control" : "Control del Consumo de Alcohol",
+                UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Smoking Control" : "Control del Tabaquismo" ][index]
             label.textAlignment = .center
             label.font = UIFont(name: Fonts().lexendRegular, size: 16)!
             label.textColor = index == selectedIndex ? selectedColor : unselectedColor

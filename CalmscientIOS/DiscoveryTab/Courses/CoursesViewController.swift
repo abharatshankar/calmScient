@@ -41,6 +41,7 @@ class CoursesViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Changing your response to stress" : "Cambiando tu respuesta al estrés"
         getCoursesData()
 //        let courseRequest = GetCourseSessionIdRequestForm()
 //        guard let requestURL = courseRequest.getURLRequest() else {

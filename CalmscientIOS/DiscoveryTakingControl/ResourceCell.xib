@@ -83,6 +83,7 @@
                 <outlet property="descriptionLabel" destination="0GE-fR-yVh" id="r9L-my-gEi"/>
                 <outlet property="headLable" destination="Si3-cZ-eRO" id="yZi-Ch-OaQ"/>
                 <outlet property="mainView" destination="l2b-9q-DvR" id="YdP-Ob-h6X"/>
+                <outlet property="resourcesLbl" destination="ITt-uX-IZ7" id="HHZ-fs-mKl"/>
                 <outlet property="videoImageView" destination="Puu-u4-Rt5" id="Q6k-ws-i1g"/>
             </connections>
             <point key="canvasLocation" x="176.33587786259542" y="53.521126760563384"/>

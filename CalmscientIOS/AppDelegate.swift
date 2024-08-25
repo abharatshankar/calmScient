@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        checkNotificationPermission()
         DispatchQueue.main.async {
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "TabBarUnSelectedColor")!, NSAttributedString.Key.font: UIFont(name: Fonts().lexendRegular, size: 9)!], for: .normal)
             UITabBar.appearance().isTranslucent = true
@@ -57,6 +59,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         return true
+    }
+    
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Permission granted")
+            } else {
+                print("Permission not granted")
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            }
+        }
+    }
+    
+
+    
+    func checkNotificationPermission() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                // Permission not requested yet, request permission
+                self.requestNotificationPermission()
+            case .denied:
+                // Permission was denied, show an alert to guide the user to settings
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            case .authorized, .provisional, .ephemeral:
+                // Permission granted or in provisional state
+                print("Permission granted")
+            @unknown default:
+                break
+            }
+        }
     }
     
     
