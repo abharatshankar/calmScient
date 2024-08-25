@@ -16,16 +16,20 @@ class UserIntroSelectionTableCell: UITableViewCell {
     
     private var cellType:UserEntryDayFeedbackTableCell! {
         didSet {
+            var languageId : Int?
+            languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            
             if cellType == .UserMoodHoursCell {
-                self.titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? instance.moodData?.moodQuestion  : "¿Cómo estuvo tu día?"
+                self.titleLabel.text = (languageId == 0 ? 1 : languageId  ) == 1 ? instance.moodData?.moodQuestion  : "¿Cómo estuvo tu día?"
             } else {
-                self.titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? instance.timeSpendData?.timeSpendQuestion : "¿Con quién pasaste tiempo?"
+                self.titleLabel.text = (languageId == 0 ? 1 : languageId  ) == 1 ? instance.timeSpendData?.timeSpendQuestion : "¿Con quién pasaste tiempo?"
             }
         }
     }
     private var instance:UserStartupScreenDayData!
     var selectedIndex = -1
-    let dummyData:[String:[(String,String)]] = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? ["UserMoodHoursCell":[
+    
+    let dummyData:[String:[(String,String)]] = (UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 0 ? 1 : UserDefaults.standard.integer(forKey: "SelectedLanguageID")) == 1 ? ["UserMoodHoursCell":[
         ("UserIntro_Bad","BAD"),
         ("UserIntro_Couldbe","COULD BE BETTER"),
         ("UserIntro_Fair","FAIR"),

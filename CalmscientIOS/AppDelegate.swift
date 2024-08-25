@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             
-            let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
-            
-            UserDefaults.standard.set(languageId, forKey: "SelectedLanguageID")
+            var languageId: Int? = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            languageId = (languageId == 0) ? 1 : languageId
+            UserDefaults.standard.set(languageId , forKey: "SelectedLanguageID")
             
             
             if languageId == 1 {

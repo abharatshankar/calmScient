@@ -50,7 +50,7 @@ class AppMainTabViewController: UITabBarController {
         let vmain = UIStoryboard(name: "DashboardHomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTabDashboardViewController") as! HomeTabDashboardViewController
         let navCview = UINavigationController(rootViewController: vmain)
         
-        let vc1 = UIStoryboard(name: "UserMedicalRecords", bundle: nil).instantiateViewController(withIdentifier: "UserMedicalRecordsViewController") as! UserMedicalRecordsViewController
+        let vc1 = UIStoryboard(name: "UserMedications", bundle: nil).instantiateViewController(withIdentifier: "UserMedicationsViewController") as! UserMedicationsViewController
                 let navC = UINavigationController(rootViewController: vc1)
                 
         

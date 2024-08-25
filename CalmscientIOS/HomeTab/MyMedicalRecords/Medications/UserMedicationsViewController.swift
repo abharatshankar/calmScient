@@ -26,6 +26,14 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
     var nomedications = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        let customButton = UIButton(type: .system)
+        customButton.setImage(UIImage(named: "BackArrow")?.withRenderingMode(.alwaysOriginal), for: .normal) // Example with an image
+            customButton.addTarget(self, action: #selector(customButtonTapped), for: .touchUpInside)
+            
+            // Assign the custom button to the leftBarButtonItem
+            let customBarButton = UIBarButtonItem(customView: customButton)
+            self.navigationItem.leftBarButtonItem = customBarButton
+        
         calendar.calendarToViewDelegate = self
         addMedicationsButton.imageView?.contentMode = .scaleAspectFill
         medicationsTableView.register(UINib(nibName: "UserMedicationsTableCell", bundle: nil), forCellReuseIdentifier: "UserMedicationsTableCell")
@@ -52,6 +60,26 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
                 ])
         self.nomedications.isHidden = true
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func customButtonTapped() {
+        // Action for the custom button
+        print("Custom left button tapped!")
+        // You can also add custom functionality here, such as popping the view controller
+        
+        if #available(iOS 16.0, *) {
+            if let sceneDelegate = UIApplication.shared.connectedScenes
+                .first?.delegate as? SceneDelegate {
+                guard let window = sceneDelegate.window else { return }
+                let homeController = UIStoryboard(name: "AppTabBar", bundle: nil).instantiateViewController(withIdentifier: "AppMainTabViewController") as! AppMainTabViewController
+                homeController.isInitalView = false
+                window.rootViewController = homeController
+                window.makeKeyAndVisible()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     

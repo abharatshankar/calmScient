@@ -96,6 +96,7 @@
                 <outlet property="cellTitleLabel" destination="rOi-r4-EIn" id="vdi-bj-aw9"/>
                 <outlet property="darkModeChangeButton" destination="eeb-yA-wuz" id="UgS-ve-aKI"/>
                 <outlet property="darkModeSwitch" destination="lWb-qp-ID1" id="ZlN-6j-StL"/>
+                <outlet property="darkmodeLbl" destination="Zaa-Z8-0Ba" id="9gy-W8-vXO"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="39.7887323943662"/>
         </tableViewCell>

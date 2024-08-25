@@ -21,14 +21,15 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var loginButton: LinearGradientButton!
     
     @IBOutlet weak var createAnAccountLabel: UILabel!
+    var languageId : Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLanguage()
 
        
-//       userNameTextField.text = "mtabata@gmail.com"
-//       passwordTextField.text = "mtabata@1234"
+       userNameTextField.text = "mtabata@gmail.com"
+       passwordTextField.text = "mtabata@1234"
 //        
 //       userNameTextField.text = "chandra.p@gmail.com"
 //       passwordTextField.text = "chandra@1234"
@@ -37,8 +38,8 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 //       userNameTextField.text = "ramesh@gmail.com"
 //       passwordTextField.text = "ramesh@123"
         
-          userNameTextField.text = "sravanthi@gmail.com"
-          passwordTextField.text = "sravanthi@1234"
+//          userNameTextField.text = "sravanthi@gmail.com"
+//          passwordTextField.text = "sravanthi@1234"
 
 //        userNameTextField.text = ""
 //        passwordTextField.text = ""
@@ -61,11 +62,10 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         passwordTextField.font = UIFont(name: Fonts().lexendLight, size: 16.0)
         passwordTextField.textColor = UIColor(named: "MainTextColor")
         
-        selectionButton.contentLabel.text = "Accept Terms & Conditions"
         
         
         
-        self.loginButton.setAttributedTitleWithGradientDefaults(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Login" : "Acceso")
+        
         
         self.forgotPasswordLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPasswordGesture(tapGestureRecognizer:)))
@@ -77,15 +77,8 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         createAccountTapGesture.numberOfTapsRequired = 1
         self.createAnAccountLabel.addGestureRecognizer(createAccountTapGesture)
         
-        let attributedText = NSMutableAttributedString(string: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Forgot Password?" : "¿Has olvidado tu contraseña?", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
-        forgotPasswordLabel.attributedText = attributedText
-        
-       
-        let createAccountAttributedText = NSMutableAttributedString(string:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Create an new account" : "Crea una nueva cuenta", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
-        createAnAccountLabel.attributedText = createAccountAttributedText
-        
-       
-        let termsAndConditions = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Accept terms and conditions" : " Aceptar términos y condiciones"
+        languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+        let termsAndConditions = (languageId == 0 ? 1 : languageId  ) == 1 ? "Accept terms and conditions" : " Aceptar términos y condiciones"
         let termsAndConditionsAttributedText = NSMutableAttributedString(string: termsAndConditions, attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white])
         termsAndConditionsAttributedText.addAttributes([.underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white], range: (termsAndConditions as NSString).range(of: "terms and conditions"))
         selectionButton.contentLabel.attributedText = termsAndConditionsAttributedText
@@ -94,21 +87,25 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     func setupLanguage() {
         
             let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
-            
-            if languageId == 1 {
-                UserDefaults.standard.set("en", forKey: "Language")
-                userNameLabel.text = AppHelper.getLocalizeString(str: "Username")
-                passwordLabel.text = AppHelper.getLocalizeString(str: "Password")
-                createAnAccountLabel.text = AppHelper.getLocalizeString(str: "Create an New account")
-                forgotPasswordLabel.text = AppHelper.getLocalizeString(str: "Forgot Password?")
-            } else if languageId == 2 {
-                UserDefaults.standard.set("es", forKey: "Language")
-                userNameLabel.text = AppHelper.getLocalizeString(str: "Username")
-                passwordLabel.text = AppHelper.getLocalizeString(str: "Password")
-                createAnAccountLabel.text = AppHelper.getLocalizeString(str: "Create an New account")
-                forgotPasswordLabel.text = AppHelper.getLocalizeString(str: "Forgot Password?")
-                
-            }
+        
+        
+        
+        
+        let attributedText = NSMutableAttributedString(string: (languageId == 0 ? 1 : languageId  ) == 1 ?  "Forgot Password?" : "¿Has olvidado tu contraseña?", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
+        forgotPasswordLabel.attributedText = attributedText
+        
+       
+        let createAccountAttributedText = NSMutableAttributedString(string:  (languageId == 0 ? 1 : languageId  ) == 1 ?  "Create an new account" : "Crea una nueva cuenta", attributes: [.font: UIFont(name: Fonts().lexendLight, size: 14.0)!, .foregroundColor:UIColor(named: "MainTextColor") ?? UIColor.white, .underlineStyle : NSUnderlineStyle.single.rawValue, .underlineColor:UIColor(named: "MainTextColor") ?? UIColor.white])
+        createAnAccountLabel.attributedText = createAccountAttributedText
+        
+        
+        self.loginButton.setAttributedTitleWithGradientDefaults(title: (languageId == 0 ? 1 : languageId  ) == 1 ?  "Login" : "Acceso")
+        selectionButton.contentLabel.text = (languageId == 0 ? 1 : languageId  ) == 1 ? "Accept Terms & Conditions" : "Aceptar Términos y Condiciones"
+        userNameLabel.text = AppHelper.getLocalizeString(str: "Username")
+        passwordLabel.text = AppHelper.getLocalizeString(str: "Password")
+        createAnAccountLabel.text = (languageId == 0 ? 1 : languageId  ) == 1 ? "Create an New account" : "Crear una nueva cuenta"
+        forgotPasswordLabel.text = (languageId == 0 ? 1 : languageId  ) == 1 ?  "Forgot Password?" : "¿Has olvidado tu contraseña?"
+        
         }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

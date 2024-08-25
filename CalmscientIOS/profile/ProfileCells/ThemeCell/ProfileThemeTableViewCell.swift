@@ -10,6 +10,9 @@ import UIKit
 class ProfileThemeTableViewCell: UITableViewCell {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     
+    
+    @IBOutlet weak var darkmodeLbl: UILabel!
+    
     @IBOutlet weak var profileIconSwitch: UIImageView!
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var cellIconView: UIImageView!

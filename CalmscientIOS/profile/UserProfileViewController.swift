@@ -752,6 +752,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
+                            cell.darkmodeLbl.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Dark Mode" : "la noche"
 //                            cell.cellIconView.image = UIImage(data: data)
                             cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                             guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
@@ -1019,6 +1020,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             // Create the "Yes" action
             let yesAction = UIAlertAction(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Yes" : "Sí", style: .default) { _ in
                 print("User tapped Yes")
+                self.clearUserDefaults()
                 let next = UIStoryboard(name: "LoginVC", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                 self.navigationController?.pushViewController(vc!, animated: true)
@@ -1044,5 +1046,13 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             
         }
         
+    }
+    
+    func clearUserDefaults() {
+        let defaults = UserDefaults.standard
+        if let appDomain = Bundle.main.bundleIdentifier {
+            defaults.removePersistentDomain(forName: appDomain)
+        }
+        defaults.synchronize()
     }
 }

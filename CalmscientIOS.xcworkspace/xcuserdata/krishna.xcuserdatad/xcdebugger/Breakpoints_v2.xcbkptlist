@@ -46,8 +46,8 @@
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/TableCellWithCollectionView/UserIntroSelectionTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/TableCellWithCollectionView/UserIntroSelectionTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/TableCellWithCollectionView/UserIntroSelectionTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/TableCellWithCollectionView/UserIntroSelectionTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "CalmscientIOS/Features/UserIntro/CellsUI/TableCells/TableCellWithCollectionView/UserIntroSelectionTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -258,6 +258,36 @@
             endingLineNumber = "202"
             landmarkName = "submitAction(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70014BC4-B12D-4E72-82BC-53320812B658 - 402e2f83c34784b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202">
+               </Location>
+               <Location
+                  uuid = "70014BC4-B12D-4E72-82BC-53320812B658 - d01a512571110abe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -306,6 +336,36 @@
             endingLineNumber = "182"
             landmarkName = "submitAction(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F712BF5E-2313-43C8-8ABA-5FE209E5A087 - f4b2fdc7db5a9681"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184">
+               </Location>
+               <Location
+                  uuid = "F712BF5E-2313-43C8-8ABA-5FE209E5A087 - f4b2fdc7db5a9681"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalmscientIOS.ProfileViewController.submitAction(Any) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -674,6 +734,36 @@
             endingLineNumber = "143"
             landmarkName = "userContentController(_:didReceive:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "249E6C8E-7EF9-437E-B274-0CEA9D4FDE25 - 45e7bcfb95da0d18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalmscientIOS.WebViewLessonViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143">
+               </Location>
+               <Location
+                  uuid = "249E6C8E-7EF9-437E-B274-0CEA9D4FDE25 - 45e7bcfb95da0d18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalmscientIOS.WebViewLessonViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -882,6 +972,36 @@
             endingLineNumber = "112"
             landmarkName = "backButtonTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12B0171B-C10D-496B-9411-B1DF7FFE72A2 - 2df9dbcbaeac7b8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CalmscientIOS.WebViewLessonViewController.backButtonTapped() -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112">
+               </Location>
+               <Location
+                  uuid = "12B0171B-C10D-496B-9411-B1DF7FFE72A2 - 2df9dbcbaeac7b8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CalmscientIOS.WebViewLessonViewController.backButtonTapped() -&gt; ()"
+                  moduleName = "CalmscientIOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -961,6 +1081,22 @@
             startingLineNumber = "243"
             endingLineNumber = "243"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32B4479-C04C-4D2D-B047-5CE0262AE233"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
