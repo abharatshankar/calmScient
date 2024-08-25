@@ -26,6 +26,10 @@ class MindfulNess: UIViewController {
     @IBOutlet weak var leftBtn: UIImageView!
     @IBOutlet weak var rightBtn: UIImageView!
     
+    @IBOutlet weak var imgStack: UIStackView!
+    
+    @IBOutlet weak var stackHeight: NSLayoutConstraint!
+    
     var languageId : Int = 1
     
     
@@ -124,6 +128,8 @@ class MindfulNess: UIViewController {
     
     func setupData(){
         if(counter == 0){
+            imgStack.isHidden = true
+            stackHeight.constant = 0
             leftBtn.isHidden = true
             // Define the attributes for each text segment
                     let highlightAttr: [NSAttributedString.Key: Any] = [
@@ -201,6 +207,7 @@ class MindfulNess: UIViewController {
             attributedString.addAttributes(highlightAttr, range: beingRange)
 
             text1.attributedText = attributedString
+            text2.text = ""
         }
         else if(counter == 2){
             text1.text = languageId == 1 ? textArray[2] : "¿Cómo ayuda la atención plena con la ansiedad?"
@@ -219,6 +226,8 @@ class MindfulNess: UIViewController {
             stepsImgView.image = UIImage(named: "step4")
         }
         else if(counter == 4){
+            imgStack.isHidden = true
+            stackHeight.constant = 0
             rightBtn.isHidden = false
             text1.text = languageId == 1 ? textArray[4] : "Como un ejemplo simple: en lugar de concentrarte en cuántas millas caminaste por la mañana, ¿puedes estar consciente del canto de los pájaros, sentir activamente el aire fresco y sentir el cambio de estación? Cuando conectas tus sentidos con la naturaleza , los animales, las personas y tu propio cuerpo, captas la atención de tu sistema nervioso, lo que a su vez calma tu ansiedad. Cuando regreses a casa, estarás en mejor estado de ánimo y más preparado para afrontar tu día."
             text2.text = ""
@@ -227,6 +236,8 @@ class MindfulNess: UIViewController {
             stepsImgView.image = UIImage(named: "step5")
         }
         else if(counter == 5){
+            imgStack.isHidden = false
+            stackHeight.constant = 41
             rightBtn.isHidden = true
             text1.text = languageId == 1 ? textArray[5] : "¿Qué ejercicios de atención plena le gustaría incluir en su rutina diaria? Calmscient puede recordarle algunas rutinas sencillas de atención plena que le ayudarán a mantenerse saludable"
             text2.text = ""
@@ -245,6 +256,8 @@ class MindfulNess: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        imgStack.isHidden  =   (counter == 5) ?  false :  true
+        stackHeight.constant = (counter == 5) ? 41 : 0
         setupLanguage()
         titleLabel.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : UIColor(hex: "#424242")
     }

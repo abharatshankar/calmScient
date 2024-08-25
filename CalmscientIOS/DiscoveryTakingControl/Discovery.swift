@@ -106,6 +106,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
     }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        self.title = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Taking control" : "Tomando el control"
        // self.view.showToastActivity()
     }
 //        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
@@ -194,7 +195,8 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
            
                     cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
                     if let goalValue = sectionData["goal"] as? Int {
-                        cell.rightValue.text = "\(goalValue) days"
+                        
+                        cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(goalValue) days" :"Días"
                     } else {
                         cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 days" :"0 Días"
                     }
@@ -209,16 +211,18 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
 
                     let sectionData = index[indexPath.section]
                     if let nowValue = sectionData["now"] as? Int {
-                        cell.leftValue.text = "\(nowValue) counts"
+                        
+                        cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(nowValue) counts" :"conteos"
                     } else {
-                        cell.leftValue.text = "0 counts"
+                        cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 counts" : "0 conteos"
                     }
            
                     cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
                     if let goalValue = sectionData["goal"] as? Int {
-                        cell.rightValue.text = "\(goalValue) counts"
+                        
+                        cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(goalValue) counts" :"conteos"
                     } else {
-                        cell.rightValue.text = "0 counts"
+                        cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 counts" : "0 conteos"
                     }
 
                     cell.rightBox.layer.cornerRadius = 10
@@ -285,8 +289,9 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResourceCell", for: indexPath) as! ResourceCell
             cell.selectionStyle = .none
             cell.videoImageView.image = UIImage(named: "Mask", in: nil, with: nil)
-            cell.headLable.text = "Work your strengths"
-            cell.descriptionLabel.text = "Do something you're good at to build self-confidence, then tackle a tougher task."
+            cell.headLable.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   "Work your strengths" : "Aprovecha tus fortalezas"
+            
+            cell.descriptionLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?   "Do something you're good at to build self-confidence, then tackle a tougher task." : "Haz algo en lo que seas bueno para aumentar tu autoconfianza, y luego enfrenta una tarea más difícil."
             // Configure the cell as needed
             return cell
         case 4:

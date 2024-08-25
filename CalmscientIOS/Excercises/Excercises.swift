@@ -24,7 +24,7 @@ class Excercises: UIViewController {
             ("Progressive muscle relaxation", "progressive"),
             ("Touch and the butterfly hug", "touchAndButterfly"),
             ("Hand over your heart", "handover"),
-            ("Mindful walking", "mindful"),
+            ("Mindful walking", "mindfulWalking_index"),
             ("Movement: dance", "movement"),
             ("Movement: running", "movementRunning"),
             ("Mindful body movement", "mindFulBodyMovement"),

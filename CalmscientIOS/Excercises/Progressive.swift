@@ -21,6 +21,7 @@ class Progressive: UIViewController {
     
     var redOverlayView: UIView!
     var languageId : Int = 1
+    var isPlayerReady = false
     
     
     override func viewDidLoad() {
@@ -32,22 +33,43 @@ class Progressive: UIViewController {
         }
         
         player = AVPlayer(url: url)
+        // Start the activity indicator
+        self.view.showToastActivity()
         
         // Adding gesture recognizers
         addGestureRecognizers()
+        setupPlayerObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            // Stop the audio when the view is about to disappear
-            if self.isMovingFromParent {
-                player?.pause()
+    
+    func setupPlayerObserver() {
+        // Observe the status of the player to check if it's ready to play
+        player?.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "status" {
+            if player?.status == .readyToPlay {
+                isPlayerReady = true
+                // Stop the activity indicator and show the play button
+                self.view.hideToastActivity()
+                playAudioImg.isHidden = false
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Stop the audio when the view is about to disappear
+        if self.isMovingFromParent {
+            player?.pause()
+        }
+        player?.currentItem?.removeObserver(self, forKeyPath: "status")
+    }
     
     func setupLanguage() {
         
@@ -114,26 +136,29 @@ class Progressive: UIViewController {
     }
     
     @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        equalizerImg.contentMode = .scaleToFill
+        guard isPlayerReady else { return } // Ensure the player is ready
         
-        // Create the red overlay view
-        redOverlayView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: equalizerImg.frame.height))
-        redOverlayView.backgroundColor = UIColor(hex: "#F48383")
-        equalizerImg.addSubview(redOverlayView)
-        
-        // Create the mask layer
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = equalizerImg.bounds
-        
-        // Use the image as the mask
-        maskLayer.contents = equalizerImg.image?.cgImage
-        redOverlayView.layer.mask = maskLayer
+        if redOverlayView == nil {
+            equalizerImg.contentMode = .scaleToFill
+            
+            // Create the red overlay view
+            redOverlayView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: equalizerImg.frame.height))
+            redOverlayView.backgroundColor = UIColor(hex: "#F48383")
+            equalizerImg.addSubview(redOverlayView)
+            
+            // Create the mask layer
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = equalizerImg.bounds
+            
+            // Use the image as the mask
+            maskLayer.contents = equalizerImg.image?.cgImage
+            redOverlayView.layer.mask = maskLayer
+        }
         
         // Play or pause audio
         if player?.timeControlStatus == .playing {
             playAudioImg.image = UIImage(named: "playAudio")
             player?.pause()
-            
         } else {
             playAudioImg.image = UIImage(named: "pause")
             player?.play()
@@ -141,9 +166,6 @@ class Progressive: UIViewController {
         
         // Start a timer to update the red overlay view based on the audio progress
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateOverlayView), userInfo: nil, repeats: true)
-        
-        // Update the play/pause icon
-//        playAudioImg.image = player?.timeControlStatus == .playing ? UIImage(named: "pause") : UIImage(named: "playAudio")
     }
 }
 

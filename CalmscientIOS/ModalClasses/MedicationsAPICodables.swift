@@ -242,7 +242,7 @@ class MedicationAlarm: Codable {
             medicineTime = "19:00:00"
         }
         plId = userInfo.patientLocationID
-        `repeat` = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        `repeat` = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] : ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]
     }
     
     public func getDayTime() -> DayTimeValue {
