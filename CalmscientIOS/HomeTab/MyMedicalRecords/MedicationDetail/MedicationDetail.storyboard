@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,13 +33,13 @@
                                         <rect key="frame" x="24" y="11" width="68" height="68"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Ramesh G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-lG-Svv">
-                                        <rect key="frame" x="108" y="47" width="104" height="20"/>
+                                        <rect key="frame" x="108" y="47" width="99.333333333333314" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dolo650" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcA-dn-ka9">
-                                        <rect key="frame" x="108" y="18" width="81" height="25"/>
+                                        <rect key="frame" x="108" y="19.666666666666671" width="75" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Lexend-Medium" family="Lexend" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,25 +60,25 @@
                                 <rect key="frame" x="16" y="173" width="361" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgz-2k-qzE">
-                                        <rect key="frame" x="15.999999999999996" y="26" width="55.666666666666657" height="19"/>
+                                        <rect key="frame" x="15.999999999999996" y="27.333333333333343" width="51.666666666666657" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                         <color key="textColor" name="MedicationCellTitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10mg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIU-aE-R7I">
-                                        <rect key="frame" x="16.000000000000004" y="49" width="48.333333333333343" height="22.666666666666671"/>
+                                        <rect key="frame" x="16" y="49" width="46" height="21"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-xs-fPg">
-                                        <rect key="frame" x="271.66666666666669" y="26" width="73.333333333333314" height="19"/>
+                                        <rect key="frame" x="277.66666666666669" y="27.333333333333343" width="67.333333333333314" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                         <color key="textColor" name="MedicationCellTitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 tablets per day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYj-37-PZW">
-                                        <rect key="frame" x="197.66666666666663" y="49" width="147.33333333333337" height="22.666666666666671"/>
+                                        <rect key="frame" x="209.66666666666663" y="49" width="135.33333333333337" height="21"/>
                                         <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -98,13 +98,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule Time &amp; Alarm " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVb-ma-ONz">
-                                <rect key="frame" x="16" y="295" width="208" height="23"/>
+                                <rect key="frame" x="16" y="295" width="193" height="21"/>
                                 <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g09-U8-Dcr">
-                                <rect key="frame" x="0.0" y="318" width="393" height="500"/>
+                                <rect key="frame" x="0.0" y="316" width="393" height="502"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -126,8 +126,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="directionLabel" destination="Wjj-xs-fPg" id="kB2-Ed-zdW"/>
                         <outlet property="directionsValue" destination="XYj-37-PZW" id="vWO-4B-Sle"/>
                         <outlet property="doctorTitle" destination="fKp-lG-Svv" id="GWZ-VZ-G7i"/>
+                        <outlet property="dosageLabel" destination="Wgz-2k-qzE" id="nuy-Aa-Zba"/>
                         <outlet property="dosageValue" destination="iIU-aE-R7I" id="cbt-da-NPG"/>
                         <outlet property="dosageView" destination="xh3-nJ-76D" id="BdJ-6k-3Ni"/>
                         <outlet property="medicationsDetailsTableView" destination="g09-U8-Dcr" id="HH6-4H-O3F"/>

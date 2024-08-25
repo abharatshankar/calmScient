@@ -152,10 +152,10 @@ class ScreeningQuestionsViewController: ViewController {
                         // Present the alert
                         self.present(alertController, animated: true, completion: nil)
                     } else if response.statusResponse.responseCode == 200 {
-                        
-                        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:"Screening"), message: response.statusResponse.responseMessage, preferredStyle: .alert)
+                      
+                        let alertController = UIAlertController(title: AppHelper.getLocalizeString(str:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Screening" : "Cribado"), message: response.statusResponse.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
-                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                        let okAction = UIAlertAction(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "OK" : "DE ACUERDO", style: .default) { _ in
                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                                 self.screeningAllQuestionsSuccessfullySubmittedClosure?(self.selectedScreening)

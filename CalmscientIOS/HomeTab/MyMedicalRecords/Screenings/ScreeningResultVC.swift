@@ -29,11 +29,12 @@ class ScreeningResultVC: ViewController {
     
     @IBOutlet weak var scoreMarkedLabel: UILabel!
     
+    @IBOutlet weak var totalscoreLabelText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        needToTalkButton.setAttributedTitleWithGradientDefaults(title: "Need to talk with someone?")
+        needToTalkButton.setAttributedTitleWithGradientDefaults(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Need to talk with someone?" : "¿Necesitas hablar con alguien?")
         addShadowAndBorder()
         print(progressBar.frame.height)
         print(progressBar.frame.height)
@@ -98,12 +99,13 @@ class ScreeningResultVC: ViewController {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
         self.title =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Your Results" : "Tus Resultados."
-        needToTalkButton.titleLabel!.text = AppHelper.getLocalizeString(str:"Need to talk with someone?")
+     //   needToTalkButton.titleLabel!.text = AppHelper.getLocalizeString(str:"Need to talk with someone?")
+        needToTalkButton.setAttributedTitleWithGradientDefaults(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Need to talk with someone?" : "¿Necesitas hablar con alguien?")
         remindMeLabel.text = AppHelper.getLocalizeString(str:"Remind me")
-        scoreMarkedLabel.text =  AppHelper.getLocalizeString(str:"Score marked")
-        totalScoreLbl.text = AppHelper.getLocalizeString(str:"Total score")
+        scoreMarkedLabel.text =  AppHelper.getLocalizeString(str:"Score\nmarked")
+        totalscoreLabelText.text = AppHelper.getLocalizeString(str:"Total score")
+        remindOptionLbl.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Weekly" : "Semanalmente"
         
-//        change at line 48, 49,
         }
     @IBAction func needToTalkAction(_ sender: Any) {
         let next = UIStoryboard(name: "NeedToTalkViewController", bundle: nil)

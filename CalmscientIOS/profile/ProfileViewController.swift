@@ -8,10 +8,11 @@
 import UIKit
 
 @available(iOS 16.0, *)
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     
+    @IBOutlet weak var profileScrollView: UIScrollView!
     @IBOutlet weak var lastNameTextfield: UITextField!
     
     @IBOutlet weak var emailTF: UITextField!
@@ -22,6 +23,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var confirmPwTF: ImagePaddingTextField!
     
+    @IBOutlet weak var ContentView: UIView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var firstView: UIView!
@@ -50,6 +52,7 @@ class ProfileViewController: UIViewController {
         let borderColor = UIColor(named: "AppBorderColor")?.cgColor
 
         
+        submitButton.setTitle(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Submit" : "Enviar", for: .normal)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         //self.title = "Profile"
         // Apply the corner radius and border color to each text field
@@ -64,6 +67,16 @@ class ProfileViewController: UIViewController {
 //            self.view.showToast(message: "Username or Password can't be empty.")
 //            return
 //        }
+        
+        profileScrollView.delegate = self
+
+               // Assuming contentView is already constrained inside the scrollView
+        profileScrollView.contentSize = CGSize(width: profileScrollView.frame.width, height: ContentView.frame.height)
+
+        profileScrollView.bounces = false
+        profileScrollView.alwaysBounceVertical = false
+        profileScrollView.alwaysBounceHorizontal = false
+        
         
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
@@ -114,7 +127,9 @@ class ProfileViewController: UIViewController {
     }
 
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            scrollView.contentOffset.x = 0 // Lock horizontal scrolling
+        }
     override func viewWillAppear(_ animated: Bool) {
         profileTitle.font = UIFont(name: Fonts().lexendMedium, size: 19)
         profileTitle.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Profile" : "Perfil"
@@ -135,7 +150,7 @@ class ProfileViewController: UIViewController {
         confirmPassLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Confirm Password" : "Confirmar contraseña"
         confirmPassLabel.font =  UIFont(name: Fonts().lexendRegular, size: 16)
         
-        submitButton.titleLabel?.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Submit" : "Enviar"
+        submitButton.setTitle(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Submit" : "Enviar", for: .normal)
         
     }
     

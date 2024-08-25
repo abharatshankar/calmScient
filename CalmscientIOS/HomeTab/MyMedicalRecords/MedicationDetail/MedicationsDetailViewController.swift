@@ -16,6 +16,8 @@ class MedicationsDetailViewController: ViewController, UISheetPresentationContro
     @IBOutlet weak var tableTitleLabel: UILabel!
     @IBOutlet weak var medicationsDetailsTableView: UITableView!
     
+    @IBOutlet weak var directionLabel: UILabel!
+    @IBOutlet weak var dosageLabel: UILabel!
     @IBOutlet weak var doctorTitle: UILabel!
     @IBOutlet weak var medicineTitle: UILabel!
     @IBOutlet weak var directionsValue: UILabel!
@@ -52,6 +54,10 @@ class MedicationsDetailViewController: ViewController, UISheetPresentationContro
         dosageView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
      //   saveButton.setAttributedTitleWithGradientDefaults(title:saveStr)
      //   cancelButton.setAttributedTitleWithGradientDefaults(title:AppHelper.getLocalizeString(str: "Cancel"))
+        
+        dosageLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Dosage" : "Dosificación"
+        directionLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Direction" : "Dirección"
+        
         guard let details = medicineDetails?.medicationDetailsByDate.first?.medicalDetails else {
             return
         }

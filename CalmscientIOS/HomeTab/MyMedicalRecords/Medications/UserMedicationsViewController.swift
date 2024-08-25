@@ -34,7 +34,7 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
         getMedicationsData(forDate: Date())
         
         
-        nomedications.text = "No medications for this date"
+        nomedications.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No medications for this date" : "No hay medicamentos para esta fecha."
         nomedications.textColor = .purple
         nomedications.textAlignment = .center
         nomedications.font = UIFont.boldSystemFont(ofSize: 17)

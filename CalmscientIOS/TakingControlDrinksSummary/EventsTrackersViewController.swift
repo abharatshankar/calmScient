@@ -154,7 +154,6 @@ class EventsTrackersViewController: UIViewController {
                         DispatchQueue.main.async { [self] in
                             print(json)
                             self.view.hideToastActivity()
-                            self.navigationController?.popViewController(animated: true)
                         }
                         
                     } else {

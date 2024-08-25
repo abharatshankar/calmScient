@@ -261,7 +261,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200
+        return 350
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -349,8 +349,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         
     }
     @IBAction func backward_action(_ sender: UIButton) {
-       // self.navigationController?.popViewController(animated: true)
-        
+        self.navigationController?.popViewController(animated: true)
     }
     func saveBasicKnowledgeCource(plId: Int, patientId: Int, clientId: Int, activityDate: String,bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
         // Define the URL

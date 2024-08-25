@@ -128,7 +128,8 @@ extension NextAppointmentsViewController : UITableViewDataSource, UITableViewDel
         case .emptyAppointment(let dateInstance):
             cell.dateLabel.text = dateInstance
             cell.cellIconImageView.image = UIImage(named: "appointmentIcon")
-            cell.contentTextLabel.text = AppHelper.getLocalizeString(str:"No appointments" )
+           // UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No appointments" : "Sin citas"
+            cell.contentTextLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No appointments" : "Sin citas"
         case .medicalAppointment(let appointment):
             cell.dateLabel.text = appointment.dateString
             cell.cellIconImageView.image = UIImage(named: "doctorWithSteth")
