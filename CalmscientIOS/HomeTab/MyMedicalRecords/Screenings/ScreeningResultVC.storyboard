@@ -321,6 +321,7 @@ score</string>
                         <outlet property="testDateLbl" destination="sKQ-CZ-tjG" id="E6l-Bx-ngy"/>
                         <outlet property="testTimeLbl" destination="Dan-LH-I8e" id="nai-O7-mYJ"/>
                         <outlet property="totalScoreLbl" destination="ZKk-fK-RzN" id="hRE-tt-Iwd"/>
+                        <outlet property="totalscoreLabelText" destination="Oqc-E7-8Ac" id="4wV-pl-sar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

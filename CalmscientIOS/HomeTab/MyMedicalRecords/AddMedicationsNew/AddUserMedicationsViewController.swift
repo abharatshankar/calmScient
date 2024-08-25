@@ -131,10 +131,10 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 print("JSON String: \(jsonString)")
             }
-            
+       
             let requestForm = AddMedicationsRequestForm(jsonData)
             guard let requestURL = requestForm.getURLRequest() else {
-                self.view.showToast(message: "An Unknown error occured. Please check with Admin")
+                self.view.showToast(message:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "An Unknown error occured. Please check with Admin" : "Se produjo un error desconocido. Consulte con el administrador")
                 return
             }
             NetworkAPIRequest.sendRequest(request: requestURL) { [weak self](response: AddMedicationSavedResponse?, failureResponse: FailureResponse?, error: Error?) in
@@ -146,9 +146,9 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
                     if let err = error {
                         self.view.showToast(message: err.localizedDescription)
                     } else if let response = response {
-                        let alertController = UIAlertController(title: "Add Medication", message: response.response.responseMessage, preferredStyle: .alert)
+                        let alertController = UIAlertController(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Add Medication" : "Agregar medicación", message: response.response.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
-                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                        let okAction = UIAlertAction(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "OK" : "DE ACUERDO", style: .default) { _ in
                             // Handle OK button action if needed
                             self.navigationController?.popViewController(animated: true)
                             self.refreshControlClosure?(true)
@@ -168,10 +168,18 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
     }
     
     public func doValidation() -> Bool {
-        let detailsMatch:[Int:String] = [0:"Name",1:"Provider",2:"Dosage",3:"Direction"]
+        
+        let name = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Name" : "Nombre"
+        let provider = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Provider" : "Proveedora"
+        let dosage = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Dosage" : "Dosificación"
+        let direction = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Direction" : "Dirección"
+        let pleaseEnter = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Please enter" : "Por favor ingresa"
+        
+        
+        let detailsMatch:[Int:String] = [0:name,1:provider,2:dosage,3:direction]
         for (idx,detailEntered) in userEnteredDetails.enumerated() {
             if detailEntered.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                self.view.showToast(message: "Please enter \(detailsMatch[idx]!)!")
+                self.view.showToast(message: "\(pleaseEnter) \(detailsMatch[idx]!)!")
                 return false
             }
         }
