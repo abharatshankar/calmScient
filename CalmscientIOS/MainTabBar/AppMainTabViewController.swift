@@ -11,7 +11,10 @@ import UIKit
 class AppMainTabViewController: UITabBarController {
 
     var isInitalView: Bool  = false
-    let tabTitles:[String] = ["HOME","DISCOVERY","EXERCISES","REWARDS"]
+    let tabTitlesEnglish: [String] = ["HOME", "DISCOVERY", "EXERCISES", "REWARDS"]
+    let tabTitlesSpanish: [String] = ["INICIO", "DESCUBRIMIENTO", "EJERCICIOS", "RECOMPENSAS"]
+
+    var tabTitles: [String] = []
     let selectedImages:[String] =  ["MainTab_Home_Selected","MainTab_Discovery_Selected","MainTab_Exercises_Selected","MainTab_Rewards_Selected"]
     let unselectedimages:[String] = ["MainTab_Home_Unselected","MainTab_Discovery_Unselected","MainTab_Exercises_Unselected","MainTab_Rewards_UnSelected"]
     
@@ -20,6 +23,9 @@ class AppMainTabViewController: UITabBarController {
 //        UITabBar.appearance().barTintColor = UIColor(named: "TabBarUnSelectedColor")
 //        UITabBar.appearance().tintColor = UIColor(named: "TabBarSelectedColor")
 //        UITabBar.appearance().isTranslucent = true
+        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+        tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
+        
         
         if #available(iOS 15, *) {
             let tabBarItemAppearence = UITabBarItemAppearance()

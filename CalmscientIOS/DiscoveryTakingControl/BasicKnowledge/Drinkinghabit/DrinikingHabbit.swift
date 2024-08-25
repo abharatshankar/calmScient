@@ -26,6 +26,7 @@ class DrinikingHabbit: ViewController {
     var answerId : Int?
     var basicData: [[String: Any]] = []
     var sectionID66: Int?
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -165,9 +166,9 @@ class DrinikingHabbit: ViewController {
             
         }
     }
-    func saveBasicKnowledgeCource(plId: Int, patientId: Int, clientId: Int, activityDate: String,bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
+    func postAlcoholDrinks(alcoholData: [[String: Any]], bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
         // Define the URL
-        guard let url = URL(string: "\(baseURLString)patients/api/v1/takingControl/saveBasicKnowledgeCourse") else {
+        guard let url = URL(string: "\(baseURLString)patients/api/v1/alcohol/createDrinkTracking") else {
             print("Invalid URL")
             return
         }
@@ -181,15 +182,7 @@ class DrinikingHabbit: ViewController {
         
         // Define the JSON payload
         let payload: [String: Any] = [
-            "answerId": answerId!,
-            "plId": plId,
-            "patientId": patientId,
-            "clientId": clientId,
-            "optionId": optionid!,
-            "optionValue":"",
-            "assessmentId": 0,
-            "quantity": totalQuantitySum,
-            "questionnaireId" : questionnaireId!
+            "alcohol": alcoholData
         ]
            print(payload)
         do {
@@ -360,7 +353,7 @@ class DrinikingHabbit: ViewController {
 //        }
 //        else{
             self.view.showToastActivity()
-            saveBasicKnowledgeCource(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, activityDate: "", bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
+        postAlcoholDrinks(alcoholData: alcoholData, bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
                 switch result {
                 case .success(let data):
                     // Convert data to JSON object and print it
@@ -373,7 +366,8 @@ class DrinikingHabbit: ViewController {
                                  vc?.title = "Basic knowledge"
                                 //vc?.basicData2 = basicData
                                 vc?.sectionID666 = sectionID66
-                                self.navigationController?.pushViewController(vc!, animated: true)                            }
+                                self.navigationController?.pushViewController(vc!, animated: true)
+                            }
                             
                         } else {
                             print("Unable to convert data to JSON")
@@ -441,9 +435,9 @@ extension DrinikingHabbit: UICollectionViewDataSource, UICollectionViewDelegate,
                 
                 
                 
-//                if let drinkId = drink["drinkId"] as? Int {
-//                    self.addOrUpdateAlcoholData(drinkId: drinkId, newQuantity: count, flag: "U")
-//                }
+                if let drinkId = drink["drinkId"] as? Int {
+                    self.addOrUpdateAlcoholData(drinkId: drinkId, newQuantity: count, flag: "U")
+                }
                 
             }
         }
@@ -462,10 +456,10 @@ extension DrinikingHabbit: UICollectionViewDataSource, UICollectionViewDelegate,
                 count_lbl.text = String(self.totalQuantitySum + noOfQuantityAlcohol)
                 
                 
-//                if let drinkId = drink["drinkId"] as? Int {
-//                    let flag = count == 1 ? "I" : "U"
-//                    self.addOrUpdateAlcoholData(drinkId: drinkId, newQuantity: count, flag: flag)
-//                }
+                if let drinkId = drink["drinkId"] as? Int {
+                    let flag = count == 1 ? "I" : "U"
+                    self.addOrUpdateAlcoholData(drinkId: drinkId, newQuantity: count, flag: flag)
+                }
             }
         }
         return cell

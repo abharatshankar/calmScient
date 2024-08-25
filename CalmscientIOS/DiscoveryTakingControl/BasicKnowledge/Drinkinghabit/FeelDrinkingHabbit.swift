@@ -19,8 +19,10 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
     var optionid2 : Int?
     var questionnaireId2 : Int?
     var answerId2 : Int?
+    var patientAnswer : String = ""
     var basicData2: [[String: Any]] = []
     var options: [String] = []
+    var optionsIds: [Int] = []
     let data = [
         "What’s a “standard drink”?",
         "What are the U.S. guidelines for drink?",
@@ -34,6 +36,8 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
     var checkedStates: [Bool] = []
     var previouslySelectedTextView: UITextView?
     var previouslySelectedBackgroundView : UIView?
+    var defaultSelectedTextView: UITextView?
+    var defaultSelectedBackgroundView: UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -61,14 +65,25 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
                         DispatchQueue.main.async { [self] in
                             self.view.hideToastActivity()
                             self.basicData2 = json["answersList"] as! [[String : Any]]
-                            print("answersList:\(basicData2)")
+                            //print("answersList:\(basicData2)")
+                            print("basicData2:\(basicData2[2])")
+                            
+                            if let patientAnswerValue = basicData2[2]["patientAnswer"] as? String {
+                                patientAnswer = patientAnswerValue
+                            } else {
+                                patientAnswer = "0"
+                            }
+                            print("patientAnswerrrrrr \(String(describing: patientAnswer))")
+                            optionid2 = Int(patientAnswer)
                             questionnaireId2 = basicData2[2]["questionnaireId"] as? Int
                             
                             answerId2 = basicData2[2]["answerId"] as? Int ?? 0
                             print("Answer ID: \(answerId2 ?? 0)")
-                            
+                           
+//
                             guard let options1 = basicData2[2]["options"] as? [[String: Any]] else { return }
                             self.options = options1.compactMap { $0["optionValue"] as? String }
+                            self.optionsIds = options1.compactMap { $0["optionId"] as? Int }
                             print("self.options\(self.options)")
                             tableView.reloadData()
                         }
@@ -205,6 +220,29 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         cell.separatorInset = .zero
         
         let optionValue = self.options[indexPath.row]
+        let optionIDS = self.optionsIds[indexPath.row]
+       
+        if optionIDS == Int(patientAnswer) {
+            // Set the default selected cell
+            cell.drinkTextView.backgroundColor = UIColor(named: "barColor1") ?? UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+            cell.drinkTextView.textColor = UIColor.white
+            cell.newBackGroundView.backgroundColor = UIColor(named: "barColor1") ?? UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+            
+            // Store references to the default selected views
+            defaultSelectedTextView = cell.drinkTextView
+            defaultSelectedBackgroundView = cell.newBackGroundView
+        } else if optionIDS == optionid2 {
+            // Highlight the cell that was selected by the user
+            cell.drinkTextView.backgroundColor = UIColor(named: "barColor1") ?? UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+            cell.drinkTextView.textColor = UIColor.white
+            cell.newBackGroundView.backgroundColor = UIColor(named: "barColor1") ?? UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+        } else {
+            // Reset the appearance for non-selected cells
+            cell.drinkTextView.backgroundColor = UIColor.clear
+            cell.drinkTextView.textColor = UIColor.black
+            cell.newBackGroundView.backgroundColor = UIColor.clear
+        }
+
         configureTextView(cell.drinkTextView, withHTML: optionValue)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(drinkTextViewTapped(_:)))
@@ -213,19 +251,17 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         cell.drinkTextView.tag = indexPath.row
         cell.newBackGroundView.tag = indexPath.row
         
-        
         let backgroundViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(drinkTextViewTapped(_:)))
-           cell.newBackGroundView.addGestureRecognizer(backgroundViewTapGesture)
-           cell.newBackGroundView.isUserInteractionEnabled = true
-           cell.newBackGroundView.tag = indexPath.row
-        
+        cell.newBackGroundView.addGestureRecognizer(backgroundViewTapGesture)
+        cell.newBackGroundView.isUserInteractionEnabled = true
+        cell.newBackGroundView.tag = indexPath.row
         
         return cell
     }
-   
+
     @objc func drinkTextViewTapped(_ sender: UITapGestureRecognizer) {
         guard let tappedView = sender.view else { return }
-        let indexPathRow = tappedView.tag // Retrieve the row index from the tag
+        let indexPathRow = tappedView.tag
 
         guard let cell = tableView.cellForRow(at: IndexPath(row: indexPathRow, section: 0)) as? FeelDrink else { return }
 
@@ -246,6 +282,13 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
                 previousBackgroundView.backgroundColor = UIColor.white
             }
 
+            // Reset the default selected cell if it's not the one being selected
+            if optionId != Int(patientAnswer) {
+                defaultSelectedTextView?.backgroundColor = UIColor.clear
+                defaultSelectedTextView?.textColor = UIColor.black
+                defaultSelectedBackgroundView?.backgroundColor = UIColor.clear
+            }
+
             // Apply selection changes
             cell.drinkTextView.backgroundColor = UIColor(named: "barColor1")
             cell.drinkTextView.textColor = UIColor.white
@@ -256,7 +299,6 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
             previouslySelectedBackgroundView = cell.newBackGroundView
         }
     }
-
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

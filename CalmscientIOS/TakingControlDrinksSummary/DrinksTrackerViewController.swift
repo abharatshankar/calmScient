@@ -191,8 +191,7 @@ class DrinksTrackerViewController: UIViewController {
         if let index = alcoholData.firstIndex(where: { $0["drinkId"] as? Int == drinkId }) {
             alcoholData[index]["quantity"] = newQuantity
             alcoholData[index]["flag"] = flag
-            alcoholData[index]["activityDate"] = dateString
-
+            alcoholData[index]["activityDate"] = currentDate
         } else {
             guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
                 fatalError("Unable to found Application Shared Info")
@@ -206,27 +205,14 @@ class DrinksTrackerViewController: UIViewController {
                 "clientId": userInfo.clientID,
                 "quantity": newQuantity,
                 "drinkId": drinkId,
-                "activityDate": dateString
+                "activityDate": currentDate
             ]
 
-            // Initialize the array with the new entry
-             alcoholData = [newEntry]
-
-            // Add another entry for demonstration purposes
-            let anotherEntry: [String: Any] = [
-                "flag": "I",
-                "plId": userInfo.patientLocationID,
-                "trackingId": 1,
-                "patientId": userInfo.patientID,
-                "clientId": userInfo.clientID,
-                "quantity": 2,
-                "drinkId": 1,
-                "activityDate": "07/10/2024"
-            ]
-            alcoholData.append(anotherEntry)
-            
+            // Append the new entry to the existing array
+            alcoholData.append(newEntry)
         }
     }
+
     @IBAction func saveButtonClicked(_ sender: Any) {
         //print("alcoholData==\(alcoholData)")
         self.view.showToastActivity()
@@ -239,7 +225,6 @@ class DrinksTrackerViewController: UIViewController {
                         DispatchQueue.main.async { [self] in
                             print(json)
                             self.view.hideToastActivity()
-                            self.navigationController?.popViewController(animated: true)
                         }
                         
                     } else {
