@@ -36,13 +36,13 @@ class EventsTrackersTableViewCell: UITableViewCell {
         super.awakeFromNib()
         eventsImageView.maskCircle()
         backGroundView.layer.cornerRadius = 10
-        backGroundView.layer.shadowColor = UIColor.black.cgColor
+        backGroundView.layer.shadowColor = UIColor(named: "blackAndWhite")?.cgColor
         backGroundView.layer.shadowOpacity = 0.1
         backGroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         backGroundView.layer.shadowRadius = 4
         backGroundView.layer.masksToBounds = false
        // backGroundView.layer.borderWidth = 1
-        backGroundView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
+        backGroundView.layer.borderColor = UIColor(named: "blackAndWhite")?.cgColor
         backGroundView.layer.shadowPath = UIBezierPath(roundedRect: backGroundView.bounds, cornerRadius: backGroundView.layer.cornerRadius).cgPath
         eventsSwitch.addTarget(self, action: #selector(switchToggled), for: .valueChanged)
         

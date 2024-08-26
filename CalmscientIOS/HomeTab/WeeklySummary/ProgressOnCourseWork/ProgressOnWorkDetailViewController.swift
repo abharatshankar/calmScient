@@ -103,6 +103,7 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
             summaryResultsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
         self.view.bringSubviewToFront(needToTalkSomeOneButton)
+        summaryResultsTableView.allowsSelection = false
         summaryResultsTableView.reloadData()
     }
     
@@ -145,72 +146,81 @@ class ProgressOnWorkDetailViewController: ViewController, UITableViewDataSource,
         return dataItem.exapansionState ? dataItem.subtitle.count + 1 : 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dataItem = tableData[indexPath.section]
-        
-        if indexPath.row == 0 {
-            // Main collapsible cell
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
-                return UITableViewCell()
-            }
-            cell.dataItem = dataItem
-            cell.cellExpansionClosure = { [weak self] isExpanded in
-                guard let self = self else { return }
-                if isExpanded {
-                    // Collapse all sections
-                    for item in self.tableData {
-                        item.updateExpansionState(isExpanded: false)
-                    }
-                    // Expand the selected section
-                    dataItem.updateExpansionState(isExpanded: true)
-                } else {
-                    // Collapse the selected section
-                    dataItem.updateExpansionState(isExpanded: false)
-                }
-                tableView.reloadData() // Reload the table view after updating the expansion state
-            }
-            return cell
-        } else {
-            // Subsection cells
-            let subTitle = dataItem.subtitle[indexPath.row - 1]
-            let subPercentage = dataItem.percentage[indexPath.row - 1]
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SubsectionCell", for: indexPath)
-            cell.textLabel?.text = subTitle
-            cell.detailTextLabel?.text = subPercentage
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
-            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
-            cell.detailTextLabel?.textAlignment = .right
-            cell.selectionStyle = .none
-            
-            return cell
-        }
-    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let dataItem = tableData[indexPath.section]
+//        
+//        if indexPath.row == 0 {
+//            // Main collapsible cell
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
+//                return UITableViewCell()
+//            }
+//            cell.dataItem = dataItem
+//            cell.cellExpansionClosure = { [weak self] isExpanded in
+//                guard let self = self else { return }
+//                if isExpanded {
+//                    // Collapse all sections
+//                    for item in self.tableData {
+//                        item.updateExpansionState(isExpanded: false)
+//                    }
+//                    // Expand the selected section
+//                    dataItem.updateExpansionState(isExpanded: true)
+//                } else {
+//                    // Collapse the selected section
+//                    dataItem.updateExpansionState(isExpanded: false)
+//                }
+//                tableView.reloadData() // Reload the table view after updating the expansion state
+//            }
+//            return cell
+//        } 
+//        else {
+//            // Subsection cells
+//            return UITableViewCell()
+////            let subTitle = dataItem.subtitle[indexPath.row - 1]
+////            let subPercentage = dataItem.percentage[indexPath.row - 1]
+////            
+////            let cell = tableView.dequeueReusableCell(withIdentifier: "SubsectionCell", for: indexPath)
+//////            cell.textLabel?.text = subTitle
+//////            cell.detailTextLabel?.text = subPercentage
+//////            cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+//////            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+//////            cell.detailTextLabel?.textAlignment = .right
+//////            cell.selectionStyle = .none
+////            
+////            return cell
+//        }
+//    }
     
-    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let dataItem = tableData[indexPath.section]
-    //                if indexPath.row == 0 {
-    //                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
-    //                        return UITableViewCell()
-    //                    }
-    //                    cell.dataItem = dataItem
-    //                    cell.cellExpansionClosure = { isExpanded in
-    //                        dataItem.updateExpansionState(isExpanded: isExpanded)
-    //                        tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
-    //                    }
-    //                    return cell
-    //                } else {
-    //                    let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "SubsectionCell")
-    //                    cell.textLabel?.text = dataItem.subtitle[indexPath.row - 1]
-    //                    cell.detailTextLabel?.text = dataItem.percentage[indexPath.row - 1]
-    //                    return cell
-    //                }
-    //    }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let dataItem = tableData[indexPath.section]
+                    if indexPath.row == 0 {
+                        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCollapsableTableCell", for: indexPath) as? ProgressCollapsableTableCell else {
+                            return UITableViewCell()
+                        }
+                        cell.dataItem = dataItem
+                        cell.cellExpansionClosure = { isExpanded in
+                            dataItem.updateExpansionState(isExpanded: isExpanded)
+                            tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
+                        }
+                        return cell
+                    } else {
+                        return UITableViewCell()
+//                        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "SubsectionCell")
+//                        cell.textLabel?.text = dataItem.subtitle[indexPath.row - 1]
+//                        cell.detailTextLabel?.text = dataItem.percentage[indexPath.row - 1]
+//                        return cell
+                    }
+        }
     
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if indexPath.row == 0 {
+            return UITableView.automaticDimension
+        }
+        else{
+            return 0
+        }
+            
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

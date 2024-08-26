@@ -35,38 +35,99 @@ class Moderation: ViewController {
        // normalTextLabel.numberOfLines = 0
         
         
-        let text = """
-        What is alcohol misuse?
+//        let text = """
+//        What is alcohol misuse?
+//        
+//        NIAAA defines heavy drinking as follows:
+//
+//        For women:
+//        4 or more drinks on any day or 8 or more per week
+//
+//        For men:
+//        5 or more drinks on any day or 15 or more per week.
+//        """
+//
+//        let attributedString = NSMutableAttributedString(string: text)
+//
+//        let womenRange = (text as NSString).range(of: "For women: 4 or more drinks on any day or 8 or more per week")
+//        let menRange = (text as NSString).range(of: "For men: 5 or more drinks on any day or 15 or more per week.")
+//        let womenDetailRange = (text as NSString).range(of: "4 or more drinks on any day or 8 or more per week")
+//        let menDetailRange = (text as NSString).range(of: "5 or more drinks on any day or 15 or more per week")
+
+
+//        attributedString.addAttribute(.link, value: "", range: womenRange)
+//        attributedString.addAttribute(.link, value: "", range: menRange)
+//        attributedString.addAttribute(.link, value: "", range: womenDetailRange)
+//        attributedString.addAttribute(.link, value: "", range: menDetailRange)
+//
+//        let font = UIFont(name: Fonts().lexendRegular, size: 15)!
+//        let textColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0) 
+//        let fullRange = NSRange(location: 0, length: attributedString.length)
+//
+//        attributedString.addAttribute(.font, value: font, range: fullRange)
+//        attributedString.addAttribute(.foregroundColor, value: textColor, range: fullRange)
+
         
-        NIAAA defines heavy drinking as follows:
+        
+        
+        let fullText = """
+                According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to avoid alcohol altogether if you are:
 
-        For women:
-        4 or more drinks on any day or 8 or more per week
+                    •  Taking medications that interact with alcohol
 
-        For men:
-        5 or more drinks on any day or 15 or more per week.
-        """
+                    •  Managing a medical condition that can be made worse by drinking
 
-        let attributedString = NSMutableAttributedString(string: text)
+                    •  Under the age of 21, the minimum legal drinking age in the United States
 
-        let womenRange = (text as NSString).range(of: "For women: 4 or more drinks on any day or 8 or more per week")
-        let menRange = (text as NSString).range(of: "For men: 5 or more drinks on any day or 15 or more per week.")
-        let womenDetailRange = (text as NSString).range(of: "4 or more drinks on any day or 8 or more per week")
-        let menDetailRange = (text as NSString).range(of: "5 or more drinks on any day or 15 or more per week")
+                    •  Recovering from alcohol use disorder (AUD) or unable to control the amount you drink
 
+                    •  Pregnant or might be pregnant
 
-        attributedString.addAttribute(.link, value: "", range: womenRange)
-        attributedString.addAttribute(.link, value: "", range: menRange)
-        attributedString.addAttribute(.link, value: "", range: womenDetailRange)
-        attributedString.addAttribute(.link, value: "", range: menDetailRange)
+                In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery—or who are participating in activities that require skill, coordination, and alertness—should avoid alcohol completely.
 
-        let font = UIFont(name: Fonts().lexendRegular, size: 15)!
-        let textColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0) 
-        let fullRange = NSRange(location: 0, length: attributedString.length)
+                What is alcohol misuse?
 
-        attributedString.addAttribute(.font, value: font, range: fullRange)
-        attributedString.addAttribute(.foregroundColor, value: textColor, range: fullRange)
+                NIAAA defines heavy drinking as follows:
 
+                For women:
+                4 or more drinks on any day or 8 or more per week
+
+                For men:
+                5 or more drinks on any day or 15 or more per week.
+                """
+
+                // Create a mutable attributed string
+                let attributedText = NSMutableAttributedString(string: fullText)
+        
+        // Define the font and size
+               let font = UIFont(name: Fonts().lexendRegular, size: 16)!
+               
+               // Set the entire text to green color with the desired font and size
+               let fullRange = NSRange(location: 0, length: attributedText.length)
+               attributedText.addAttributes([
+                   .foregroundColor: UIColor.green,
+                   .font: font
+               ], range: fullRange)
+        
+                let fullRange1 = NSRange(location: 0, length: attributedText.length)
+                attributedText.addAttribute(.foregroundColor, value: UIColor(named: "blackAndWhite") as Any, range: fullRange1)
+                // Define the range for the first part of the text that needs to be red
+                if let range1 = fullText.range(of: "4 or more drinks on any day or 8 or more per week") {
+                    let nsRange1 = NSRange(range1, in: fullText)
+                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange1)
+                }
+                
+                // Define the range for the second part of the text that needs to be red
+                if let range2 = fullText.range(of: "5 or more drinks on any day or 15 or more per week") {
+                    let nsRange2 = NSRange(range2, in: fullText)
+                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange2)
+                }
+                
+                // Assign the attributed string to the text view
+        hyperTextLabel.attributedText = attributedText
+        
+        
+        
 //
      //   hyperTextLabel.attributedText = attributedString
      //   hyperTextLabel.isEditable = false

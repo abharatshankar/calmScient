@@ -35,7 +35,7 @@ class DrinksTrackerViewController: UIViewController {
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
         }
-        pickerBackView.backgroundColor = UIColor.white
+        pickerBackView.backgroundColor = UIColor(named: "whiteAndBlack")
         pickerBackView.layer.borderColor = UIColor.lightGray.cgColor
         pickerBackView.layer.borderWidth = 1
 

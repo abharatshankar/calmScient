@@ -16,7 +16,7 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     private func configure() {
 //        contentView.backgroundColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)  // Set your desired color here
+        label.textColor = UIColor(named: "blackAndWhite")  // Set your desired color here
         label.font = UIFont(name:Fonts().lexendRegular, size: 18)
         
         contentView.addSubview(label)
