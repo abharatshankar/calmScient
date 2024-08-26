@@ -24,6 +24,7 @@ class FeelDrinkController: ViewController{
     var optionid : Int?
     var questionnaireId : Int?
     var answerId : Int?
+    var answerText : String = ""
     var sectionID6666: Int?
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -55,6 +56,9 @@ class FeelDrinkController: ViewController{
                             
                              answerId = answersList[3]["answerId"] as? Int ?? 0
                             print("Answer ID: \(answerId ?? 0)")
+                            answerText = answersList[3]["answerText"] as? String ?? ""
+                            enter_text.text = answerText
+                            
                             let answer = answersList[3]
                             if let options = answer["options"] as? [[String: Any]], let firstOption = options.first {
                                 optionid = firstOption["optionId"] as? Int
@@ -219,6 +223,7 @@ class FeelDrinkController: ViewController{
     
     
     @IBAction func forward_action(_ sender: UIButton) {
+        optionType =  enter_text.text
         if optionType == ""{
             self.view.showToast(message: "Please fill the text field")
         }

@@ -35,6 +35,9 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
     var optionType5: String = ""
     var optionType6: String = ""
     var sectionID66666: Int?
+    var answerText4: String = ""
+    var answerText5: String = ""
+    var patientAnswer7 : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -66,13 +69,14 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
                         DispatchQueue.main.async { [self] in
                             self.view.hideToastActivity()
                             self.basicData2 = json["answersList"] as! [[String : Any]]
-                            print("answersList:\(basicData2)")
-                            
+                            print("answersList:\(basicData2[4])")
+                            answerText4 = basicData2[4]["answerText"] as? String ?? ""
                             questionnaireId5 = basicData2[4]["questionnaireId"] as? Int
                             
                             answerId5 = basicData2[4]["answerId"] as? Int ?? 0
                             
                             questionnaireId6 = basicData2[5]["questionnaireId"] as? Int
+                            answerText5 = basicData2[5]["answerText"] as? String ?? ""
                             
                             answerId6 = basicData2[5]["answerId"] as? Int ?? 0
                             
@@ -84,20 +88,33 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
                             self.values = options1.compactMap { $0["optionValue"] as? String }
                             print("self.options\(self.values)")
                             
-                            
                             let answer5 = basicData2[4]
                             
                             if let options = answer5["options"] as? [[String: Any]], let firstOption = options.first {
                                 optionid5 = firstOption["optionId"] as? Int
                                 print("Option ID: \(optionid5 ?? 0)")
                             }
-                            
+                            optionType5 = answerText4
                             
                             let answer6 = basicData2[5]
                             
                             if let options = answer6["options"] as? [[String: Any]], let firstOption = options.first {
                                 optionid6 = firstOption["optionId"] as? Int
                                 print("Option ID: \(optionid6 ?? 0)")
+                            }
+                            optionType6 = answerText5
+                            
+                            let answer7 = basicData2[6]
+                            
+                            if let options7 = answer7["options"] as? [[String: Any]], let firstOption7 = options7.first {
+                                optionid7 = firstOption7["optionId"] as? Int
+                                print("Option ID: \(optionid7 ?? 0)")
+                            }
+                            if let patientAnswerValue = basicData2[6]["patientAnswer"] as? String {
+                                patientAnswer7 = patientAnswerValue
+                              //  optionid7 = Int(patientAnswer7)
+                            } else {
+                                patientAnswer7 = "0"
                             }
                             
                             tableView.reloadData()
@@ -421,6 +438,8 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
     
     @objc func saveButtonTapped(_ sender: UIButton) {
         // Handle the save button action
+        optionType5 = answerText4
+        optionType6 = answerText5
         if let cell = sender.superview?.superview as? SaveCell {
             let indexPath = tableView.indexPath(for: cell)
             print("Save button tapped at row)")
@@ -431,7 +450,8 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
             }
             self.view.showToastActivity()
             if optionType5 == "nil"{
-                self.view.showToast(message: "Please fill textfield one")
+                self.view.showToast(message: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Please fill textfield one" : "Por favor complete el campo de texto uno")
+                
             }
             else{
                 saveBasicKnowledgeCource5(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, activityDate: "", bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
@@ -443,9 +463,9 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
                                     // self.view.hideToastActivity()
                                     print("saveBasicKnowledgeCource5:\(json)")
                                     if optionType6 == "nil"{
-                                        self.view.showToast(message: "Please fill textfield two")
+                                        self.view.showToast(message: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Please fill textfield two" : "Por favor complete el campo de texto dos")
                                     }
-                                    else{
+                                    else {
                                         // self.view.showToastActivity()
                                         
                                         saveBasicKnowledgeCource6(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, activityDate: "", bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
@@ -457,7 +477,8 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
                                                             //   self.view.hideToastActivity()
                                                             print("saveBasicKnowledgeCource6:\(json)")
                                                             if optionid7 == nil{
-                                                                self.view.showToast(message: "Please select one option")
+                                                                self.view.showToast(message:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Please select one option" : "Por favor seleccione una opción")
+                                                               
                                                             }
                                                             else{
                                                                 //   self.view.showToastActivity()

@@ -119,7 +119,7 @@ class SummaryViewController: UIViewController {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         DispatchQueue.main.async { [self] in
-                            print(json)
+                           // print(json)
                             
                             self.view.hideToastActivity()
                         }
@@ -170,7 +170,7 @@ class SummaryViewController: UIViewController {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         DispatchQueue.main.async {
-                          
+                          print(json)
                             self.view.hideToastActivity()
 //                            guard let newData = json["summaryList"] as? [String: Any] else {
 //                                    print("Invalid newData format")
@@ -220,7 +220,7 @@ class SummaryViewController: UIViewController {
         }
         
         let payload: [String: Any] = [
-            "patientId":userInfo.patientLocationID,
+            "patientId":userInfo.patientID,
             "date": date,
             "clientId": clientId
         ]
