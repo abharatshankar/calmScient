@@ -135,7 +135,7 @@
                                         <constraint firstAttribute="width" constant="67" id="gyb-kk-SNc"/>
                                         <constraint firstAttribute="height" constant="20" id="zzK-OQ-Pom"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Close"/>
                                     <connections>
@@ -148,7 +148,7 @@
                                         <constraint firstAttribute="height" constant="20" id="OJD-16-pVn"/>
                                         <constraint firstAttribute="width" constant="67" id="tvJ-bF-OR4"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Done"/>
                                     <connections>
@@ -156,7 +156,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.96487838029999995" green="0.96024924519999999" blue="0.98823899029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" name="blueAndDarkBule"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="6dZ-DF-FtO" secondAttribute="bottom" constant="17" id="1Yc-Ai-XQ4"/>
                                 <constraint firstAttribute="bottom" secondItem="mSX-Rr-PU0" secondAttribute="bottom" constant="17" id="77H-Q2-eXS"/>
@@ -204,6 +204,12 @@
         </namedColor>
         <namedColor name="AppLightTextColor">
             <color red="0.40799999237060547" green="0.40400001406669617" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blackAndWhite">
+            <color red="0.0040000001899898052" green="0.0040000001899898052" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="blueAndDarkBule">
+            <color red="0.80500000715255737" green="0.81499999761581421" blue="0.93599998950958252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
