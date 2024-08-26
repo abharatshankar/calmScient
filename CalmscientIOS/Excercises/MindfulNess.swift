@@ -121,7 +121,7 @@ class MindfulNess: UIViewController {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
-
+        self.titleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Mindfulness - what is it?" : "Mindfulness: ¿qué es?"
         setupData()
         
         }

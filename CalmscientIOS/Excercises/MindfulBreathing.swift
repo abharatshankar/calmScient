@@ -163,6 +163,7 @@ class MindfulBreathing: UIViewController {
         preparationTitle.text = AppHelper.getLocalizeString(str: "Preparation")
         preparationDesLabel.text = AppHelper.getLocalizeString(str: "First find a comfortable to either sit down or lay down. You can close your eyes if you want to.")
         
+        
         subTitleLabel.text = AppHelper.getLocalizeString(str: "Let’s learn how to do the mindful breathing exercise.")
         
         step1Label.text =  AppHelper.getLocalizeString(str: "Step 1: Inhale")
@@ -188,7 +189,13 @@ class MindfulBreathing: UIViewController {
         bottomDescLabel.text = AppHelper.getLocalizeString(str:"Engage in this practice regularly, allowing the diaphragmatic breathing technique to guide you towards a state of tranquility and mindful breathing.")
         
         
-        
+        self.preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step5.backgroundColor = UIColor(named: "AppViewBorderColor")
+        self.step6View.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         }
     

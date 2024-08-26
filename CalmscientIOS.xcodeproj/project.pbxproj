@@ -2870,6 +2870,7 @@
 				INFOPLIST_FILE = CalmscientIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CalmscientIOS;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save photo in your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos and videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = HealthAppLaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2909,6 +2910,7 @@
 				INFOPLIST_FILE = CalmscientIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CalmscientIOS;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save photo in your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos and videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = HealthAppLaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

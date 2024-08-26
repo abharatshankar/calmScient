@@ -10,7 +10,7 @@ import IQKeyboardManagerSwift
 import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     
     
@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         checkNotificationPermission()
+        UNUserNotificationCenter.current().delegate = self
+                
         DispatchQueue.main.async {
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "TabBarUnSelectedColor")!, NSAttributedString.Key.font: UIFont(name: Fonts().lexendRegular, size: 9)!], for: .normal)
             UITabBar.appearance().isTranslucent = true
@@ -48,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             var languageId: Int? = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
             languageId = (languageId == 0) ? 1 : languageId
-            UserDefaults.standard.set(languageId , forKey: "SelectedLanguageID")
+            UserDefaults.standard.set(languageId, forKey: "SelectedLanguageID")
             
             
             if languageId == 1 {
@@ -61,23 +63,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // Handle the notification when the app is in the foreground
+        func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+            if #available(iOS 14.0, *) {
+                completionHandler([.banner, .sound])
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+        // Handle what happens when the user taps on the notification
+        func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            // Handle the action when the notification is tapped
+            if response.actionIdentifier == "STOP_ACTION" {
+                        // Logic to stop the alarm sound (if needed)
+                        stopAlarmSound()  // This will stop any continuous alarm sound playing in the background
+                    }
+            completionHandler()
+            
+        }
+    
+    func stopAlarmSound() {
+            // No need to stop the notification sound, as it stops automatically when the notification is dismissed.
+            // Implement any additional logic if the sound is playing elsewhere (like in a background process).
+        }
+    
+    func showStopAlarmScreen() {
+        if let topController = UIApplication.shared.keyWindow?.rootViewController {
+            let alert = UIAlertController(title: "Alarm", message: "The alarm is ringing. Stop it?", preferredStyle: .alert)
+            
+            let stopAction = UIAlertAction(title: "Stop", style: .destructive) { _ in
+                // Stop the alarm sound
+                self.stopAlarmSound()
+            }
+            
+            alert.addAction(stopAction)
+            topController.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
                 print("Permission granted")
             } else {
                 print("Permission not granted")
-                DispatchQueue.main.async {
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                                return
-                            }
-                            
-                            if UIApplication.shared.canOpenURL(settingsUrl) {
-                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                                    print("Settings opened: \(success)") // Prints true
-                                })
-                            }
-                }
+//                DispatchQueue.main.async {
+//                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+//                                return
+//                            }
+//                            
+//                            if UIApplication.shared.canOpenURL(settingsUrl) {
+//                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+//                                    print("Settings opened: \(success)") // Prints true
+//                                })
+//                            }
+//                }
             }
         }
     }
@@ -85,24 +127,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func checkNotificationPermission() {
+        
+        
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .notDetermined:
-                // Permission not requested yet, request permission
+                print(" Permission not requested yet, request permission ")
                 self.requestNotificationPermission()
+                // Permission not requested yet, request permission
+//                self.requestNotificationPermission()
             case .denied:
+                print("for now we are allowing user to use app but in app if user tried to use alarm then we will restrict user")
                 // Permission was denied, show an alert to guide the user to settings
-                DispatchQueue.main.async {
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                                return
-                            }
-                            
-                            if UIApplication.shared.canOpenURL(settingsUrl) {
-                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                                    print("Settings opened: \(success)") // Prints true
-                                })
-                            }
-                }
+//                DispatchQueue.main.async {
+//                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+//                                return
+//                            }
+//                            
+//                            if UIApplication.shared.canOpenURL(settingsUrl) {
+//                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+//                                    print("Settings opened: \(success)") // Prints true
+//                                })
+//                            }
+//                }
             case .authorized, .provisional, .ephemeral:
                 // Permission granted or in provisional state
                 print("Permission granted")

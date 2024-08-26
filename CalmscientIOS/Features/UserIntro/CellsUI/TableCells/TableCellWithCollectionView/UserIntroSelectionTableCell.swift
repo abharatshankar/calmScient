@@ -144,7 +144,14 @@ extension UserIntroSelectionTableCell : UICollectionViewDelegateFlowLayout, UICo
         }
         let cellData = collectionData[indexPath.row]
         if indexPath.row == selectedIndex {
-            cell.cellTitleLabel.textColor = UIColor(named: "TabBarSelectedColor")
+            cell.cellTitleLabel.textColor = cellType == .UserEntryTimeSpendCell ?  UIColor(named: "barColor1") :
+                                        [
+                                             UIColor(hex: "#EF6D6D"),
+                                             UIColor(hex: "#F28A91"),
+                                             UIColor(hex: "#F8BEBD"),
+                                             UIColor(hex: "#A19EBD"),
+                                             UIColor(hex: "#6E6BB3"),
+                                        ][indexPath.row]
             cell.cellImageView.image =  cellType == .UserEntryTimeSpendCell ? UIImage(named: selectedFamilyImages[indexPath.row]) : UIImage(named: "\(cellData.0)")  //UIImage(named: selectedSmileyImgs[indexPath.row])
             cell.cellImageView.applyShadow()
             // UIImage(named: "\(cellData.0)")

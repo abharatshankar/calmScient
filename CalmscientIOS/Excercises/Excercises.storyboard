@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1698,7 +1699,7 @@ Pay careful attention to the following video.</string>
                                                 <rect key="frame" x="0.0" y="1057.6666666666667" width="393" height="340"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-wa-WhG">
-                                                        <rect key="frame" x="335" y="17" width="41" height="41"/>
+                                                        <rect key="frame" x="335" y="8" width="41" height="41"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="41" id="Tnk-QE-mfs"/>
                                                             <constraint firstAttribute="height" constant="41" id="nD6-FP-zP0"/>
@@ -1722,7 +1723,7 @@ Pay careful attention to the following video.</string>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="AppViewContentColor"/>
                                                 <constraints>
                                                     <constraint firstItem="hG3-8U-hT5" firstAttribute="centerX" secondItem="fHa-Ar-jy1" secondAttribute="centerX" id="199-ID-7pg"/>
                                                     <constraint firstItem="hG3-8U-hT5" firstAttribute="centerY" secondItem="fHa-Ar-jy1" secondAttribute="centerY" id="BWr-zr-yTz"/>
@@ -1733,7 +1734,7 @@ Pay careful attention to the following video.</string>
                                                     <constraint firstItem="odp-Zy-Eed" firstAttribute="top" secondItem="H0f-f7-TXU" secondAttribute="bottom" constant="8" symbolic="YES" id="cYw-jX-wha"/>
                                                     <constraint firstAttribute="trailing" secondItem="odp-Zy-Eed" secondAttribute="trailing" constant="10" id="k4m-oF-SDc"/>
                                                     <constraint firstItem="odp-Zy-Eed" firstAttribute="leading" secondItem="fHa-Ar-jy1" secondAttribute="leading" constant="10" id="nGk-7b-vIQ"/>
-                                                    <constraint firstItem="sy2-wa-WhG" firstAttribute="top" secondItem="fHa-Ar-jy1" secondAttribute="top" constant="17" id="oAH-zB-WyG"/>
+                                                    <constraint firstItem="sy2-wa-WhG" firstAttribute="top" secondItem="fHa-Ar-jy1" secondAttribute="top" constant="8" id="oAH-zB-WyG"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="div-kJ-a5x">
@@ -1744,7 +1745,7 @@ Pay careful attention to the following video.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="AppViewContentColor"/>
                                         <constraints>
                                             <constraint firstItem="1pS-2l-EWy" firstAttribute="trailing" secondItem="d1d-YF-lOe" secondAttribute="trailing" id="2Ix-L9-sgG"/>
                                             <constraint firstItem="220-Vn-1O0" firstAttribute="leading" secondItem="maI-08-fk0" secondAttribute="leading" id="5r8-n9-fPx"/>
@@ -1801,6 +1802,7 @@ Pay careful attention to the following video.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="AppViewContentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="cx2-pD-JAs" secondAttribute="bottom" id="KcT-bK-1h4"/>
                                     <constraint firstAttribute="trailing" secondItem="cx2-pD-JAs" secondAttribute="trailing" id="WjV-Wm-rDb"/>
@@ -2353,7 +2355,7 @@ Pay careful attention to the following video.</string>
                                                 <rect key="frame" x="0.0" y="1099" width="393" height="340"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-PM-OIr">
-                                                        <rect key="frame" x="332" y="19" width="41" height="41"/>
+                                                        <rect key="frame" x="332" y="8" width="41" height="41"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="4m3-fE-DQc"/>
                                                             <constraint firstAttribute="width" constant="41" id="IsC-RF-FAI"/>
@@ -2377,10 +2379,10 @@ Pay careful attention to the following video.</string>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="AppViewContentColor"/>
                                                 <constraints>
                                                     <constraint firstItem="ZgA-8z-PVE" firstAttribute="centerX" secondItem="TzY-PM-OIr" secondAttribute="centerX" id="3T1-hl-6h8"/>
-                                                    <constraint firstItem="TzY-PM-OIr" firstAttribute="top" secondItem="aJW-TX-BnS" secondAttribute="top" constant="19" id="CPe-f1-jr2"/>
+                                                    <constraint firstItem="TzY-PM-OIr" firstAttribute="top" secondItem="aJW-TX-BnS" secondAttribute="top" constant="8" id="CPe-f1-jr2"/>
                                                     <constraint firstItem="c84-oN-ucO" firstAttribute="top" secondItem="ZgA-8z-PVE" secondAttribute="bottom" constant="8" id="EAF-dF-Xah"/>
                                                     <constraint firstAttribute="bottom" secondItem="c84-oN-ucO" secondAttribute="bottom" constant="10" id="Fee-BX-Pir"/>
                                                     <constraint firstItem="c84-oN-ucO" firstAttribute="leading" secondItem="aJW-TX-BnS" secondAttribute="leading" constant="10" id="Rv7-uF-PFU"/>
@@ -2407,7 +2409,7 @@ Pay careful attention to the following video.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="AppViewContentColor"/>
                                         <constraints>
                                             <constraint firstItem="wVE-v3-IQv" firstAttribute="centerX" secondItem="TgM-Qv-A8O" secondAttribute="centerX" id="13T-5k-BmV"/>
                                             <constraint firstItem="YJh-AK-guG" firstAttribute="leading" secondItem="dL3-cv-Es9" secondAttribute="leading" id="4oC-7Q-dWY"/>
@@ -2477,6 +2479,7 @@ Pay careful attention to the following video.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="AppViewContentColor"/>
                                 <constraints>
                                     <constraint firstItem="9dw-RO-lOC" firstAttribute="leading" secondItem="Gkp-eh-ATY" secondAttribute="leading" id="0mM-ra-u63"/>
                                     <constraint firstItem="9dw-RO-lOC" firstAttribute="centerX" secondItem="Gkp-eh-ATY" secondAttribute="centerX" id="LjA-HI-MZs"/>
@@ -2838,7 +2841,7 @@ Pay careful attention to the following video.</string>
                                                 <rect key="frame" x="0.0" y="994" width="393" height="340"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav" translatesAutoresizingMaskIntoConstraints="NO" id="9Nx-St-dQ9">
-                                                        <rect key="frame" x="332" y="19" width="41" height="41"/>
+                                                        <rect key="frame" x="332" y="8" width="41" height="41"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="41" id="bYF-bs-9yp"/>
                                                             <constraint firstAttribute="height" constant="41" id="stZ-Ba-V6p"/>
@@ -2859,13 +2862,13 @@ Pay careful attention to the following video.</string>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="AppViewContentColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Mcu-Si-ug0" firstAttribute="centerX" secondItem="vjQ-Td-omE" secondAttribute="centerX" id="Hq4-dX-UVo"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Nx-St-dQ9" secondAttribute="trailing" constant="20" id="LXp-jE-4JJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="sg3-Bb-dK4" secondAttribute="trailing" constant="20" id="M3y-HE-Y7A"/>
                                                     <constraint firstItem="Mcu-Si-ug0" firstAttribute="centerY" secondItem="vjQ-Td-omE" secondAttribute="centerY" id="MbP-wE-vX2"/>
-                                                    <constraint firstItem="9Nx-St-dQ9" firstAttribute="top" secondItem="vjQ-Td-omE" secondAttribute="top" constant="19" id="Q0N-33-uYk"/>
+                                                    <constraint firstItem="9Nx-St-dQ9" firstAttribute="top" secondItem="vjQ-Td-omE" secondAttribute="top" constant="8" id="Q0N-33-uYk"/>
                                                     <constraint firstAttribute="height" constant="340" id="p4u-g7-bGJ"/>
                                                 </constraints>
                                             </view>
@@ -2880,7 +2883,7 @@ Pay careful attention to the following video.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="AppViewContentColor"/>
                                         <constraints>
                                             <constraint firstItem="Qnz-tV-aWO" firstAttribute="centerX" secondItem="xy7-jV-24v" secondAttribute="centerX" id="0V7-FD-ha4"/>
                                             <constraint firstItem="CFT-jg-4YQ" firstAttribute="top" secondItem="OTI-Da-2TL" secondAttribute="bottom" constant="20" id="1bI-zf-xP3"/>
@@ -2944,6 +2947,7 @@ Pay careful attention to the following video.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="AppViewContentColor"/>
                                 <constraints>
                                     <constraint firstItem="9XE-SM-8aT" firstAttribute="leading" secondItem="ytz-ai-6Ij" secondAttribute="leading" id="1rm-bw-o2H"/>
                                     <constraint firstItem="9XE-SM-8aT" firstAttribute="centerX" secondItem="ytz-ai-6Ij" secondAttribute="centerX" id="2c0-73-3rd"/>
@@ -3033,6 +3037,9 @@ Pay careful attention to the following video.</string>
         <image name="step1" width="1155" height="90"/>
         <image name="step4_img" width="1116" height="1404"/>
         <image name="touchAndButterfly" width="555" height="375"/>
+        <namedColor name="AppViewContentColor">
+            <color red="0.98431372549019602" green="0.98431372549019602" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

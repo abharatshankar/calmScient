@@ -54,10 +54,9 @@ class CustomAlertMoreInfoView: UIView {
         // Create an attributed string with the text and add the underline attribute
         let underLinetext = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "US National Institute of HealthAmerican Psychological AssociationStamford University" : "Instituto Nacional de Salud de EE. UU.Asociación Americana de PsicologíaUniversidad de Stamford"
         let attributedString = NSMutableAttributedString(string: underLinetext)
-        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: highlightLbl.text!.count))
-
-        // Set the attributed text to the label
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: underLinetext.count))
         highlightLbl.attributedText = attributedString
+        
  
         highlightLbl.font = UIFont(name: Fonts().lexendMedium, size: 15)
         

@@ -60,6 +60,7 @@ extension UserMedicalRecordsViewController : UITableViewDataSource,UITableViewDe
         let cellContent = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? content[indexPath.row] : spanishContent[indexPath.row]
         cell.medicalCellImage.image = cellContent.1
         cell.titleTextField.text = cellContent.0
+//        cell.addShadowAndBorder()
         return cell
     }
     

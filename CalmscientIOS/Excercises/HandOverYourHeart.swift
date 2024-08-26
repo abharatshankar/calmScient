@@ -64,9 +64,9 @@ class HandOverYourHeart: UIViewController {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
-        titleLbl.text = AppHelper.getLocalizeString(str:"Hand over your heart")
+        titleLbl.text = languageId == 1 ? "Hand over your heart" : "La mano en el corazón."
         
-        subtitleLbl.text = AppHelper.getLocalizeString(str: "HOW TO DO IT")
+        subtitleLbl.text = languageId == 1 ? "HOW TO DO IT" : "CÓMO HACERLO."
         
         }
     

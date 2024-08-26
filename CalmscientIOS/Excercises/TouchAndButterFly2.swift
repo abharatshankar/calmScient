@@ -57,7 +57,7 @@ class TouchAndButterFly2: UIViewController {
             } else if languageId == 2 {
                 UserDefaults.standard.set("es", forKey: "Language")
             }
-        titleLabel.text = AppHelper.getLocalizeString(str:"Touch and the butterfly hug")
+        titleLabel.text = languageId == 1 ? "Touch and the butterfly hug" : "Toque y el abrazo de mariposa"
         
         descriptionLabel.text = AppHelper.getLocalizeString(str: "Humans respond powerfully to touch. Gentle, affectionate touch helps calm the nervous system and can trigger the release of oxytocin, the attachment hormone. Interestingly, when it comes to releasing oxytocin, our bodies don’t differentiate between the touch of a loved one or our own touch as we hold ourselves.\nWhen you are feeling upset, ungrounded, agitated or irritable, try giving yourself a hug or a gentle stroke on the cheek and see how it impacts the way you feel.")
         

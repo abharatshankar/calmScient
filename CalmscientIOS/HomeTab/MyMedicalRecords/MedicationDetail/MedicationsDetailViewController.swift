@@ -100,7 +100,8 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentModal(forInstance: tableData[indexPath.row])
+//        presentModal(forInstance: tableData[indexPath.row])
+        checkNotificationPermission(forInstance: tableData[indexPath.row])
     }
     func setupLanguage() {
         
@@ -114,6 +115,70 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
         self.title = AppHelper.getLocalizeString(str:"Add Medications")
         saveStr = AppHelper.getLocalizeString(str: "Save")
         }
+    
+    
+    func requestNotificationPermission(forInstance:ScheduledTimeList) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Permission granted")
+                DispatchQueue.main.async {
+                    self.presentModal(forInstance:forInstance)
+                }
+            } else {
+                print("Permission not granted")
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            }
+        }
+    }
+    
+    
+    func checkNotificationPermission(forInstance:ScheduledTimeList) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                // Permission not requested yet, request permission
+                print("Permission not requested yet, request permission")
+            case .denied:
+                // Permission was denied, show an alert to guide the user to settings
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            case .authorized, .provisional, .ephemeral:
+                // Permission granted or in provisional state
+                print("Permission granted")
+                
+                DispatchQueue.main.async {
+                    // UI update code here
+                    DispatchQueue.main.async {
+                        self.requestNotificationPermission(forInstance:forInstance)
+                    }
+                }
+            @unknown default:
+                break
+            }
+        }
+    }
+    
+    
+    
 
     private func presentModal(forInstance:ScheduledTimeList) {
             let next = UIStoryboard(name: "BottomSheetTimeAndAlarmVC", bundle: nil)

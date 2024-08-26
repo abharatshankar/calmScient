@@ -267,9 +267,72 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
         let cellType = cellData[indexPath.row]
         
         if cellType == .MedicationsDetailCell {
-            presentModal(instance: medicationTimeData[indexPath.row - alarmCellStartIndex])
+//            presentModal(instance: medicationTimeData[indexPath.row - alarmCellStartIndex])
+            checkNotificationPermission(instance: medicationTimeData[indexPath.row - alarmCellStartIndex])
         }
         
+    }
+    
+    
+    
+    func requestNotificationPermission(instance:MedicationAlarm) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Permission granted")
+                DispatchQueue.main.async {
+                    // UI update code here
+                    self.presentModal(instance:instance)
+                }
+                
+            } else {
+                print("Permission not granted")
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            }
+        }
+    }
+    
+    
+    func checkNotificationPermission(instance:MedicationAlarm) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                // Permission not requested yet, request permission
+                print("Permission not requested yet, request permission")
+            case .denied:
+                // Permission was denied, show an alert to guide the user to settings
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+                            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                    print("Settings opened: \(success)") // Prints true
+                                })
+                            }
+                }
+            case .authorized, .provisional, .ephemeral:
+                // Permission granted or in provisional state
+                print("Permission granted")
+                DispatchQueue.main.async {
+                    // UI update code here
+                    self.requestNotificationPermission(instance:instance)
+                }
+                
+            @unknown default:
+                break
+            }
+        }
     }
     
     private func presentModal(instance:MedicationAlarm) {
@@ -307,13 +370,13 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
                 sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
 
                 sheet.delegate = self // To handle delegate methods and adjust dimming view
+                presentationControllerShouldDismiss(sheet)
             }
         } else {
             // Fallback on earlier versions
         }
 
         present(vc, animated: true, completion: nil)
-
 
     }
 }
@@ -324,4 +387,10 @@ extension AddUserMedicationsViewController: UIViewControllerTransitioningDelegat
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return HalfScreenPresentationController(presentedViewController: presented, presenting: presenting)
     }
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        // Return false to prevent the sheet from dismissing when tapping outside or swiping down
+        return false
+    }
 }
+

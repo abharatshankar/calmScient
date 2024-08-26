@@ -85,13 +85,19 @@ class BreathingTechniqueType1: UIViewController {
         progressBar.setThumbImage(UIImage(), for: .normal)
         progressBar.tintColor = UIColor.white
         preparationView.applyShadow()
+        preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         step1View.applyShadow()
+        step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step2View.applyShadow()
+        step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step3View.applyShadow()
+        step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step4View.applyShadow()
+        step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step5View.applyShadow()
+        step5View.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         dot1View.layer.cornerRadius = dot1View.frame.size.width / 2
         dot1View.backgroundColor = UIColor(hex: "#6E6BB3")
@@ -127,38 +133,44 @@ class BreathingTechniqueType1: UIViewController {
         maximiseImg.addGestureRecognizer(maximiseGesture)
         
         
-        titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
-        preparationLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        preparationDescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
         
-        subtitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
+    }
     
+    func uiLabelsSetup(){
+        
+        titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 19)
+        titleLabel.textColor = UIColor(named: "lineChartLabelColor")
+        preparationLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
+        preparationLabel.textColor = UIColor(named: "lineChartLabelColor")
+        preparationDescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
+        preparationDescLabel.textColor = UIColor(named: "lineChartLabelColor")
+        subtitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
+        subtitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         step1TitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        step1TitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         step1DescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        step1DescLabel.textColor = UIColor(named: "lineChartLabelColor")
         step2TitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        step2DescLabel.textColor = UIColor(named: "lineChartLabelColor")
         step2DescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        step2TitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         
         step3TitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        step3TitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         step3DescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        step3DescLabel.textColor = UIColor(named: "lineChartLabelColor")
         step4TitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        step4TitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         step4DescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        step4DescLabel.textColor = UIColor(named: "lineChartLabelColor")
         step5TitleLabel.font = UIFont(name: Fonts().lexendRegular, size: 15)
-        
+        step5TitleLabel.textColor = UIColor(named: "lineChartLabelColor")
         step5DescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        step5DescLabel.textColor = UIColor(named: "lineChartLabelColor")
         videoDescLbl.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
+        videoDescLbl.textColor = UIColor(named: "lineChartLabelColor")
         bottomDescLabel.font = UIFont(name: Fonts().lexendLight, size: 15)
-        
-        
+        bottomDescLabel.textColor = UIColor(named: "lineChartLabelColor")
         
     }
     
@@ -263,6 +275,7 @@ class BreathingTechniqueType1: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupLanguage()
         bringControlsToFront()
+        uiLabelsSetup()
     }
     
     func setupPlayer() {

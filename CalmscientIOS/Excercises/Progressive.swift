@@ -74,7 +74,8 @@ class Progressive: UIViewController {
     func setupLanguage() {
         
              languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
-            
+        
+        
             if languageId == 1 {
                 UserDefaults.standard.set("en", forKey: "Language")
             } else if languageId == 2 {
@@ -82,6 +83,7 @@ class Progressive: UIViewController {
             }
         titleLabel.text = AppHelper.getLocalizeString(str:"Progressive muscle relaxation")
         
+        self.titleLabel.text = languageId == 1 ? "Progressive muscle relaxation" : "Relajación progresiva muscular"
         }
     
     func addGestureRecognizers() {

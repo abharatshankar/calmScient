@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVFAudio
 
 class BottomSheetTimeAndAlarmVC: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
@@ -34,6 +36,22 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         if isNewMedicationCreation {
             newMedicationInstance?.medicineTime = newDateTime
             newMedicationInstance?.isEnabled = 1
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+
+            // Convert the string back to a Date object
+            if let date = dateFormatter.date(from: newDateTime) {
+                // Extract hour and minute using Calendar
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date)
+                let minute = calendar.component(.minute, from: date)
+                
+                print("Hour: \(hour), Minute: \(minute)")
+                scheduleAlarmNotification(hour: hour, minute: minute, identifier: newMedicationInstance?.medicineTime ?? "")
+            } else {
+                print("Invalid date format")
+            }
         } else {
             guard let scheduledObj = self.instanceObj?.scheduledTimes.first else {
                 return
@@ -51,6 +69,41 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
             scheduledObj.alarmEnabled = "1"
         }
     }
+    
+    func scheduleAlarmNotification(hour: Int, minute: Int, identifier: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Calmscient Alarm"
+        content.body = "Please take your medication to stay healthy"
+        content.categoryIdentifier = "ALARM_CATEGORY"
+        if #available(iOS 15.0, *) {
+            content.interruptionLevel = .critical
+        } else {
+            // Fallback on earlier versions
+            
+        }
+        if #available(iOS 15.2, *) {
+            content.sound = UNNotificationSound.defaultRingtone
+        } else {
+            // Fallback on earlier versions
+            content.sound = UNNotificationSound.defaultCritical
+        }
+
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            }
+        }
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.headingLabel.text = headingLabelString
@@ -71,12 +124,15 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         } else {
             updateWithUserSelectedDefaults()
         }
+        scheduleAlarmNotification(hour: 00, minute: 27, identifier: "morningAlarm")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         onScheetClosed?()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         timeLbl.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ?  "Time" : "Tiempo"
@@ -128,6 +184,9 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
+    
+    
 }
 
 extension BottomSheetTimeAndAlarmVC : UITableViewDataSource,UITableViewDelegate {
