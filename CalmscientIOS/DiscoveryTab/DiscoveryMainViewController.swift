@@ -162,15 +162,19 @@ extension DiscoveryMainViewController : UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyMedicalRecordsCell", for: indexPath) as! MyMedicalRecordsCell
         if indexPath.row == 0{
-            cell.medicalCellImage.image = UIImage(named: "discoveryAnxiety")
+            cell.medicalCellImage.image = UIImage(named: "img1")
+            cell.titleTextField.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Managing anxiety" : "Manejar la ansiedad"
         } else if indexPath.row == 1 {
-            cell.medicalCellImage.image = UIImage(named: "discoveryStress")
+            cell.medicalCellImage.image = UIImage(named: "img2")
+            cell.titleTextField.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Changing your response to stress" : "Cambiar tu respuesta al estrés"
         } else {
-            cell.medicalCellImage.image = UIImage(named: "discoveryControl")
+            cell.medicalCellImage.image = UIImage(named: "img3")
+            cell.titleTextField.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Taking control" : "Tomando el control"
         }
-        cell.cellBottomImageView.isHidden = true
-        cell.titleTextField.isHidden = true
-        cell.arrowImage.isHidden = true
+        cell.medicalCellImage.contentMode = .center
+        cell.cellBottomImageView.isHidden = false
+        cell.titleTextField.isHidden = false
+        cell.arrowImage.isHidden = false
         cell.selectionStyle = .none
         return cell
     }

@@ -28,8 +28,8 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         setupLanguage()
 
        
-       userNameTextField.text = "mtabata@gmail.com"
-       passwordTextField.text = "mtabata@1234"
+//       userNameTextField.text = "mtabata@gmail.com"
+//       passwordTextField.text = "mtabata@1234"
 //        
 //       userNameTextField.text = "chandra.p@gmail.com"
 //       passwordTextField.text = "chandra@1234"
@@ -38,8 +38,8 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 //       userNameTextField.text = "ramesh@gmail.com"
 //       passwordTextField.text = "ramesh@123"
         
-//          userNameTextField.text = "sravanthi@gmail.com"
-//          passwordTextField.text = "sravanthi@1234"
+          userNameTextField.text = "sravanthi@gmail.com"
+          passwordTextField.text = "sravanthi@1234"
 
 //        userNameTextField.text = ""
 //        passwordTextField.text = ""

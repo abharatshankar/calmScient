@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +30,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rU-4x-Woc">
                                 <rect key="frame" x="0.0" y="0.0" width="358" height="159"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Medications_Cell" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-nG-I46">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img3" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-nG-I46">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="159"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MedicalRecord_RoundedCorners" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-Eo-WMy">
@@ -96,8 +96,8 @@
     </objects>
     <resources>
         <image name="MedicalRecord_RoundedCorners" width="392" height="56"/>
-        <image name="Medications_Cell" width="392" height="162"/>
         <image name="TableCellSelection_Arrow" width="9.3333330154418945" height="13.666666984558105"/>
+        <image name="img3" width="392" height="162"/>
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

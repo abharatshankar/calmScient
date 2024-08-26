@@ -749,7 +749,7 @@
             startingLineNumber = "205"
             endingLineNumber = "205"
             landmarkName = "getTimeStr(timeStr:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1060,7 +1060,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "375AC96F-D90D-4C90-8CC1-9FC0BC878EBD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
@@ -1069,14 +1069,14 @@
             startingLineNumber = "181"
             endingLineNumber = "181"
             landmarkName = "updateCellData(withScheduledTimeList:medicineDetails:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F520B148-C0B6-479D-9799-EED70C71E5D2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
@@ -1084,15 +1084,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
             endingLineNumber = "215"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "updateCellData(medicationAlarm:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4625E7DA-0852-4E0E-B19D-9FE93AE2FC0E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
