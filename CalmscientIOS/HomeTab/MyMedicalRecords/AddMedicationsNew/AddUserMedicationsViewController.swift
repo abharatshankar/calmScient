@@ -349,7 +349,8 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
             self?.dimmingView?.removeFromSuperview()
         }
         vc.headingLabelString = AppHelper.getLocalizeString(str:"Add Time & Alarm")
-
+        vc.medicineDose = userEnteredDetails[2]
+        vc.medicineName = userEnteredDetails[0]
         
         // Create a dimming view and add it to the window
         if let window = UIApplication.shared.keyWindow {

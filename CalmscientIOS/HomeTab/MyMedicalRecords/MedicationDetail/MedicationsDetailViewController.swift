@@ -179,8 +179,16 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
     
     
     
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        // Return false to prevent the sheet from dismissing when tapping outside or swiping down
+        return false
+    }
+    
+    
 
     private func presentModal(forInstance:ScheduledTimeList) {
+        
+        
             let next = UIStoryboard(name: "BottomSheetTimeAndAlarmVC", bundle: nil)
             guard let sheetVC = (next.instantiateViewController(withIdentifier: "BottomSheetTimeAndAlarmVC") as? BottomSheetTimeAndAlarmVC) else {
                 return
@@ -246,6 +254,9 @@ extension MedicationsDetailViewController : UITableViewDataSource,UITableViewDel
                 
             }
         sheetVC.headingLabelString = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Update Time & Alarm" : "Actualizar Hora y Alarma."
+        sheetVC.medicineName = medicineTitle.text ?? ""
+        sheetVC.medicineDose = dosageValue.text ?? ""
+        
             present(sheetVC, animated: true, completion: nil)
         }
 }

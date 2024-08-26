@@ -30,16 +30,24 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     var selectedDays = [Int]()
     var onScheetClosed:(()->Void)?
     var headingLabelString : String = ""
+    var medicineName : String = ""
+    var medicineDose : String = ""
+    var hourTime : Int?
+    var minTime : Int?
+    var repeatDays : [Int] = []
+    var timeIdentifier : String? = ""
+    
+    
     
     @IBAction func onDateValueChanged(_ sender: UIDatePicker) {
         let newDateTime = sender.date.dateToString(format: "HH:mm:ss")
         if isNewMedicationCreation {
             newMedicationInstance?.medicineTime = newDateTime
             newMedicationInstance?.isEnabled = 1
-            
+            timeIdentifier = newMedicationInstance?.medicineTime ?? ""
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"
-
+            repeatDays = convertDaysToNumbers(days: newMedicationInstance?.repeat ?? [])
             // Convert the string back to a Date object
             if let date = dateFormatter.date(from: newDateTime) {
                 // Extract hour and minute using Calendar
@@ -48,7 +56,8 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
                 let minute = calendar.component(.minute, from: date)
                 
                 print("Hour: \(hour), Minute: \(minute)")
-                scheduleAlarmNotification(hour: hour, minute: minute, identifier: newMedicationInstance?.medicineTime ?? "")
+                hourTime = hour
+                minTime = minute
             } else {
                 print("Invalid date format")
             }
@@ -64,43 +73,106 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
             guard let newAlarmTime = alarmTime?.dateToString(format: "HH:mm:ss") else {
                 fatalError("Get alarm Date Failed")
             }
+            
             newAlarmDateAndTime = "\(newAlarmDateAndTime) \(newAlarmTime)"
             scheduledObj.alarmTime = newAlarmDateAndTime
             scheduledObj.alarmEnabled = "1"
+            timeIdentifier = scheduledObj.medicineTime
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+            // Convert the string back to a Date object
+            if let date = dateFormatter.date(from: newDateTime) {
+                // Extract hour and minute using Calendar
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date)
+                let minute = calendar.component(.minute, from: date)
+                
+                print("Hour: \(hour), Minute: \(minute)")
+                hourTime = hour
+                minTime = minute
+                repeatDays = convertDaysToNumbers(days: scheduledObj.repeatDay )
+            } else {
+                print("Invalid date format")
+            }
         }
     }
     
-    func scheduleAlarmNotification(hour: Int, minute: Int, identifier: String) {
+//    func scheduleAlarmNotification(hour: Int, minute: Int, identifier: String) {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Medication Alert"
+//        content.body = "Please take your \(self.medicineName) medicine of \(self.medicineDose) dosage to stay healthy"
+//        content.categoryIdentifier = "ALARM_CATEGORY"
+//        if #available(iOS 15.0, *) {
+//            content.interruptionLevel = .critical
+//        } else {
+//            // Fallback on earlier versions
+//            
+//        }
+//        
+//            content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName(rawValue: "bell.mp3"))
+//        
+//
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = hour
+//        dateComponents.minute = minute
+//        
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//        UNUserNotificationCenter.current().add(request) { error in
+//            if let error = error {
+//                print("Error scheduling notification: \(error)")
+//            }
+//        }
+//        
+//    }
+    
+    
+    func convertDaysToNumbers(days: [String]) -> [Int] {
+        let dayMapping: [String: Int] = [
+            "Sun": 1,
+            "Mon": 2,
+            "Tue": 3,
+            "Wed": 4,
+            "Thu": 5,
+            "Fri": 6,
+            "Sat": 7
+        ]
+        
+        let dayNumbers = days.compactMap { dayMapping[$0] }
+        return dayNumbers
+    }
+    
+    
+    func scheduleAlarmNotification(hour: Int, minute: Int, identifier: String, repeatDays: [Int]) {
         let content = UNMutableNotificationContent()
-        content.title = "Calmscient Alarm"
+        content.title = "Medication Alert"
         content.body = "Please take your medication to stay healthy"
         content.categoryIdentifier = "ALARM_CATEGORY"
+        
         if #available(iOS 15.0, *) {
             content.interruptionLevel = .critical
         } else {
             // Fallback on earlier versions
-            
         }
-        if #available(iOS 15.2, *) {
-            content.sound = UNNotificationSound.defaultRingtone
-        } else {
-            // Fallback on earlier versions
-            content.sound = UNNotificationSound.defaultCritical
-        }
-
-        var dateComponents = DateComponents()
-        dateComponents.hour = hour
-        dateComponents.minute = minute
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error)")
+        content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName(rawValue: "bell.mp3"))
+        
+        for day in repeatDays {
+            var dateComponents = DateComponents()
+            dateComponents.hour = hour
+            dateComponents.minute = minute
+            dateComponents.weekday = day  // Sunday is 1, Monday is 2, ..., Saturday is 7
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "\(identifier)_\(day)", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error)")
+                }
             }
         }
-        
     }
 
     
@@ -124,7 +196,6 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         } else {
             updateWithUserSelectedDefaults()
         }
-        scheduleAlarmNotification(hour: 00, minute: 27, identifier: "morningAlarm")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -182,7 +253,17 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        if let hour = self.hourTime{
+            if let minutes = self.minTime{
+                if let timeId = timeIdentifier{
+                    
+                    scheduleAlarmNotification(hour: hour, minute: minutes, identifier: timeId ,repeatDays: repeatDays )
+                    self.dismiss(animated: true)
+                }
+            }
+            
+        }
+        
     }
     
     

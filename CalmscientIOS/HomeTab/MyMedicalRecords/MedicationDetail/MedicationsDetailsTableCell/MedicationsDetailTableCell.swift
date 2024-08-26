@@ -56,6 +56,11 @@ class MedicationsDetailTableCell: UITableViewCell {
                }
                if buttonState == .dafault {
                    scheduleAlarm.alarmEnabled = "0"
+                   
+                       //to disable alarm
+                       deleteAlarmNotification(identifier: scheduleAlarm.medicineTime)
+                   
+                   
                } else {
                    scheduleAlarm.alarmEnabled = "1"
                }
@@ -79,6 +84,56 @@ class MedicationsDetailTableCell: UITableViewCell {
                NetworkAPIRequest.sendRequest(request: requestURL) {(response: ResponseDetails?, failureResponse: FailureResponse?, error: Error?) in
                    print(response?.responseMessage ?? "")
                }
+    }
+    
+    func deleteAlarmNotification(identifier: String) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+    
+    func convertDaysToNumbers(days: [String]) -> [Int] {
+        let dayMapping: [String: Int] = [
+            "Sun": 1,
+            "Mon": 2,
+            "Tue": 3,
+            "Wed": 4,
+            "Thu": 5,
+            "Fri": 6,
+            "Sat": 7
+        ]
+        
+        let dayNumbers = days.compactMap { dayMapping[$0] }
+        return dayNumbers
+    }
+    
+    func scheduleAlarmNotification(hour: Int, minute: Int, identifier: String, repeatDays: [Int]) {
+        let content = UNMutableNotificationContent()
+        content.title = "Medication Alert"
+        content.body = "Please take your medication to stay healthy"
+        content.categoryIdentifier = "ALARM_CATEGORY"
+        
+        if #available(iOS 15.0, *) {
+            content.interruptionLevel = .critical
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName(rawValue: "bell.mp3"))
+        
+        for day in repeatDays {
+            var dateComponents = DateComponents()
+            dateComponents.hour = hour
+            dateComponents.minute = minute
+            dateComponents.weekday = day  // Sunday is 1, Monday is 2, ..., Saturday is 7
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "\(identifier)_\(day)", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error)")
+                }
+            }
+        }
     }
     
     override func prepareForReuse() {

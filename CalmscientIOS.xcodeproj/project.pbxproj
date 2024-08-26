@@ -419,6 +419,7 @@
 		4AED7C3F2BFCAAEF0087F9D3 /* UserStartUpScreenDayData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AED7C3E2BFCAAEF0087F9D3 /* UserStartUpScreenDayData.json */; };
 		4AFA67712BFA03B2001197C9 /* CourseAPICodables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFA67702BFA03B2001197C9 /* CourseAPICodables.swift */; };
 		4AFA67732BFA692A001197C9 /* UpcomingMedicalAppointmentsAPICodables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFA67722BFA692A001197C9 /* UpcomingMedicalAppointmentsAPICodables.swift */; };
+		6B5789C72C7C3C7500EFB8FF /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B5789C62C7C3C7500EFB8FF /* bell.mp3 */; };
 		6B5CC41C2C673C14007DDEE5 /* UserStartUpScreenDayDataSpanish.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B5CC41B2C673C14007DDEE5 /* UserStartUpScreenDayDataSpanish.json */; };
 		6B75829C2C6B9A62008EB4EF /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75829B2C6B9A61008EB4EF /* Header.swift */; };
 		6BE9FE6D2C6F7C1800178B92 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9FE6C2C6F7C1800178B92 /* CustomViewController.swift */; };
@@ -847,6 +848,7 @@
 		4AFA67702BFA03B2001197C9 /* CourseAPICodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAPICodables.swift; sourceTree = "<group>"; };
 		4AFA67722BFA692A001197C9 /* UpcomingMedicalAppointmentsAPICodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMedicalAppointmentsAPICodables.swift; sourceTree = "<group>"; };
 		55E4AA5A9D408FDB6EB4DFC2 /* Pods-CalmscientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalmscientIOS.debug.xcconfig"; path = "Target Support Files/Pods-CalmscientIOS/Pods-CalmscientIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6B5789C62C7C3C7500EFB8FF /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		6B5CC41B2C673C14007DDEE5 /* UserStartUpScreenDayDataSpanish.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserStartUpScreenDayDataSpanish.json; sourceTree = "<group>"; };
 		6B75829B2C6B9A61008EB4EF /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		6BE9FE6C2C6F7C1800178B92 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
@@ -1393,6 +1395,7 @@
 				4A65C31E2BD6857600809222 /* GenericUIComponents */,
 				4A65C31C2BD6856C00809222 /* HealthAppLaunchScreen.storyboard */,
 				4A65C2F32BD6852C00809222 /* AppDelegate.swift */,
+				6B5789C62C7C3C7500EFB8FF /* bell.mp3 */,
 				4A65C2F52BD6852C00809222 /* SceneDelegate.swift */,
 				4A967F8B2BD6892800FCE646 /* Features */,
 				4A65C2F72BD6852C00809222 /* ViewController.swift */,
@@ -2272,6 +2275,7 @@
 				43AB77402C63DBC800740BA6 /* weeklySummay1.png in Resources */,
 				43A08DB92C3EE5F20082F47B /* Lexend-Thin.ttf in Resources */,
 				4A6ADF412BDCE6AB0066357E /* ScreeningQuestionarrieTableViewCell.xib in Resources */,
+				6B5789C72C7C3C7500EFB8FF /* bell.mp3 in Resources */,
 				4A0853912C21684B00202C02 /* BasicknowledgeVideo.storyboard in Resources */,
 				43508AF32C4E395E000B5645 /* quizTableViewCell.xib in Resources */,
 				43508ACF2C48F0B5000B5645 /* pause.png in Resources */,

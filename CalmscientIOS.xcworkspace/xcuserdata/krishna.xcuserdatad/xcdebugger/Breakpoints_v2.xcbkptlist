@@ -691,100 +691,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "47AD13B7-65EE-4CCB-AD19-FFADE522D2A7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "userContentController(_:didReceive:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "249E6C8E-7EF9-437E-B274-0CEA9D4FDE25"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "userContentController(_:didReceive:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "249E6C8E-7EF9-437E-B274-0CEA9D4FDE25 - 45e7bcfb95da0d18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CalmscientIOS.WebViewLessonViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
-                  moduleName = "CalmscientIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143">
-               </Location>
-               <Location
-                  uuid = "249E6C8E-7EF9-437E-B274-0CEA9D4FDE25 - 45e7bcfb95da0d18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CalmscientIOS.WebViewLessonViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
-                  moduleName = "CalmscientIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B06A852-00DC-4095-A457-F0B082F8E040"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "userContentController(_:didReceive:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CED7DDB9-150F-4390-9121-C5723923467E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "userContentController(_:didReceive:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A7E94BD2-F143-4FFF-8A4D-31441A82130F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -840,10 +746,10 @@
             filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "getTimeStr(timeStr:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -930,7 +836,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "12B0171B-C10D-496B-9411-B1DF7FFE72A2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
@@ -940,43 +846,13 @@
             endingLineNumber = "112"
             landmarkName = "backButtonTapped()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "12B0171B-C10D-496B-9411-B1DF7FFE72A2 - 2df9dbcbaeac7b8a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CalmscientIOS.WebViewLessonViewController.backButtonTapped() -&gt; ()"
-                  moduleName = "CalmscientIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112">
-               </Location>
-               <Location
-                  uuid = "12B0171B-C10D-496B-9411-B1DF7FFE72A2 - 2df9dbcbaeac7b8a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CalmscientIOS.WebViewLessonViewController.backButtonTapped() -&gt; ()"
-                  moduleName = "CalmscientIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krishna/Downloads/CalmscientIOS%202/CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7C471903-856F-476A-A563-7C9659504B8D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalmscientIOS/DiscoveryTab/Courses/Web/WebViewLessonViewController.swift"
@@ -1046,8 +922,8 @@
             filePath = "CalmscientIOS/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1087,22 +963,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "587521AE-9BA1-415A-93C3-4923C447AC5E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "presentModal(forInstance:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "77C83181-65D9-4A90-ABBD-DED7BCFEBF2F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1126,9 +986,121 @@
             filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/AddMedication/BottomSheetTimeAndAlarmVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8DA3BD5-E5A9-4E5B-99AB-E2503D16D7A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/AddMedication/BottomSheetTimeAndAlarmVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "onDateValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "320F3631-E18C-45F9-ACDB-2D63BFC92C0D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/AddMedication/BottomSheetTimeAndAlarmVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "onDateValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DA03A48-D77E-4B5D-BD1B-65B95E7A983B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/AddMedication/BottomSheetTimeAndAlarmVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "onDateValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94D170BB-B789-474D-BFF8-B36018801F75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/AddMedication/BottomSheetTimeAndAlarmVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "onDateValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "375AC96F-D90D-4C90-8CC1-9FC0BC878EBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "updateCellData(withScheduledTimeList:medicineDetails:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F520B148-C0B6-479D-9799-EED70C71E5D2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4625E7DA-0852-4E0E-B19D-9FE93AE2FC0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/HomeTab/MyMedicalRecords/MedicationDetail/MedicationsDetailsTableCell/MedicationsDetailTableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "didTapOnSelectionButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
