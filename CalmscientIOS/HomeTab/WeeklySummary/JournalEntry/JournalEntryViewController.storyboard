@@ -33,9 +33,10 @@
                                             <constraint firstAttribute="height" constant="30" id="sY3-zu-BFK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" name="blackAndWhite"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Quiz">
-                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                            <color key="titleColor" name="blackAndWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="quizButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="l1S-ia-rxj"/>
@@ -48,7 +49,7 @@
                                         <color key="tintColor" name="AppBackGroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Discovery Exercise">
-                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                            <color key="titleColor" name="blackAndWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="discoveryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Bl-jB-6V9"/>
@@ -64,7 +65,7 @@
                                         <color key="tintColor" name="AppBackGroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Daily jouneral">
-                                            <color key="titleColor" name="CalenderDefaultTextColor"/>
+                                            <color key="titleColor" name="blackAndWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="N5N-Yt-fdK"/>
@@ -172,9 +173,11 @@
                                         <constraint firstAttribute="width" constant="67" id="oVH-tF-QIX"/>
                                         <constraint firstAttribute="height" constant="20" id="sLb-bc-8h0"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Done">
+                                        <color key="baseForegroundColor" name="blackAndWhite"/>
+                                    </buttonConfiguration>
                                     <connections>
                                         <action selector="okButtomClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ool-wI-hzi"/>
                                     </connections>
@@ -185,15 +188,18 @@
                                         <constraint firstAttribute="width" constant="67" id="4EX-Zg-eRc"/>
                                         <constraint firstAttribute="height" constant="34.329999999999998" id="JHA-5H-UZs"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Close">
+                                        <color key="baseForegroundColor" name="blackAndWhite"/>
+                                    </buttonConfiguration>
                                     <connections>
                                         <action selector="closeButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oQx-wc-BTT"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.96487838029999995" green="0.96024924519999999" blue="0.98823899029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" name="blueAndDarkBule"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="HaM-Mw-HAm" firstAttribute="top" secondItem="kxL-GA-EKD" secondAttribute="top" constant="3" id="9St-XG-Ov0"/>
                                 <constraint firstAttribute="bottom" secondItem="HaM-Mw-HAm" secondAttribute="bottom" constant="2.6699999999999999" id="MKS-n4-aRc"/>
@@ -206,13 +212,13 @@
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" id="qT3-nc-qex">
                             <rect key="frame" x="52" y="48" width="298" height="132"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                            <color key="backgroundColor" name="AppLightTextColor"/>
-                            <color key="tintColor" red="0.50196078430000002" green="0.43434495989999999" blue="0.81000056880000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="barColor5"/>
                         </datePicker>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="L5h-DI-cJs"/>
-                    <color key="backgroundColor" name="AppBackGroundColor"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="lightF2F2F2Color"/>
+                    <color key="tintColor" name="lightF2F2F2Color"/>
                     <constraints>
                         <constraint firstItem="kxL-GA-EKD" firstAttribute="top" secondItem="zHy-Ih-qTM" secondAttribute="top" id="01A-ux-jLT"/>
                         <constraint firstAttribute="trailing" secondItem="kxL-GA-EKD" secondAttribute="trailing" id="jsT-PH-mnY"/>
@@ -235,9 +241,6 @@
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="AppLightTextColor">
-            <color red="0.40799999237060547" green="0.40400001406669617" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="CalenderDefaultTextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -246,6 +249,18 @@
         </namedColor>
         <namedColor name="GradientButtonColor2">
             <color red="0.17254901960784313" green="0.20000000000000001" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="barColor5">
+            <color red="0.93725490196078431" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blackAndWhite">
+            <color red="0.0039988997714971043" green="0.0040384928385416297" blue="0.0040384928385416297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="blueAndDarkBule">
+            <color red="0.80529247509862345" green="0.81519589647221369" blue="0.93577568312198067" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lightF2F2F2Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

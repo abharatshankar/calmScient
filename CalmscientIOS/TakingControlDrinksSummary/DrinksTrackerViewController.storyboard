@@ -195,21 +195,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-gX-5tT">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bac-99-jk6">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bac-99-jk6">
                                     <rect key="frame" x="318" y="8" width="67" height="20"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Close"/>
                                     <connections>
                                         <action selector="closeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GF3-MP-Oqg"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-Xa-zfv">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-Xa-zfv">
                                     <rect key="frame" x="19" y="8" width="67" height="20"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="67" id="usT-4p-S9g"/>
+                                        <constraint firstAttribute="width" constant="67" id="PJi-WC-BwP"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="blackAndWhite"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Done"/>
                                     <connections>
@@ -217,14 +217,18 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.96487838029999995" green="0.96024924519999999" blue="0.98823899029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" name="blueAndDarkBule"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="1sU-ND-Shg"/>
-                                <constraint firstItem="qeK-Xa-zfv" firstAttribute="leading" secondItem="7IQ-gX-5tT" secondAttribute="leading" constant="19" id="8f5-QG-EqA"/>
+                                <constraint firstItem="bac-99-jk6" firstAttribute="trailing" secondItem="7IQ-gX-5tT" secondAttribute="trailingMargin" id="Gl3-0u-aXB"/>
                                 <constraint firstAttribute="width" constant="393" id="V2Q-Tn-faK"/>
-                                <constraint firstItem="qeK-Xa-zfv" firstAttribute="top" secondItem="7IQ-gX-5tT" secondAttribute="top" constant="8" id="rEn-oH-MOQ"/>
-                                <constraint firstItem="bac-99-jk6" firstAttribute="trailing" secondItem="7IQ-gX-5tT" secondAttribute="trailingMargin" id="sz6-Hi-iwD"/>
-                                <constraint firstItem="qeK-Xa-zfv" firstAttribute="baseline" secondItem="bac-99-jk6" secondAttribute="baseline" id="uCU-Qc-VqT"/>
+                                <constraint firstItem="bac-99-jk6" firstAttribute="top" secondItem="7IQ-gX-5tT" secondAttribute="top" constant="8" id="Xfx-Zg-jy4"/>
+                                <constraint firstItem="bac-99-jk6" firstAttribute="baseline" secondItem="qeK-Xa-zfv" secondAttribute="firstBaseline" id="cd6-qO-7Pe"/>
+                                <constraint firstAttribute="bottom" secondItem="qeK-Xa-zfv" secondAttribute="bottom" constant="12" id="fGe-QZ-sdT"/>
+                                <constraint firstItem="qeK-Xa-zfv" firstAttribute="leading" secondItem="7IQ-gX-5tT" secondAttribute="leading" constant="19" id="lzH-75-XIO"/>
+                                <constraint firstAttribute="bottom" secondItem="bac-99-jk6" secondAttribute="bottom" constant="12" id="nMK-n9-b5R"/>
+                                <constraint firstItem="qeK-Xa-zfv" firstAttribute="top" secondItem="7IQ-gX-5tT" secondAttribute="top" constant="8" id="qya-Pl-IE6"/>
+                                <constraint firstItem="bac-99-jk6" firstAttribute="baseline" secondItem="qeK-Xa-zfv" secondAttribute="baseline" id="wQW-Qg-7EB"/>
                             </constraints>
                         </view>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" id="YUo-YS-0rw">
@@ -241,7 +245,7 @@
                         </datePicker>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="Egh-ck-aPD"/>
-                    <color key="backgroundColor" name="AppBackGroundColor"/>
+                    <color key="backgroundColor" name="whiteAndBlack"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="7IQ-gX-5tT" firstAttribute="leading" secondItem="Urr-XG-AZB" secondAttribute="leading" id="6Lz-Bw-XwS"/>
@@ -275,6 +279,15 @@
         </namedColor>
         <namedColor name="GradientButtonColor2">
             <color red="0.17254901960784313" green="0.20000000000000001" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="blackAndWhite">
+            <color red="0.0039988997714971043" green="0.0040384928385416297" blue="0.0040384928385416297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="blueAndDarkBule">
+            <color red="0.80529247509862345" green="0.81519589647221369" blue="0.93577568312198067" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="whiteAndBlack">
+            <color red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

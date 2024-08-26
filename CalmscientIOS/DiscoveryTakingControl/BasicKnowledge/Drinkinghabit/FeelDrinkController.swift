@@ -36,7 +36,9 @@ class FeelDrinkController: ViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        enter_text.layer.cornerRadius = 5
+        enter_text.layer.borderWidth = 1
+        enter_text.layer.borderColor = UIColor(named: "clearAndWhite")?.cgColor
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
             

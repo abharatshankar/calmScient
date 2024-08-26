@@ -13,6 +13,7 @@ class HeadersCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        textView.layer.cornerRadius = 5
         textView.layer.borderWidth = 1
         textView.layer.borderColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1).cgColor
     }

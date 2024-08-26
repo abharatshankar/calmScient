@@ -54,24 +54,27 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         quizButton.layer.borderColor = UIColor.lightGray.cgColor
         discoveryButton.layer.borderColor = UIColor.lightGray.cgColor
         dailyButton.layer.borderColor = UIColor.lightGray.cgColor
-        
+        //quizButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
         
 
         journalTableView.register(UINib(nibName: "quizTableViewCell", bundle: nil), forCellReuseIdentifier: "quizTableViewCell")
         journalTableView.delegate = self
         journalTableView.dataSource = self
         journalTableView.reloadData()
-        quizButton.backgroundColor = UIColor(named: "AppBorderColor")
+        quizButton.backgroundColor = UIColor(named: "6E6BB3ColorOnly")
+
         
-        pickerBackView.backgroundColor = UIColor.white
-        pickerBackView.layer.borderColor = UIColor.lightGray.cgColor
+        pickerBackView.backgroundColor = UIColor(named: "whiteAndBlack")
+       // pickerBackView.layer.borderColor = UIColor.lightGray.cgColor
         pickerBackView.layer.borderWidth = 1
 
         pickerBackView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        datePickerView.backgroundColor = UIColor(named: "blackAndWhite")
+        
+        
         if let window = UIApplication.shared.keyWindow {
             window.addSubview(pickerBackView)
-            
-            // Add constraints
             NSLayoutConstraint.activate([
                 pickerBackView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
                 pickerBackView.trailingAnchor.constraint(equalTo: window.trailingAnchor),
@@ -395,6 +398,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         }
     }
     @IBAction func calenderButtonTapped(_ sender: Any) {
+        datePickerView.tintColor = UIColor.green
         self.view.bringSubviewToFront(pickerBackView)
       //  datePickerView.maximumDate = Date()
 print("calenderButtonTapped")
