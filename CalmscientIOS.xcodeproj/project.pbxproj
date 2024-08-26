@@ -1250,13 +1250,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		4A0E1F9F2BEB4BE2008389C4 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		4A178C942C0572CE00371517 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -1362,7 +1355,6 @@
 			isa = PBXGroup;
 			children = (
 				4AC1F44B2BF35022002F5E44 /* Extensions */,
-				4A0E1F9F2BEB4BE2008389C4 /* New Group */,
 				4A0E1F772BE69CD7008389C4 /* NetworkLayer */,
 				4A0E1F3A2BE4673F008389C4 /* ModalClasses */,
 				4A6DCA182BE1E6D400F2EB7C /* LineChartViewAssets.xcassets */,

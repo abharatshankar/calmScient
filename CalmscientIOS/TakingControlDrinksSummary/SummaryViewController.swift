@@ -50,7 +50,7 @@ class SummaryViewController: UIViewController {
         
         self.title =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Summary" :"Resumen."
         //pickerView.frame = CGRect.init(x: 0, y: self.view.bounds.height-550, width: 350, height: 200)
-        pickerView.backgroundColor = UIColor.white
+        pickerView.backgroundColor = UIColor(named: "whiteAndBlack")
         pickerView.layer.borderColor = UIColor.lightGray.cgColor
         pickerView.layer.borderWidth = 1
 

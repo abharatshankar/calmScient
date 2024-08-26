@@ -311,7 +311,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                     // Remove the previous entry from journalEntry
                     if let previousIndexPath = previousSelectedIndexPath {
                         if let previousCell = tableView.cellForRow(at: previousIndexPath) {
-                            previousCell.contentView.backgroundColor = UIColor.white // Default color
+                            previousCell.contentView.backgroundColor = UIColor(named: "medicationscelldefaulttextcolor") // Default color
                             journalEntry.removeAll { $0["entry"] == button_name[previousIndexPath.row] }
                            // tableView.reloadRows(at: [previousIndexPath], with: .none)
                         }
@@ -333,7 +333,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                     // Remove the previous entry from journalEntry
                     if let previousIndexPath1 = previousSelectedIndexPath1 {
                         if let previousCell = tableView.cellForRow(at: previousIndexPath1) {
-                            previousCell.contentView.backgroundColor = UIColor.white // Default color
+                            previousCell.contentView.backgroundColor = UIColor(named: "medicationscelldefaulttextcolor") // Default color
                             journalEntry.removeAll { $0["entry"] == cons_arr[previousIndexPath1.row] }
                         }
                     }
