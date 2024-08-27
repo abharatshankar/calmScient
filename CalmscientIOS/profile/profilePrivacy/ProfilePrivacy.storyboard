@@ -39,7 +39,7 @@
                                     <action selector="didClickOnClose:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PN1-uD-uDm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULy-ln-Ds8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULy-ln-Ds8">
                                 <rect key="frame" x="16" y="77" width="382" height="94"/>
                                 <string key="text">Data from Calmscient can be transmitted to your doctor for clinical review purposes. Please indicate which data you allow to be shared with your doctor by selecting either Yes or No next to each data element below</string>
                                 <fontDescription key="fontDescription" name="Lexend-Light" family="Lexend" pointSize="15"/>

@@ -1020,7 +1020,6 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             // Create the "Yes" action
             let yesAction = UIAlertAction(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Yes" : "Sí", style: .default) { _ in
                 print("User tapped Yes")
-                self.clearUserDefaults()
                                 let next = UIStoryboard(name: "LoginVC", bundle: nil)
 //                                let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
 //                                self.navigationController?.pushViewController(vc!, animated: true)

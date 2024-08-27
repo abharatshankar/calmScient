@@ -189,17 +189,21 @@ class BasicknowledgeVideo: ViewController {
     }
     @IBAction func playPauseTapped(_ sender: UIButton) {
             if isPlaying {
+                playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+                playPauseButton.alpha = 1.0
                 player.pause()
                 playPauseButton.setTitle("Play", for: .normal)
                 let videoURL = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!
                 let avPlayer = AVPlayer(url: videoURL)
                 let avController = AVPlayerViewController()
-                avController.player = avPlayer
-                present(avController, animated: true) {
-                    avPlayer.play()
-                }
+//                avController.player = avPlayer
+//                present(avController, animated: true) {
+//                    avPlayer.play()
+//                }
             } else {
+                playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
                 player.play()
+                playPauseButton.alpha = 0.5
                 playPauseButton.setTitle("Pause", for: .normal)
                // resetAutoHideTimer()
             }
