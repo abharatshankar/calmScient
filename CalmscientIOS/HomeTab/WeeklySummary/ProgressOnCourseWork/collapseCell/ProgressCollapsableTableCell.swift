@@ -26,7 +26,8 @@ public class ProgressOfWorkCellData {
     }
 }
 class ProgressCollapsableTableCell: UITableViewCell {
-
+    @IBOutlet weak var cellButton: UIButton!
+    
     @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var shadowView: UIView!
     
@@ -73,9 +74,14 @@ class ProgressCollapsableTableCell: UITableViewCell {
                            
                            subStackView.addArrangedSubview(horizontalStackView)
                        }
-                   }
+                cellButton.setImage(UIImage(named: "cellCollapse"), for: .normal)
+            } else {
+                // Set the button image to expand when collapsed
+                cellButton.setImage(UIImage(named: "cellExpansion"), for: .normal)
+            }
         }
     }
+    
     
     var cellExpansionClosure: ((Bool) -> Void)?
 
@@ -107,6 +113,13 @@ class ProgressCollapsableTableCell: UITableViewCell {
 
     @IBAction func didClickOnExpandOrCollapse(_ sender: UIButton) {
         dataItem.updateExpansionState(isExpanded: !dataItem.exapansionState)
+        
+        if dataItem.exapansionState {
+                   cellButton.setImage(UIImage(named: "cellCollapse"), for: .normal)
+               } else {
+                   cellButton.setImage(UIImage(named: "cellExpansion"), for: .normal)
+               }
+        
         cellExpansionClosure?(dataItem.exapansionState)
     }
 

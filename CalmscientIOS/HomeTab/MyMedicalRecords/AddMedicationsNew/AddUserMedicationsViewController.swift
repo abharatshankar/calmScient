@@ -137,6 +137,7 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
                 self.view.showToast(message:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "An Unknown error occured. Please check with Admin" : "Se produjo un error desconocido. Consulte con el administrador")
                 return
             }
+            self.view.showToastActivity()
             NetworkAPIRequest.sendRequest(request: requestURL) { [weak self](response: AddMedicationSavedResponse?, failureResponse: FailureResponse?, error: Error?) in
                 DispatchQueue.main.async {
                     guard let self = self else {

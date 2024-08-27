@@ -51,9 +51,12 @@ Here are resources that can assist you in achieving your goal?</string>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now, let's get to know the drink coach features." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-u8-emo">
-                                <rect key="frame" x="20" y="490.33333333333331" width="353" height="20"/>
-                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now, let's get to know the drink coach features." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-u8-emo">
+                                <rect key="frame" x="20" y="480" width="353" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="VUd-2z-BAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -73,7 +76,7 @@ Here are resources that can assist you in achieving your goal?</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oak-TU-n2e">
-                                <rect key="frame" x="22" y="520.33333333333337" width="349" height="45"/>
+                                <rect key="frame" x="22" y="549.33333333333337" width="349" height="45"/>
                                 <color key="backgroundColor" name="6E6BB3ColorOnly"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gyO-dX-A7P"/>
@@ -149,11 +152,11 @@ Here are resources that can assist you in achieving your goal?</string>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R1K-p5-iF0" secondAttribute="trailing" constant="20" id="n6k-rD-xZV"/>
                             <constraint firstItem="2Fd-ag-E65" firstAttribute="top" secondItem="xMQ-aQ-Fl2" secondAttribute="bottom" constant="10" id="nCy-to-oF4"/>
                             <constraint firstItem="TU2-Ej-gBj" firstAttribute="top" secondItem="2Fd-ag-E65" secondAttribute="bottom" constant="10" id="pBU-4f-mHH"/>
-                            <constraint firstItem="Oak-TU-n2e" firstAttribute="top" secondItem="IXT-u8-emo" secondAttribute="bottom" constant="10" id="ptc-EN-43J"/>
+                            <constraint firstItem="Oak-TU-n2e" firstAttribute="top" secondItem="IXT-u8-emo" secondAttribute="bottom" constant="23.333333333333258" id="ptc-EN-43J"/>
                             <constraint firstItem="qXN-HR-IoQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="qG3-SC-QN8"/>
                             <constraint firstItem="Oak-TU-n2e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="wa9-a3-PPZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TU2-Ej-gBj" secondAttribute="trailing" constant="22" id="xoe-44-4U7"/>
-                            <constraint firstItem="IXT-u8-emo" firstAttribute="top" secondItem="R1K-p5-iF0" secondAttribute="bottom" constant="33.333333333333314" id="y29-7h-CFP"/>
+                            <constraint firstItem="IXT-u8-emo" firstAttribute="top" secondItem="R1K-p5-iF0" secondAttribute="bottom" constant="23" id="y29-7h-CFP"/>
                         </constraints>
                     </view>
                     <connections>
