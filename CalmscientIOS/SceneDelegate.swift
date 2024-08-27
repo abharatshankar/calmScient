@@ -16,7 +16,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.overrideUserInterfaceStyle = style
         }
     }
-
+    func changeRootViewController(to viewController: UIViewController) {
+        guard let window = self.window else { return }
+        
+        // Set the new root view controller
+        window.rootViewController = viewController
+        
+        // Optional: Animate the transition
+        UIView.transition(with: window,
+                          duration: 0.5,
+                          options: .transitionFlipFromRight,
+                          animations: nil,
+                          completion: nil)
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

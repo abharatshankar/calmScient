@@ -231,11 +231,31 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 //                                let homeController = UIStoryboard(name: "AppTabBar", bundle: nil).instantiateViewController(withIdentifier: "AppMainTabViewController") as! AppMainTabViewController
 //                                window.rootViewController = homeController
 //                                window.makeKeyAndVisible()
-                                    let next = UIStoryboard(name: "UserIntro", bundle: nil)
-                                    let vc = next.instantiateViewController(withIdentifier: "UserIntroDayFeedbackViewController") as? UserIntroDayFeedbackViewController
-                                    vc?.afternoonVC = true
-                                    vc?.titleString = "Good Afternoon"
-                                    self.navigationController?.pushViewController(vc!, animated: true)
+                            
+                            
+//                                    let next = UIStoryboard(name: "UserIntro", bundle: nil)
+//                                    let vc = next.instantiateViewController(withIdentifier: "UserIntroDayFeedbackViewController") as? UserIntroDayFeedbackViewController
+//                                    vc?.afternoonVC = true
+//                                    vc?.titleString = "Good Afternoon"
+//                                    self.navigationController?.pushViewController(vc!, animated: true)
+                            
+                            
+                            
+                            
+                            
+                            
+                            let storyboard = UIStoryboard(name: "UserIntro", bundle: nil)
+                                let homeViewController = storyboard.instantiateViewController(withIdentifier: "UserIntroDayFeedbackViewController") as! UserIntroDayFeedbackViewController
+                            homeViewController.afternoonVC = true
+                            homeViewController.titleString = "Good Afternoon"
+                                // Wrap the home view controller in a navigation controller if needed
+                                let navController = UINavigationController(rootViewController: homeViewController)
+                            
+                                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                                    sceneDelegate.changeRootViewController(to: navController)
+                                }
+                            
+                            
 //                            }
                         }
                     }

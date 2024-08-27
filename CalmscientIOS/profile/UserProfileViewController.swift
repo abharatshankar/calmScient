@@ -1021,10 +1021,35 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             let yesAction = UIAlertAction(title:  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Yes" : "Sí", style: .default) { _ in
                 print("User tapped Yes")
                 self.clearUserDefaults()
-                let next = UIStoryboard(name: "LoginVC", bundle: nil)
-                let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-                self.navigationController?.pushViewController(vc!, animated: true)
+                                let next = UIStoryboard(name: "LoginVC", bundle: nil)
+//                                let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+//                                self.navigationController?.pushViewController(vc!, animated: true)
+//                
                 // Add your code to handle the "Yes" action here
+                
+                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    let newViewController = next.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                    
+                    sceneDelegate.changeRootViewController(to: newViewController)
+                }
+                
+//                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+//                    // Initialize the Login View Controller (assuming it's in the storyboard)
+//                    let storyboard = UIStoryboard(name: "LoginVC", bundle: nil)
+//                    let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                    
+//                    // Set it as the root view controller
+//                    sceneDelegate.window?.rootViewController = loginViewController
+//                    
+//                    // Optional: Animate the transition
+//                    UIView.transition(with: sceneDelegate.window!,
+//                                      duration: 0.5,
+//                                      options: [.transitionFlipFromLeft],
+//                                      animations: nil,
+//                                      completion: nil)
+                    
+                    
+//                }
             }
             
             // Create the "No" action
@@ -1047,6 +1072,8 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
         }
         
     }
+    
+    
     
     func clearUserDefaults() {
         let defaults = UserDefaults.standard
