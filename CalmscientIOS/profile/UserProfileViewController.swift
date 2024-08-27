@@ -25,7 +25,11 @@ fileprivate enum ProfileTableCells : String {
     }
 }
 
-class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISheetPresentationControllerDelegate {
+class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISheetPresentationControllerDelegate, LanguageSelectionDelegate {
+    func didSelectLanguage(languageId: Int) {
+        
+    }
+    
     var dimmingView: UIView?
     @IBOutlet weak var profileIcon: UIImageView!
     @IBOutlet weak var circleView: UIView!
@@ -907,6 +911,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
 //                            cell.cellIconView.image = UIImage(data: data)
                             cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                             cell.languagesArray = self.languagesData
+                            cell.delegate = self
                             cell.languageSelectionClosure = { [weak self] languageId in
                                
                                 self?.handleLanguageSelection(languageId: languageId)

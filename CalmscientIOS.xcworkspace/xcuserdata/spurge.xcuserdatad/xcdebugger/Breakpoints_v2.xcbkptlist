@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E1C8EE89-49EC-4682-B51E-090D87374DB5"
+            uuid = "5D4F5B63-9764-4574-9D87-5E2EF7EEDF7A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CalmscientIOS/Features/Login/LoginVC.swift"
+            filePath = "CalmscientIOS/MainTabBar/AppMainTabViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "createLoginRequest(userName:password:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateTabBarItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7564D1F-B049-452F-885E-2A97C608BC24"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalmscientIOS/MainTabBar/AppMainTabViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "didSelectLanguage(languageId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

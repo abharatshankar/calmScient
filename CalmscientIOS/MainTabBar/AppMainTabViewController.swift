@@ -6,15 +6,19 @@
 //
 
 import UIKit
+protocol LanguageSelectionDelegate: AnyObject {
+    func didSelectLanguage(languageId: Int)
+}
+
+let tabTitlesEnglish: [String] = ["HOME", "DISCOVERY", "EXERCISES", "REWARDS"]
+let tabTitlesSpanish: [String] = ["INICIO", "DESCUBRIMIENTO", "EJERCICIOS", "RECOMPENSAS"]
+var tabTitles: [String] = []
 
 @available(iOS 16.0, *)
 class AppMainTabViewController: UITabBarController {
 
     var isInitalView: Bool  = false
-    let tabTitlesEnglish: [String] = ["HOME", "DISCOVERY", "EXERCISES", "REWARDS"]
-    let tabTitlesSpanish: [String] = ["INICIO", "DESCUBRIMIENTO", "EJERCICIOS", "RECOMPENSAS"]
-
-    var tabTitles: [String] = []
+   
     let selectedImages:[String] =  ["MainTab_Home_Selected","MainTab_Discovery_Selected","MainTab_Exercises_Selected","MainTab_Rewards_Selected"]
     let unselectedimages:[String] = ["MainTab_Home_Unselected","MainTab_Discovery_Unselected","MainTab_Exercises_Unselected","MainTab_Rewards_UnSelected"]
     
@@ -23,9 +27,9 @@ class AppMainTabViewController: UITabBarController {
 //        UITabBar.appearance().barTintColor = UIColor(named: "TabBarUnSelectedColor")
 //        UITabBar.appearance().tintColor = UIColor(named: "TabBarSelectedColor")
 //        UITabBar.appearance().isTranslucent = true
-        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
-        tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
-        
+//        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+//        tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
+        updateTabBarItems()
         
         if #available(iOS 15, *) {
             let tabBarItemAppearence = UITabBarItemAppearance()
@@ -42,8 +46,19 @@ class AppMainTabViewController: UITabBarController {
         delegate = self
         // Do any additional setup after loading the view.
     }
-    
-    
+    func updateTabBarItems() {
+            let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+            tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
+
+            guard let items = tabBar.items else { return }
+            for i in 0..<items.count {
+                items[i].title = tabTitles[i]
+            }
+        }
+    func didSelectLanguage(languageId: Int) {
+            UserDefaults.standard.set(languageId, forKey: "SelectedLanguageID")
+            updateTabBarItems()
+        }
 //    let next = UIStoryboard(name: "UserIntro", bundle: nil)
 //    let vc = next.instantiateViewController(withIdentifier: "UserIntroDayFeedbackViewController") as? UserIntroDayFeedbackViewController
 //    vc?.afternoonVC = false

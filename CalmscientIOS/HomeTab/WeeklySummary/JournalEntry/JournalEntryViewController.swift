@@ -29,6 +29,8 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
     var dateString1 : String = ""
     @IBOutlet var pickerBackView: UIView!
     var nomedications = UILabel()
+    var nomedications1 = UILabel()
+    var nomedications2 = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +48,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         quizButton.layer.cornerRadius = 10
         discoveryButton.layer.cornerRadius = 10
         dailyButton.layer.cornerRadius = 10
-        
+        quizButton.titleLabel?.textColor = UIColor.white
         quizButton.layer.borderWidth = 0.5
         discoveryButton.layer.borderWidth = 0.5
         dailyButton.layer.borderWidth = 0.5
@@ -56,12 +58,13 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         dailyButton.layer.borderColor = UIColor.lightGray.cgColor
         //quizButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
         
+        quizButton.setTitleColor(UIColor.white, for: .normal)
 
         journalTableView.register(UINib(nibName: "quizTableViewCell", bundle: nil), forCellReuseIdentifier: "quizTableViewCell")
         journalTableView.delegate = self
         journalTableView.dataSource = self
         journalTableView.reloadData()
-        quizButton.backgroundColor = UIColor(named: "6E6BB3ColorOnly")
+        quizButton.backgroundColor = UIColor(named: "blueAndPink")
 
         
         pickerBackView.backgroundColor = UIColor(named: "whiteAndBlack")
@@ -87,7 +90,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         
         
         nomedications.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No data for this date" : "No hay datos para esta fecha"
-        nomedications.textColor = .purple
+        nomedications.textColor = UIColor(named: "medicationscelldefaulttextcolor")
         nomedications.textAlignment = .center
         nomedications.font = UIFont.boldSystemFont(ofSize: 17)
 
@@ -102,8 +105,42 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
                 ])
         self.nomedications.isHidden = true
         
+        nomedications1.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No data for this date" : "No hay datos para esta fecha"
+        nomedications1.textColor = UIColor(named: "medicationscelldefaulttextcolor")
+        nomedications1.textAlignment = .center
+        nomedications1.font = UIFont.boldSystemFont(ofSize: 17)
+
+              
+        view.addSubview(nomedications1)
+
+        nomedications1.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+                    nomedications1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    nomedications1.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                ])
+        self.nomedications1.isHidden = true
+        
+        
+        nomedications2.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "No data for this date" : "No hay datos para esta fecha"
+        nomedications2.textColor = UIColor(named: "medicationscelldefaulttextcolor")
+        nomedications2.textAlignment = .center
+        nomedications2.font = UIFont.boldSystemFont(ofSize: 17)
+
+              
+        view.addSubview(nomedications2)
+
+        nomedications2.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+                    nomedications2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    nomedications2.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                ])
+        self.nomedications2.isHidden = true
+        
+        
+        
         self.view.showToastActivity()
-      //  dateString =  "05/03/2024"
         
         let currentDate = Date()
                 let dateFormatter = DateFormatter()
@@ -148,12 +185,12 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
                                 print("self.dailyData==\(self.dailyData)")
                                 self.filtereddailyData = self.dailyData
 //                                if self.filtereddailyData.isEmpty {
-//                                    self.nomedications.isHidden = false
+//                                    self.nomedications1.isHidden = false
 //                                }
 //                                else{
-//                                    self.nomedications.isHidden = true
+//                                    self.nomedications1.isHidden = true
 //                                }
-
+//                                self.journalTableView.reloadData()
                             } else {
                                 print("providerDetails key is missing or not a dictionary")
                             }
@@ -162,11 +199,12 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
                                 self.filtereddiscoverData = self.discoverData
                                 print("self.discoverData==\(self.discoverData)")
 //                                if self.filtereddiscoverData.isEmpty {
-//                                    self.nomedications.isHidden = false
+//                                    self.nomedications2.isHidden = false
 //                                }
 //                                else{
-//                                    self.nomedications.isHidden = true
+//                                    self.nomedications2.isHidden = true
 //                                }
+//                                self.journalTableView.reloadData()
 
                             } else {
                                 print("providerDetails key is missing or not a dictionary")
@@ -344,12 +382,12 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
                                 self.quizData = quiz1
                                // print("self.quizData==\(self.quizData)")
                                 self.filteredQuizData = self.quizData
-//                                if self.filteredQuizData.isEmpty {
-//                                    self.nomedications.isHidden = false
-//                                }
-//                                else{
-//                                    self.nomedications.isHidden = true
-//                                }
+                                if self.filteredQuizData.isEmpty {
+                                    self.nomedications.isHidden = false
+                                }
+                                else{
+                                    self.nomedications.isHidden = true
+                                }
                                 self.journalTableView.reloadData()
 
                             } else {
@@ -411,10 +449,15 @@ print("calenderButtonTapped")
         journalTableView.delegate = self
         journalTableView.dataSource = self
         journalTableView.reloadData()
-        quizButton.backgroundColor = UIColor(named: "AppBorderColor")
-        dailyButton.backgroundColor = UIColor(named: "AppBackGroundColor")
-        discoveryButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
+        quizButton.backgroundColor = UIColor(named: "blueAndPink")
+        dailyButton.backgroundColor = UIColor(named: "whiteAndBlack")
+        discoveryButton.backgroundColor =  UIColor(named: "whiteAndBlack")
+        quizButton.setTitleColor(UIColor.white, for: .normal)
+        dailyButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
+        discoveryButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
         searchTF.text = ""
+        self.nomedications1.isHidden = true
+        self.nomedications2.isHidden = true
         if self.filteredQuizData.isEmpty {
             self.nomedications.isHidden = false
         }
@@ -429,15 +472,21 @@ print("calenderButtonTapped")
         journalTableView.delegate = self
         journalTableView.dataSource = self
         journalTableView.reloadData()
-        quizButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
-        dailyButton.backgroundColor = UIColor(named: "AppBorderColor")
-        discoveryButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
+        quizButton.backgroundColor =  UIColor(named: "whiteAndBlack")
+        dailyButton.backgroundColor = UIColor(named: "blueAndPink")
+        discoveryButton.backgroundColor =  UIColor(named: "whiteAndBlack")
+        dailyButton.setTitleColor(UIColor.white, for: .normal)
+        discoveryButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
+        quizButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
+       
         searchTF.text = ""
+        self.nomedications.isHidden = true
+        self.nomedications2.isHidden = true
         if self.dailyData.isEmpty {
-            self.nomedications.isHidden = false
+            self.nomedications1.isHidden = false
         }
         else{
-            self.nomedications.isHidden = true
+            self.nomedications1.isHidden = true
         }
         self.journalTableView.reloadData()
         
@@ -448,15 +497,21 @@ print("calenderButtonTapped")
         journalTableView.delegate = self
         journalTableView.dataSource = self
         journalTableView.reloadData()
-        quizButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
-        dailyButton.backgroundColor =  UIColor(named: "AppBackGroundColor")
-        discoveryButton.backgroundColor = UIColor(named: "AppBorderColor")
+        quizButton.backgroundColor =  UIColor(named: "whiteAndBlack")
+        dailyButton.backgroundColor =  UIColor(named: "whiteAndBlack")
+        discoveryButton.backgroundColor = UIColor(named: "blueAndPink")
+        discoveryButton.setTitleColor(UIColor.white, for: .normal)
+        quizButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
+        dailyButton.setTitleColor(UIColor(named: "blackAndWhite"), for: .normal)
+
         searchTF.text = ""
+        self.nomedications.isHidden = true
+        self.nomedications1.isHidden = true
         if self.discoverData.isEmpty {
-            self.nomedications.isHidden = false
+            self.nomedications2.isHidden = false
         }
         else{
-            self.nomedications.isHidden = true
+            self.nomedications2.isHidden = true
         }
         self.journalTableView.reloadData()
     }

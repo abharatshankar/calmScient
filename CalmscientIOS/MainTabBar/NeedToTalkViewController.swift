@@ -22,6 +22,9 @@ class NeedToTalkViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = false
 
+        doctorName.font = UIFont(name: Fonts().lexendMedium, size: 20)
+        doctorSubtitle.font = UIFont(name: Fonts().lexendBold, size: 12)
+        phoneNumber.font = UIFont(name: Fonts().lexendMedium, size: 17)
         
         needToTalkTableView.dataSource = self
         needToTalkTableView.delegate = self
@@ -200,7 +203,7 @@ extension NeedToTalkViewController : UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 200
     }
     @objc func learnMoreButtonClicked(_ sender: UIButton) {
             let index = sender.tag

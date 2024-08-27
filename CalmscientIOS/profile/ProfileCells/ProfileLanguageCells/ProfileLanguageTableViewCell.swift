@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileLanguageTableViewCell: UITableViewCell {
+    weak var delegate: LanguageSelectionDelegate?
 
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var cellIconView: UIImageView!
@@ -111,52 +112,26 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let newData = languagesArray[indexPath.row]
-//       // print(newData["languageId"] as! Int)
-//       // print(newData["preferred"] as Any)
-//        let languageId = newData["languageId"] as! Int
-//        
-//        if let languageId = newData["languageId"] as? Int {
+
+//                let newData = languagesArray[indexPath.row]
+//                let languageId = newData["languageId"] as! Int
+//                if let languageId = newData["languageId"] as? Int {
 //                    languageSelectionClosure?(languageId)
+//                    tabTitles = languageId == 1 ? tabTitlesEnglish : tabTitlesSpanish
 //                }
-       // selectedIndexPath = indexPath
-                let newData = languagesArray[indexPath.row]
-                let languageId = newData["languageId"] as! Int
-                if let languageId = newData["languageId"] as? Int {
-                    languageSelectionClosure?(languageId)
-                }
-                collectionView.reloadData()
-        languageCollectionView.reloadData()
+//                collectionView.reloadData()
+//        languageCollectionView.reloadData()
         
-//        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
-//            fatalError("Unable to found Application Shared Info")
-//        }
-//        
-//        updateUserLanguage(patientId: userInfo.patientID, clientId: userInfo.clientID,languageId: languageId ,bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
-//            switch result {
-//            case .success(let data):
-//                do {
-//                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//                        DispatchQueue.main.async {
-//                          //  print(json)
-//                          // self.languageCollectionView.reloadData()
-//                            let next = UIStoryboard(name: "UserProfile", bundle: nil)
-//                            let vc = next.instantiateViewController(withIdentifier: "UserProfileViewController") as? UserProfileViewController
-//                           // self.navigationController?.pushViewController(vc!, animated: false)
-//                            
-//                        }
-//                        
-//                    } else {
-//                        print("Unable to convert data to JSON")
-//                    }
-//                } catch {
-//                    print("Error converting data to JSON: \(error)")
-//                }
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
+        let newData = languagesArray[indexPath.row]
+               
+               if let languageId = newData["languageId"] as? Int {
+                   // Notify the delegate of the language selection
+                   languageSelectionClosure?(languageId)
+                   delegate?.didSelectLanguage(languageId: languageId)
+                   collectionView.reloadData()
+               }
+           }
         
     }
 
-}
+
