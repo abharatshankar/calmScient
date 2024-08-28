@@ -58,7 +58,7 @@ class MedicationsDetailTableCell: UITableViewCell {
                    scheduleAlarm.alarmEnabled = "0"
                    
                        //to disable alarm
-                       deleteAlarmNotification(identifier: scheduleAlarm.medicineTime)
+                       deleteAlarmNotification(identifier: scheduleAlarm.alarmTime)
                    
                    
                } else {
@@ -180,8 +180,37 @@ class MedicationsDetailTableCell: UITableViewCell {
             }
             if scheduledTime.alarmEnabled == "1" {
                 buttonState = .selected
+                
+                ///////////////////////////////////////////////
+                // To add alarm if your tapped on swiitch to "yes" in medication configaration
+                ///////////////////////////////////////////////
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH:mm:ss"
+                 
+                // Convert the string back to a Date object
+                if let date = dateFormatter.date(from: scheduledTime.alarmTime) {
+                    // Extract hour and minute using Calendar
+                    let calendar = Calendar.current
+                    let hour = calendar.component(.hour, from: date)
+                    let minute = calendar.component(.minute, from: date)
+                    
+                    print("Hour: \(hour), Minute: \(minute)")
+                    
+                    
+                    scheduleAlarmNotification(hour: hour, minute: minute, identifier: scheduledTime.alarmTime, repeatDays: convertDaysToNumbers(days: scheduledTime.repeatDay ))
+                } else {
+                    print("Invalid date format")
+                    
+                }
+                //////////////////////////////////////////////
+                ///
+                //////////////////////////////////////////////
+                
             } else {
                 buttonState = .dafault
+                // to remove alarm if user tapped on swiitch to "No"
+                deleteAlarmNotification(identifier: scheduledTime.alarmTime)
+                
             }
             self.cellSwitchImageView.image = self.currentImage
             guard let alarmDayType = scheduledTime.alarmTime.getDayTimeFromDate(), let alarmDayTypeShortForm = scheduledTime.alarmTime.getDayTimeFromDate(includeTimeZone:true) else {

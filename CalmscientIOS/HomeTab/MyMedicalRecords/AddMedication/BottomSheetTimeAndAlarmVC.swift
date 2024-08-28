@@ -23,9 +23,6 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
     weak var newMedicationInstance:MedicationAlarm?
     var isNewMedicationCreation = false
     
-    var timeArray = ["05", "10", "15", "20", "25", "30"]
-    var dayArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    var daySelectedArray = ["SunSelected", "MonSelected", "TueSelected", "WedSelected", "ThuSelected", "FriSelected", "SatSelected"]
     
     var selectedDays = [Int]()
     var onScheetClosed:(()->Void)?
@@ -45,11 +42,12 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
             newMedicationInstance?.medicineTime = newDateTime
             newMedicationInstance?.isEnabled = 1
             timeIdentifier = newMedicationInstance?.medicineTime ?? ""
+            timeIdentifier = newMedicationInstance?.getAlarmTime()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"
             repeatDays = convertDaysToNumbers(days: newMedicationInstance?.repeat ?? [])
             // Convert the string back to a Date object
-            if let date = dateFormatter.date(from: newDateTime) {
+            if let date = dateFormatter.date(from: (newMedicationInstance?.getAlarmTime())!) {
                 // Extract hour and minute using Calendar
                 let calendar = Calendar.current
                 let hour = calendar.component(.hour, from: date)
@@ -77,11 +75,11 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
             newAlarmDateAndTime = "\(newAlarmDateAndTime) \(newAlarmTime)"
             scheduledObj.alarmTime = newAlarmDateAndTime
             scheduledObj.alarmEnabled = "1"
-            timeIdentifier = scheduledObj.medicineTime
+            timeIdentifier = scheduledObj.alarmTime
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"
             // Convert the string back to a Date object
-            if let date = dateFormatter.date(from: newDateTime) {
+            if let date = dateFormatter.date(from: newAlarmTime) {
                 // Extract hour and minute using Calendar
                 let calendar = Calendar.current
                 let hour = calendar.component(.hour, from: date)
@@ -106,16 +104,16 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
 //            content.interruptionLevel = .critical
 //        } else {
 //            // Fallback on earlier versions
-//            
+//
 //        }
-//        
+//
 //            content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName(rawValue: "bell.mp3"))
-//        
+//
 //
 //        var dateComponents = DateComponents()
 //        dateComponents.hour = hour
 //        dateComponents.minute = minute
-//        
+//
 //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 //
 //        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
@@ -124,7 +122,7 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
 //                print("Error scheduling notification: \(error)")
 //            }
 //        }
-//        
+//
 //    }
     
     
@@ -136,7 +134,15 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
             "Wed": 4,
             "Thu": 5,
             "Fri": 6,
-            "Sat": 7
+            "Sat": 7,
+            
+            "Dom": 1,
+            "Lun": 2,
+            "Mar": 3,
+            "Mié": 4,
+            "Jue": 5,
+            "Vie": 6,
+            "Sáb" : 7
         ]
         
         let dayNumbers = days.compactMap { dayMapping[$0] }

@@ -1029,8 +1029,11 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
 //                                let vc = next.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
 //                                self.navigationController?.pushViewController(vc!, animated: true)
 //                
-                // Add your code to handle the "Yes" action here
                 
+                
+                // to Remove all Alarms in medications page
+                self.removeAllAlarms()
+                // Add your code to handle the "Yes" action here
                 if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                     let newViewController = next.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                     
@@ -1077,7 +1080,11 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
         
     }
     
-    
+    func removeAllAlarms() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        print("All alarms have been removed.")
+    }
     
     func clearUserDefaults() {
         let defaults = UserDefaults.standard
