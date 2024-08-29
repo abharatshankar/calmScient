@@ -93,7 +93,6 @@ extension LandingVC: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    
 }
 
 extension LandingVC: UICollectionViewDataSource{

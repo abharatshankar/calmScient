@@ -18,7 +18,7 @@ class MedicationsDetailTableCell: UITableViewCell {
     @IBOutlet weak var rightContentLabel: UILabel!
     
     @IBOutlet weak var rightTitleLabel: UILabel!
-    
+    var cellIndex : Int?
     @IBOutlet weak var cellSwitchImageView: UIImageView!
     
     private var defaultImage = UIImage(named: "ToggleSwitch_No")
@@ -42,6 +42,12 @@ class MedicationsDetailTableCell: UITableViewCell {
         }
     }
     
+    protocol MedicationsDetailTableCellDelegate: AnyObject {
+        func didChangeSwitchState(for cell: MedicationsDetailTableCell, isSelected: Bool, at index: Int)
+    }
+
+    weak var delegate: MedicationsDetailTableCellDelegate?
+        
     @IBAction func didTapOnSelectionButton(_ sender: UITapGestureRecognizer) {
         if buttonState == .dafault {
                    buttonState = .selected
@@ -51,7 +57,15 @@ class MedicationsDetailTableCell: UITableViewCell {
                UIView.transition(with: cellSwitchImageView, duration: 0.3, options: .transitionCrossDissolve) {
                    self.cellSwitchImageView.image = self.currentImage
                }
+        
                guard let scheduleAlarm = medicationAlarmInstance?.scheduledTimes.first else {
+                   //for newly created medication 
+                   
+                   if let index = cellIndex{
+                       delegate?.didChangeSwitchState(for: self, isSelected: isCellSelected, at: index)
+                   }
+                           
+                       
                    return
                }
                if buttonState == .dafault {
@@ -185,7 +199,7 @@ class MedicationsDetailTableCell: UITableViewCell {
                 // To add alarm if your tapped on swiitch to "yes" in medication configaration
                 ///////////////////////////////////////////////
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm:ss"
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                  
                 // Convert the string back to a Date object
                 if let date = dateFormatter.date(from: scheduledTime.alarmTime) {
@@ -195,8 +209,6 @@ class MedicationsDetailTableCell: UITableViewCell {
                     let minute = calendar.component(.minute, from: date)
                     
                     print("Hour: \(hour), Minute: \(minute)")
-                    
-                    
                     scheduleAlarmNotification(hour: hour, minute: minute, identifier: scheduledTime.alarmTime, repeatDays: convertDaysToNumbers(days: scheduledTime.repeatDay ))
                 } else {
                     print("Invalid date format")
@@ -224,7 +236,7 @@ class MedicationsDetailTableCell: UITableViewCell {
             }
             self.dayTimeImageView.image = dayTypeMatch.getIconImage()
             leftTitleLabel.text = getTimeStr(timeStr: dayTypeMatch.rawValue)
-        rightTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alarm" : "Alarma"
+            rightTitleLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alarm" : "Alarma"
             leftContentLabel.text = medicineTimeShortForm
             rightContentLabel.text = alarmDayTypeShortForm
         }

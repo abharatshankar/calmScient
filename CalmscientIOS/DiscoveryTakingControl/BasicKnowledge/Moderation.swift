@@ -14,125 +14,33 @@ class Moderation: ViewController {
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
     var sectionID3: Int?
+    
+    var primaryReasonsArr = [
+        "Taking medications that interact with alcohol",
+        "Managing a medical condition that can be made worse by drinking",
+        "Under the age of 21, the minimum legal drinking age in the United States",
+        "Recovering from alcohol use disorder (AUD) or unable to control the amount you drink",
+        "Pregnant or might be pregnant"
+    ]
+    
+    let primaryReasonsArrSpanish = [
+        "Tomar medicamentos que interactúan con el alcohol",
+        "Manejar una condición médica que puede empeorar con el consumo de alcohol",
+        "Menor de 21 años, la edad mínima legal para beber en los Estados Unidos",
+        "Recuperándose de un trastorno por consumo de alcohol (AUD) o incapaz de controlar la cantidad que bebes",
+        "Embarazada o podría estar embarazada"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let primaryReasons = AlcoholAvoidanceReason.primaryReasons().map { "\n   • \($0.rawValue)" }.joined(separator: "\n")
-                let additionalReasons = AlcoholAvoidanceReason.additionalReasons().map { "\n   • \($0.rawValue)" }.joined(separator: "\n")
 
-                let guidelinesText = """
-                According to the 2020-2025 Dietary Guidelines for
-                Americans, certain individuals should not consume
-                alcohol. It’s safest to void alcohol altogether
-                if you are:
-                \(primaryReasons)
-                
-                In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely.
-                """
-
-       // \(additionalReasons)
-      //      normalTextLabel.text = guidelinesText
-       // normalTextLabel.numberOfLines = 0
-        
-        
-//        let text = """
-//        What is alcohol misuse?
-//        
-//        NIAAA defines heavy drinking as follows:
-//
-//        For women:
-//        4 or more drinks on any day or 8 or more per week
-//
-//        For men:
-//        5 or more drinks on any day or 15 or more per week.
-//        """
-//
-//        let attributedString = NSMutableAttributedString(string: text)
-//
-//        let womenRange = (text as NSString).range(of: "For women: 4 or more drinks on any day or 8 or more per week")
-//        let menRange = (text as NSString).range(of: "For men: 5 or more drinks on any day or 15 or more per week.")
-//        let womenDetailRange = (text as NSString).range(of: "4 or more drinks on any day or 8 or more per week")
-//        let menDetailRange = (text as NSString).range(of: "5 or more drinks on any day or 15 or more per week")
-
-
-//        attributedString.addAttribute(.link, value: "", range: womenRange)
-//        attributedString.addAttribute(.link, value: "", range: menRange)
-//        attributedString.addAttribute(.link, value: "", range: womenDetailRange)
-//        attributedString.addAttribute(.link, value: "", range: menDetailRange)
-//
-//        let font = UIFont(name: Fonts().lexendRegular, size: 15)!
-//        let textColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0) 
-//        let fullRange = NSRange(location: 0, length: attributedString.length)
-//
-//        attributedString.addAttribute(.font, value: font, range: fullRange)
-//        attributedString.addAttribute(.foregroundColor, value: textColor, range: fullRange)
-
-        
-        
-        
-        let fullText = """
-                According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to avoid alcohol altogether if you are:
-
-                    •  Taking medications that interact with alcohol
-
-                    •  Managing a medical condition that can be made worse by drinking
-
-                    •  Under the age of 21, the minimum legal drinking age in the United States
-
-                    •  Recovering from alcohol use disorder (AUD) or unable to control the amount you drink
-
-                    •  Pregnant or might be pregnant
-
-                In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery—or who are participating in activities that require skill, coordination, and alertness—should avoid alcohol completely.
-
-                What is alcohol misuse?
-
-                NIAAA defines heavy drinking as follows:
-
-                For women:
-                4 or more drinks on any day or 8 or more per week
-
-                For men:
-                5 or more drinks on any day or 15 or more per week.
-                """
-
-                // Create a mutable attributed string
-                let attributedText = NSMutableAttributedString(string: fullText)
-        
-        // Define the font and size
-               let font = UIFont(name: Fonts().lexendRegular, size: 16)!
-               
-               // Set the entire text to green color with the desired font and size
-               let fullRange = NSRange(location: 0, length: attributedText.length)
-               attributedText.addAttributes([
-                   .foregroundColor: UIColor.green,
-                   .font: font
-               ], range: fullRange)
-        
-                let fullRange1 = NSRange(location: 0, length: attributedText.length)
-                attributedText.addAttribute(.foregroundColor, value: UIColor(named: "blackAndWhite") as Any, range: fullRange1)
-                // Define the range for the first part of the text that needs to be red
-                if let range1 = fullText.range(of: "4 or more drinks on any day or 8 or more per week") {
-                    let nsRange1 = NSRange(range1, in: fullText)
-                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange1)
-                }
-                
-                // Define the range for the second part of the text that needs to be red
-                if let range2 = fullText.range(of: "5 or more drinks on any day or 15 or more per week") {
-                    let nsRange2 = NSRange(range2, in: fullText)
-                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange2)
-                }
-                
-                // Assign the attributed string to the text view
-        hyperTextLabel.attributedText = attributedText
-        
         
         
 //
      //   hyperTextLabel.attributedText = attributedString
      //   hyperTextLabel.isEditable = false
      //   hyperTextLabel.dataDetectorTypes = .link
-        title = "Basic Knowledge"
+//        title = "Basic Knowledge"
         
         self.view.showToastActivity()
         
@@ -163,8 +71,75 @@ class Moderation: ViewController {
         }
         
     }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
        // setupLanguage()
+        self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
+        
+        fontConfigaration()
+    }
+    
+    func fontConfigaration(){
+        self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
+        headerLabel.font = UIFont(name: Fonts().lexendLight, size: 15)!
+        let someAdditionalInfo = NSMutableAttributedString(string:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to avoid alcohol altogether if you are:\n\n" : "Según las Guías Alimentarias para Estadounidenses 2020-2025, ciertas personas no deben consumir alcohol. Es más seguro evitar el alcohol por completo si eres:\n\n")
+        someAdditionalInfo.addAttribute(.font, value: UIFont(name: Fonts().lexendLight, size: 15)!, range: NSRange(location: 0, length: someAdditionalInfo.length))
+        someAdditionalInfo.addAttribute(.foregroundColor, value: UIColor(hex: "#424242"), range: NSRange(location: 0, length: someAdditionalInfo.length))
+
+
+        let primaryReasons = add(stringList:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? primaryReasonsArr : primaryReasonsArrSpanish, font: UIFont(name: Fonts().lexendLight, size: 15)!)
+        
+        let fullText = """
+                In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery—or who are participating in activities that require skill, coordination, and alertness—should avoid alcohol completely.
+
+                What is alcohol misuse?
+
+                NIAAA defines heavy drinking as follows:
+
+                For women:
+                4 or more drinks on any day or 8 or more per week
+
+                For men:
+                5 or more drinks on any day or 15 or more per week.
+                """
+        
+
+                // Create a mutable attributed string
+                let attributedText =  NSMutableAttributedString(string: fullText)
+        
+        // Define the font and size
+               let font = UIFont(name: Fonts().lexendLight, size: 15)!
+               
+               // Set the entire text to green color with the desired font and size
+               let fullRange = NSRange(location: 0, length: attributedText.length)
+               attributedText.addAttributes([
+                   .foregroundColor: UIColor.green,
+                   .font: font
+               ], range: fullRange)
+        
+                let fullRange1 = NSRange(location: 0, length: attributedText.length)
+                attributedText.addAttribute(.foregroundColor, value: UIColor(named: "blackAndWhite") as Any, range: fullRange1)
+                // Define the range for the first part of the text that needs to be red
+                if let range1 = fullText.range(of: "4 or more drinks on any day or 8 or more per week") {
+                    let nsRange1 = NSRange(range1, in: fullText)
+                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange1)
+                }
+                
+                // Define the range for the second part of the text that needs to be red
+                if let range2 = fullText.range(of: "5 or more drinks on any day or 15 or more per week") {
+                    let nsRange2 = NSRange(range2, in: fullText)
+                    attributedText.addAttribute(.foregroundColor, value: UIColor(named: "CustomAlertTitleColor") as Any, range: nsRange2)
+                }
+        let combinedAttributedString = NSMutableAttributedString()
+        combinedAttributedString.append(someAdditionalInfo)
+        combinedAttributedString.append(primaryReasons)
+        combinedAttributedString.append(attributedText)
+        
+                // Assign the attributed string to the text view
+        hyperTextLabel.attributedText = combinedAttributedString
+        
     }
     
     
@@ -181,8 +156,9 @@ class Moderation: ViewController {
                 
                
             }
-        self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
+        
         headerLabel.text = AppHelper.getLocalizeString(str: "What’s a standard drink")
+        
         normalTextLabel.text = AppHelper.getLocalizeString(str: "According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to void alcohol altogether if you are: Taking medications that interact with alcohol Managing a medical condition that can be made Worse by drinking Under the age of 21, the minimum legal drinking age in the United States Recovering from alcohol use disorder (AUD) or unable to control the amount you drink Pregnant or might be pregnant In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery-or who are participating in activities that require skill, coordination, and alertness-should avoid alcohol completely.")
         hyperTextLabel.text = AppHelper.getLocalizeString(str: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.")
         }
@@ -249,5 +225,50 @@ class Moderation: ViewController {
         // Start the data task
         task.resume()
     }
+    
+    
+    func add(stringList: [String],
+             font: UIFont,
+             bullet: String = "  \u{2022}",
+             indentation: CGFloat = 20,
+             lineSpacing: CGFloat = 2,
+             paragraphSpacing: CGFloat = 12,
+             textColor: UIColor = UIColor(hex: "#424242"),
+             bulletColor: UIColor = .black) -> NSAttributedString {
+
+        let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor]
+        let bulletAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: bulletColor]
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        let nonOptions = [NSTextTab.OptionKey: Any]()
+        paragraphStyle.tabStops = [
+            NSTextTab(textAlignment: .left, location: indentation, options: nonOptions)]
+        paragraphStyle.defaultTabInterval = indentation
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.paragraphSpacing = paragraphSpacing
+        paragraphStyle.headIndent = indentation
+
+        let bulletList = NSMutableAttributedString()
+        for (index,string) in stringList.enumerated() {
+            let formattedString = "\(bullet)\t\(string)\n"
+            let attributedString = NSMutableAttributedString(string: formattedString)
+
+            attributedString.addAttributes(
+                [NSAttributedString.Key.paragraphStyle : paragraphStyle],
+                range: NSMakeRange(0, attributedString.length))
+
+            attributedString.addAttributes(
+                textAttributes,
+                range: NSMakeRange(0, attributedString.length))
+
+            let string:NSString = NSString(string: formattedString)
+            let rangeForBullet:NSRange = string.range(of: bullet)
+            attributedString.addAttributes(bulletAttributes, range: rangeForBullet)
+            bulletList.append(attributedString)
+        }
+
+        return bulletList
+    }
+    
 }
 

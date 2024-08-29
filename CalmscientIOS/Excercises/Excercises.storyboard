@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cw-fC-QpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-996.18320610687022" y="-1087.323943661972"/>
+            <point key="canvasLocation" x="-1350" y="25"/>
         </scene>
         <!--Excercises-->
         <scene sceneID="jtn-Hp-0UX">
@@ -277,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7p-j5-M55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="1194"/>
+            <point key="canvasLocation" x="1404" y="1194"/>
         </scene>
         <!--Touch And Butter Fly2-->
         <scene sceneID="Cil-ju-7af">
@@ -352,35 +352,32 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                             <constraint firstItem="ZxP-WD-eep" firstAttribute="top" secondItem="iaS-7t-yKH" secondAttribute="top" id="t8Y-DS-cJI"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFf-6A-WU5">
-                                        <rect key="frame" x="0.0" y="683" width="393" height="56"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front" translatesAutoresizingMaskIntoConstraints="NO" id="6xX-uw-Llb">
-                                                <rect key="frame" x="332" y="7.6666666666666288" width="41" height="41"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="69R-lE-mvf"/>
-                                                    <constraint firstAttribute="width" constant="41" id="iFA-br-DUl"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="a9f-j8-uAq"/>
-                                            <constraint firstItem="6xX-uw-Llb" firstAttribute="centerY" secondItem="mFf-6A-WU5" secondAttribute="centerY" id="gsF-GT-p3q"/>
-                                            <constraint firstAttribute="trailing" secondItem="6xX-uw-Llb" secondAttribute="trailing" constant="20" id="oqh-Mm-JJ8"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="iaS-7t-yKH" secondAttribute="trailing" id="4J9-Zq-JBa"/>
                                     <constraint firstItem="iaS-7t-yKH" firstAttribute="top" secondItem="UTI-xT-SGi" secondAttribute="top" id="E2Q-0l-3hi"/>
-                                    <constraint firstItem="mFf-6A-WU5" firstAttribute="leading" secondItem="UTI-xT-SGi" secondAttribute="leading" id="OZI-ow-BOG"/>
-                                    <constraint firstAttribute="trailing" secondItem="mFf-6A-WU5" secondAttribute="trailing" id="Upe-xy-rYU"/>
                                     <constraint firstAttribute="bottom" secondItem="iaS-7t-yKH" secondAttribute="bottom" id="Wxj-fm-2MU"/>
                                     <constraint firstItem="iaS-7t-yKH" firstAttribute="leading" secondItem="UTI-xT-SGi" secondAttribute="leading" id="XuB-TZ-Ib4"/>
-                                    <constraint firstAttribute="bottom" secondItem="mFf-6A-WU5" secondAttribute="bottom" constant="20" symbolic="YES" id="eYp-g6-5Ae"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFf-6A-WU5">
+                                <rect key="frame" x="0.0" y="742" width="393" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front" translatesAutoresizingMaskIntoConstraints="NO" id="6xX-uw-Llb">
+                                        <rect key="frame" x="332" y="7.6666666666666288" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="WzZ-gM-jia"/>
+                                            <constraint firstAttribute="width" constant="41" id="uaY-e9-0iI"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6xX-uw-Llb" firstAttribute="centerY" secondItem="mFf-6A-WU5" secondAttribute="centerY" id="Suk-gS-mwz"/>
+                                    <constraint firstAttribute="trailing" secondItem="6xX-uw-Llb" secondAttribute="trailing" constant="20" symbolic="YES" id="wkx-cU-1jf"/>
+                                    <constraint firstAttribute="height" constant="56" id="ysX-HQ-h1s"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ASW-md-BIc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -388,9 +385,12 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <constraint firstItem="UTI-xT-SGi" firstAttribute="top" secondItem="ASW-md-BIc" secondAttribute="top" id="2B7-Pc-K9F"/>
                             <constraint firstItem="UTI-xT-SGi" firstAttribute="centerX" secondItem="B1F-JK-JgG" secondAttribute="centerX" id="8NQ-Dl-a5j"/>
                             <constraint firstItem="UTI-xT-SGi" firstAttribute="leading" secondItem="ASW-md-BIc" secondAttribute="leading" id="B6I-0g-lLf"/>
+                            <constraint firstItem="ASW-md-BIc" firstAttribute="bottom" secondItem="mFf-6A-WU5" secondAttribute="bottom" constant="20" id="CXT-SA-8oR"/>
+                            <constraint firstItem="mFf-6A-WU5" firstAttribute="leading" secondItem="ASW-md-BIc" secondAttribute="leading" id="FBz-Yc-e6u"/>
                             <constraint firstItem="UTI-xT-SGi" firstAttribute="trailing" secondItem="ASW-md-BIc" secondAttribute="trailing" id="SbU-cl-eO9"/>
                             <constraint firstAttribute="trailing" secondItem="iaS-7t-yKH" secondAttribute="trailing" id="hWA-Pb-VMt"/>
                             <constraint firstItem="UTI-xT-SGi" firstAttribute="bottom" secondItem="ASW-md-BIc" secondAttribute="bottom" id="mKg-Ut-M2g"/>
+                            <constraint firstItem="mFf-6A-WU5" firstAttribute="trailing" secondItem="ASW-md-BIc" secondAttribute="trailing" id="niB-B0-GRS"/>
                             <constraint firstItem="iaS-7t-yKH" firstAttribute="leading" secondItem="B1F-JK-JgG" secondAttribute="leading" id="zhi-hv-hsA"/>
                         </constraints>
                     </view>
@@ -404,81 +404,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfe-Jp-3av" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2281.679389312977" y="-470.42253521126764"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="uD4-Nk-DPY">
-            <objects>
-                <viewController id="gHs-XL-AnB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4JI-5G-VoJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1052"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNN-s9-OhA">
-                                <rect key="frame" x="0.0" y="988" width="393" height="52"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front" translatesAutoresizingMaskIntoConstraints="NO" id="Y7e-Tt-5MA">
-                                        <rect key="frame" x="341" y="10" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="4uy-jo-FFa"/>
-                                            <constraint firstAttribute="height" constant="32" id="qRf-sB-Tkw"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLT-PC-KRZ">
-                                        <rect key="frame" x="341" y="10" width="32" height="32"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="zLT-PC-KRZ" firstAttribute="bottom" secondItem="Y7e-Tt-5MA" secondAttribute="bottom" id="2A9-3P-qdg"/>
-                                    <constraint firstItem="zLT-PC-KRZ" firstAttribute="trailing" secondItem="Y7e-Tt-5MA" secondAttribute="trailing" id="3QS-ft-AzP"/>
-                                    <constraint firstAttribute="height" constant="52" id="ApH-6W-oc0"/>
-                                    <constraint firstItem="zLT-PC-KRZ" firstAttribute="leading" secondItem="Y7e-Tt-5MA" secondAttribute="leading" id="NIE-wn-Pwt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y7e-Tt-5MA" secondAttribute="trailing" constant="20" id="O62-gD-xHg"/>
-                                    <constraint firstItem="Y7e-Tt-5MA" firstAttribute="centerY" secondItem="SNN-s9-OhA" secondAttribute="centerY" id="ROy-55-5KZ"/>
-                                    <constraint firstItem="zLT-PC-KRZ" firstAttribute="top" secondItem="Y7e-Tt-5MA" secondAttribute="top" id="fPa-DE-J9q"/>
-                                    <constraint firstItem="zLT-PC-KRZ" firstAttribute="centerY" secondItem="SNN-s9-OhA" secondAttribute="centerY" id="hBh-pf-oNM"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8Q-uT-ZT1">
-                                <rect key="frame" x="0.0" y="59" width="393" height="929"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhf-x3-vF0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="721"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="721" id="Ujj-qZ-hAG"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Vhf-x3-vF0" firstAttribute="centerX" secondItem="q8Q-uT-ZT1" secondAttribute="centerX" id="SY5-V2-Bf2"/>
-                                    <constraint firstItem="Vhf-x3-vF0" firstAttribute="top" secondItem="q8Q-uT-ZT1" secondAttribute="top" id="W92-ee-kRx"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vhf-x3-vF0" secondAttribute="bottom" id="kWE-PL-rpc"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vhf-x3-vF0" secondAttribute="trailing" id="len-X6-jLr"/>
-                                    <constraint firstItem="Vhf-x3-vF0" firstAttribute="leading" secondItem="q8Q-uT-ZT1" secondAttribute="leading" id="mfo-Xb-8vc"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="kXz-50-1V2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="SNN-s9-OhA" secondAttribute="bottom" constant="12" id="LJg-EC-zZ2"/>
-                            <constraint firstItem="SNN-s9-OhA" firstAttribute="top" secondItem="q8Q-uT-ZT1" secondAttribute="bottom" id="RgN-qA-fw8"/>
-                            <constraint firstItem="q8Q-uT-ZT1" firstAttribute="top" secondItem="kXz-50-1V2" secondAttribute="top" id="Vbx-VS-K7e"/>
-                            <constraint firstItem="q8Q-uT-ZT1" firstAttribute="trailing" secondItem="kXz-50-1V2" secondAttribute="trailing" id="ZQq-OJ-o9b"/>
-                            <constraint firstItem="SNN-s9-OhA" firstAttribute="leading" secondItem="kXz-50-1V2" secondAttribute="leading" id="ll0-85-X2r"/>
-                            <constraint firstItem="q8Q-uT-ZT1" firstAttribute="leading" secondItem="kXz-50-1V2" secondAttribute="leading" id="vp7-XJ-1pi"/>
-                            <constraint firstItem="SNN-s9-OhA" firstAttribute="trailing" secondItem="kXz-50-1V2" secondAttribute="trailing" id="wlD-jt-ON4"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="393" height="1052"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uee-sa-Ojq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1463.3587786259541" y="-383.0985915492958"/>
+            <point key="canvasLocation" x="-648" y="25"/>
         </scene>
         <!--Progressive-->
         <scene sceneID="Pi2-EP-Ph5">
@@ -615,7 +541,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCw-5o-9Ak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2060.3053435114502" y="1194.3661971830986"/>
+            <point key="canvasLocation" x="2108" y="1194"/>
         </scene>
         <!--Mindful Walking-->
         <scene sceneID="GDQ-Af-iDC">
@@ -777,14 +703,14 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNi-gX-GmL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759.5419847328244" y="1193.661971830986"/>
+            <point key="canvasLocation" x="2760" y="1194"/>
         </scene>
         <!--Touch Butterfly Hug-->
         <scene sceneID="7LB-EJ-n08">
             <objects>
                 <viewController storyboardIdentifier="TouchButterflyHug" id="gOx-DA-AAo" customClass="TouchButterflyHug" customModule="CalmscientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uL3-EU-okh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-bZ-ylR">
@@ -822,7 +748,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqz-cc-PfJ">
-                                <rect key="frame" x="0.0" y="160" width="393" height="1692"/>
+                                <rect key="frame" x="0.0" y="160" width="393" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xie-2k-0Aj">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="824.66666666666663"/>
@@ -959,13 +885,6 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                             <constraint firstItem="jK8-i7-ib8" firstAttribute="trailing" secondItem="GVW-aE-w3G" secondAttribute="trailing" id="wMG-oE-xqU"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-Q6-jsI">
-                                        <rect key="frame" x="20" y="748" width="41" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="pkM-Fh-95J"/>
-                                            <constraint firstAttribute="height" constant="41" id="rrC-m8-5tu"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Xie-2k-0Aj" firstAttribute="top" secondItem="aqz-cc-PfJ" secondAttribute="top" id="1er-gK-pSq"/>
@@ -975,11 +894,16 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                                     <constraint firstItem="Xie-2k-0Aj" firstAttribute="leading" secondItem="aqz-cc-PfJ" secondAttribute="leading" id="Gzr-Zg-WsG"/>
                                     <constraint firstAttribute="bottom" secondItem="Xie-2k-0Aj" secondAttribute="bottom" id="M2E-c8-ejL"/>
                                     <constraint firstItem="Xie-2k-0Aj" firstAttribute="top" secondItem="aqz-cc-PfJ" secondAttribute="top" id="Mbd-5y-E2Z"/>
-                                    <constraint firstItem="YHg-Q6-jsI" firstAttribute="top" secondItem="jK8-i7-ib8" secondAttribute="bottom" constant="23.333333333333371" id="Ois-HF-i0Q"/>
                                     <constraint firstAttribute="trailing" secondItem="Xie-2k-0Aj" secondAttribute="trailing" id="oAo-9j-LCA"/>
-                                    <constraint firstItem="YHg-Q6-jsI" firstAttribute="leading" secondItem="aqz-cc-PfJ" secondAttribute="leading" constant="20" id="trS-Ov-wMx"/>
                                 </constraints>
                             </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-Q6-jsI">
+                                <rect key="frame" x="23" y="757" width="41" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="eUg-58-XjA"/>
+                                    <constraint firstAttribute="height" constant="41" id="tMb-hk-HEi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8iP-ft-7Df"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -987,6 +911,7 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <constraint firstItem="aqz-cc-PfJ" firstAttribute="top" secondItem="9Vi-iJ-Dym" secondAttribute="bottom" constant="1" id="8a4-xr-1Vg"/>
                             <constraint firstItem="9Vi-iJ-Dym" firstAttribute="leading" secondItem="8iP-ft-7Df" secondAttribute="leading" constant="20" id="CId-rX-KKq"/>
                             <constraint firstItem="AAe-bZ-ylR" firstAttribute="leading" secondItem="8iP-ft-7Df" secondAttribute="leading" id="E7h-WD-tRe"/>
+                            <constraint firstItem="8iP-ft-7Df" firstAttribute="bottom" secondItem="YHg-Q6-jsI" secondAttribute="bottom" constant="20" id="Ek9-32-013"/>
                             <constraint firstItem="AAe-bZ-ylR" firstAttribute="trailing" secondItem="8iP-ft-7Df" secondAttribute="trailing" id="Eq6-0u-yhX"/>
                             <constraint firstItem="9Vi-iJ-Dym" firstAttribute="trailing" secondItem="AQj-nQ-yN5" secondAttribute="trailing" id="JOI-CG-tfA"/>
                             <constraint firstItem="8iP-ft-7Df" firstAttribute="trailing" secondItem="9Vi-iJ-Dym" secondAttribute="trailing" constant="20" id="SNY-4k-jIq"/>
@@ -994,11 +919,11 @@ When you are feeling upset, ungrounded, agitated or irritable, try giving yourse
                             <constraint firstItem="AAe-bZ-ylR" firstAttribute="top" secondItem="8iP-ft-7Df" secondAttribute="top" id="UXW-fs-t51"/>
                             <constraint firstItem="9Vi-iJ-Dym" firstAttribute="top" secondItem="AAe-bZ-ylR" secondAttribute="bottom" constant="20" id="XYb-bl-Bal"/>
                             <constraint firstItem="aqz-cc-PfJ" firstAttribute="trailing" secondItem="8iP-ft-7Df" secondAttribute="trailing" id="bMO-7T-fLS"/>
+                            <constraint firstItem="YHg-Q6-jsI" firstAttribute="leading" secondItem="8iP-ft-7Df" secondAttribute="leading" constant="23" id="lSb-1N-cfw"/>
                             <constraint firstAttribute="bottom" secondItem="aqz-cc-PfJ" secondAttribute="bottom" id="xrb-LR-hgr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zu2-zr-rJ4"/>
-                    <size key="freeformSize" width="393" height="1852"/>
                     <connections>
                         <outlet property="backImg" destination="Hrv-BI-emX" id="9Za-zb-DQx"/>
                         <outlet property="circle1" destination="JGZ-5v-Ovt" id="tfi-LL-J3M"/>
@@ -1410,7 +1335,7 @@ For added effect, you can place your other hand across your forehead or on your 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7H-uI-Lvg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756.4885496183206" y="-25.35211267605634"/>
+            <point key="canvasLocation" x="2761" y="25"/>
         </scene>
         <!--Breathing Technique Type1-->
         <scene sceneID="2Ie-T3-tiq">

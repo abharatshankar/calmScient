@@ -35,8 +35,9 @@ class DashboardMainTableCell: UITableViewCell {
         
         borderView.layer.cornerRadius = 8
         borderView.layer.masksToBounds = true
-        borderView.layer.borderWidth = 1
-        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+//        borderView.layer.borderWidth = 1
+//        borderView.layer.borderColor = UIColor(named: "AppViewBorderColor")?.cgColor
+        borderView.applyShadow()
     }
     
 }

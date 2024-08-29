@@ -41,7 +41,6 @@ class BottomSheetTimeAndAlarmVC: UIViewController {
         if isNewMedicationCreation {
             newMedicationInstance?.medicineTime = newDateTime
             newMedicationInstance?.isEnabled = 1
-            timeIdentifier = newMedicationInstance?.medicineTime ?? ""
             timeIdentifier = newMedicationInstance?.getAlarmTime()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm:ss"

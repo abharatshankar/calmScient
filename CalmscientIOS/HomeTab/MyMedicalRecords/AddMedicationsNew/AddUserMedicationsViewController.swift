@@ -23,7 +23,18 @@ fileprivate enum AddUserMedicationsCellDef:String {
     
 }
 
-class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationControllerDelegate, UISheetPresentationControllerDelegate {
+class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationControllerDelegate, UISheetPresentationControllerDelegate, MedicationsDetailTableCell.MedicationsDetailTableCellDelegate {
+    func didChangeSwitchState(for cell: MedicationsDetailTableCell, isSelected: Bool, at index: Int) {
+                // Capture the state change and send it to the backend
+                let status = isSelected ? 1 : 0
+        print("-----alarm delegate status-----")
+        print(status)
+                medicationTimeData[index].isEnabled = status
+        print(medicationTimeData[index].isEnabled)
+        
+    }
+    
+    
     var dimmingView: UIView?
     @IBOutlet weak var cancelButton: BorderShadowButton!
     @IBOutlet weak var saveButton: LinearGradientButton!
@@ -37,7 +48,11 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
     private var isMedicineWithMeals:Bool = false
     private var userEnteredDetails:[String] = Array(repeating: "", count: 4)
     
-    private var medicationTimeData:[MedicationAlarm] = [MedicationAlarm.init(alarmTime: .Morning)!,MedicationAlarm.init(alarmTime: .Afternoon)!,MedicationAlarm.init(alarmTime: .Evening)!]
+    private var medicationTimeData:[MedicationAlarm] = [
+        MedicationAlarm.init(alarmTime: .Morning)!,
+        MedicationAlarm.init(alarmTime: .Afternoon)!,
+        MedicationAlarm.init(alarmTime: .Evening)!
+    ]
     private let alarmCellStartIndex = 5
     var saveStr = "Save"
     override func viewDidLoad() {
@@ -113,14 +128,16 @@ class AddUserMedicationsViewController: ViewController, UIAdaptivePresentationCo
         view.endEditing(true)
         if doValidation() {
             let medicationData = AddMedication()
+            for alarm in medicationTimeData {
+                print("-----alarm isenabled-----")
+                print(alarm.isEnabled)
+            }
             medicationData.alarms = medicationTimeData
             medicationData.direction = userEnteredDetails[3]
             medicationData.dosage = userEnteredDetails[2]
             medicationData.medicationName = userEnteredDetails[0]
             
-            //TODO: - How to get provider ID
-            medicationData.providerId = 1
-            
+            medicationData.providerId = ApplicationSharedInfo.shared.loginResponse?.providerID ?? 0
             medicationData.alarms = self.medicationTimeData
             medicationData.quantity = medicationTimeData.count
             medicationData.withMeal = (isMedicineWithMeals ? 1 : 0)
@@ -210,6 +227,8 @@ extension AddUserMedicationsViewController : UITableViewDataSource,UITableViewDe
             cell.dayTimeImageView.image = UIImage(named: "\(imageNames[Int.random(in: 0..<imageNames.count)])")
             cell.updateCellData(medicationAlarm: medicationTimeData[indexPath.row - alarmCellStartIndex])
             cell.selectionStyle = .none
+            cell.cellIndex = indexPath.row - alarmCellStartIndex
+            cell.delegate = self
             return cell
         case .textFieldUserEntry:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewMedicationUserEntryTableCell", for: indexPath) as! AddNewMedicationUserEntryTableCell

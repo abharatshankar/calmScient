@@ -38,16 +38,8 @@
                                                 <color key="textColor" name="424242Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-jW-Nf2">
-                                                <rect key="frame" x="149" y="38" width="49" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="31" id="3Kn-6t-RaJ"/>
-                                                    <constraint firstAttribute="width" constant="47" id="T3C-5O-cS3"/>
-                                                </constraints>
-                                                <color key="onTintColor" name="6E6BB3ColorOnly"/>
-                                            </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRe-Xo-gce">
-                                                <rect key="frame" x="229" y="24" width="55" height="33"/>
+                                                <rect key="frame" x="229" y="21" width="55" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="JcP-VV-lca"/>
                                                     <constraint firstAttribute="height" constant="33" id="jv6-mT-D7S"/>
@@ -58,15 +50,10 @@
                                         </subviews>
                                         <color key="backgroundColor" name="AppViewContentColor"/>
                                         <constraints>
-                                            <constraint firstItem="rC2-jW-Nf2" firstAttribute="top" secondItem="5tf-gx-CHb" secondAttribute="top" constant="38" id="6M8-lj-viR"/>
-                                            <constraint firstAttribute="bottom" secondItem="rC2-jW-Nf2" secondAttribute="bottom" constant="6" id="6xz-7P-54G"/>
-                                            <constraint firstItem="tRe-Xo-gce" firstAttribute="top" secondItem="5tf-gx-CHb" secondAttribute="top" constant="24" id="Mda-Pk-Efb"/>
                                             <constraint firstItem="NX3-Ad-lM5" firstAttribute="leading" secondItem="5tf-gx-CHb" secondAttribute="leading" constant="16" id="R1J-3a-crf"/>
-                                            <constraint firstAttribute="trailing" secondItem="rC2-jW-Nf2" secondAttribute="trailing" constant="92" id="SlE-Rl-68N"/>
                                             <constraint firstAttribute="trailing" secondItem="tRe-Xo-gce" secondAttribute="trailing" constant="4" id="Y4Y-Zm-sEY"/>
                                             <constraint firstItem="NX3-Ad-lM5" firstAttribute="centerY" secondItem="5tf-gx-CHb" secondAttribute="centerY" id="aaD-bx-CWa"/>
-                                            <constraint firstAttribute="bottom" secondItem="tRe-Xo-gce" secondAttribute="bottom" constant="18" id="nnQ-Fg-fM5"/>
-                                            <constraint firstItem="rC2-jW-Nf2" firstAttribute="leading" secondItem="NX3-Ad-lM5" secondAttribute="trailing" constant="44" id="shS-fd-q6L"/>
+                                            <constraint firstItem="tRe-Xo-gce" firstAttribute="centerY" secondItem="NX3-Ad-lM5" secondAttribute="centerY" id="lA8-9P-Wrc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -100,7 +87,6 @@
                 <outlet property="borderView" destination="5tf-gx-CHb" id="N6x-FI-MHk"/>
                 <outlet property="shadowView" destination="JIk-r3-Q0S" id="um6-SR-0Br"/>
                 <outlet property="titleLabel" destination="NX3-Ad-lM5" id="FDH-jb-9lB"/>
-                <outlet property="toggleSwitch" destination="rC2-jW-Nf2" id="9XJ-4P-kzH"/>
                 <outlet property="yesAndNobutton" destination="tRe-Xo-gce" id="CyV-Gk-me7"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="36.267605633802816"/>
@@ -110,9 +96,6 @@
         <image name="ToggleSwitch_Yes" width="90.666664123535156" height="48"/>
         <namedColor name="424242Color">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="6E6BB3ColorOnly">
-            <color red="0.43137254901960786" green="0.41960784313725491" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppBackGroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

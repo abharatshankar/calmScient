@@ -23,11 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = viewController
         
         // Optional: Animate the transition
-        UIView.transition(with: window,
-                          duration: 0.5,
-                          options: .transitionFlipFromRight,
-                          animations: nil,
-                          completion: nil)
+//        UIView.transition(with: window,
+//                          duration: 0.5,
+//                          options: .transitionFlipFromRight,
+//                          animations: nil,
+//                          completion: nil)
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

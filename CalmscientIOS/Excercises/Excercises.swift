@@ -27,7 +27,7 @@ class Excercises: UIViewController {
             ("Mindful walking", "mindfulWalking_index"),
             ("Movement: dance", "movement"),
             ("Movement: running", "movementRunning"),
-            ("Mindful body movement", "mindFulBodyMovement"),
+            ("Mindful body movement", "MindFulBodyMovement"),
             ("Breathing technique", "breathingTechnique")
         ]
     

@@ -406,6 +406,7 @@ problems worse. 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bodyTxtView" destination="iox-p8-J1A" id="UGq-5k-xeA"/>
                         <outlet property="headerLabel" destination="R2s-NE-LOL" id="Olo-FW-m4Q"/>
                         <outlet property="normalTextLabel" destination="NEx-Js-f53" id="dTg-VN-BUb"/>
                         <outlet property="selection_view" destination="aJ9-BJ-JhU" id="ZZV-lW-051"/>
