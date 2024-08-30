@@ -192,10 +192,10 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                     
                     if tableSelectedRow[indexPath.section] != nil && indexPath.row == tableSelectedRow[indexPath.section] {
                         cell.main_view.backgroundColor = UIColor(named: "AppBorderColor")
-                        cell.label.textColor = .white
+                        cell.label.textColor = UIColor(named: "appointmentBackgroundcolor")
                     } else {
                         cell.main_view.backgroundColor = UIColor.systemBackground
-                        cell.label.textColor = UIColor(hex: "#424242")
+                        cell.label.textColor = UIColor(named: "424242Color")
                     }
                     cell.selectionStyle = .none
                     return cell
@@ -218,10 +218,10 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
             
             if tableSelectedRow[indexPath.section] != nil && indexPath.row == tableSelectedRow[indexPath.section] {
                 cell.main_view.backgroundColor = UIColor(named: "AppBorderColor")
-                cell.label.textColor = .white
+                cell.label.textColor = UIColor(named: "appointmentBackgroundcolor")
             } else {
                 cell.main_view.backgroundColor = UIColor.systemBackground
-                cell.label.textColor = UIColor(hex: "#424242")
+                cell.label.textColor = UIColor(named: "424242Color")
             }
             cell.selectionStyle = .none
             return cell

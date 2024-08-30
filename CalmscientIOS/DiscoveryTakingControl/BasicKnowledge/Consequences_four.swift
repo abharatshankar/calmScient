@@ -68,8 +68,12 @@ class Consequences_four:  ViewController {
         self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
         
         headerLabel.text = AppHelper.getLocalizeString(str: "What are the consequence?")
-        subtitleLabel.text = AppHelper.getLocalizeString(str: "Health problems") //
+        subtitleLabel.text = AppHelper.getLocalizeString(str: "Health problems") 
         subtitleLabel.font = UIFont(name: Fonts().lexendMedium, size: 15)!
+        
+        
+        subtitleLabel.textColor = UIColor(named: "424242Color")
+        normalTextLabel.textColor = UIColor(named: "424242Color")
       //  hyperTextLabel.text = AppHelper.getLocalizeString(str:"consequences4" )
         
         }

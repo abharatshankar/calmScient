@@ -265,7 +265,7 @@ Here are resources that can assist you in achieving your goal?";
 
 //journal entry view controller
 "Quiz" = "Quiz";
-"Daily jouneral" = "Daily jouneral";
+"Daily jouneral" = "Daily journal";
 "Discovery Excercise" = "Discovery Excercise";
 
 //ProgressOnCourseWorkHeaderView
@@ -530,3 +530,9 @@ lay down.";
 "Journal Entry" = "Journal Entry";
 "DISCOVERY" = "DISCOVERY";
 
+"Fatalities and injuries" = "Fatalities and injuries";
+
+"Alcohol-related deaths are increasing in the United States.\n\nAlcohol is a factor in:" = "Alcohol-related deaths are increasing in the United States.
+
+Alcohol is a factor in:
+";

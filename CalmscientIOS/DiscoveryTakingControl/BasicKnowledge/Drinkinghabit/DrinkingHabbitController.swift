@@ -34,7 +34,7 @@ class DrinkingHabbitController:  ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Basic Knowledge"
+        title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
             
@@ -100,7 +100,7 @@ class DrinkingHabbitController:  ViewController {
            // Perform the action you want here
            let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
            let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-           vc?.title = "Basic Knowledge"
+           vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
    //            vc?.courseID = 3
            self.navigationController?.pushViewController(vc!, animated: true)
            

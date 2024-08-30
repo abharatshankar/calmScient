@@ -6,9 +6,9 @@
 //
 
 import UIKit
-protocol LanguageSelectionDelegate: AnyObject {
-    func didSelectLanguage(languageId: Int)
-}
+//protocol LanguageSelectionDelegate: AnyObject {
+//    func didSelectLanguage(languageId: Int)
+//}
 
 let tabTitlesEnglish: [String] = ["HOME", "DISCOVERY", "EXERCISES", "REWARDS"]
 let tabTitlesSpanish: [String] = ["INICIO", "DESCUBRIMIENTO", "EJERCICIOS", "RECOMPENSAS"]
@@ -24,13 +24,10 @@ class AppMainTabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UITabBar.appearance().barTintColor = UIColor(named: "TabBarUnSelectedColor")
-//        UITabBar.appearance().tintColor = UIColor(named: "TabBarSelectedColor")
-//        UITabBar.appearance().isTranslucent = true
-//        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
-//        tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
         updateTabBarItems()
-        
+        // Register for language change notifications
+                NotificationCenter.default.addObserver(self, selector: #selector(languageChanged(_:)), name: .languageChanged, object: nil)
+                
         if #available(iOS 15, *) {
             let tabBarItemAppearence = UITabBarItemAppearance()
             tabBarItemAppearence.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "TabBarUnSelectedColor")!, NSAttributedString.Key.font: UIFont(name: Fonts().lexendRegular, size: 9)!]
@@ -46,23 +43,26 @@ class AppMainTabViewController: UITabBarController {
         delegate = self
         // Do any additional setup after loading the view.
     }
+    @objc func languageChanged(_ notification: Notification) {
+            updateTabBarItems() // Update tab bar items when the language changes
+        }
+    deinit {
+            NotificationCenter.default.removeObserver(self, name: .languageChanged, object: nil)
+        }
     func updateTabBarItems() {
             let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
             tabTitles = selectedLanguageID == 1 ? tabTitlesEnglish : tabTitlesSpanish
-
+//        prepareTabs()
             guard let items = tabBar.items else { return }
             for i in 0..<items.count {
                 items[i].title = tabTitles[i]
             }
+        
         }
-    func didSelectLanguage(languageId: Int) {
-            UserDefaults.standard.set(languageId, forKey: "SelectedLanguageID")
-            updateTabBarItems()
-        }
-//    let next = UIStoryboard(name: "UserIntro", bundle: nil)
-//    let vc = next.instantiateViewController(withIdentifier: "UserIntroDayFeedbackViewController") as? UserIntroDayFeedbackViewController
-//    vc?.afternoonVC = false
-//    vc?.titleString = "Good Morning"
+//    func didSelectLanguage(languageId: Int) {
+//            UserDefaults.standard.set(languageId, forKey: "SelectedLanguageID")
+//            updateTabBarItems()
+//        }
     
     private func prepareTabs() {
         print("prepare Tabs")
@@ -79,6 +79,7 @@ class AppMainTabViewController: UITabBarController {
         let item1 = isInitalView ? navC : navCview
         let icon1 = UITabBarItem(title: "\(tabTitles[0])", image: UIImage(named: "\(unselectedimages[0])"), selectedImage: UIImage(named: "\(selectedImages[0])"))
         
+        item1.title = tabTitles[0]
         item1.tabBarItem = icon1
         tabVC.append(item1)
         
@@ -86,34 +87,23 @@ class AppMainTabViewController: UITabBarController {
         let navC2 = UINavigationController(rootViewController: vcz)
         
         let item2 = navC2
+        item2.title = tabTitles[1]
         let icon2 = UITabBarItem(title: "\(tabTitles[1])", image: UIImage(named: "\(unselectedimages[1])"), selectedImage: UIImage(named: "\(selectedImages[1])"))
         item2.tabBarItem = icon2
         tabVC.append(item2)
-        
-        
-        
-        
-//        let storyboard = UIStoryboard(name: "Excercises", bundle: nil)
-////
-////                // 2. Instantiate the destination view controller using its Storyboard ID
-//                if let destinationVC = storyboard.instantiateViewController(withIdentifier: "Excercises") as? Excercises {
-//                    
-//                    // 3. Push the destination view controller onto the navigation stack
-//                    self.navigationController?.pushViewController(destinationVC, animated: true)
-//                }else{
-//                    print("incorrect nav")
-//                }
         
         let vcz3 = UIStoryboard(name: "Excercises", bundle: nil).instantiateViewController(withIdentifier: "Excercises") as! Excercises
         let navC3 = UINavigationController(rootViewController: vcz3)
         
         
         let item3 = navC3
+        item3.title = tabTitles[2]
         let icon3 = UITabBarItem(title: "\(tabTitles[2])", image: UIImage(named: "\(unselectedimages[2])"), selectedImage: UIImage(named: "\(selectedImages[2])"))
         item3.tabBarItem = icon3
         tabVC.append(item3)
         
         let item4 = TestViewController4()
+        item4.title = tabTitles[3]
         let icon4 = UITabBarItem(title: "\(tabTitles[3])", image: UIImage(named: "MainTab_Rewards_UnSelected"), selectedImage: UIImage(named: "MainTab_Rewards_Selected"))
         item4.tabBarItem = icon4
         tabVC.append(item4)
@@ -138,64 +128,7 @@ extension AppMainTabViewController : UITabBarControllerDelegate {
     }
 }
 
-class TestViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
-        print("item 1 loaded")
-    }
-}
-
-class TestViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = UIColor.randomColor()
-        print("item 1 loaded")
-    }
-}
-
-class TestViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = UIColor.randomColor()
-        print("item 1 loaded")
-    }
-}
-
-//class TestViewController3: UIViewController {
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        view.backgroundColor = UIColor.white
-//        print("item 1 loaded")
-//        
-//        // Load the image
-//        guard let image = UIImage(named: "comingsoon.png") else {
-//            print("Image not found")
-//            return
-//        }
-//        
-//        // Create and configure the UIImageView
-//        let imageView = UIImageView(image: image)
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.contentMode = .scaleAspectFit
-//        
-//        // Add the UIImageView to the view
-//        view.addSubview(imageView)
-//        
-//        // Set up constraints to center the UIImageView
-//        NSLayoutConstraint.activate([
-//            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            imageView.widthAnchor.constraint(equalToConstant: 300), // Adjust the width as needed
-//            imageView.heightAnchor.constraint(equalToConstant: 200) // Adjust the height as needed
-//        ])
-//    }
-//}
 class TestViewController4: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -236,4 +169,8 @@ extension UIColor {
 
         return UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: alphaValue)
     }
+}
+
+extension Notification.Name {
+    static let languageChanged = Notification.Name("languageChanged")
 }

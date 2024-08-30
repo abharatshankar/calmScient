@@ -283,7 +283,7 @@ extension ProfilePrivacyViewController : UITableViewDataSource, UITableViewDeleg
         
         // Update the button image based on the new state
         DispatchQueue.main.async {
-            let newImage = isOn ? UIImage(named: "ToggleSwitch_Yes") : UIImage(named: "ToggleSwitch_No")
+            let newImage = new == 1 ? UIImage(named: "ToggleSwitch_Yes")  :  UIImage(named: "ToggleSwitch_No")
             sender.setImage(newImage, for: .normal)
             
             // Show the toast activity

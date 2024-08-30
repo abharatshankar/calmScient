@@ -131,6 +131,7 @@ class ProfileViewController: UIViewController,UIScrollViewDelegate {
             scrollView.contentOffset.x = 0 // Lock horizontal scrolling
         }
     override func viewWillAppear(_ animated: Bool) {
+        
         profileTitle.font = UIFont(name: Fonts().lexendMedium, size: 19)
         profileTitle.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Profile" : "Perfil"
         

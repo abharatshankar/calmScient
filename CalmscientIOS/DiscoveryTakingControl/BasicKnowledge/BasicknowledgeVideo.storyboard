@@ -157,6 +157,8 @@ you drink?</string>
                         <outlet property="normal_text" destination="fP9-jO-VuP" id="Dmi-ve-Ov9"/>
                         <outlet property="playPauseButton" destination="cM9-va-npn" id="zPw-5Y-6tV"/>
                         <outlet property="progressBar" destination="5cj-BF-emi" id="1g4-JH-BCE"/>
+                        <outlet property="questionLbl" destination="Sxb-c6-sqx" id="5uu-k5-F3k"/>
+                        <outlet property="subtitleLbl" destination="PJi-Ka-2AQ" id="c7A-FF-c4h"/>
                         <outlet property="videoView" destination="4I7-ho-zhG" id="ZBQ-2U-h9h"/>
                     </connections>
                 </viewController>

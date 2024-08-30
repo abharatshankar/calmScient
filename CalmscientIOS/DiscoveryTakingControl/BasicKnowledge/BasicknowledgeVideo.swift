@@ -14,11 +14,12 @@ class BasicknowledgeVideo: ViewController {
     @IBOutlet weak var main_View: UIView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var normal_text: UILabel!
-
-        @IBOutlet weak var favoriteButton: UIButton!
-        @IBOutlet weak var maximizeButton: UIButton!
-        @IBOutlet weak var progressBar: UISlider!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var maximizeButton: UIButton!
+    @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var questionLbl: UILabel!
+    @IBOutlet weak var subtitleLbl: UILabel!
     var sectionID4: Int?
 //        @IBOutlet weak var timeLabel: UILabel!
 
@@ -37,7 +38,7 @@ class BasicknowledgeVideo: ViewController {
             bringControlsToFront()
             progressBar.setThumbImage(UIImage(), for: .normal)
             progressBar.tintColor = UIColor.white
-            title = "Basic Knowledge"
+            title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
 
             self.view.showToastActivity()
             
@@ -67,6 +68,16 @@ class BasicknowledgeVideo: ViewController {
                 }
             }
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        normal_text.textColor = UIColor(named: "424242Color")
+        normal_text.text = AppHelper.getLocalizeString(str:"This video explains the impact of alcohol on the brain and its subsequent effects. Having this knowledge will help you consider your drinking habits." )
+        
+        questionLbl.text =  AppHelper.getLocalizeString(str:"What happens to your brain when you drink?")
+        
+        subtitleLbl.text = AppHelper.getLocalizeString(str:"Let’s watch the videos ")
+        
+    }
     
     @IBAction func maximiseButtonAction(_ sender: Any) {
         let videoURL = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!

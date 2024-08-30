@@ -38,7 +38,7 @@ class WhatToExpectViewController: ViewController {
             bringControlsToFront()
             progressBar.setThumbImage(UIImage(), for: .normal)
             progressBar.tintColor = UIColor.white
-            title = "Basic Knowledge"
+            title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
 
             self.view.showToastActivity()
             

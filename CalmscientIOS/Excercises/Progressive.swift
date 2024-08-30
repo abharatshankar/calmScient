@@ -32,7 +32,16 @@ class Progressive: UIViewController {
             return
         }
         
-        player = AVPlayer(url: url)
+        let playerItem = AVPlayerItem(url: url)
+        playerItem.preferredPeakBitRate = 1000000 // Set preferred peak bit rate (in bits per second)
+
+        player = AVPlayer(playerItem: playerItem)
+        
+        player?.automaticallyWaitsToMinimizeStalling = true // AVPlayer will automatically wait to minimize stalling
+
+        // Observe the player's playback status
+        player?.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: nil)
+
         // Start the activity indicator
         self.view.showToastActivity()
         
@@ -52,6 +61,16 @@ class Progressive: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print(keyPath)
+        if keyPath == "timeControlStatus" {
+            if player?.timeControlStatus == .waitingToPlayAtSpecifiedRate {
+                self.view.showToastActivity()
+                // Show buffering indicator
+            } else if player?.timeControlStatus == .playing {
+                // Hide buffering indicator
+                self.view.hideToastActivity()
+            }
+        }
         if keyPath == "status" {
             if player?.status == .readyToPlay {
                 isPlayerReady = true

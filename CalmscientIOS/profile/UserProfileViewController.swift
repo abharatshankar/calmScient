@@ -25,10 +25,8 @@ fileprivate enum ProfileTableCells : String {
     }
 }
 
-class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISheetPresentationControllerDelegate, LanguageSelectionDelegate {
-    func didSelectLanguage(languageId: Int) {
-        
-    }
+class UserProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISheetPresentationControllerDelegate{
+    
     
     var dimmingView: UIView?
     @IBOutlet weak var profileIcon: UIImageView!
@@ -45,8 +43,16 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     //    var profileIconList:[String] = ["AppProfileIcon","themeIcon","privacyIcon","privacyIcon","notificationsIcon","licenseIcon","helpAndSupportIcon","logoutIcon"]
     //    var cellTitleList:[String] = ["Profile","Theme","Language","Privacy","Notifications","License Key","Help & Support","Logout"]
     
-    fileprivate let tableRows:[ProfileTableCells] = [.ProfileDefaultTableViewCell,.ProfileThemeTableViewCell,.ProfileLanguageTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.ProfileDefaultTableViewCell,.LogoutTableViewCell]
-    fileprivate let profileSvgIcons = ["profile_svg","theme_svg","language_svg","notification_svg","privacy_svg","license_svg","helpNsupport_svg","logout_svg"]
+    fileprivate let tableRows:[ProfileTableCells] = [.ProfileDefaultTableViewCell,
+                                                     .ProfileThemeTableViewCell,
+                                                     .ProfileLanguageTableViewCell,
+                                                     .ProfileDefaultTableViewCell,
+                                                     .ProfileDefaultTableViewCell,
+                                                     .ProfileDefaultTableViewCell,
+                                                     .ProfileDefaultTableViewCell,
+                                                     .LogoutTableViewCell
+                            ]
+    fileprivate let profileSvgIcons = ["profile_svg","theme_svg","language_svg","privacy_svg","notification_svg","license_svg","helpNsupport_svg","logout_svg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,17 +185,18 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
                     if let languageTitle = settings["languageTitle"] as? String {
                         self.cellTitleList.append(languageTitle)
                     }
-                    if let notificationIcon = settings["notificationIcon"] as? String {
-                        self.profileIconList.append(notificationIcon)
-                    }
-                    if let notificationTitle = settings["notificationTitle"] as? String {
-                        self.cellTitleList.append(notificationTitle)
-                    }
+                    
                     if let privacyIcon = settings["privacyIcon"] as? String {
                         self.profileIconList.append(privacyIcon)
                     }
                     if let privacyTitle = settings["privacyTitle"] as? String {
                         self.cellTitleList.append(privacyTitle)
+                    }
+                    if let notificationIcon = settings["notificationIcon"] as? String {
+                        self.profileIconList.append(notificationIcon)
+                    }
+                    if let notificationTitle = settings["notificationTitle"] as? String {
+                        self.cellTitleList.append(notificationTitle)
                     }
                     if let licenseDetails = settings["licenseDetails"] as? [String: Any] {
                         if let licenseIcon = licenseDetails["licenseIcon"] as? String {
@@ -465,7 +472,8 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     private func setupView() {
         profileIcon.layer.cornerRadius = profileIcon.bounds.width / 2
         profileIcon.layer.masksToBounds = true
-        
+        profileIcon.layer.borderWidth = 2.0
+        profileIcon.layer.borderColor = UIColor(hex: "#6E6BB3").cgColor
         circleView.layer.cornerRadius = circleView.bounds.width / 2
         circleView.layer.masksToBounds = true
         
@@ -765,7 +773,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
                             
                             let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
                             cell.darkModeChangeButton.setImage(UIImage(named: isDarkMode ? "ToggleSwitch_Yes" : "ToggleSwitch_No"), for: .normal)
-                            
+                            cell.darkModeChangeButton.imageView?.contentMode = .scaleAspectFill
                             cell.darkModeChangeButtonAction = { [weak self, weak cell] in
                                 guard let self = self, let cell = cell else { return }
                                 if cell.darkModeChangeButton.currentImage == UIImage(named: "ToggleSwitch_No") {
@@ -911,7 +919,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
 //                            cell.cellIconView.image = UIImage(data: data)
                             cell.cellIconView.image = UIImage(named: self.profileSvgIcons[indexPath.row])
                             cell.languagesArray = self.languagesData
-                            cell.delegate = self
+//                            cell.delegate = self
                             cell.languageSelectionClosure = { [weak self] languageId in
                                
                                 self?.handleLanguageSelection(languageId: languageId)
@@ -972,7 +980,7 @@ extension UserProfileViewController : UITableViewDataSource, UITableViewDelegate
             // vc?.title = "Profile"
             self.navigationController?.pushViewController(vc!, animated: true)
         }
-        if indexPath.row == 4 {
+        if indexPath.row == 3 {
 
             let next = UIStoryboard(name: "ProfilePrivacy", bundle: nil)
             guard let viewControllerToPresent = next.instantiateViewController(withIdentifier: "ProfilePrivacyViewController") as? ProfilePrivacyViewController else {

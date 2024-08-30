@@ -89,7 +89,7 @@ class FeelDrinkController: ViewController{
            // Perform the action you want here
            let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
            let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-           vc?.title = "Basic Knowledge"
+           vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
    //            vc?.courseID = 3
            self.navigationController?.pushViewController(vc!, animated: true)
            
@@ -232,7 +232,7 @@ class FeelDrinkController: ViewController{
         else {
             let next = UIStoryboard(name: "QuestionViewController", bundle: nil)
             let vc = next.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController
-            vc?.title = "Basic knowledge"
+            vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
             vc?.sectionID66666 = sectionID6666
             self.navigationController?.pushViewController(vc!, animated: true)
         }

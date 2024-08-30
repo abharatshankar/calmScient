@@ -47,7 +47,16 @@ class MindfulWalking: UIViewController {
             print("Invalid URL")
             return
         }
-        player = AVPlayer(url: url)
+        let playerItem = AVPlayerItem(url: url)
+        playerItem.preferredPeakBitRate = 1000000 // Set preferred peak bit rate (in bits per second)
+
+        player = AVPlayer(playerItem: playerItem)
+        
+        player?.automaticallyWaitsToMinimizeStalling = true // AVPlayer will automatically wait to minimize stalling
+
+        // Observe the player's playback status
+        player?.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: nil)
+
         
         // Start the activity indicator
         self.view.showToastActivity()
@@ -86,6 +95,16 @@ class MindfulWalking: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print(keyPath)
+        if keyPath == "timeControlStatus" {
+            if player?.timeControlStatus == .waitingToPlayAtSpecifiedRate {
+                self.view.showToastActivity()
+                // Show buffering indicator
+            } else if player?.timeControlStatus == .playing {
+                // Hide buffering indicator
+                self.view.hideToastActivity()
+            }
+        }
         if keyPath == "status" {
             if player?.status == .readyToPlay {
                 isPlayerReady = true
@@ -123,20 +142,54 @@ class MindfulWalking: UIViewController {
         player.seek(to: newTime)
     }
     
+//    @objc func updateOverlayView() {
+//        guard let player = player else { return }
+//        let totalDuration = player.currentItem?.duration.seconds ?? 1.0
+//        let currentTime = player.currentTime().seconds
+//        let progress = CGFloat(currentTime / totalDuration)
+//        
+//        let newWidth = equalizerImg.frame.width * progress
+//        redOverlayView.frame = CGRect(x: 0, y: 0, width: newWidth, height: equalizerImg.frame.height)
+//        
+//        // Stop the timer if the audio has finished playing
+//        if progress >= 1.0 {
+//            redOverlayView.frame = CGRect(x: 0, y: 0, width: equalizerImg.frame.width, height: equalizerImg.frame.height)
+//        }
+//    }
+//    
+    
+    
+    
+    
     @objc func updateOverlayView() {
-        guard let player = player else { return }
-        let totalDuration = player.currentItem?.duration.seconds ?? 1.0
+        guard let player = player, let currentItem = player.currentItem else { return }
+        
+        let totalDuration = currentItem.duration.seconds
+        guard totalDuration > 0 else { return }
+        
         let currentTime = player.currentTime().seconds
         let progress = CGFloat(currentTime / totalDuration)
         
+        // Ensure equalizerImg has valid dimensions
+        guard equalizerImg.frame.width > 0, equalizerImg.frame.height > 0 else { return }
+        
         let newWidth = equalizerImg.frame.width * progress
-        redOverlayView.frame = CGRect(x: 0, y: 0, width: newWidth, height: equalizerImg.frame.height)
+        
+        // Check for NaN or Infinite values before applying them
+        if !newWidth.isNaN && !newWidth.isInfinite {
+            redOverlayView.frame = CGRect(x: 0, y: 0, width: newWidth, height: equalizerImg.frame.height)
+        } else {
+            // Handle the error case, maybe set a default value or log an error
+            redOverlayView.frame = CGRect(x: 0, y: 0, width: 0, height: equalizerImg.frame.height)
+        }
         
         // Stop the timer if the audio has finished playing
         if progress >= 1.0 {
             redOverlayView.frame = CGRect(x: 0, y: 0, width: equalizerImg.frame.width, height: equalizerImg.frame.height)
         }
     }
+    
+    
     
     @objc func playPauseTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         guard isPlayerReady else { return } // Ensure the player is ready

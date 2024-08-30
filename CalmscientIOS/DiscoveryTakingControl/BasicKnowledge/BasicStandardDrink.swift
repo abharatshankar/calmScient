@@ -26,7 +26,7 @@ class BasicStandardDrink: ViewController {
         main_view.layer.borderWidth = 1
         main_view.layer.borderColor = UIColor(hex: "#F6F6FF").cgColor
         updateContent()
-        title = "Basic Knowledge"
+        
         
         self.view.bringSubviewToFront(backButton)
         self.view.bringSubviewToFront(forwardButton)
@@ -92,6 +92,11 @@ class BasicStandardDrink: ViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLanguage()
+    }
+    
     func labelText() {
         let fullText = """
         In the United States, a “standard drink” (also known as an alcoholic drink equivalent) is defined as any drink that contains about 0.6 fluid ounces or 14 grams of pure alcohol. Although the drinks pictured here are different sizes, each contains approximately the same amount of alcohol and counts as one U.S. standard drink or one alcoholic drink equivalent.

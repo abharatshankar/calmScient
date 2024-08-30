@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lexend-Bold.ttf">
+        <array key="lexendbold.ttf">
             <string>Lexend-Bold</string>
         </array>
         <array key="lexendregular.ttf">
@@ -207,6 +207,7 @@ Alcohol is a factor in:
                         <outlet property="normalTextLabel" destination="KuR-ww-w9j" id="F0n-l6-wsu"/>
                         <outlet property="pointsTxt" destination="dAC-kP-4i7" id="kbC-U3-Zld"/>
                         <outlet property="selection_view" destination="BRn-0F-vEW" id="IIw-qC-F78"/>
+                        <outlet property="titleLbl" destination="WWF-gc-nBn" id="ccm-ku-X7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlc-Gq-T00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

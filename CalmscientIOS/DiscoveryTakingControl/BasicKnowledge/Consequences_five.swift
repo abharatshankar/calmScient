@@ -82,14 +82,14 @@ class Consequences_five:  ViewController {
         // Perform the action you want here
         let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-        vc?.title = "Basic Knowledge"
+        vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
     @IBAction func forward_action(_ sender: UIButton) {
         let next = UIStoryboard(name: "Consequences", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "Consequences_six") as? Consequences_six
-        vc?.title = "Basic knowledge"
+        vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func backward_action(_ sender: UIButton) {

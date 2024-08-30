@@ -20,12 +20,13 @@ class ProfilePrivacyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadowAndBorder()
-        toggleSwitch.addTarget(self, action: #selector(switchToggled), for: .valueChanged)
+//        toggleSwitch.addTarget(self, action: #selector(switchToggled), for: .valueChanged)
         yesAndNobutton.addTarget(self, action: #selector(yesAndNobuttonActionClicked), for: .touchUpInside)
 
         // Initialization code
     }
     @objc private func switchToggled() {
+        print(toggleSwitch.isOn)
             switchToggleAction?(toggleSwitch.isOn)
         }
     @objc func yesAndNobuttonActionClicked() {

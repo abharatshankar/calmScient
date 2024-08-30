@@ -225,7 +225,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
             let title1 = languageId == 1 ? "Quiz" : "Prueba"
             quizButton.setTitle(title1, for: .normal)
-        let title2 = languageId == 1 ? "Daily jouneral" : "diario"
+        let title2 = languageId == 1 ? "Daily journal" : "diario"
         dailyButton.setTitle(title2, for: .normal)
         
         let title3 = languageId == 1 ? "Discovery Excercise" : "Ejercicio de descubrimiento"
@@ -240,7 +240,7 @@ class JournalEntryViewController: UIViewController,UITextFieldDelegate {
         let languageId = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
             let title1 = languageId == 1 ? "Quiz" : "Prueba"
             quizButton.setTitle(title1, for: .normal)
-        let title2 = languageId == 1 ? "Daily jouneral" : "diario"
+        let title2 = languageId == 1 ? "Daily journal" : "diario"
         dailyButton.setTitle(title2, for: .normal)
         
         let title3 = languageId == 1 ? "Discovery Excercise" : "Ejercicio de descubrimiento"

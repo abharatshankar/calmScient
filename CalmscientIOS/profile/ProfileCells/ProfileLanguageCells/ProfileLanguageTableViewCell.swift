@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileLanguageTableViewCell: UITableViewCell {
-    weak var delegate: LanguageSelectionDelegate?
+//    weak var delegate: LanguageSelectionDelegate?
 
     @IBOutlet weak var cellTitleLabel: UILabel!
     @IBOutlet weak var cellIconView: UIImageView!
@@ -74,15 +74,15 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
                 }
             }
         }
-        cell.cellBackGroundView.layer.borderWidth = 1
-        cell.cellBackGroundView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
+//        cell.cellBackGroundView.layer.borderWidth = 1
+//        cell.cellBackGroundView.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
         cell.cellBackGroundView.layer.cornerRadius = 10
         
         if let preferred = newData["preferred"] as? Int, preferred == 1 {
             cell.cellBackGroundView.backgroundColor = UIColor(named: "AppBorderColor")
             cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ?  .black : .white
                } else {
-                   cell.cellBackGroundView.backgroundColor = UIColor.clear
+                   cell.cellBackGroundView.backgroundColor = UIColor(named: "profileCellSeperaionColor")
                    cell.langaugeLable.textColor = (UserDefaults.standard.value(forKey: "isDarkMode") ?? false) as! Bool ? .white : .black
                }
 //        if selectedIndexPath == indexPath {
@@ -127,7 +127,9 @@ extension ProfileLanguageTableViewCell: UICollectionViewDelegateFlowLayout, UICo
                if let languageId = newData["languageId"] as? Int {
                    // Notify the delegate of the language selection
                    languageSelectionClosure?(languageId)
-                   delegate?.didSelectLanguage(languageId: languageId)
+                   // Post notification
+                           NotificationCenter.default.post(name: .languageChanged, object: nil)
+//                   delegate?.didSelectLanguage(languageId: languageId)
                    collectionView.reloadData()
                }
            }

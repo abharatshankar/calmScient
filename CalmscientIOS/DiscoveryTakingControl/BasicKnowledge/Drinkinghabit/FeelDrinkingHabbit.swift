@@ -118,7 +118,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
            // Perform the action you want here
            let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
            let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-           vc?.title = "Basic Knowledge"
+           vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
    //            vc?.courseID = 3
            self.navigationController?.pushViewController(vc!, animated: true)
            
@@ -249,7 +249,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
         } else {
             // Reset the appearance for non-selected cells
             cell.drinkTextView.backgroundColor = UIColor.clear
-            cell.drinkTextView.textColor = UIColor.black
+            cell.drinkTextView.textColor = UIColor(named: "424242Color")
             cell.newBackGroundView.backgroundColor = UIColor.clear
         }
 
@@ -386,7 +386,7 @@ class FeelDrinkingHabbit:  ViewController, UITableViewDelegate, UITableViewDataS
                                 let next = UIStoryboard(name: "FeelDrinkController", bundle: nil)
                                 let vc = next.instantiateViewController(withIdentifier: "FeelDrinkController") as? FeelDrinkController
                                 vc?.basicData3 = basicData2
-                                vc?.title = "Basic knowledge"
+                                vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
                                 vc?.sectionID6666 = sectionID666
                                 self.navigationController?.pushViewController(vc!, animated: true)
                             }

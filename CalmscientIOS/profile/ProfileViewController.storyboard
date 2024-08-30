@@ -313,13 +313,13 @@
     </scenes>
     <designables>
         <designable name="15U-ig-xZZ">
-            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="59" height="22"/>
         </designable>
         <designable name="63Q-WV-8oX">
-            <size key="intrinsicContentSize" width="48" height="30"/>
+            <size key="intrinsicContentSize" width="52" height="31"/>
         </designable>
         <designable name="pXf-Sx-xGG">
-            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="59" height="22"/>
         </designable>
     </designables>
     <resources>

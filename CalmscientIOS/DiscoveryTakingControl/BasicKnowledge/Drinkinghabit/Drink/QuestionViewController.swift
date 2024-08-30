@@ -14,6 +14,11 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
     @IBOutlet weak var tableView: UITableView!
     
     let headers = ["1. What is your understanding of how these things are affect yourself?", "2. What is your understanding of how these things are affect people?", "3. And if you are comfortable sharing, which of these impact are you dealing with right now?"]
+    let spanishHeaders = [
+        "1. ¿Cuál es su comprensión de cómo estas cosas le afectan a usted mismo?",
+        "2. ¿Cuál es su comprensión de cómo estas cosas afectan a las personas?",
+        "3. Y si se siente cómodo compartiendo, ¿con cuál de estos impactos está lidiando en este momento?"
+      ]
     let texts = ["Text for section 1", "Text for section 2", "Text for section 3"]
     //    var values = ["Anxiety, paranoia, panic","Depression","Decreased memory and problem solving ability","Sleep problems","Mood swings","Family relationships—more fighting and arguing","Health problems","Getting in trouble with the law","Accidents and injuries"]
     
@@ -168,7 +173,7 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
            // Perform the action you want here
            let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
            let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-           vc?.title = "Basic Knowledge"
+           vc?.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
    //            vc?.courseID = 3
            self.navigationController?.pushViewController(vc!, animated: true)
            
@@ -321,7 +326,7 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
                 return UITableViewCell()
             }
             cell.separatorInset = .zero
-            cell.headerLabel.text = headers[indexPath.row]
+            cell.headerLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? headers[indexPath.row] : spanishHeaders[indexPath.row]
             cell.textView.delegate = self
             cell.textView.tag = indexPath.row
             if cell.textView.tag == 0 {
@@ -361,11 +366,13 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
             
             
             cell.labl_name.text = values[indexPath.row]
-            
+            cell.labl_name.textColor = UIColor(named: "424242Color")
             if indexPath == selectedIndexPath {
                 cell.backgroundColor = .systemBlue
+                
             } else {
-                cell.backgroundColor = .white
+                cell.labl_name.textColor = UIColor(named: "424242Color")
+                cell.backgroundColor = .clear
             }
             
             return cell
@@ -419,7 +426,7 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
             
             if let selectedIndexPath = selectedIndexPath {
                 let cell = tableView.cellForRow(at: selectedIndexPath) as! ButtonsCell
-                cell.main_view.backgroundColor = .white
+                cell.main_view.backgroundColor = .clear
                 cell.labl_name.textColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
             }
             

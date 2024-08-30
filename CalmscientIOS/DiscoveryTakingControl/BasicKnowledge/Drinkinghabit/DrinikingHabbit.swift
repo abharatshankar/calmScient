@@ -128,7 +128,7 @@ class DrinikingHabbit: ViewController {
            // Perform the action you want here
            let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
            let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-           vc?.title = "Basic Knowledge"
+           vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
    //            vc?.courseID = 3
            self.navigationController?.pushViewController(vc!, animated: true)
            
@@ -363,7 +363,7 @@ class DrinikingHabbit: ViewController {
                                 self.view.hideToastActivity()
                                 let next = UIStoryboard(name: "FeelDrinkingHabbit", bundle: nil)
                                 let vc = next.instantiateViewController(withIdentifier: "FeelDrinkingHabbit") as? FeelDrinkingHabbit
-                                 vc?.title = "Basic knowledge"
+                                 vc?.title =  AppHelper.getLocalizeString(str: "Basic Knowledge")
                                 //vc?.basicData2 = basicData
                                 vc?.sectionID666 = sectionID66
                                 self.navigationController?.pushViewController(vc!, animated: true)

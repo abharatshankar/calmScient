@@ -86,10 +86,12 @@ class Moderation: ViewController {
         headerLabel.font = UIFont(name: Fonts().lexendLight, size: 15)!
         let someAdditionalInfo = NSMutableAttributedString(string:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "According to the 2020-2025 Dietary Guidelines for Americans, certain individuals should not consume alcohol. It’s safest to avoid alcohol altogether if you are:\n\n" : "Según las Guías Alimentarias para Estadounidenses 2020-2025, ciertas personas no deben consumir alcohol. Es más seguro evitar el alcohol por completo si eres:\n\n")
         someAdditionalInfo.addAttribute(.font, value: UIFont(name: Fonts().lexendLight, size: 15)!, range: NSRange(location: 0, length: someAdditionalInfo.length))
-        someAdditionalInfo.addAttribute(.foregroundColor, value: UIColor(hex: "#424242"), range: NSRange(location: 0, length: someAdditionalInfo.length))
+        someAdditionalInfo.addAttribute(.foregroundColor, value: UIColor(named: "424242Color")!, range: NSRange(location: 0, length: someAdditionalInfo.length))
 
 
         let primaryReasons = add(stringList:UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? primaryReasonsArr : primaryReasonsArrSpanish, font: UIFont(name: Fonts().lexendLight, size: 15)!)
+        
+        primaryReasons.addAttribute(.foregroundColor, value: UIColor(named: "424242Color")!, range: NSRange(location: 0, length: primaryReasons.length))
         
         let fullText = """
                 In addition, certain individuals, particularly older adults, who are planning to drive a vehicle or operate machinery—or who are participating in activities that require skill, coordination, and alertness—should avoid alcohol completely.
@@ -234,7 +236,7 @@ class Moderation: ViewController {
              lineSpacing: CGFloat = 2,
              paragraphSpacing: CGFloat = 12,
              textColor: UIColor = UIColor(hex: "#424242"),
-             bulletColor: UIColor = .black) -> NSAttributedString {
+             bulletColor: UIColor = .black) -> NSMutableAttributedString {
 
         let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor]
         let bulletAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: bulletColor]

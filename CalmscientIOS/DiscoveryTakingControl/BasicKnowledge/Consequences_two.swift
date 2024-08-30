@@ -16,6 +16,9 @@ class Consequences_two:  ViewController {
     @IBOutlet weak var normalTextLabel: UILabel!
     @IBOutlet weak var hyperTextLabel: UITextView!
     
+    @IBOutlet weak var titleLbl: UILabel!
+    
+    
     @IBOutlet weak var pointsTxt: UILabel!
     var sectionID55: Int?
 
@@ -49,7 +52,11 @@ class Consequences_two:  ViewController {
         self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
         
         headerLabel.text = AppHelper.getLocalizeString(str: "What are the consequence?")
-//        normalTextLabel.text = AppHelper.getLocalizeString(str:"consequences2" )
+        titleLbl.text = AppHelper.getLocalizeString(str: "Fatalities and injuries")
+        normalTextLabel.text = AppHelper.getLocalizeString(str:
+        "Alcohol-related deaths are increasing in the United States.\n\nAlcohol is a factor in:"
+         )
+        normalTextLabel.textColor = UIColor(named:"424242Color" )
         
         pointsTxt.attributedText = add(stringList: arrayString, font: pointsTxt.font, bullet: "•")
         
@@ -61,7 +68,7 @@ class Consequences_two:  ViewController {
              indentation: CGFloat = 20,
              lineSpacing: CGFloat = 2,
              paragraphSpacing: CGFloat = 12,
-             textColor: UIColor = UIColor(hex: "#424242"),
+             textColor: UIColor = UIColor(named:"424242Color")!,
              bulletColor: UIColor = .black) -> NSAttributedString {
 
         let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor]

@@ -46,8 +46,11 @@ class Consequences_three:  ViewController {
         self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
         
         headerLabel.text = AppHelper.getLocalizeString(str: "What are the consequence?")
-        subtitleLbl.text = AppHelper.getLocalizeString(str: "Alcohol-related blackouts") //
+        subtitleLbl.text = AppHelper.getLocalizeString(str: "Alcohol-related blackouts") 
         normalTextLabel.text = AppHelper.getLocalizeString(str:"consequences3" )
+        
+        subtitleLbl.textColor = UIColor(named: "424242Color")
+        normalTextLabel.textColor = UIColor(named: "424242Color")
         
         }
 

@@ -40,18 +40,56 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
             fatalError("Unable to found Application Shared Info")
         }
         self.view.showToastActivity()
-        getPatientFavorites(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
+//        getPatientFavorites(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
+//            switch result {
+//            case .success(let data):
+//                // Convert data to JSON object and print it
+//                do {
+//                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                        print("favorites===\(json)")
+//                        DispatchQueue.main.async {
+//                            self.dashBoardCollectionView.hideToastActivity()
+//                            self.patientFavorites = json["favorites"] as! [[String : Any]]
+//                            print("self.patientFavorites\(self.patientFavorites)")
+//                            self.dashBoardCollectionView.reloadData()
+//                            self.view.hideToastActivity()
+//                        }
+//                        
+//                    } else {
+//                        self.view.hideToastActivity()
+//                        print("Unable to convert data to JSON")
+//                    }
+//                } catch {
+//                    self.view.hideToastActivity()
+//                    print("Error converting data to JSON: \(error)")
+//                }
+//            case .failure(let error):
+//                self.view.hideToastActivity()
+//                print("Error: \(error)")
+//            }
+//        }
+        guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
+            fatalError("Unable to found Application Shared Info")
+        }
+      //  self.view.showToastActivity()
+        
+        getMeniItems(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
             switch result {
             case .success(let data):
                 // Convert data to JSON object and print it
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                        print("favorites===\(json)")
                         DispatchQueue.main.async {
-                            self.dashBoardCollectionView.hideToastActivity()
-                            self.patientFavorites = json["favorites"] as! [[String : Any]]
-                            print("self.patientFavorites\(self.patientFavorites)")
-                            self.dashBoardCollectionView.reloadData()
+                            
+                            self.favorites = json["favorites"] as! [[String : Any]]
+                            if self.favorites.isEmpty{
+                                self.noFavsLabel.isHidden = false
+                            }
+                            else {
+                                self.noFavsLabel.isHidden = true
+                                print("self.favorites\(self.favorites)")
+                                self.dashBoardCollectionView.reloadData()
+                            }
                             self.view.hideToastActivity()
                         }
                         
@@ -59,12 +97,12 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
                         self.view.hideToastActivity()
                         print("Unable to convert data to JSON")
                     }
+                    
                 } catch {
                     self.view.hideToastActivity()
                     print("Error converting data to JSON: \(error)")
                 }
             case .failure(let error):
-                self.view.hideToastActivity()
                 print("Error: \(error)")
             }
         }
@@ -106,35 +144,35 @@ class HomeTabDashboardViewController: ViewController, UITableViewDataSource,UITa
         }
       //  self.view.showToastActivity()
         
-        getMeniItems(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
-            switch result {
-            case .success(let data):
-                // Convert data to JSON object and print it
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                        DispatchQueue.main.async {
-                          //  self.view.hideToastActivity()
-                            self.favorites = json["favorites"] as! [[String : Any]]
-                            if self.favorites.isEmpty{
-                                self.noFavsLabel.isHidden = false
-                            }
-                            else {
-                                self.noFavsLabel.isHidden = true
-                                print("self.favorites\(self.favorites)")
-                                self.dashBoardCollectionView.reloadData()
-                            }
-                        }
-                        
-                    } else {
-                        print("Unable to convert data to JSON")
-                    }
-                } catch {
-                    print("Error converting data to JSON: \(error)")
-                }
-            case .failure(let error):
-                print("Error: \(error)")
-            }
-        }
+//        getMeniItems(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
+//            switch result {
+//            case .success(let data):
+//                // Convert data to JSON object and print it
+//                do {
+//                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                        DispatchQueue.main.async {
+//                          //  self.view.hideToastActivity()
+//                            self.favorites = json["favorites"] as! [[String : Any]]
+//                            if self.favorites.isEmpty{
+//                                self.noFavsLabel.isHidden = false
+//                            }
+//                            else {
+//                                self.noFavsLabel.isHidden = true
+//                                print("self.favorites\(self.favorites)")
+//                                self.dashBoardCollectionView.reloadData()
+//                            }
+//                        }
+//                        
+//                    } else {
+//                        print("Unable to convert data to JSON")
+//                    }
+//                } catch {
+//                    print("Error converting data to JSON: \(error)")
+//                }
+//            case .failure(let error):
+//                print("Error: \(error)")
+//            }
+//        }
 //        self.dashBoardCollectionView.showToastActivity()
 //        getPatientFavorites(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID, parentId: 0) { [self] result in
 //            switch result {
@@ -358,12 +396,12 @@ extension HomeTabDashboardViewController : UICollectionViewDelegateFlowLayout, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let selectedFavorite = favorites[indexPath.item]
-        let patientselectedFavorite = patientFavorites[indexPath.item]
+//        let patientselectedFavorite = patientFavorites[indexPath.item]
         
             if let favoritesId = selectedFavorite["favoritesId"] as? Int,
-               let patientFavoriteId = patientselectedFavorite["favoritesId"] as? Int,
+               let patientFavoriteId = selectedFavorite["favoritesId"] as? Int,
                favoritesId == patientFavoriteId {
-                if let navigateURL = patientselectedFavorite["navigateURL"] as? String {
+                if let navigateURL = selectedFavorite["navigateURL"] as? String {
                     
                     print("navigateURL===\(navigateURL)")
                     
