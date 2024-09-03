@@ -35,11 +35,11 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 //       passwordTextField.text = "chandra@1234"
         
         
-//       userNameTextField.text = "ramesh@gmail.com"
-//       passwordTextField.text = "ramesh@123"
+       userNameTextField.text = "ramesh@gmail.com"
+       passwordTextField.text = "ramesh@123"
         
-          userNameTextField.text = "sravanthi@gmail.com"
-          passwordTextField.text = "sravanthi@1234"
+//          userNameTextField.text = "sravanthi@gmail.com"
+//          passwordTextField.text = "sravanthi@1234"
 
 //        userNameTextField.text = ""
 //        passwordTextField.text = ""
