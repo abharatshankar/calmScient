@@ -389,6 +389,7 @@ extension HomeTabDashboardViewController : UICollectionViewDelegateFlowLayout, U
                 }
             }
         }
+        cell.titleLabel.text = images["title"] as? String
         
        // cell.cellImageView.image = UIImage(named: "HometabFavorites\(Int.random(in: 1...2))")
         return cell
@@ -408,7 +409,8 @@ extension HomeTabDashboardViewController : UICollectionViewDelegateFlowLayout, U
                     let next = UIStoryboard(name: "FavoritesVideosWebViewController", bundle: nil)
                     let vc = next.instantiateViewController(withIdentifier: "FavoritesVideosWebViewController") as? FavoritesVideosWebViewController
                     vc?.favURL = navigateURL
-                    vc?.title = "Favorite Video"
+                    let newTitle = selectedFavorite["title"] as! String
+                    vc?.titleString = newTitle
                     self.navigationController?.pushViewController(vc!, animated: true)
 
                 }
@@ -419,7 +421,7 @@ extension HomeTabDashboardViewController : UICollectionViewDelegateFlowLayout, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Return the size of each item in your collection view
         
-        return CGSize(width: 160, height: 100)
+        return CGSize(width: 160, height: 120)
     }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

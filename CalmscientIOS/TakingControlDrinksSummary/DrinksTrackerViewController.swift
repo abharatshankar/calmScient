@@ -2,6 +2,8 @@ import UIKit
 
 class DrinksTrackerViewController: UIViewController {
     
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var saveButton: LinearGradientButton!
     @IBOutlet weak var dateLable: UILabel!
     @IBOutlet weak var totalCountLabel: UILabel!
@@ -31,6 +33,11 @@ class DrinksTrackerViewController: UIViewController {
         drinksTrackerCollectionView.dataSource = self
         drinksTrackerCollectionView.delegate = self
         drinksTrackerCollectionView.reloadData()
+        
+        self.countLabel.font = UIFont(name: Fonts().lexendRegular, size: 10)
+        self.totalLabel.font = UIFont(name: Fonts().lexendRegular, size: 14)
+        self.totalCountLabel.font = UIFont(name: Fonts().lexendRegular, size: 20)
+
         
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")

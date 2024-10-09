@@ -85,19 +85,19 @@ class BreathingTechniqueType1: UIViewController {
         progressBar.setThumbImage(UIImage(), for: .normal)
         progressBar.tintColor = UIColor.white
         preparationView.applyShadow()
-        preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
+      //  preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         step1View.applyShadow()
-        step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
+       // step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step2View.applyShadow()
-        step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
+      //  step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step3View.applyShadow()
-        step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
+      //  step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step4View.applyShadow()
-        step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
+      //  step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
         step5View.applyShadow()
-        step5View.backgroundColor = UIColor(named: "AppViewBorderColor")
+      //  step5View.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         dot1View.layer.cornerRadius = dot1View.frame.size.width / 2
         dot1View.backgroundColor = UIColor(hex: "#6E6BB3")

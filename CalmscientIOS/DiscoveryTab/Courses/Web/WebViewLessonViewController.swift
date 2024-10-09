@@ -93,6 +93,10 @@ class WebViewLessonViewController: ViewController, WKNavigationDelegate, WKScrip
     
     @objc func rightButtonTapped() {
         
+        let next = UIStoryboard(name: "GlossyController", bundle: nil)
+        let vc = next.instantiateViewController(withIdentifier: "GlossyController") as? GlossyController
+        vc?.title = "Glossy"
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @objc func backButtonTapped() {

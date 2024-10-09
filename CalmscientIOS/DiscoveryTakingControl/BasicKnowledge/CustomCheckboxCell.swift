@@ -15,7 +15,7 @@ class CustomCheckboxCell: UITableViewCell {
 
         override func awakeFromNib() {
             super.awakeFromNib()
-            main_view.layer.cornerRadius = 20
+            main_view.layer.cornerRadius = main_view.frame.height / 3.5
 //            checkBox.layer.cornerRadius = 15
 //            checkBox.layer.borderWidth = 1
 //            checkBox.layer.borderColor = UIColor.black.cgColor
@@ -35,7 +35,7 @@ class CustomCheckboxCell: UITableViewCell {
 //        }
         
         private func setShadow() {
-            main_view.layer.cornerRadius = 10
+           // main_view.layer.cornerRadius = main_view.frame.height / 3.5
             main_view.layer.shadowColor = UIColor.gray.cgColor
             main_view.layer.shadowOffset = CGSize(width: 2, height: 2)
             main_view.layer.shadowOpacity = 0.5

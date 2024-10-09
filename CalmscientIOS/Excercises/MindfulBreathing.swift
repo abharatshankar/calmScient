@@ -189,13 +189,13 @@ class MindfulBreathing: UIViewController {
         bottomDescLabel.text = AppHelper.getLocalizeString(str:"Engage in this practice regularly, allowing the diaphragmatic breathing technique to guide you towards a state of tranquility and mindful breathing.")
         
         
-        self.preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step5.backgroundColor = UIColor(named: "AppViewBorderColor")
-        self.step6View.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.preparationView.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step1View.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step2View.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step3View.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step4View.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step5.backgroundColor = UIColor(named: "AppViewBorderColor")
+//        self.step6View.backgroundColor = UIColor(named: "AppViewBorderColor")
         
         }
     

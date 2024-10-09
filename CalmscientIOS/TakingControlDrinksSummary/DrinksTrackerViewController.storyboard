@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -179,12 +179,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="7cS-ZM-hPi" id="Hxn-va-3wr"/>
                         <outlet property="dateLable" destination="IfS-fd-hUY" id="6XR-qK-fM8"/>
                         <outlet property="datePickerView" destination="YUo-YS-0rw" id="KSn-kJ-7Xl"/>
                         <outlet property="drinksTrackerCollectionView" destination="xSa-Dx-h3S" id="Wjw-Jg-9as"/>
                         <outlet property="pickerBackView" destination="Urr-XG-AZB" id="og0-gH-Guo"/>
                         <outlet property="saveButton" destination="p1e-8T-qmZ" id="scp-zP-tXd"/>
                         <outlet property="totalCountLabel" destination="yVc-9q-Ubz" id="Kgq-AE-mgO"/>
+                        <outlet property="totalLabel" destination="ZEn-jg-5Bs" id="21Y-oe-SSx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -257,11 +259,6 @@
             <point key="canvasLocation" x="19.083969465648853" y="-34.507042253521128"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="p1e-8T-qmZ">
-            <size key="intrinsicContentSize" width="61" height="34.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <image name="calendarIcon" width="24" height="24"/>
         <image name="drop1" width="14" height="8.6666669845581055"/>
@@ -281,13 +278,13 @@
             <color red="0.17254901960784313" green="0.20000000000000001" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="blackAndWhite">
-            <color red="0.0039988997714971043" green="0.0040384928385416297" blue="0.0040384928385416297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0040000001899898052" green="0.0040000001899898052" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="blueAndDarkBule">
-            <color red="0.80529247509862345" green="0.81519589647221369" blue="0.93577568312198067" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.80500000715255737" green="0.81499999761581421" blue="0.93599998950958252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="whiteAndBlack">
-            <color red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

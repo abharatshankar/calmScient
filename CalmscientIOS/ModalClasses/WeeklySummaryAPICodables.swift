@@ -871,7 +871,7 @@ extension CodableRequestFormParams {
 
 class GetMoodDataRequestForm : EndPointRequest, CodableRequestFormParams {
     var baseURL: String = baseURLString
-    var path: String = "patients/api/v1/patientDetails/getPatientMoodByPatientId"
+    var path: String = "patients/api/v1/patientDetails/getPatientMoodByPatientIdForMobile"
     var httpMethod: HTTPMethod = .post
     var requestBody: [String : Any] = [:]
     
@@ -882,7 +882,7 @@ class GetMoodDataRequestForm : EndPointRequest, CodableRequestFormParams {
 
 class GetSleepDataRequestForm : EndPointRequest, CodableRequestFormParams  {
     var baseURL: String = baseURLString
-    var path: String = "patients/api/v1/patientDetails/getPatientSleepMonitoringById"
+    var path: String = "patients/api/v1/patientDetails/getPatientSleepMonitoringByIdForMobile"
     var httpMethod: HTTPMethod = .post
     var requestBody: [String : Any] = [:]
     

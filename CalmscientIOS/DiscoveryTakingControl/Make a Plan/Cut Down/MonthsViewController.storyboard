@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtA-MN-ddc">
-                                <rect key="frame" x="0.0" y="59" width="430" height="801"/>
+                                <rect key="frame" x="0.0" y="59" width="430" height="717"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHy-gd-Cc5">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="939"/>
@@ -168,75 +168,6 @@ Drinks count</string>
                                                     <constraint firstItem="V6R-W4-aqT" firstAttribute="height" secondItem="afD-xf-eKR" secondAttribute="height" id="zJN-60-cI2"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgQ-82-lm4">
-                                                <rect key="frame" x="20" y="673" width="390" height="114"/>
-                                                <subviews>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-Ij-VWb">
-                                                        <rect key="frame" x="325" y="36" width="41" height="41"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="41" id="C5B-RC-nR4"/>
-                                                            <constraint firstAttribute="height" constant="41" id="avn-l9-PFc"/>
-                                                        </constraints>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="forwardArrow"/>
-                                                        <connections>
-                                                            <action selector="forwardButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="mKc-yf-HYZ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlA-jW-jof">
-                                                        <rect key="frame" x="10" y="36" width="41" height="41"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="41" id="PSn-1i-NEY"/>
-                                                            <constraint firstAttribute="height" constant="41" id="myM-6G-5F9"/>
-                                                        </constraints>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="backward"/>
-                                                        <connections>
-                                                            <action selector="backwardButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="MdN-iR-ZeY"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41c-fC-z3X" customClass="LinearGradientButton" customModule="CalmscientIOS" customModuleProvider="target">
-                                                        <rect key="frame" x="107" y="26.666666666666629" width="176" height="60"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="176" id="11T-7d-9Js"/>
-                                                            <constraint firstAttribute="height" constant="60" id="3vX-oy-9o0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Set">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
-                                                                <color key="value" name="circleCellSelectedColor"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
-                                                                <color key="value" name="GradientButtonColor2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="setButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="n09-rf-vJh"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" name="AppBackGroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="RYG-Ij-VWb" firstAttribute="top" secondItem="TgQ-82-lm4" secondAttribute="top" constant="36" id="0G0-pr-f78"/>
-                                                    <constraint firstItem="41c-fC-z3X" firstAttribute="centerY" secondItem="RYG-Ij-VWb" secondAttribute="centerY" id="7BG-o6-yWG"/>
-                                                    <constraint firstAttribute="height" constant="114" id="8sY-Em-tEl"/>
-                                                    <constraint firstItem="tlA-jW-jof" firstAttribute="leading" secondItem="TgQ-82-lm4" secondAttribute="leading" constant="10" id="AJq-mv-H1D"/>
-                                                    <constraint firstAttribute="width" constant="390" id="IAb-Fk-ZOh"/>
-                                                    <constraint firstItem="RYG-Ij-VWb" firstAttribute="leading" secondItem="41c-fC-z3X" secondAttribute="trailing" constant="42" id="O5m-87-s5i"/>
-                                                    <constraint firstItem="41c-fC-z3X" firstAttribute="leading" secondItem="tlA-jW-jof" secondAttribute="trailing" constant="56" id="ORU-NB-feE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="RYG-Ij-VWb" secondAttribute="trailing" constant="24" id="j5t-eO-JZX"/>
-                                                    <constraint firstAttribute="bottom" secondItem="RYG-Ij-VWb" secondAttribute="bottom" constant="37" id="nZe-GV-vb5"/>
-                                                    <constraint firstAttribute="bottom" secondItem="tlA-jW-jof" secondAttribute="bottom" constant="37" id="rUd-Nx-vVl"/>
-                                                    <constraint firstItem="tlA-jW-jof" firstAttribute="top" secondItem="TgQ-82-lm4" secondAttribute="top" constant="36" id="so7-L3-WKV"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now, lets's decide how much you drink" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-LG-xCY">
                                                 <rect key="frame" x="20" y="288" width="237" height="24"/>
                                                 <constraints>
@@ -250,13 +181,10 @@ Drinks count</string>
                                         </subviews>
                                         <color key="backgroundColor" name="AppBackGroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="TgQ-82-lm4" secondAttribute="trailing" constant="20" id="6cC-BC-O51"/>
                                             <constraint firstItem="FKO-KK-3wc" firstAttribute="top" secondItem="mDO-LG-xCY" secondAttribute="bottom" constant="13" id="BBf-pT-Lgn"/>
                                             <constraint firstAttribute="height" constant="939" id="Bjv-ol-Tgq"/>
-                                            <constraint firstAttribute="bottom" secondItem="TgQ-82-lm4" secondAttribute="bottom" constant="152" id="CbQ-Ov-zmQ"/>
                                             <constraint firstItem="SQQ-KY-smC" firstAttribute="top" secondItem="Tbn-8a-zGq" secondAttribute="bottom" constant="8" symbolic="YES" id="Cq7-yO-Dl2"/>
                                             <constraint firstAttribute="trailing" secondItem="Tbn-8a-zGq" secondAttribute="trailing" constant="20" symbolic="YES" id="Uar-7u-ibA"/>
-                                            <constraint firstItem="TgQ-82-lm4" firstAttribute="leading" secondItem="GHy-gd-Cc5" secondAttribute="leading" constant="20" id="VEz-0v-5Mv"/>
                                             <constraint firstItem="FKO-KK-3wc" firstAttribute="leading" secondItem="GHy-gd-Cc5" secondAttribute="leading" constant="20" symbolic="YES" id="XAp-Zs-ree"/>
                                             <constraint firstAttribute="trailing" secondItem="SQQ-KY-smC" secondAttribute="trailing" constant="20" symbolic="YES" id="chI-Ch-Eiz"/>
                                             <constraint firstItem="Tbn-8a-zGq" firstAttribute="leading" secondItem="GHy-gd-Cc5" secondAttribute="leading" constant="20" symbolic="YES" id="cyx-uh-m8N"/>
@@ -272,19 +200,91 @@ Drinks count</string>
                                 <constraints>
                                     <constraint firstItem="GHy-gd-Cc5" firstAttribute="leading" secondItem="dtA-MN-ddc" secondAttribute="leading" id="4HP-l9-QDC"/>
                                     <constraint firstItem="GHy-gd-Cc5" firstAttribute="top" secondItem="dtA-MN-ddc" secondAttribute="top" id="Q03-g4-KA0"/>
-                                    <constraint firstAttribute="bottom" secondItem="GHy-gd-Cc5" secondAttribute="bottom" constant="-138" id="RLa-sS-OrD"/>
+                                    <constraint firstAttribute="bottom" secondItem="GHy-gd-Cc5" secondAttribute="bottom" constant="-222" id="RLa-sS-OrD"/>
                                     <constraint firstAttribute="trailing" secondItem="GHy-gd-Cc5" secondAttribute="trailing" id="Yw2-rl-Sk2"/>
                                     <constraint firstItem="GHy-gd-Cc5" firstAttribute="width" secondItem="dtA-MN-ddc" secondAttribute="width" id="cDS-tr-2Td"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgQ-82-lm4">
+                                <rect key="frame" x="20" y="784" width="390" height="114"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-Ij-VWb">
+                                        <rect key="frame" x="325" y="36" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="C5B-RC-nR4"/>
+                                            <constraint firstAttribute="height" constant="41" id="avn-l9-PFc"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="forwardArrow"/>
+                                        <connections>
+                                            <action selector="forwardButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="mKc-yf-HYZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlA-jW-jof">
+                                        <rect key="frame" x="10" y="36" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="PSn-1i-NEY"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="dRp-wH-8hy"/>
+                                            <constraint firstAttribute="height" constant="41" id="myM-6G-5F9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="wAb-3O-GeL"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="backward"/>
+                                        <connections>
+                                            <action selector="backwardButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="MdN-iR-ZeY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41c-fC-z3X" customClass="LinearGradientButton" customModule="CalmscientIOS" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="26.666666666666629" width="176" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="176" id="11T-7d-9Js"/>
+                                            <constraint firstAttribute="height" constant="60" id="3vX-oy-9o0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lexend-Regular" family="Lexend" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Set">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                                <color key="value" name="circleCellSelectedColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                                <color key="value" name="GradientButtonColor2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="setButtonAction:" destination="9Xe-ID-4Ga" eventType="touchUpInside" id="n09-rf-vJh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="AppBackGroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="41c-fC-z3X" firstAttribute="centerY" secondItem="tlA-jW-jof" secondAttribute="centerY" id="1Wb-fG-OnY"/>
+                                    <constraint firstItem="41c-fC-z3X" firstAttribute="centerY" secondItem="RYG-Ij-VWb" secondAttribute="centerY" id="7BG-o6-yWG"/>
+                                    <constraint firstItem="tlA-jW-jof" firstAttribute="leading" secondItem="TgQ-82-lm4" secondAttribute="leading" constant="10" id="FTF-eL-dG7"/>
+                                    <constraint firstAttribute="bottom" secondItem="tlA-jW-jof" secondAttribute="bottom" constant="37" id="GxT-NA-b7v"/>
+                                    <constraint firstAttribute="height" constant="114" id="K0Q-fu-NuI"/>
+                                    <constraint firstItem="RYG-Ij-VWb" firstAttribute="leading" secondItem="41c-fC-z3X" secondAttribute="trailing" constant="42" id="O5m-87-s5i"/>
+                                    <constraint firstItem="41c-fC-z3X" firstAttribute="leading" secondItem="tlA-jW-jof" secondAttribute="trailing" constant="56" id="ORU-NB-feE"/>
+                                    <constraint firstItem="tlA-jW-jof" firstAttribute="top" secondItem="TgQ-82-lm4" secondAttribute="top" constant="36" id="ifD-rx-RTw"/>
+                                    <constraint firstAttribute="width" constant="390" id="sNf-GT-8kH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3xl-4h-yYZ"/>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <constraints>
+                            <constraint firstItem="TgQ-82-lm4" firstAttribute="top" secondItem="dtA-MN-ddc" secondAttribute="bottom" constant="8" id="1TB-HC-jHP"/>
                             <constraint firstItem="dtA-MN-ddc" firstAttribute="top" secondItem="3xl-4h-yYZ" secondAttribute="top" id="6fN-66-JM9"/>
-                            <constraint firstItem="dtA-MN-ddc" firstAttribute="bottom" secondItem="3xl-4h-yYZ" secondAttribute="bottom" constant="-38" id="dNo-Vc-b3l"/>
+                            <constraint firstItem="TgQ-82-lm4" firstAttribute="bottom" secondItem="3xl-4h-yYZ" secondAttribute="bottom" id="XeF-ci-DVX"/>
                             <constraint firstItem="dtA-MN-ddc" firstAttribute="trailing" secondItem="3xl-4h-yYZ" secondAttribute="trailing" id="jx3-Pc-PuS"/>
                             <constraint firstItem="dtA-MN-ddc" firstAttribute="leading" secondItem="3xl-4h-yYZ" secondAttribute="leading" id="pAP-ub-U7G"/>
+                            <constraint firstItem="3xl-4h-yYZ" firstAttribute="trailing" secondItem="TgQ-82-lm4" secondAttribute="trailing" constant="20" id="qWh-gd-EgF"/>
+                            <constraint firstItem="TgQ-82-lm4" firstAttribute="leading" secondItem="3xl-4h-yYZ" secondAttribute="leading" constant="20" id="qns-RD-bCt"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="430" height="932"/>
@@ -1092,17 +1092,9 @@ moderate drinking is:</string>
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-18" y="-131"/>
+            <point key="canvasLocation" x="-18.320610687022899" y="-131.69014084507043"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="41c-fC-z3X">
-            <size key="intrinsicContentSize" width="30" height="31"/>
-        </designable>
-        <designable name="lNK-I2-1wi">
-            <size key="intrinsicContentSize" width="119.66666666666667" height="34.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Rectangle_backGround" width="420" height="1042"/>
         <image name="backward" width="41" height="41"/>
@@ -1135,7 +1127,7 @@ moderate drinking is:</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

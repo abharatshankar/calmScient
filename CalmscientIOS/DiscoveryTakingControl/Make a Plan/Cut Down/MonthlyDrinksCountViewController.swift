@@ -174,7 +174,7 @@ class MonthlyDrinksCountViewController: UIViewController {
                 
         let next = UIStoryboard(name: "MonthsViewController", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "MonthsViewController") as? MonthsViewController
-        vc?.title = "Make a Plan"
+        vc?.title = AppHelper.getLocalizeString(str: "Make a plan")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -238,28 +238,29 @@ class MonthlyDrinksCountViewController: UIViewController {
 
        }
     
-    
     private func setUpMonths() {
+        // Title Label
         let titleLabel = UILabel()
-        titleLabel.text = "  Apply same alcohol free days for following months"
-        titleLabel.numberOfLines = 2
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
+        titleLabel.text = "Apply same alcohol free days for following months"
+        titleLabel.numberOfLines = 4
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         monthsView.addSubview(titleLabel)
         
+        // Constraints for Title Label with 5-point gap at the top
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: monthsView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: monthsView.leadingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: monthsView.leadingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: monthsView.trailingAnchor)
         ])
         
-        // Create the grid layout
+        // Grid layout
         let gridLayout = UIStackView()
         gridLayout.axis = .vertical
         gridLayout.alignment = .center
         gridLayout.distribution = .equalSpacing
-        gridLayout.spacing = 2
+        gridLayout.spacing = 5
         gridLayout.translatesAutoresizingMaskIntoConstraints = false
         monthsView.addSubview(gridLayout)
         
@@ -268,26 +269,25 @@ class MonthlyDrinksCountViewController: UIViewController {
         dateFormatter.dateFormat = "MMM"
         let currentMonth = dateFormatter.string(from: Date())
         
-        // Add buttons to the grid layout
+        // Create buttons for each month
         var currentRowStackView: UIStackView?
-        
+
         for (index, month) in months.enumerated() {
             let button = UIButton(type: .system)
             button.setTitle(month, for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.backgroundColor = .white
             button.layer.cornerRadius = 10
-            button.layer.masksToBounds = false
             button.layer.shadowColor = UIColor.gray.cgColor
             button.layer.shadowOffset = CGSize(width: 2, height: 2)
             button.layer.shadowOpacity = 0.5
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.widthAnchor.constraint(equalToConstant: 40).isActive = true // Decrease the button width
-            button.heightAnchor.constraint(equalToConstant: 40).isActive = true // Set the button height
+            button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 50).isActive = true
             button.addTarget(self, action: #selector(monthButtonTapped(_:)), for: .touchUpInside)
             buttons.append(button)
             
-            // Select and disable the current month button
+            // If the button is the current month, set it as selected and disable interaction
             if month == currentMonth {
                 button.backgroundColor = UIColor(named: "6E6BB3ColorOnly")
                 button.isUserInteractionEnabled = false
@@ -295,35 +295,113 @@ class MonthlyDrinksCountViewController: UIViewController {
                 selectedMonths.append(month)
             }
             
-            if index % 6 == 0 {
+            // Create new row every 4 buttons
+            if index % 4 == 0 {
                 currentRowStackView = UIStackView()
                 currentRowStackView?.axis = .horizontal
                 currentRowStackView?.alignment = .center
                 currentRowStackView?.distribution = .equalSpacing
-                currentRowStackView?.spacing = 4
+                currentRowStackView?.spacing = 5
                 currentRowStackView?.translatesAutoresizingMaskIntoConstraints = false
                 gridLayout.addArrangedSubview(currentRowStackView!)
             }
             
             currentRowStackView?.addArrangedSubview(button)
-            
-            // Move the "Jan" button 5 points on the x-axis
-            if month == "Jan" || month == "Jul" {
-                button.leadingAnchor.constraint(equalTo: currentRowStackView!.leadingAnchor, constant: 5).isActive = true
-            }
-            if month == "Jun" || month == "Dec" {
-                button.trailingAnchor.constraint(equalTo: currentRowStackView!.trailingAnchor, constant: 15).isActive = true
-            }
         }
         
-        // Set up the grid layout constraints
         NSLayoutConstraint.activate([
-            gridLayout.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            gridLayout.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5), // Add 5-point gap between the label and grid
             gridLayout.leadingAnchor.constraint(equalTo: monthsView.leadingAnchor),
             gridLayout.trailingAnchor.constraint(equalTo: monthsView.trailingAnchor),
-            gridLayout.bottomAnchor.constraint(equalTo: monthsView.bottomAnchor)
+            gridLayout.bottomAnchor.constraint(equalTo: monthsView.bottomAnchor, constant: -10) // Add 5-point gap at the bottom
         ])
     }
+
+//    private func setUpMonths() {
+//        let titleLabel = UILabel()
+//        titleLabel.text = "  Apply same alcohol free days for following months"
+//        titleLabel.numberOfLines = 2
+//        titleLabel.font = UIFont.systemFont(ofSize: 13)
+//        titleLabel.textAlignment = .left
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        monthsView.addSubview(titleLabel)
+//        
+//        NSLayoutConstraint.activate([
+//            titleLabel.topAnchor.constraint(equalTo: monthsView.topAnchor, constant: 10),
+//            titleLabel.leadingAnchor.constraint(equalTo: monthsView.leadingAnchor),
+//            titleLabel.trailingAnchor.constraint(equalTo: monthsView.trailingAnchor)
+//        ])
+//        
+//        // Create the grid layout
+//        let gridLayout = UIStackView()
+//        gridLayout.axis = .vertical
+//        gridLayout.alignment = .center
+//        gridLayout.distribution = .equalSpacing
+//        gridLayout.spacing = 2
+//        gridLayout.translatesAutoresizingMaskIntoConstraints = false
+//        monthsView.addSubview(gridLayout)
+//        
+//        // Get the current month
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMM"
+//        let currentMonth = dateFormatter.string(from: Date())
+//        
+//        // Add buttons to the grid layout
+//        var currentRowStackView: UIStackView?
+//        
+//        for (index, month) in months.enumerated() {
+//            let button = UIButton(type: .system)
+//            button.setTitle(month, for: .normal)
+//            button.setTitleColor(.black, for: .normal)
+//            button.backgroundColor = .white
+//            button.layer.cornerRadius = 10
+//            button.layer.masksToBounds = false
+//            button.layer.shadowColor = UIColor.gray.cgColor
+//            button.layer.shadowOffset = CGSize(width: 2, height: 2)
+//            button.layer.shadowOpacity = 0.5
+//            button.translatesAutoresizingMaskIntoConstraints = false
+//            button.widthAnchor.constraint(equalToConstant: 40).isActive = true // Decrease the button width
+//            button.heightAnchor.constraint(equalToConstant: 40).isActive = true // Set the button height
+//            button.addTarget(self, action: #selector(monthButtonTapped(_:)), for: .touchUpInside)
+//            buttons.append(button)
+//            
+//            // Select and disable the current month button
+//            if month == currentMonth {
+//                button.backgroundColor = UIColor(named: "6E6BB3ColorOnly")
+//                button.isUserInteractionEnabled = false
+//                selectedButtons.insert(button)
+//                selectedMonths.append(month)
+//            }
+//            
+//            if index % 6 == 0 {
+//                currentRowStackView = UIStackView()
+//                currentRowStackView?.axis = .horizontal
+//                currentRowStackView?.alignment = .center
+//                currentRowStackView?.distribution = .equalSpacing
+//                currentRowStackView?.spacing = 4
+//                currentRowStackView?.translatesAutoresizingMaskIntoConstraints = false
+//                gridLayout.addArrangedSubview(currentRowStackView!)
+//            }
+//            
+//            currentRowStackView?.addArrangedSubview(button)
+//            
+//            // Move the "Jan" button 5 points on the x-axis
+//            if month == "Jan" || month == "Jul" {
+//                button.leadingAnchor.constraint(equalTo: currentRowStackView!.leadingAnchor, constant: 5).isActive = true
+//            }
+//            if month == "Jun" || month == "Dec" {
+//                button.trailingAnchor.constraint(equalTo: currentRowStackView!.trailingAnchor, constant: 15).isActive = true
+//            }
+//        }
+//        
+//        // Set up the grid layout constraints
+//        NSLayoutConstraint.activate([
+//            gridLayout.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+//            gridLayout.leadingAnchor.constraint(equalTo: monthsView.leadingAnchor),
+//            gridLayout.trailingAnchor.constraint(equalTo: monthsView.trailingAnchor),
+//            gridLayout.bottomAnchor.constraint(equalTo: monthsView.bottomAnchor)
+//        ])
+//    }
 
 //    private func setUpMonths() {
 //           let titleLabel = UILabel()

@@ -45,15 +45,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         updateView()
         self.navigationController?.isNavigationBarHidden = false
         
-//
-//        getTakingControlIndexResponse()
-//       print("takingControlResponse?.courseLists: \(takingControlResponse?.courseLists)")
-        
-        
-        
-        
 
-        
         var image = UIImage(named: "NavigationBack")
         image = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image:image , style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonOverrideAction))
@@ -200,7 +192,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
                         cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 days" :"0 Días"
                     }
            
-                    cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
+                    cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly goal")
                     if let goalValue = sectionData["goal"] as? Int {
                         
                         cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(goalValue) days" :"Días"
@@ -224,7 +216,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
                         cell.leftValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "0 counts" : "0 conteos"
                     }
            
-                    cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly Goal")
+                    cell.rightTitle.text =  AppHelper.getLocalizeString(str: "Monthly goal")
                     if let goalValue = sectionData["goal"] as? Int {
                         
                         cell.rightValue.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "\(goalValue) counts" :"conteos"
@@ -261,7 +253,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
             if isEnable == 1 {
                 cell.main_view.layer.borderWidth = 2
                 cell.main_view.layer.borderColor = UIColor(named: "AppBorderColor")?.cgColor
-                cell.main_view.layer.cornerRadius = cell.main_view.frame.height / 3.5
+              //  cell.main_view.layer.cornerRadius = cell.main_view.frame.height / 3.5
                 cell.main_view.layer.masksToBounds = true
                 cell.customLabel.textColor =  UIColor(named: "AppBorderColor")
                 cell.isUserInteractionEnabled = true
@@ -272,7 +264,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
                 cell.main_view.layer.borderWidth = 2
                 cell.main_view.layer.borderColor = UIColor(named: "AppLightTextColor")?.cgColor
                 cell.customLabel.textColor =  UIColor(named: "AppLightTextColor")
-                cell.main_view.layer.cornerRadius = cell.main_view.frame.height / 3.5
+                //cell.main_view.layer.cornerRadius = cell.main_view.frame.height / 3.5
                 cell.main_view.layer.masksToBounds = true
                 cell.isUserInteractionEnabled = false
                 cell.main_view.alpha = 0.3
@@ -322,7 +314,7 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
         
         switch section {
         case 0:
-            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol Fee Days" : "Días sin alcohol.")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol free days" : "Días sin alcohol.")
         case 1:
             header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Drink Counts" : "Conteo de bebidas.")
         default:
@@ -363,40 +355,40 @@ class Discovery: ViewController,UITableViewDelegate,UITableViewDataSource {
             if(course as! Int == 3){
                 let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-                vc?.title = "Basic knowledge"
+                vc?.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if (course as! Int == 5) {
                 let next = UIStoryboard(name: "SummaryViewController", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "SummaryViewController") as? SummaryViewController
-                vc?.title = "Summary"
+                vc?.title = AppHelper.getLocalizeString(str: "Summary")
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if (course as! Int == 6) {
                 let next = UIStoryboard(name: "DrinksTrackerViewController", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "DrinksTrackerViewController") as? DrinksTrackerViewController
-                vc?.title = "Drink Tracker"
+                vc?.title = AppHelper.getLocalizeString(str: "Drink tracker")
                
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if (course as! Int == 7) {
                 let next = UIStoryboard(name: "EventsTrackersViewController", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "EventsTrackersViewController") as? EventsTrackersViewController
-              //  vc?.title = "Drinks"
+                vc?.title =  AppHelper.getLocalizeString(str: "Events tracker")
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if (course as! Int == 1) {
                     let next = UIStoryboard(name: "TakingControllIntro", bundle: nil)
                     let vc = next.instantiateViewController(withIdentifier: "TakingControllIntro") as? TakingControllIntro
-                    vc?.title = "Taking control Introduction"
+                    vc?.title = AppHelper.getLocalizeString(str: "Taking control introduction")
                     self.navigationController?.pushViewController(vc!, animated: true)
             }
             else if (course as! Int == 4) {
                 let next = UIStoryboard(name: "MakePlan", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "MakePlan") as? MakePlan
-                vc?.title = "Make a Plan"
+                vc?.title =  AppHelper.getLocalizeString(str: "Make a plan")
                 self.navigationController?.pushViewController(vc!, animated: true)
             }
             else if (course as! Int == 2) {
                 let next = UIStoryboard(name: "HowToUseViewController", bundle: nil)
                 let vc = next.instantiateViewController(withIdentifier: "HowToUseViewController") as? HowToUseViewController
-                vc?.title = "How to use"
+                vc?.title =  AppHelper.getLocalizeString(str: "How to use")
                 self.navigationController?.pushViewController(vc!, animated: true)
             }
             

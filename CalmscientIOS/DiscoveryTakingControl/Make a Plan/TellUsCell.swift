@@ -45,11 +45,14 @@ class TellUsCell: UITableViewCell {
         headerLabel.text = AppHelper.getLocalizeString(str: "Save it to weekly summary journal entry")
         titleLabel.text = AppHelper.getLocalizeString(str: "Tell us what you would like to do." )
         
-        yesButton.titleLabel?.text = AppHelper.getLocalizeString(str: "Yes")
+        //yesButton.titleLabel?.text = AppHelper.getLocalizeString(str: "Yes")
+        yesButton.setTitle( AppHelper.getLocalizeString(str: "Yes"), for: .normal)
         
-        quit_btn.titleLabel?.text = AppHelper.getLocalizeString(str: "Quit or cut down drinking")
+      //  quit_btn.titleLabel?.text = AppHelper.getLocalizeString(str: "Quit or cut down drinking")
+        quit_btn.setTitle(AppHelper.getLocalizeString(str: "Quit or cut down drinking"), for: .normal)
         
-        track_btn.titleLabel?.text = AppHelper.getLocalizeString(str: "Just track the alcohol consumption")
+      //  track_btn.titleLabel?.text = AppHelper.getLocalizeString(str: "Just track the alcohol consumption")
+        track_btn.setTitle(AppHelper.getLocalizeString(str: "Just track the alcohol consumption"), for: .normal)
         
         }
 }

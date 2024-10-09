@@ -14,7 +14,14 @@ class ChangeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setupLabel()
+        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+
+        if selectedLanguageID == 1 {
+            setupLabel()
+        }
+        else{
+            setupSpanishLabel()
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,7 +29,39 @@ class ChangeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
+    private func setupSpanishLabel() {
+        let fullText = """
+        ¿Pensando en un cambio?
+        
+        ¡Queremos que sepas que la decisión de reducir el consumo de alcohol/drogas es completamente tuya!
+        
+        Pero si te encuentras superando constantemente las pautas recomendadas para el consumo de alcohol, sería prudente considerar detener, reducir o disminuir tu consumo.
+        Es normal tener sentimientos encontrados.
+        
+        ¿Has pensado en los pros y contras de hacerlo?
+        """
+        
+        let attributedString = NSMutableAttributedString(string: fullText)
+        
+        // Default text color
+        let defaultTextColor: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "AppLightTextColor") ?? UIColor.darkGray
+        ]
+        attributedString.addAttributes(defaultTextColor, range: NSRange(location: 0, length: attributedString.length))
+
+        let hyperlinkAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "AppThemeColor")!
+        ]
+        
+        attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "la decisión de reducir el consumo de alcohol/drogas es completamente tuya!"))
+        attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "detener, reducir o disminuir tu consumo."))
+    //    attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "pros y contras de hacerlo?"))
+        
+        label.attributedText = attributedString
+        label.font = UIFont(name: Fonts().lexendRegular, size: 15)
+
+    }
+
     private func setupLabel() {
         let fullText = """
         Thinking about a change?
@@ -54,35 +93,10 @@ class ChangeCell: UITableViewCell {
         
         label.attributedText = attributedString
         label.font = UIFont(name: Fonts().lexendRegular, size: 15)
-     //   label.textColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-//        label.isUserInteractionEnabled = true
-//        label.addGestureRecognizer(tapGestureRecognizer)
+    
     }
     
-//    @objc private func labelTapped(_ recognizer: UITapGestureRecognizer) {
-//        let label = recognizer.view as! UITextView
-//        let text = (label.attributedText?.string ?? "") as NSString
-//        
-//        let range1 = text.range(of: "We want you to know that the decision to reduce alcohol/drug consumption is entirely yours!")
-//        let range2 = text.range(of: "stopping, cutting down, or reducing your drinking.")
-//        let range3 = text.range(of: "pros and cons of doing so?")
-//        
-//        let tapLocation = recognizer.location(in: label)
-//        let index = indexOfCharacter(at: tapLocation, in: label)
-//        
-//        if NSLocationInRange(index, range1) {
-//            // Handle tap on the first hyperlink
-//            print("First hyperlink tapped")
-//        } else if NSLocationInRange(index, range2) {
-//            // Handle tap on the second hyperlink
-//            print("Second hyperlink tapped")
-//        } else if NSLocationInRange(index, range3) {
-//            // Handle tap on the third hyperlink
-//            print("Third hyperlink tapped")
-//        }
-//    }
+
 //    
     private func indexOfCharacter(at point: CGPoint, in label: UILabel) -> Int {
         guard let attributedText = label.attributedText else { return NSNotFound }

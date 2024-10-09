@@ -36,9 +36,13 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var headerLabel: UILabel!
     
     @IBOutlet weak var descriptionLabel: UILabel!
+    var doesttext = ""
+    var applytometext = ""
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        doesttext = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Doesn't apply to me" : "No se aplica a mi"
+        applytometext = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Apply to me" : "Aplicarme"
         getScreeningData()
         tableView.dataSource = self
         tableView.delegate = self
@@ -220,10 +224,11 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
             }
     //    self.title = AppHelper.getLocalizeString(str: "Taking Control Introduction")
         
-       // headerLabel.text = AppHelper.getLocalizeString(str: "How many days a week do you drink?")
-       // descriptionLabel.text = AppHelper.getLocalizeString(str: "Thank you for being willing to talk about alcohol and drugs. Now let’s begin with a brief assessment.")
         
+        headerLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Welcome to taking control!" : "¡Bienvenido a tomar el control!"
+        descriptionLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Thank you for being willing to talk about alcohol and drugs. Now let’s begin with a brief assessment." : "Gracias por estar dispuesto a hablar sobre el alcohol y las drogas. Ahora comencemos con una breve evaluación."
         
+       
         
         }
     @available(iOS 16.0, *)
@@ -504,8 +509,8 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
     }
     fileprivate lazy var questionAlertView:QuestionAlert = {
         let questionAlertView = QuestionAlert(frame: .zero)
-        questionAlertView.contentLabel.text = "Are you sure?"
-        
+        questionAlertView.contentLabel.text =  UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Are you sure?" : "Estas segura?"
+       
         //        questionAlertView.titleLabel.text = "Delete"
         questionAlertView.alertIconImage.image = UIImage(named: "question2")
         questionAlertView.alertActionDelegate = self
@@ -524,23 +529,23 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
         questionAlertView.layer.cornerRadius = 10
         
         if auditFlag == 0 {
-            questionAlertView.contentLabel.text = "\(value) apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(applytometext)"
         }
         if auditFlag == 1 {
-            questionAlertView.contentLabel.text = "\(value) doesn't apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(doesttext)"
         }
         if dastFlag == 0 {
-            questionAlertView.contentLabel.text = "\(value) apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(applytometext)"
         }
         if dastFlag == 1{
-            questionAlertView.contentLabel.text = "\(value) doesn't apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(doesttext)"
         }
         
         if cageFlag == 0 {
-            questionAlertView.contentLabel.text = "\(value) apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(applytometext)"
         }
         if cageFlag == 1{
-            questionAlertView.contentLabel.text = "\(value) doesn't apply to you"
+            questionAlertView.contentLabel.text = "\(value) \(doesttext)"
         }
         //questionAlertView.contentLabel.text = "\(value) doesn't apply to me"
         questionAlertView.layer.masksToBounds = true
@@ -794,13 +799,13 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
         if indexPath.row == 0 {
             if auditFlag == 1 {
                 
-                cell.action_button.setTitle("Doesn't apply to me", for: .normal)
+                cell.action_button.setTitle(doesttext, for: .normal)
                 cell.selectionStyle = .none
                 cell.main_view.backgroundColor = UIColor(named: "AppBackGroundColor")
 
             }
             else if auditFlag == 0{
-                cell.action_button.setTitle("Apply to me", for: .normal)
+                cell.action_button.setTitle(applytometext, for: .normal)
                 cell.selectionStyle = .none
                 cell.main_view.backgroundColor = UIColor(named: "barColor3")
 
@@ -810,24 +815,24 @@ class TakingControllIntro: ViewController,UITableViewDelegate,UITableViewDataSou
     
     if indexPath.row == 1 {
         if dastFlag == 1{
-            cell.action_button.setTitle("Doesn't apply to me", for: .normal)
+            cell.action_button.setTitle(doesttext, for: .normal)
             cell.selectionStyle = .none
             cell.main_view.backgroundColor = UIColor(named: "AppBackGroundColor")
         }
         else if dastFlag == 0 {
-            cell.action_button.setTitle("Apply to me", for: .normal)
+            cell.action_button.setTitle(applytometext, for: .normal)
             cell.selectionStyle = .none
             cell.main_view.backgroundColor = UIColor(named: "barColor3")
         }
     }
     if indexPath.row == 2 {
         if cageFlag == 1{
-            cell.action_button.setTitle("Doesn't apply to me", for: .normal)
+            cell.action_button.setTitle(doesttext, for: .normal)
             cell.selectionStyle = .none
             cell.main_view.backgroundColor = UIColor(named: "AppBackGroundColor")
         }
         else if cageFlag == 0 {
-            cell.action_button.setTitle("Apply to me", for: .normal)
+            cell.action_button.setTitle(applytometext, for: .normal)
             cell.selectionStyle = .none
             cell.main_view.backgroundColor = UIColor(named: "barColor3")
         }

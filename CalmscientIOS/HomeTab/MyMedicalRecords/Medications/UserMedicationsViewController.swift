@@ -8,7 +8,9 @@
 import UIKit
 import FSCalendar
 
+@available(iOS 16.0, *)
 class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
+    @IBOutlet weak var titleLabel: UILabel!
     
     var networkHandler:NetworkAPIRequest = NetworkAPIRequest()
     @IBOutlet weak var calendar: CustomCalender!
@@ -95,7 +97,8 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
     override func viewWillAppear(_ animated: Bool) {//kiran diagnostics
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false;
-        self.title = AppHelper.getLocalizeString(str:"Medications")
+        self.titleLabel.font = UIFont(name: Fonts().lexendMedium, size: 20)
+        self.titleLabel.text = AppHelper.getLocalizeString(str:"Medications")
         saveButton.setAttributedTitleWithGradientDefaults(title: AppHelper.getLocalizeString(str:"Save"))
     }
     
@@ -175,6 +178,7 @@ class UserMedicationsViewController: ViewController, CalendarToViewDelegate {
     }
 }
 
+@available(iOS 16.0, *)
 extension UserMedicationsViewController : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicationData.count

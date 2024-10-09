@@ -43,7 +43,7 @@ class EventsTrackersTableViewCell: UITableViewCell {
         backGroundView.layer.masksToBounds = false
        // backGroundView.layer.borderWidth = 1
         backGroundView.layer.borderColor = UIColor(named: "blackAndWhite")?.cgColor
-        backGroundView.layer.shadowPath = UIBezierPath(roundedRect: backGroundView.bounds, cornerRadius: backGroundView.layer.cornerRadius).cgPath
+      //  backGroundView.layer.shadowPath = UIBezierPath(roundedRect: backGroundView.bounds, cornerRadius: backGroundView.layer.cornerRadius).cgPath
         eventsSwitch.addTarget(self, action: #selector(switchToggled), for: .valueChanged)
         
        // titleLabel.attributedText = attributedString

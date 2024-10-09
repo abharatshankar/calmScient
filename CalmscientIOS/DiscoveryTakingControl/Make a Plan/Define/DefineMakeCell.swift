@@ -15,7 +15,15 @@ class DefineMakeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setupLabel()
+        let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+
+        if selectedLanguageID == 1 {
+            setupLabel()
+        }
+        else{
+            setupSpanishLabel()
+        }
+      
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,35 +60,40 @@ class DefineMakeCell: UITableViewCell {
         
         label.attributedText = attributedString
         label.font = UIFont(name: Fonts().lexendRegular, size: 15)
-//        label.textColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-//        label.isUserInteractionEnabled = true
-//        label.addGestureRecognizer(tapGestureRecognizer)
+
     }
     
-//    @objc private func labelTapped(_ recognizer: UITapGestureRecognizer) {
-//        let label = recognizer.view as! UITextView
-//        let text = (label.attributedText?.string ?? "") as NSString
-//
-//        let range1 = text.range(of: "We want you to know that the decision to reduce alcohol/drug consumption is entirely yours!")
-//        let range2 = text.range(of: "stopping, cutting down, or reducing your drinking.")
-//        let range3 = text.range(of: "pros and cons of doing so?")
-//
-//        let tapLocation = recognizer.location(in: label)
-//        let index = indexOfCharacter(at: tapLocation, in: label)
-//
-//        if NSLocationInRange(index, range1) {
-//            // Handle tap on the first hyperlink
-//            print("First hyperlink tapped")
-//        } else if NSLocationInRange(index, range2) {
-//            // Handle tap on the second hyperlink
-//            print("Second hyperlink tapped")
-//        } else if NSLocationInRange(index, range3) {
-//            // Handle tap on the third hyperlink
-//            print("Third hyperlink tapped")
-//        }
-//    }
+    private func setupSpanishLabel() {
+        let fullText = """
+        En primer lugar, definamos qué es lo mejor para ti.
+
+        Si estás considerando cambiar tu forma de beber, tendrás que decidir si reducir o dejar de beber. Es una buena idea hablar sobre las diferentes opciones con un profesional de la salud, un amigo o alguien en quien confíes.
+
+        Ten en cuenta que, cuando una persona que ha estado bebiendo en exceso durante un período prolongado deja de beber repentinamente, su cuerpo puede entrar en un proceso de abstinencia doloroso o incluso potencialmente mortal.
+
+        Los síntomas pueden incluir náuseas, ritmo cardíaco acelerado, convulsiones u otros problemas. Busca ayuda médica para planificar una recuperación segura. Los médicos pueden recetar medicamentos para tratar estos síntomas y hacer que el proceso sea más seguro y menos angustiante.
+        """
+        
+        let attributedString = NSMutableAttributedString(string: fullText)
+        
+        let defaultTextColor: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "AppLightTextColor") ?? UIColor.darkGray
+        ]
+        attributedString.addAttributes(defaultTextColor, range: NSRange(location: 0, length: attributedString.length))
+        
+        let hyperlinkAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "AppThemeColor")!
+        ]
+        
+        attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "un proceso de abstinencia doloroso o incluso potencialmente mortal."))
+        attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "náuseas, ritmo cardíaco acelerado, convulsiones u otros problemas."))
+    //    attributedString.addAttributes(hyperlinkAttributes, range: (fullText as NSString).range(of: "pros y contras de hacerlo?"))
+        
+        label.attributedText = attributedString
+        label.font = UIFont(name: Fonts().lexendRegular, size: 15)
+
+    }
+
 //
     private func indexOfCharacter(at point: CGPoint, in label: UILabel) -> Int {
         guard let attributedText = label.attributedText else { return NSNotFound }

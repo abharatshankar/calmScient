@@ -50,6 +50,7 @@ class UserMedicalRecordsViewController: ViewController {
         }
 }
 
+@available(iOS 16.0, *)
 extension UserMedicalRecordsViewController : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 3

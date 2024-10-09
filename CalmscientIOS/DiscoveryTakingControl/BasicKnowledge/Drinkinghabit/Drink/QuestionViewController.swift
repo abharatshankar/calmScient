@@ -395,7 +395,7 @@ class QuestionViewController: ViewController, UITableViewDataSource,UITextViewDe
         else if(indexPath.section == 1)
         {
             
-            return 95
+            return 68
         }
         else if(indexPath.section == 3)
         {

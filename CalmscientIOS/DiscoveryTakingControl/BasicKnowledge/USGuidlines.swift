@@ -16,10 +16,10 @@ class USGuidlines: ViewController {
     var sectionID2: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextView()
+       // setupTextView()
         title = "Basic Knowledge"
         self.view.showToastActivity()
-        
+        usguideTextView.font = UIFont(name: Fonts().lexendLight, size: 16)
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
             fatalError("Unable to found Application Shared Info")
         }
@@ -65,7 +65,7 @@ class USGuidlines: ViewController {
             }
         self.title = AppHelper.getLocalizeString(str: "Basic Knowledge")
         headerLabel.text = AppHelper.getLocalizeString(str: "What are the U.S. guidelines for drinking?")
-        setupTextView()
+    //    setupTextView()
         
         }
     private func setupTextView() {

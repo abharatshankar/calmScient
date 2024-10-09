@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,22 +21,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kah-bP-cS4">
                         <rect key="frame" x="8" y="8" width="361" height="145"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol-Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aX-TT-sSJ">
-                                <rect key="frame" x="52" y="16" width="140" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="3dh-G3-BvT"/>
-                                    <constraint firstAttribute="height" constant="21" id="iNk-KN-Tir"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" name="CalenderDefaultTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zeroalchol" translatesAutoresizingMaskIntoConstraints="NO" id="FlM-fd-yTK">
-                                <rect key="frame" x="9" y="13" width="30" height="30"/>
+                                <rect key="frame" x="9" y="8" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="ifv-3n-4CT"/>
-                                    <constraint firstAttribute="height" constant="30" id="rah-g3-CRi"/>
+                                    <constraint firstAttribute="width" constant="50" id="ifv-3n-4CT"/>
+                                    <constraint firstAttribute="height" constant="50" id="rah-g3-CRi"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZN-Vj-vpa">
@@ -62,21 +52,31 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zWd-Td-8qS">
                                 <rect key="frame" x="28" y="74" width="325" height="4"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol-Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aX-TT-sSJ">
+                                <rect key="frame" x="75" y="23" width="194" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="3dh-G3-BvT"/>
+                                    <constraint firstAttribute="height" constant="21" id="iNk-KN-Tir"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" name="CalenderDefaultTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <constraints>
-                            <constraint firstItem="3aX-TT-sSJ" firstAttribute="leading" secondItem="FlM-fd-yTK" secondAttribute="trailing" constant="13" id="5SP-Ow-Ygj"/>
+                            <constraint firstItem="3aX-TT-sSJ" firstAttribute="leading" secondItem="FlM-fd-yTK" secondAttribute="trailing" constant="16" id="5SP-Ow-Ygj"/>
                             <constraint firstAttribute="height" constant="145" id="E9n-VR-obC"/>
-                            <constraint firstItem="3aX-TT-sSJ" firstAttribute="top" secondItem="kah-bP-cS4" secondAttribute="top" constant="16" id="GdC-5C-eZb"/>
+                            <constraint firstItem="3aX-TT-sSJ" firstAttribute="top" secondItem="kah-bP-cS4" secondAttribute="top" constant="23" id="GdC-5C-eZb"/>
                             <constraint firstAttribute="trailing" secondItem="zWd-Td-8qS" secondAttribute="trailing" constant="8" id="Hhf-Qt-LMG"/>
                             <constraint firstAttribute="bottom" secondItem="2ov-ID-z4k" secondAttribute="bottom" constant="29" id="OAC-Um-Bvi"/>
                             <constraint firstItem="zWd-Td-8qS" firstAttribute="leading" secondItem="kah-bP-cS4" secondAttribute="leading" constant="28" id="aV5-VJ-pzE"/>
-                            <constraint firstItem="zWd-Td-8qS" firstAttribute="top" secondItem="FlM-fd-yTK" secondAttribute="bottom" constant="31" id="dTD-bT-9JE"/>
+                            <constraint firstItem="zWd-Td-8qS" firstAttribute="top" secondItem="FlM-fd-yTK" secondAttribute="bottom" constant="16" id="dTD-bT-9JE"/>
                             <constraint firstAttribute="width" constant="361" id="eB3-QP-idS"/>
                             <constraint firstAttribute="trailing" secondItem="tZN-Vj-vpa" secondAttribute="trailing" constant="17" id="ei1-1I-ywr"/>
                             <constraint firstAttribute="trailing" secondItem="2ov-ID-z4k" secondAttribute="trailing" constant="17" id="mln-Dl-8X8"/>
                             <constraint firstItem="FlM-fd-yTK" firstAttribute="leading" secondItem="kah-bP-cS4" secondAttribute="leading" constant="9" id="tUF-zQ-PS1"/>
-                            <constraint firstItem="FlM-fd-yTK" firstAttribute="top" secondItem="kah-bP-cS4" secondAttribute="top" constant="13" id="wdX-Ae-5Vi"/>
+                            <constraint firstItem="FlM-fd-yTK" firstAttribute="top" secondItem="kah-bP-cS4" secondAttribute="top" constant="8" id="wdX-Ae-5Vi"/>
                             <constraint firstAttribute="bottom" secondItem="tZN-Vj-vpa" secondAttribute="bottom" constant="19" id="xgU-Zk-T5C"/>
                         </constraints>
                     </view>

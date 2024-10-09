@@ -143,9 +143,14 @@ class ScreeningQuestionsViewController: ViewController {
                         let alertController = UIAlertController(title: UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Screening" : "Cribado", message: response.statusResponse.responseMessage, preferredStyle: .alert)
                         // Add an action button to the alert
                         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                            let next = UIStoryboard(name: "ScreeningListVC", bundle: nil)
-                            let vc = next.instantiateViewController(withIdentifier: "ScreeningListVC") as? ScreeningListVC
-                            self.navigationController?.pushViewController(vc!, animated: true)
+//                            let next = UIStoryboard(name: "ScreeningListVC", bundle: nil)
+//                            let vc = next.instantiateViewController(withIdentifier: "ScreeningListVC") as? ScreeningListVC
+//                            self.navigationController?.pushViewController(vc!, animated: true)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                                self.screeningAllQuestionsSuccessfullySubmittedClosure?(self.selectedScreening)
+                                
+                                
+                            })
                         }
                        
                         alertController.addAction(okAction)
@@ -162,9 +167,11 @@ class ScreeningQuestionsViewController: ViewController {
                                 
                                 
                             })
+//                            let next = UIStoryboard(name: "ScreeningListVC", bundle: nil)
+//                            let vc = next.instantiateViewController(withIdentifier: "ScreeningListVC") as? ScreeningListVC
+//                            self.navigationController?.pushViewController(vc!, animated: true)
                         }
                         alertController.addAction(okAction)
-                        // Present the alert
                         DispatchQueue.main.async {
                             self.present(alertController, animated: true, completion: nil)
                         }

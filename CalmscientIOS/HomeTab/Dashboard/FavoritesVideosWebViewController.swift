@@ -17,9 +17,10 @@ class FavoritesVideosWebViewController: UIViewController, WKUIDelegate, WKNaviga
     override func viewDidLoad() {
           super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        titlelLabel.font = UIFont(name: Fonts().lexendMedium, size: 18)
         titlelLabel.text = titleString
         favoritesWebView.uiDelegate = self
-               favoritesWebView.navigationDelegate = self
+        favoritesWebView.navigationDelegate = self
        loadFavoriteURL()
        }
     override func viewWillAppear(_ animated: Bool) {

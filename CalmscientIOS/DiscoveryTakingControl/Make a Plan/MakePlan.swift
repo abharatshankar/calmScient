@@ -21,6 +21,11 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
     
     var button_name = ["To improve my health","To improve my relationships","To avoid hangovers","To do better at work or in school", "To save money","To lose weight or get fit","To avoid more serious problems","To meet my own personal standards"]
     var cons_arr = ["I'd need another way to unwind","It helps me feel more at ease socially","I wouldn't fit in with some of my friends","Change can be hard"]
+    
+    var button_namespanish = ["Mejorar mi salud", "Mejorar mis relaciones", "Evitar resacas", "Rendir mejor en el trabajo o en la escuela", "Ahorrar dinero", "Perder peso o ponerme en forma", "Evitar problemas más graves", "Cumplir mis propios estándares personales"];
+    var cons_arrspanish = ["Necesitaría otra forma de relajarme", "Me ayuda a sentirme más cómodo socialmente", "No encajaría con algunos de mis amigos", "El cambio puede ser difícil"];
+
+    
     var prosText : String  = ""
     var prosTextfieldText : String  = ""
     var consText : String  = ""
@@ -67,7 +72,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
         
         let next = UIStoryboard(name: "DefineMakeplan", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "DefineMakeplan") as? DefineMakeplan
-        vc?.title = "Make a Plan"
+        vc?.title =  AppHelper.getLocalizeString(str: "Make a plan")
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
@@ -188,7 +193,17 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
             return cell
         case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ProsCell", for: indexPath) as! ProsCell
+            let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+
+            if selectedLanguageID == 1 {
+                    // English
                     cell.label.text = button_name[indexPath.row]
+                } else {
+                    
+                    cell.label.text = button_namespanish[indexPath.row]
+                }
+            
+                   // cell.label.text = button_name[indexPath.row]
                     
                     if tableSelectedRow[indexPath.section] != nil && indexPath.row == tableSelectedRow[indexPath.section] {
                         cell.main_view.backgroundColor = UIColor(named: "AppBorderColor")
@@ -208,14 +223,22 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                 journalEntry.append(["entry": prosText])
             }
             //  prosTextfieldText = cell.label.text
-            
+            cell.otherLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Others" : "Otros"
             cell.selectionStyle = .none
             print(journalEntry)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProsCell", for: indexPath) as! ProsCell
-            cell.label.text = cons_arr[indexPath.row]
-            
+           
+            let selectedLanguageID = UserDefaults.standard.integer(forKey: "SelectedLanguageID")
+
+            if selectedLanguageID == 1 {
+                    // English
+                cell.label.text = cons_arr[indexPath.row]
+                } else {
+                    
+                    cell.label.text = cons_arrspanish[indexPath.row]
+                }
             if tableSelectedRow[indexPath.section] != nil && indexPath.row == tableSelectedRow[indexPath.section] {
                 cell.main_view.backgroundColor = UIColor(named: "AppBorderColor")
                 cell.label.textColor = UIColor(named: "appointmentBackgroundcolor")
@@ -233,7 +256,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
             if let consText = cell.label.text, !consText.isEmpty {
                 journalEntry.append(["entry": consText])
             }
-            
+            cell.otherLabel.text = UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Others" : "Otros"
             cell.selectionStyle = .none
             print(journalEntry)
             return cell
@@ -262,11 +285,11 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
         
         switch section {
         case 2:
-            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol Fee Days" : "Días sin alcohol.")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Alcohol free days" : "Días sin alcohol.")
         case 1:
-            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Pros:" : "Ventajas:")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "pros:" : "Ventajas:")
         case 3:
-            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Cons:" : "Contras:")
+            header.setText(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "cons:" : "Contras:")
         default:
             header.setText("")
         }
@@ -279,7 +302,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
         case 0:
             return 0;
         case 1,3:
-            return 44
+            return 35
         default:
             return 0
         }
@@ -288,7 +311,7 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 295 // 7 buttons * 45 height + spacing
+            return 173 // 7 buttons * 45 height + spacing
         case 1,3:
             return 55 // Adjust the height as needed
         case 2,4:
@@ -348,13 +371,13 @@ class MakePlan: ViewController,UITableViewDelegate,UITableViewDataSource {
                     if(indexPath.row == 0){
                         let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
                         let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-                        vc?.title = "Make a Plann"
+                        vc?.title =  AppHelper.getLocalizeString(str: "Make a plan")
                         self.navigationController?.pushViewController(vc!, animated: true)
                     }
                     if(indexPath.row == 1){
                         let next = UIStoryboard(name: "Basicknowledge", bundle: nil)
                         let vc = next.instantiateViewController(withIdentifier: "Basicknowledge") as? Basicknowledge
-                        vc?.title = "Make a Plan"
+                        vc?.title =  AppHelper.getLocalizeString(str: "Make a plan")
                         self.navigationController?.pushViewController(vc!, animated: true)
                     }
                 }

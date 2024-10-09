@@ -11,6 +11,7 @@ class ProsOthers: UITableViewCell {
     @IBOutlet weak var label: UITextView!
     @IBOutlet weak var main_view: UIView!
 
+    @IBOutlet weak var otherLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         main_view.layer.borderWidth = 1

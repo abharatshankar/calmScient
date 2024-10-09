@@ -509,69 +509,10 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
                         DispatchQueue.main.async {
                             print(json)
                             
-                            //                                    guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
-                            //                                        fatalError("Unable to found Application Shared Info")
-                            //                                    }
-                            //                                    getUserProfile(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID,bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken){ [self] result in
-                            //                                        switch result {
-                            //                                        case .success(let data):
-                            //                                            handleUserProfileResponse(data: data)
-                            //                                        case .failure(let error):
-                            //                                            print("Error: \(error)")
-                            //                                        }
-                            //
-                            //                                    }
-                            
-                            //                                    guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
-                            //                                        fatalError("Unable to found Application Shared Info")
-                            //                                    }
                             self.view.showToastActivity()
-                            
-                            //                                    getPatientLanguages(patientId: userInfo.patientID, clientId: userInfo.clientID,bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken) { [self] result in
-                            //                                        switch result {
-                            //                                        case .success(let data):
-                            //                                            do {
-                            //                                                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            //                                                    DispatchQueue.main.async {
-                            //
-                            //                                                        self.languagesData = json["patientLanguages"] as! [[String : Any]]
-                            //                                                        print("classgetPatientLanguages===\(self.languagesData)")
-                            //                                                        self.profileTableView.reloadData()
-                            //                                                        self.view.hideToastActivity()
-                            //
-                            //                                                    }
-                            //
-                            //                                                } else {
-                            //                                                    print("Unable to convert data to JSON")
-                            //                                                }
-                            //                                            } catch {
-                            //                                                print("Error converting data to JSON: \(error)")
-                            //                                            }
-                            //                                        case .failure(let error):
-                            //                                            print("Error: \(error)")
-                            //                                        }
-                            //                                    }
-                            
-                            
-                            //                                    guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {
-                            //                                        fatalError("Unable to found Application Shared Info")
-                            //                                    }
-                            //                                    getUserProfile(plId: userInfo.patientLocationID, patientId: userInfo.patientID, clientId: userInfo.clientID,bearerToken: ApplicationSharedInfo.shared.tokenResponse!.accessToken){ [self] result in
-                            //                                        switch result {
-                            //                                        case .success(let data):
-                            //                                            handleUserProfileResponse(data: data)
-                            //                                        case .failure(let error):
-                            //                                            print("Error: \(error)")
-                            //                                        }
-                            //
-                            //                                    }
                             
                             let userProfileViewController = UIStoryboard(name: "UserProfile", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
                             self.navigationController?.pushViewController(userProfileViewController, animated: false)
-                            
-                            
-                            
-                            
                             
                         }
                         

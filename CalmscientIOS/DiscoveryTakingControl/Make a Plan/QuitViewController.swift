@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class QuitViewController: ViewController{
     
-        @IBOutlet weak var notifiy_pcp: UIButton!
+    @IBOutlet weak var notifiy_pcp: UIButton!
     @IBOutlet weak var notified_mangment: UIButton!
     @IBOutlet weak var instruction_see: UIButton!
     
@@ -44,6 +44,12 @@ class QuitViewController: ViewController{
         instruction_see.layer.borderWidth = 2
         instruction_see.layer.cornerRadius = 20
         instruction_see.layer.borderColor = UIColor(red: 110/255, green: 107/255, blue: 179/255, alpha: 1).cgColor
+        
+        notifiy_pcp.titleLabel?.font = UIFont(name: Fonts().lexendRegular, size: 18)
+        notified_mangment.titleLabel?.font = UIFont(name: Fonts().lexendRegular, size: 18)
+        notifiy_pcp.setTitle(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Notify to PCP" : "Notificar al PCP", for: .normal)
+        notified_mangment.setTitle(UserDefaults.standard.integer(forKey: "SelectedLanguageID") == 1 ? "Notify to PCP" : "Notificar al PCP", for: .normal)
+        
         // Initialization code
         super.viewDidLoad()
         
@@ -118,9 +124,9 @@ class QuitViewController: ViewController{
         talkToPrimaryDoc2.text = AppHelper.getLocalizeString(str: "Consider medication management" )
         talkToPrimaryDoc3.text = AppHelper.getLocalizeString(str: "Look for alcohol treatment program" )
         letsGetToKnow.text = AppHelper.getLocalizeString(str: "Now, let's get to know the drink coach features." )
-        instruction_see.titleLabel?.text = AppHelper.getLocalizeString(str: "See the introduction")
+       // instruction_see.titleLabel?.text = AppHelper.getLocalizeString(str: "See the introduction")
         
-        
+        instruction_see.setTitle(AppHelper.getLocalizeString(str: "See the introduction"), for: .normal)
         }
     
     @IBAction func linkButtonAction(_ sender: Any) {

@@ -162,8 +162,8 @@ extension UserIntroSelectionTableCell : UICollectionViewDelegateFlowLayout, UICo
             cell.cellImageView.layer.masksToBounds = true
             cell.cellImageView.layer.shadowColor = UIColor.black.cgColor
             cell.cellImageView.layer.shadowOpacity = 0.5
-            cell.cellImageView.layer.shadowOffset = CGSize(width: 4, height: 4)
-            cell.cellImageView.layer.shadowRadius = 5
+            cell.cellImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+            cell.cellImageView.layer.shadowRadius = 2
             cell.cellImageView.layer.masksToBounds = false
 //            cell.cellImageView.layer.borderColor = UIColor.white.cgColor
 //            cell.cellImageView.applyShadow()

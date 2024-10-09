@@ -103,7 +103,7 @@ class ProgressOnWorkMainViewController: ViewController {
     
     func getPatientCourseWorkPercentageDetails( patientId: Int,bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void){
         // Define the URL
-        guard let url = URL(string: "\(baseURLString)patients/api/v1/course/getPatientCourseWorkPercentageDetails") else {
+        guard let url = URL(string: "\(baseURLString)patients/api/v1/course/getPatientCourseWorkPercentageDetailsForMobile") else {
             print("Invalid URL")
             return
         }

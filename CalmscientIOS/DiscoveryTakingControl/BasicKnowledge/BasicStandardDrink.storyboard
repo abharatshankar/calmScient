@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lexend-SemiBold.ttf">
+            <string>Lexend-SemiBold</string>
+        </array>
         <array key="lexendbold.ttf">
             <string>Lexend-Bold</string>
-        </array>
-        <array key="lexendsemibold.ttf">
-            <string>Lexend-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -140,33 +140,35 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppBackGroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="top" secondItem="qfn-q3-KTZ" secondAttribute="top" constant="2" id="1TF-Vt-9IO"/>
                                     <constraint firstItem="nsI-Cm-mvi" firstAttribute="top" secondItem="0bO-eD-udY" secondAttribute="bottom" constant="20" id="56f-uV-h1a"/>
-                                    <constraint firstItem="0bO-eD-udY" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="A9x-9l-H6I"/>
-                                    <constraint firstItem="nsI-Cm-mvi" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="26" id="CIj-iA-oEK"/>
-                                    <constraint firstAttribute="trailing" secondItem="nsI-Cm-mvi" secondAttribute="trailing" constant="28" id="ECl-HL-xWx"/>
+                                    <constraint firstAttribute="trailing" secondItem="ubw-MM-CXg" secondAttribute="trailing" constant="8" id="9Om-lu-r24"/>
+                                    <constraint firstItem="0bO-eD-udY" firstAttribute="trailing" secondItem="qfn-q3-KTZ" secondAttribute="trailingMargin" id="BPr-hm-XZy"/>
+                                    <constraint firstAttribute="bottom" secondItem="ubw-MM-CXg" secondAttribute="bottom" constant="51" id="Bee-cr-uOJ"/>
+                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="leading" secondItem="0bO-eD-udY" secondAttribute="leading" id="C9d-b7-EFn"/>
                                     <constraint firstItem="ubw-MM-CXg" firstAttribute="top" secondItem="nsI-Cm-mvi" secondAttribute="bottom" constant="18" id="LSl-sx-qOr"/>
-                                    <constraint firstAttribute="bottom" secondItem="ubw-MM-CXg" secondAttribute="bottom" constant="51" id="M1z-Sf-ZYa"/>
-                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="M6b-Vj-ZDx"/>
+                                    <constraint firstItem="6a3-HU-WsO" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="15" id="OMK-pA-xky"/>
                                     <constraint firstItem="MTf-I6-dGL" firstAttribute="top" secondItem="0bO-eD-udY" secondAttribute="bottom" constant="121" id="Pi3-nr-wZR"/>
                                     <constraint firstItem="6a3-HU-WsO" firstAttribute="top" secondItem="0bO-eD-udY" secondAttribute="bottom" constant="121" id="T90-em-fiF"/>
+                                    <constraint firstItem="0bO-eD-udY" firstAttribute="leading" secondItem="ubw-MM-CXg" secondAttribute="leading" id="Y5N-E5-rE2"/>
                                     <constraint firstItem="0bO-eD-udY" firstAttribute="top" secondItem="3FB-fJ-OYE" secondAttribute="bottom" constant="14.33" id="Y7b-NN-423"/>
-                                    <constraint firstAttribute="width" secondItem="qfn-q3-KTZ" secondAttribute="height" multiplier="393:748" id="e51-Jc-Vm5"/>
-                                    <constraint firstAttribute="trailing" secondItem="ubw-MM-CXg" secondAttribute="trailing" constant="8" id="elU-XL-y4I"/>
-                                    <constraint firstItem="6a3-HU-WsO" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="15" id="kOA-eM-rwl"/>
-                                    <constraint firstAttribute="trailing" secondItem="0bO-eD-udY" secondAttribute="trailing" constant="8" id="koG-s3-6CU"/>
-                                    <constraint firstAttribute="trailing" secondItem="MTf-I6-dGL" secondAttribute="trailing" constant="16" id="soT-cW-VYb"/>
-                                    <constraint firstItem="ubw-MM-CXg" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="xk1-Vl-NVB"/>
+                                    <constraint firstItem="nsI-Cm-mvi" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="26" id="cya-VO-lAp"/>
+                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="top" secondItem="qfn-q3-KTZ" secondAttribute="top" constant="2" id="d6B-h3-IEq"/>
+                                    <constraint firstItem="3FB-fJ-OYE" firstAttribute="leading" secondItem="qfn-q3-KTZ" secondAttribute="leading" constant="24" id="gvB-tL-Hem"/>
+                                    <constraint firstAttribute="trailing" secondItem="0bO-eD-udY" secondAttribute="trailing" constant="8" id="lYk-9a-gAB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nsI-Cm-mvi" secondAttribute="trailing" constant="28" id="qPf-pr-ats"/>
+                                    <constraint firstAttribute="trailing" secondItem="MTf-I6-dGL" secondAttribute="trailing" constant="16" id="rxq-AN-OXD"/>
                                 </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="JGp-aj-zwc"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="C0d-LD-gla"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="AppBackGroundColor"/>
                         <constraints>
-                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="J1J-id-WoO"/>
-                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="11" id="KTs-3d-Iwu"/>
-                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gaO-lL-bdc"/>
-                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="yGx-XX-HJO"/>
+                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="LeF-Xu-8Ra"/>
+                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ReZ-d2-Pe7"/>
+                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TrV-B7-wXa"/>
+                            <constraint firstItem="qfn-q3-KTZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="11" id="yj3-Jx-zJ0"/>
                         </constraints>
                     </view>
                     <connections>

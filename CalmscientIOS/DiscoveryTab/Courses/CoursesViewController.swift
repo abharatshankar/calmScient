@@ -145,6 +145,9 @@ extension CoursesViewController : UITableViewDataSource, UITableViewDelegate {
                 vc?.pageTitle = title
                 self?.navigationController?.pushViewController(vc!, animated: true)
             }
+            cell.darkTheme = self.patientSessionDetails?.darkTheme ?? 0
+            cell.languageName = self.patientSessionDetails?.languageName ?? ""
+            cell.userSessionID = self.courseSessionID
             cell.updateTableCell(data: instance)
             cell.selectionStyle = .none
         }

@@ -20,7 +20,6 @@ class QuestionAlert: UIView {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var cancelButton: BorderShadowButton!
     @IBOutlet weak var okButton: LinearGradientButton!
-    
     weak var alertActionDelegate:QuestionAlertAlertViewActionProtocol?
     
     

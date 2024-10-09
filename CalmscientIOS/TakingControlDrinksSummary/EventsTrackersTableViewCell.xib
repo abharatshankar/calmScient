@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="8" y="16" width="361" height="98"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvm-17-APm">
-                                <rect key="frame" x="0.0" y="2" width="361" height="90"/>
+                                <rect key="frame" x="0.0" y="2" width="353" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol-Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeB-MD-kGL">
                                         <rect key="frame" x="73" y="29.666666666666664" width="174" height="30"/>
@@ -48,7 +48,7 @@
                                         <color key="onTintColor" red="0.50196078430000002" green="0.43434495989999999" blue="0.81000056880000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-hW-KlT">
-                                        <rect key="frame" x="290" y="29" width="55" height="33"/>
+                                        <rect key="frame" x="282" y="29" width="55" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="8ou-gm-Re8"/>
                                             <constraint firstAttribute="height" constant="33" id="h6S-f8-m29"/>
@@ -77,8 +77,8 @@
                             <constraint firstItem="Zvm-17-APm" firstAttribute="top" secondItem="HYw-qD-hpE" secondAttribute="top" constant="2" id="Kg2-dp-IOV"/>
                             <constraint firstItem="Zvm-17-APm" firstAttribute="leading" secondItem="HYw-qD-hpE" secondAttribute="leading" id="NrZ-UZ-BCb"/>
                             <constraint firstAttribute="width" constant="361" id="ZKo-dc-sqo"/>
+                            <constraint firstAttribute="trailing" secondItem="Zvm-17-APm" secondAttribute="trailing" constant="8" id="m1g-mX-ZGK"/>
                             <constraint firstAttribute="height" constant="98" id="pcM-6y-YOP"/>
-                            <constraint firstAttribute="trailing" secondItem="Zvm-17-APm" secondAttribute="trailing" id="qme-QT-Ywl"/>
                         </constraints>
                     </view>
                 </subviews>

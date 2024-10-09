@@ -525,7 +525,7 @@ class MonthsViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
                             if let alertView = view.subviews.first(where: { $0 is CustomAlertView1 }) {
                                 alertView.removeFromSuperview()
                             }
-                            self.view.showToast(message: "Saved Goal Setup Make A Plan")
+                            self.view.showToast(message: "Saved Goal Setup Make A plan")
                             let next = UIStoryboard(name: "Discovery", bundle: nil)
                             let vc = next.instantiateViewController(withIdentifier: "Discovery") as? Discovery
                             vc?.title = "Taking Control"
@@ -696,7 +696,7 @@ class MonthsViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
     @IBAction func forwardButtonAction(_ sender: Any) {
     }
     @IBAction func backwardButtonAction(_ sender: Any) {
-        
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func setButtonAction(_ sender: Any) {
         guard let userInfo = ApplicationSharedInfo.shared.loginResponse else {

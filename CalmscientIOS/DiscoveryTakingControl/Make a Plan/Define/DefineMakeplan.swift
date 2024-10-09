@@ -135,7 +135,7 @@ class DefineMakeplan: ViewController,UITableViewDelegate,UITableViewDataSource {
         print("Track button tapped at row \(indexPath.row)")
         let next = UIStoryboard(name: "MonthlyDrinksCountViewController", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "MonthlyDrinksCountViewController") as? MonthlyDrinksCountViewController
-        vc?.title = "Make a Plan"
+        vc?.title = AppHelper.getLocalizeString(str: "Make a plan")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     @objc func quitButtonTapped(_ sender: UIButton) {
@@ -145,7 +145,7 @@ class DefineMakeplan: ViewController,UITableViewDelegate,UITableViewDataSource {
        
         let next = UIStoryboard(name: "QuitViewController", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: "QuitViewController") as? QuitViewController
-        vc?.title = "Make a Plan"
+        vc?.title = AppHelper.getLocalizeString(str: "Make a plan")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 
